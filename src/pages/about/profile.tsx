@@ -1,104 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import ImageSide from '../../../public/img/feature-bg.png';
-import ImageGrad from '../../../public/img/gradient/sdm.png';
-import ImageGrad2 from '../../../public/img/gradient/culture.png';
-import ImageGrad3 from '../../../public/img/gradient/location.png';
-import ImageGrad4 from '../../../public/img/gradient/facilities.png';
-import ImageGrad5 from '../../../public/img/gradient/itsystem.png';
-import ImageGrad6 from '../../../public/img/gradient/prices.png';
-
-const SectionsFive = [
-  {
-    title: 'Visi & Misi',
-    titleTwo: 'Visi',
-    titleThere: 'Misi',
-    visiContent:
-      'Visi kami adalah menjadi salah satu perusahaan jasa pengiriman domestik terbaik yang berkomitmen terhadap pengembangan sumber daya manusia, kuantitas jaringan dan sistem operasional yang andal.',
-    children: [
-      {
-        misiOne:
-          'Berkomitmen untuk memberikan pelayanan terbaik terhadap pelanggan.',
-        misiTwo: 'B Meningkatkan performa perusahaan secara berkesinambungan.',
-        misiThree:
-          'Menjadi solusi atas kebutuhan jasa pengiriman domestik area.',
-        misiFour:
-          'Berperan aktif dalam meningkatkan pengetahuan dan keterampilan logistik.',
-      },
-    ],
-  },
-  {
-    title: 'Nilai',
-    children: [
-      {
-        title: 'Berkomitmen Tinggi',
-        desc: 'Seluruh insan SML memberikan komitmen yang tinggi terhadap seluruh aktivitas untuk mencapai hasil yang optimal dan memberikan solusi yang terbaik di setiap tanggung jawab yang diberikan.',
-      },
-      {
-        title: 'Ramah',
-        desc: 'Seluruh insan SML memberikan komitmen yang tinggi terhadap seluruh aktivitas untuk mencapai hasil yang optimal dan memberikan solusi yang terbaik di setiap tanggung jawab yang diberikan.        ',
-      },
-      {
-        title: 'Berkelas',
-        desc: 'Seluruh insan SML memberikan komitmen yang tinggi terhadap seluruh aktivitas untuk mencapai hasil yang optimal dan memberikan solusi yang terbaik di setiap tanggung jawab yang diberikan.',
-      },
-    ],
-  },
-  {
-    title: 'Tim',
-    children: [
-      {
-        title: 'Tim Marketing',
-        desc: 'Tim penjualan kami selalu siap membantu klien menemukan layanan dan produk yang tepat untuk meningkatkan kualitas pekerjaan mereka dan meningkatkan efisiensi alur kerja.',
-      },
-      {
-        title: 'Tim Customer Service',
-        desc: 'Tim customer service kami memastikan pengiriman dilakukan secara efisien dan aman. Selain itu, kami hadir untuk membantu pelanggan dalam memahami fitur dan fungsi layanan yang dibutuhkan.',
-      },
-      {
-        title: 'Tim Kami',
-        desc: 'Tim kami akan membantu Anda untuk lebih memahami layanan, produk, dan sistem kami. Penting bagi kami bahwa klien kami dapat memastikan bahwa semua layanan yang kami tawarkan bernilai tambah untuk bisnis mereka.',
-      },
-    ],
-  },
-  {
-    title: 'Kelebihan',
-    children: [
-      {
-        title: 'SDM',
-        icon: ImageGrad,
-        desc: 'Memiliki sumber daya manusia tingkat manajerial dan operasional yang berpengalaman dan komitmen yang tinggi serta sangat memahami bisnis logistik dan kargo sehingga dapat memberikan solusi terbaik atas kebutuhan pelanggan.',
-      },
-      {
-        title: 'Budaya Perusahaan',
-        icon: ImageGrad2,
-        desc: 'Budaya perusahaan yang kuat, terutama dalam service culture dan customer focus dengan nilai utama "Customer Come First".',
-      },
-      {
-        title: 'Operasional Area',
-        icon: ImageGrad3,
-        desc: 'Memiliki 34 cabang yang berada di seluruh provinsi di Indonesia dengan coverage area 514 kabupaten/kota baik dalam layanan ekspres maupun reguler.',
-      },
-      {
-        title: 'Fasilitas Layanan',
-        icon: ImageGrad4,
-        desc: 'Penyediaan fasilitas Proof of Delivery (POD), asuransi, packing dan wrapping, pengurusan dokumen Free Trade Zone (FTZ) sampai pada keperluan forklift dan crane untuk memenuhi kebutuhan pelanggan.',
-      },
-      {
-        title: 'Sistem IT',
-        icon: ImageGrad5,
-        desc: 'Menggunakan sistem yang berbasis IT untuk mendukung layanan yang prima bagi pelanggan yang terus dikembangkan baik di pusat maupun di cabang.',
-      },
-      {
-        title: 'Harga',
-        icon: ImageGrad6,
-        desc: 'Harga yang kompetitif dengan standar layanan dan solusi layanan terbaik bagi semua pelanggan.',
-      },
-    ],
-  },
-];
+import VisiMisi from '@/components/app/five-section/visi-misi';
+import Value from '@/components/app/five-section/value';
+import Team from '@/components/app/five-section/team';
+import Excess from '@/components/app/five-section/excess';
+import Measurement from '@/components/app/five-section/measurement';
 
 export default function Profile() {
+  const [selectedComponent, setSelectedComponent] = useState('');
+
+  const renderSelectedComponent = () => {
+    switch (selectedComponent) {
+      case 'VisiMisi':
+        return <VisiMisi />;
+      case 'Value':
+        return <Value />;
+      case 'Team':
+        return <Team />;
+      case 'Excess':
+        return <Excess />;
+      case 'Measurement':
+        return <Measurement />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <>
       <div className="bg-gray-header w-full h-[450px] mb-20 mx-auto grid text-center relative">
@@ -168,6 +96,57 @@ export default function Profile() {
           </div>
         </div>
       </div>
+
+      <div>
+        <div className="flex justify-center items-center">
+          <div className="flex flex-wrap justify-center">
+            <div
+              className="bg-white p-6 rounded shadow w-40 h-40 m-2"
+              onClick={() => setSelectedComponent('VisiMisi')}
+            >
+              <h2 className="text-lg font-semibold mb-4">Visi & Misi</h2>
+              <p className="text-gray-700">
+                Tuliskan visi dan misi Anda di sini.
+              </p>
+            </div>
+            <div
+              className="bg-white p-6 rounded shadow w-40 h-40 m-2"
+              onClick={() => setSelectedComponent('Value')}
+            >
+              <h2 className="text-lg font-semibold mb-4">Value</h2>
+              <p className="text-gray-700">
+                Tuliskan nilai-nilai Anda di sini.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="flex justify-center items-center">
+          <div className="flex flex-wrap justify-center">
+            <div
+              className="bg-white p-6 rounded shadow w-40 h-40 m-2"
+              onClick={() => setSelectedComponent('Team')}
+            >
+              <h2 className="text-lg font-semibold mb-4">Team</h2>
+              <p className="text-gray-700">
+                Tuliskan informasi tentang tim Anda di sini.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded shadow w-40 h-40 m-2">
+              <h2 className="text-lg font-semibold mb-4">Kelebihan</h2>
+              <p className="text-gray-700">
+                Tuliskan keunggulan-keunggulan yang dimiliki di sini.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded shadow w-40 h-40 m-2">
+              <h2 className="text-lg font-semibold mb-4">Pengukuran</h2>
+              <p className="text-gray-700">
+                Tuliskan metrik pengukuran di sini.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>{renderSelectedComponent()}</div>
     </>
   );
 }

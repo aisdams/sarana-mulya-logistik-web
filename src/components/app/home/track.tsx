@@ -1,6 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Track() {
+  const [activeButton, setActiveButton] = useState<
+    'lacakStatusPod' | 'lacakStatusResi'
+  >('lacakStatusPod');
+
+  const handleButtonClick = (
+    buttonId: 'lacakStatusPod' | 'lacakStatusResi'
+  ) => {
+    setActiveButton(buttonId);
+  };
+
   return (
     <div className="grid grid-cols-2 my-20">
       <h1 className="text-base-blue font-extrabold text-[2.7rem] leading-none">
@@ -9,9 +19,21 @@ export default function Track() {
 
       <div>
         <div className="flex gap-5 mb-4">
-          <button>Lacak Status POD</button>
-          <button className="px-10 py-4 text-white bg-blue-400 rounded-md">
+          <button
+            className={`px-10 py-4 ${
+              activeButton === 'lacakStatusPod' ? 'text-white bg-blue-400' : ''
+            }`}
+            onClick={() => handleButtonClick('lacakStatusPod')}
+          >
             Lacak Status POD
+          </button>
+          <button
+            className={`px-10 py-4 ${
+              activeButton === 'lacakStatusResi' ? 'text-white bg-blue-400' : ''
+            }`}
+            onClick={() => handleButtonClick('lacakStatusResi')}
+          >
+            Lacak Status Resi
           </button>
         </div>
         <div className="flex gap-5">

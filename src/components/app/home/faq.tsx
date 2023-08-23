@@ -33,7 +33,7 @@ const FaqData: FaqItem[] = [
 ];
 
 export default function FAQ() {
-  const [activeIndex, setActiveIndex] = useState<number>(-1);
+  const [activeIndex, setActiveIndex] = useState<number>(0);
 
   const toggleAccordion = (index: number) => {
     if (activeIndex === index) {
