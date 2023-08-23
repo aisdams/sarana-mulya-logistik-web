@@ -17,6 +17,7 @@ const config: Config = {
         'base-blue': '#2BA7C0',
         'secondary-text': '#2b2b2b',
         'gray-text': '#acb4b8',
+        'gray-header': '#374b56',
       },
     },
   },

@@ -10,7 +10,7 @@ import HeaderOne from '../../../../public/img/1.png';
 import HeaderTwo from '../../../../public/img/2.png';
 import HeaderThree from '../../../../public/img/3.png';
 import { BsPlayFill } from 'react-icons/bs';
-import SpeedDial from '@/pages/SpeedDial';
+import SpeedDial from '@/pages/speed-dial';
 
 // Gambar dan konten teks untuk setiap slide
 const slides = [

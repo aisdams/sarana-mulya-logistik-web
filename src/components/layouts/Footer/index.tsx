@@ -1,4 +1,5 @@
 import React from 'react';
+// import '@/styles/Animation.css';
 import { MdOutlineArrowForwardIos } from 'react-icons/md';
 import {
   BsFacebook,
@@ -7,6 +8,15 @@ import {
   BsWhatsapp,
   BsTiktok,
 } from 'react-icons/bs';
+import OurMission from '@/components/app/home/our-mission';
+import Animate from '../../../../public/img/animate/building1.png';
+import Animate2 from '../../../../public/img/animate/building2.png';
+import Animate3 from '../../../../public/img/animate/building3.png';
+import Animate4 from '../../../../public/img/animate/building4.png';
+import Animate5 from '../../../../public/img/animate/building5.png';
+import Animate6 from '../../../../public/img/animate/park.png';
+import Animate7 from '../../../../public/img/animate/truck2.png';
+import Image from 'next/image';
 
 const Footers = [
   {
@@ -65,87 +75,75 @@ const Footers = [
 
 export default function Footer() {
   return (
-    <div className="bg-[#081c25] py-20">
-      <div className="grid grid-cols-4 mx-28 gap-5">
-        <div className="About">
-          <h1 className="text-white text-xl">Tentang Kami</h1>
-          <hr className="bg-base-blue w-3 h-1 mt-2" />
+    <>
+      <OurMission />
+      <div className="bg-[#081c25] py-20 text-white">
+        <div className="grid grid-cols-4 mx-28 gap-5">
+          {Footers.map((footer, index) => (
+            <div className={footer.title} key={index}>
+              <h1 className="text-white text-xl">{footer.title}</h1>
+              <hr className="bg-base-blue w-5 h-[2px] mt-2" />
 
-          <p className="text-gray-text mt-5">
-            Sarana Mulya Logistik adalah jasa pengiriman yang berfokus pada
-            pengiriman alat kesehatan, farmasi, dan kosmetik. Dengan menjunjung
-            tinggi motto kami “Your Trust is Our Mision” yang menjadi DNA dalam
-            kehidupan sehari-hari kami.
-          </p>
+              {/* Render content based on footer type */}
+              {footer.content && (
+                <p className="text-gray-text mt-5">{footer.content}</p>
+              )}
+
+              {footer.children && (
+                <div className="mt-5">
+                  {(
+                    footer.children as {
+                      icons: React.ReactElement;
+                      title: string;
+                    }[]
+                  ).map((child, childIndex) => (
+                    <div className="flex items-center gap-2" key={childIndex}>
+                      {footer.icon && footer.icon}
+                      {child.icons}
+                      <p>{child.title}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {footer.paragrafOne && (
+                <div className="text-white mt-5">
+                  <p>{footer.paragrafOne}</p>
+                  <p>{footer.paragrafTwo}</p>
+                  <p>{footer.paragrafThree}</p>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
 
-        <div className="time text-white">
-          <h1 className="text-xl">Jam Kerja</h1>
-          <hr className="bg-base-blue w-3 h-1 mt-2" />
+        {/* Animation Section */}
+        {/* <div className="relative overflow-hidden w-full h-[400px]">
+        <div className="animate-building absolute top-0 left-1/2 transform -translate-x-1/2 w-[200px] h-auto">
+          <Image src={Animate} alt="" className="w-full h-auto" />
+        </div>
+        <div className="animate-building2 absolute top-0 left-1/2 transform -translate-x-1/2 w-[200px] h-auto">
+          <Image src={Animate2} alt="" className="w-full h-auto" />
+        </div> */}
+        {/* Add other building images with different classes */}
 
-          <div className="mt-5">
-            <div className="flex items-center gap-2">
-              <MdOutlineArrowForwardIos className="text-xs" />
-              <p>Senin - Jumat: 09:00 - 17:00</p>
-            </div>
-            <div className="flex items-center gap-2">
-              <MdOutlineArrowForwardIos className="text-xs" />
-              <p>Senin - Jumat: 09:00 - 17:00</p>
-            </div>
-            <div className="flex items-center gap-2">
-              <MdOutlineArrowForwardIos className="text-xs" />
-              <p>Senin - Jumat: 09:00 - 17:00</p>
-            </div>
-          </div>
+        {/* <div className="animate-park absolute bottom-0 left-0 w-full h-auto">
+          <Image src={Animate3} alt="" className="w-full h-auto" />
         </div>
 
-        <div className="Medsos">
-          <h1 className="text-white text-xl">Msdia Sosial</h1>
-          <hr className="bg-base-blue w-3 h-1 mt-2" />
-
-          <div className="mt-5 text-white">
-            <div className="flex items-center gap-2 mb-4">
-              <MdOutlineArrowForwardIos className="text-xs" />
-              <BsFacebook />
-              <p>Facebook</p>
-            </div>
-            <div className="flex items-center gap-2 mb-4">
-              <MdOutlineArrowForwardIos className="text-xs" />
-              <BsYoutube />
-              <p>Youtube</p>
-            </div>
-            <div className="flex items-center gap-2 mb-4">
-              <MdOutlineArrowForwardIos className="text-xs" />
-              <BsInstagram />
-              <p>Insagram</p>
-            </div>
-            <div className="flex items-center gap-2 mb-4">
-              <MdOutlineArrowForwardIos className="text-xs" />
-              <BsWhatsapp />
-              <p>Whatsaoo</p>
-            </div>
-            <div className="flex items-center gap-2 mb-4">
-              <MdOutlineArrowForwardIos className="text-xs" />
-              <BsTiktok />
-              <p>Tiktok</p>
-            </div>
-          </div>
+        <div className="animate-park absolute bottom-0 left-0 w-full h-auto">
+          <Image src={Animate4} alt="" className="w-full h-auto" />
         </div>
 
-        <div className="Contact">
-          <h1 className="text-white text-xl">Kontak</h1>
-          <hr className="bg-base-blue w-3 h-1 mt-2" />
-
-          <div className="text-white mt-5">
-            <p>
-              Citra Grand Cibubur CBD Jl. Citra Grand II Blok AR18 - 19 Kota
-              Bekasi, Jawa Barat 17435
-            </p>
-            <p>info@saranamulyalogisticscorp.com</p>
-            <p>+62 21 22815019</p>
-          </div>
+        <div className="animate-park absolute bottom-0 left-0 w-full h-auto">
+          <Image src={Animate5} alt="" className="w-full h-auto" />
         </div>
+
+        <div className="animate-truck absolute bottom-[10%] left-0 w-[200px] h-auto">
+          <Image src={Animate7} alt="" className="w-full h-auto" />
+        </div>
+      </div> */}
       </div>
-    </div>
+    </>
   );
 }

@@ -11,24 +11,24 @@ const NavbarData = [
       {
         title: 'PROFILE ',
         type: 'info',
-        link: '/profile',
+        link: '/about/profile',
       },
       {
         title: 'PELANGGAN ',
         type: 'info',
-        link: '/pelanggan',
+        link: '/about/client',
       },
       {
         title: 'CABANG',
         type: 'info',
-        link: '/cabang',
+        link: '/about/branch',
       },
     ],
   },
   {
     title: 'LAYANAN',
     type: 'info',
-    link: '/layanan',
+    link: '/services',
   },
   {
     title: 'CEK RESI',

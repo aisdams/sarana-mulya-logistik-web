@@ -1,13 +1,17 @@
 'use client';
 import React, { useState } from 'react';
-import LogoSML from '../../../../public/img/icon.png';
+import LogoSML from '../../../../public/img/icon2.png';
 import Image from 'next/image';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import NavbarData from '@/data/NavbarData';
 import Flag from '../../../../public/img/lang/ind.png';
 
-export default function Navbar() {
-  const [activeMenu, setActiveMenu] = useState<number | null>(null); // Define the type here
+interface NavbarProps {
+  isScrolled: boolean;
+}
+
+export default function Navbar({ isScrolled }: NavbarProps) {
+  const [activeMenu, setActiveMenu] = useState<number | null>(null);
 
   const handleMouseEnter = (index: number) => {
     setActiveMenu(index);
@@ -18,12 +22,23 @@ export default function Navbar() {
   };
 
   return (
-    <div className="w-full text-white">
-      <div className="flex justify-between items-center gap-3 mx-20 px-5 py-3">
+    <div
+      className={`w-full absolute top-0 ${
+        isScrolled
+          ? 'bg-white shadow-2xl top-0 sticky text-base-blue'
+          : 'bg-transparent text-white'
+      } z-10`}
+    >
+      <div className="flex justify-between items-center gap-3 mx-20 px-3 py-3">
         <div className="LogoSection">
-          <Image src={LogoSML} alt="" width={100} />
+          <Image
+            src={LogoSML}
+            alt=""
+            width={150}
+            className={`${isScrolled ? 'filter-none' : 'brightness-[100]'}`}
+          />
         </div>
-        <div className="navbarnya flex gap-10 font-semibold text-[14px] cursor-pointer">
+        <div className="navbarnya flex gap-10 font-bold text-[14px] cursor-pointer">
           {NavbarData.map((navbar, idx) => (
             <div
               key={idx}
@@ -31,12 +46,19 @@ export default function Navbar() {
               onMouseEnter={() => handleMouseEnter(idx)}
               onMouseLeave={handleMouseLeave}
             >
-              <span>{navbar.title}</span>
+              <a href={navbar.link}>
+                <span>{navbar.title}</span>
+              </a>
               {navbar.children && activeMenu === idx && (
-                <ul className="absolute top-full text-[13px] gap-y-3 my-5 text-base-blue grid -right-20 bg-white w-[12rem] p-3 shadow-[1px_4px_41px_0px_rgba(0,0,0,0.75)]">
+                <ul className="absolute top-full text-[13px] gap-y-5 py-7 grid -right-20 bg-white w-[12rem] p-3 shadow-[1px_4px_41px_0px rgba(0,0,0,0.75)]">
                   {navbar.children.map((child, childIdx) => (
                     <li key={childIdx}>
-                      <a href={child.link}>{child.title}</a>
+                      <a
+                        href={child.link}
+                        className="text-secondary-text hover:text-base-blue font-medium"
+                      >
+                        {child.title}
+                      </a>
                     </li>
                   ))}
                 </ul>
