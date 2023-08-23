@@ -63,11 +63,13 @@ export default function Services() {
         <div className="grid grid-cols-3 gap-5">
           {RenService.map((service, idx) => (
             <div className="text-justify pb-8 overflow-hidden" key={idx}>
-              <Image
-                src={service.image}
-                alt=""
-                className="duration-300 transition-[2s]"
-              />
+              <div className="relative overflow-hidden">
+                <Image
+                  src={service.image}
+                  alt=""
+                  className="transition-transform hover:scale-110 duration-300 transform-origin-center"
+                />
+              </div>
               <Link href={service.link}>
                 <h3 className="text-2xl my-3 hover:text-base-blue hover:border-b-2 border-base-blue w-max">
                   {service.title}
