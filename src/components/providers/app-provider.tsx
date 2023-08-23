@@ -34,7 +34,7 @@ const AppProvider = ({ children }: AppProviderProps) => {
     <>
       {children}
       <ToastContainer
-        position='top-right'
+        position="top-right"
         autoClose={4000}
         hideProgressBar={false}
         newestOnTop={false}
@@ -43,7 +43,7 @@ const AppProvider = ({ children }: AppProviderProps) => {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme='dark'
+        theme="dark"
       />
     </>
   );

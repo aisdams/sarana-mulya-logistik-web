@@ -33,7 +33,7 @@ const NavbarData = [
   {
     title: 'CEK RESI',
     type: 'info',
-    link: '/cek-resi',
+    link: '/tracking',
   },
   {
     title: 'INFORMASI',
@@ -59,7 +59,7 @@ const NavbarData = [
   {
     title: 'KONTAK',
     type: 'info',
-    link: '/kontak',
+    link: '/contact',
   },
 ];
 
