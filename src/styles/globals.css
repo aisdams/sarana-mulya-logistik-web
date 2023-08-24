@@ -7,3 +7,20 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.carImage {
+  animation-name: moveCar;
+  animation-iteration-count: infinite;
+  animation-duration: 13s;
+  animation-timing-function: linear;
+  animation-delay: 1s;
+}
+
+@keyframes moveCar {
+  from {
+    left: -150px;
+  }
+  to {
+    left: 100%;
+  }
+}

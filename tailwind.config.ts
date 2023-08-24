@@ -16,6 +16,7 @@ const config: Config = {
         'brown-gray': '#bc9b91',
         'blue-navy': '#162133',
         'gray-secondary': '#6f6b66',
+        'dark-blue': '#051922',
       },
     },
   },

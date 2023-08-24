@@ -10,13 +10,15 @@ import {
   BsTiktok,
 } from 'react-icons/bs';
 import OurMission from '@/components/app/home/our-mission';
-import Animate from '../../../../public/img/animate/building1.png';
-import Animate2 from '../../../../public/img/animate/building2.png';
-import Animate3 from '../../../../public/img/animate/building3.png';
-import Animate4 from '../../../../public/img/animate/building4.png';
-import Animate5 from '../../../../public/img/animate/building5.png';
-import Animate6 from '../../../../public/img/animate/park.png';
-import Animate7 from '../../../../public/img/animate/truck2.png';
+
+import Street from '../../../public/img/animate/street.png';
+import Animate from '../../../public/img/animate/building4.png';
+import Animate2 from '../../../public/img/animate/building5.png';
+import Animate3 from '../../../public/img/animate/building1.png';
+import Animate4 from '../../../public/img/animate/building2.png';
+import Animate5 from '../../../public/img/animate/building3.png';
+import ParkAnim from '../../../public/img/animate/park.png';
+import Truck from '../../../public/img/animate/truck2.png';
 import Image from 'next/image';
 
 const Footers = [
@@ -41,7 +43,7 @@ const Footers = [
   },
   {
     title: 'Msdia Sosial',
-    iconK: <MdOutlineArrowForwardIos />,
+    icon: <MdOutlineArrowForwardIos />,
     children: [
       {
         icons: <BsFacebook />,
@@ -90,7 +92,7 @@ export default function Footer() {
     <>
       {shouldRenderOurMission && <OurMission />}
       <div className="bg-[#081c25] py-20 text-white">
-        <div className="grid grid-cols-4 mx-28 gap-5">
+        <div className="grid grid-cols-4 mx-28 gap-5 mb-28">
           {Footers.map((footer, index) => (
             <div className={footer.title} key={index}>
               <h1 className="text-white text-xl">{footer.title}</h1>
@@ -102,15 +104,17 @@ export default function Footer() {
               )}
 
               {footer.children && (
-                <div className="mt-5">
+                <div className="mt-5 text-gray-text">
                   {(
                     footer.children as {
                       icons: React.ReactElement;
                       title: string;
                     }[]
                   ).map((child, childIndex) => (
-                    <div className="flex items-center gap-2" key={childIndex}>
-                      {footer.icon && footer.icon}
+                    <div className="flex items-center gap-3" key={childIndex}>
+                      <div className="text-xs">
+                        {footer.icon && footer.icon}
+                      </div>
                       {child.icons}
                       <p>{child.title}</p>
                     </div>
@@ -129,32 +133,38 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Animation Section */}
-        {/* <div className="relative overflow-hidden w-full h-[400px]">
-        <div className="animate-building absolute top-0 left-1/2 transform -translate-x-1/2 w-[200px] h-auto">
-          <Image src={Animate} alt="" className="w-full h-auto" />
+        <div className="flex justify-between z-1 px-10 gap-5">
+          <div className="flex">
+            <Image src={Animate} alt="" className="w-32" />
+            <Image src={Animate2} alt="" className="w-32" />
+          </div>
+          <Image src={ParkAnim} alt="" className="w-32" />
+          <div className="flex">
+            <Image src={Animate3} alt="" className="w-32" />
+            <Image src={Animate4} alt="" className="w-32" />
+            <Image src={Animate5} alt="" className="w-32" />
+          </div>
         </div>
-        <div className="animate-building2 absolute top-0 left-1/2 transform -translate-x-1/2 w-[200px] h-auto">
-          <Image src={Animate2} alt="" className="w-full h-auto" />
-        </div> */}
-        {/* Add other building images with different classes */}
+        <div className="relative z-[0]">
+          <div className="absolute w-full bg-[#aaa8a7] h-[40px] top-0">
+            <div
+              className="absolute w-full h-20 bg-[#7A7A86] top-2 shadow-[0_1px_16px_rgba(111, 35, 51, 0.4)_inset]"
+              style={{ backgroundImage: `url(${Street.src})` }}
+            ></div>
 
-        {/* <div className="animate-park absolute bottom-0 left-0 w-full h-auto">
-          <Image src={Animate3} alt="" className="w-full h-auto" />
+            <div className="absolute -top-3 car z-10 carImage">
+              <Image src={Truck} alt="" />
+            </div>
+          </div>
         </div>
+      </div>
 
-        <div className="animate-park absolute bottom-0 left-0 w-full h-auto">
-          <Image src={Animate4} alt="" className="w-full h-auto" />
-        </div>
-
-        <div className="animate-park absolute bottom-0 left-0 w-full h-auto">
-          <Image src={Animate5} alt="" className="w-full h-auto" />
-        </div>
-
-        <div className="animate-truck absolute bottom-[10%] left-0 w-[200px] h-auto">
-          <Image src={Animate7} alt="" className="w-full h-auto" />
-        </div>
-      </div> */}
+      <div className="bg-dark-blue w-full h-14 text-white py-2 pl-28">
+        <h1 className="text-white">
+          Copyrights © 2022 -{' '}
+          <span className="text-base-blue">Sarana Mulya Logistik</span> All
+          Rights Reserved.
+        </h1>
       </div>
     </>
   );

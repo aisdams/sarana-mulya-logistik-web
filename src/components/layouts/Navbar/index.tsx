@@ -51,7 +51,7 @@ export default function Navbar({ isScrolled }: NavbarProps) {
                 <span>{navbar.title}</span>
               </a>
               {navbar.children && activeMenu === idx && (
-                <ul className="absolute top-full text-[13px] gap-y-5 py-7 grid -right-20 bg-white w-[12rem] p-3 shadow-[-5px_10px_49px_0px_rgba(0,0,0,0.75)]">
+                <ul className="absolute top-full text-[13px] gap-y-5 py-7 grid -right-20 bg-white w-[12rem] p-3 shadow-[-5px_10px_49px_0px_rgba(0,0,0,0.6)]">
                   {navbar.children.map((child, childIdx) => (
                     <li key={childIdx}>
                       <a
