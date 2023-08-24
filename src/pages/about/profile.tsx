@@ -6,6 +6,11 @@ import Value from '@/components/app/five-section/value';
 import Team from '@/components/app/five-section/team';
 import Excess from '@/components/app/five-section/excess';
 import Measurement from '@/components/app/five-section/measurement';
+import { IoDiamondOutline } from 'react-icons/io5';
+import { ImUsers } from 'react-icons/im';
+import { BsHandThumbsUpFill, BsRulers } from 'react-icons/bs';
+import Counter from '@/components/app/home/counter';
+import Recommendation from '@/components/app/home/recommendation';
 
 export default function Profile() {
   const [selectedComponent, setSelectedComponent] = useState('');
@@ -101,52 +106,59 @@ export default function Profile() {
         <div className="flex justify-center items-center">
           <div className="flex flex-wrap justify-center">
             <div
-              className="bg-white p-6 rounded shadow w-40 h-40 m-2"
+              className="bg-transparent p-6 rounded shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] w-40 h-max m-2 text-center cursor-pointer"
               onClick={() => setSelectedComponent('VisiMisi')}
             >
-              <h2 className="text-lg font-semibold mb-4">Visi & Misi</h2>
-              <p className="text-gray-700">
-                Tuliskan visi dan misi Anda di sini.
-              </p>
+              <div className="rounded-full border-2 border-purple-600 w-10 h-10 mx-auto grid text-center items-center mb-3">
+                <div className="rounded-full border-2 border-purple-600 w-7 h-7 mx-auto grid justify-center place-content-center items-center">
+                  <div className="rounded-full border-2 border-purple-600 w-4 h-4 mx-auto grid justify-center place-content-center items-center"></div>
+                </div>
+              </div>
+              <h2 className="text-lg font-semibold">Visi & Misi</h2>
             </div>
             <div
-              className="bg-white p-6 rounded shadow w-40 h-40 m-2"
+              className="bg-transparent p-1 rounded shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] w-40 h-max m-2 text-center cursor-pointer"
               onClick={() => setSelectedComponent('Value')}
             >
+              <IoDiamondOutline className="text-[#20c9a4] mt-6 text-[2.5rem] items-center justify-center grid mx-auto mb-2" />
               <h2 className="text-lg font-semibold mb-4">Value</h2>
-              <p className="text-gray-700">
-                Tuliskan nilai-nilai Anda di sini.
-              </p>
             </div>
           </div>
         </div>
         <div className="flex justify-center items-center">
           <div className="flex flex-wrap justify-center">
             <div
-              className="bg-white p-6 rounded shadow w-40 h-40 m-2"
+              className="bg-transparent p-1 rounded shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] w-40 h-max m-2 text-center cursor-pointer"
               onClick={() => setSelectedComponent('Team')}
             >
+              <ImUsers className="text-[#df1529] mt-6 text-[2.5rem] items-center justify-center grid mx-auto mb-2" />
               <h2 className="text-lg font-semibold mb-4">Team</h2>
-              <p className="text-gray-700">
-                Tuliskan informasi tentang tim Anda di sini.
-              </p>
             </div>
-            <div className="bg-white p-6 rounded shadow w-40 h-40 m-2">
+            <div
+              className="bg-transparent p-1 rounded shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] w-40 h-max m-2 text-center cursor-pointer"
+              onClick={() => setSelectedComponent('Excess')}
+            >
+              <BsHandThumbsUpFill className="text-[#0d6efd] mt-6 text-[2.5rem] items-center justify-center grid mx-auto mb-2" />
               <h2 className="text-lg font-semibold mb-4">Kelebihan</h2>
-              <p className="text-gray-700">
-                Tuliskan keunggulan-keunggulan yang dimiliki di sini.
-              </p>
             </div>
-            <div className="bg-white p-6 rounded shadow w-40 h-40 m-2">
+            <div
+              className="bg-transparent p-1 rounded shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] w-40 h-max m-2 text-center cursor-pointer"
+              onClick={() => setSelectedComponent('Measurement')}
+            >
+              <BsRulers className="text-[#fd7e14] mt-6 text-[2.5rem] items-center justify-center grid mx-auto mb-2" />
               <h2 className="text-lg font-semibold mb-4">Pengukuran</h2>
-              <p className="text-gray-700">
-                Tuliskan metrik pengukuran di sini.
-              </p>
             </div>
           </div>
         </div>
       </div>
       <div>{renderSelectedComponent()}</div>
+
+      <div className="mx-28">
+        <Counter />
+        <div className="!my-32">
+          <Recommendation />
+        </div>
+      </div>
     </>
   );
 }

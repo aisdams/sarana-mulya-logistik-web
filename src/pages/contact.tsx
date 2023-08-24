@@ -106,6 +106,18 @@ export default function Contact() {
           <h1 className="text-white text-4xl"> Temukan Lokasi Kami</h1>
         </div>
       </div>
+
+      <div className="map-container p-4">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253775.74597162736!2d106.66186302420834!3d-6.362195744007535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6993c4616e38b7%3A0x5b1a1e66a36546af!2sSarana%20Mulya%20Logistik%20(Head%20Office)!5e0!3m2!1sid!2sid!4v1692843986208!5m2!1sid!2sid"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          width="100%"
+          height="400"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
     </>
   );
 }

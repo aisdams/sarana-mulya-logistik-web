@@ -25,7 +25,7 @@ export default function Navbar({ isScrolled }: NavbarProps) {
     <div
       className={`w-full absolute top-0 ${
         isScrolled
-          ? 'bg-white shadow-2xl top-0 sticky text-base-blue'
+          ? 'bg-white top-0 sticky text-base-blue shadow-[-5px_10px_30px_0px_rgba(0,0,0,0.5)]'
           : 'bg-transparent text-white'
       } z-10`}
     >
@@ -35,6 +35,7 @@ export default function Navbar({ isScrolled }: NavbarProps) {
             src={LogoSML}
             alt=""
             width={150}
+            height={150}
             className={`${isScrolled ? 'filter-none' : 'brightness-[100]'}`}
           />
         </div>
@@ -50,12 +51,14 @@ export default function Navbar({ isScrolled }: NavbarProps) {
                 <span>{navbar.title}</span>
               </a>
               {navbar.children && activeMenu === idx && (
-                <ul className="absolute top-full text-[13px] gap-y-5 py-7 grid -right-20 bg-white w-[12rem] p-3 shadow-[1px_4px_41px_0px rgba(0,0,0,0.75)]">
+                <ul className="absolute top-full text-[13px] gap-y-5 py-7 grid -right-20 bg-white w-[12rem] p-3 shadow-[-5px_10px_49px_0px_rgba(0,0,0,0.75)]">
                   {navbar.children.map((child, childIdx) => (
                     <li key={childIdx}>
                       <a
                         href={child.link}
-                        className="text-secondary-text hover:text-base-blue font-medium"
+                        className={`hover:text-base-blue font-medium ${
+                          isScrolled ? 'text-base-blue' : 'text-secondary-text'
+                        } z-10`}
                       >
                         {child.title}
                       </a>

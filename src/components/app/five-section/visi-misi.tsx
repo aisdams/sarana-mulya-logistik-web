@@ -26,19 +26,19 @@ const VisiMisis = [
 export default function VisiMisi() {
   return (
     <>
-      <div className="flex">
+      <div className="flex mx-28 my-20">
         {VisiMisis.map((visimisi, idx) => (
           <>
             <div key={idx}>
-              <h1 className="text-4xl text-secondary-text font-semibold">
+              <h1 className="text-4xl text-secondary-text font-semibold my-3">
                 {visimisi.titleTwo}
               </h1>
               <p className="text-brown-gray">{visimisi.visiContent}</p>
 
-              <h1 className="text-4xl text-secondary-text font-semibold">
+              <h1 className="text-4xl text-secondary-text font-semibold mt-7">
                 {visimisi.titleThere}
               </h1>
-              <div className="flex items-center my-5">
+              <div className="flex items-center my-6">
                 <BsFillCheckCircleFill className="mr-2 text-base-blue text-[22px]" />
                 <p>{visimisi.children[0].misiOne}</p>
               </div>

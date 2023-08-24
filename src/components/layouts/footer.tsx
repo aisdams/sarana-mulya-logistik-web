@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 // import '@/styles/Animation.css';
 import { MdOutlineArrowForwardIos } from 'react-icons/md';
+import { useRouter } from 'next/router';
 import {
   BsFacebook,
   BsYoutube,
@@ -74,9 +75,20 @@ const Footers = [
 ];
 
 export default function Footer() {
+  const router = useRouter();
+  const [shouldRenderOurMission, setShouldRenderOurMission] = useState(true);
+
+  useEffect(() => {
+    if (router.pathname.includes('/contact')) {
+      setShouldRenderOurMission(false);
+    } else {
+      setShouldRenderOurMission(true);
+    }
+  }, [router.pathname]);
+
   return (
     <>
-      <OurMission />
+      {shouldRenderOurMission && <OurMission />}
       <div className="bg-[#081c25] py-20 text-white">
         <div className="grid grid-cols-4 mx-28 gap-5">
           {Footers.map((footer, index) => (

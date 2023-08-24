@@ -36,26 +36,26 @@ export default function Team() {
   };
 
   return (
-    <div className="mx-28 items-center">
+    <div className="mx-28 items-center my-20 relative">
       {teams.map((team, idx) => (
         <div className="grid gap-10" key={idx}>
           {team.children.map((chil, childIdx) => (
-            <div key={childIdx} className="flex items-center">
-              <div className="relative">
-                <hr className="bg-base-blue h-28 w-[2px] absolute top-0 text-center my-auto" />
-                <div className="ml-5">
-                  <h1
-                    onClick={() => handleTitleClick(chil.image)}
-                    className="cursor-pointer"
-                  >
+            <div key={childIdx} className="grid grid-cols-2 gap-5">
+              <div
+                className="relative shadow-[2px_0px_20px_0px_rgba(0,0,0,0.3)] h-max py-5 cursor-pointer "
+                onClick={() => handleTitleClick(chil.image)}
+              >
+                <hr className="bg-base-blue h-36 w-[4px] absolute top-0 text-center my-auto" />
+                <div className="mx-8">
+                  <h1 className="text-base-blue text-center font-semibold text-xl mb-2">
                     {chil.title}
                   </h1>
-                  <p>{chil.desc}</p>
+                  <p className="text-gray-secondary text-[15px]">{chil.desc}</p>
                 </div>
               </div>
-              <div className="">
+              <div className="absolute right-0 top-0 mt-10">
                 {selectedImage === chil.image && (
-                  <Image src={selectedImage} alt="" width={500} />
+                  <Image src={selectedImage} alt="" width={550} />
                 )}
               </div>
             </div>
