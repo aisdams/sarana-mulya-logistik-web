@@ -60,7 +60,7 @@ export default function Services() {
       </div>
 
       <div className="my-28 mx-24">
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5">
           {RenService.map((service, idx) => (
             <div className="text-justify pb-8 overflow-hidden group" key={idx}>
               <div className="relative overflow-hidden">

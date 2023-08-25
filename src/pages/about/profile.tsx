@@ -42,8 +42,8 @@ export default function Profile() {
       </div>
 
       <div className="mt-20 mx-28">
-        <div className="bg-base-blue w-full h-[190px] mt-24 text-white">
-          <div className="flex justify-between mx-20 py-14">
+        <div className="bg-base-blue w-full h-auto mt-24 text-white">
+          <div className="md:flex justify-between mx-20 py-14">
             <div className="">
               <h3 className="text-sm">DAPATKAN RESPON CEPAT DARI TIM KAMI</h3>
               <h1 className="text-3xl font-semibold mt-2">
@@ -60,12 +60,12 @@ export default function Profile() {
         </div>
       </div>
 
-      <div className="my-20 ml-28">
-        <h1 className="font-bold text-secondary-text text-4xl -mb-10">
+      <div className="my-20 lg:ml-28 mx-28">
+        <h1 className="font-bold text-secondary-text text-4xl mb-10 lg-mb-10">
           PT. Sarana Mulya Logistik
         </h1>
-        <div className="grid grid-cols-2 gap-10 relative items-center">
-          <div className=" text-justify">
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
+          <div className="text-justify">
             <h3>
               Didirikan pada tahun 2018, PT. SARANA MULYA LOGISTIK merupakan
               perusahaan jasa pengiriman yang menyediakan jasa express (Sameday,
@@ -96,7 +96,7 @@ export default function Profile() {
             </h3>
           </div>
 
-          <div className="">
+          <div className="hidden lg:block">
             <Image src={ImageSide} alt="" />
           </div>
         </div>

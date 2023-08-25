@@ -36,7 +36,7 @@ export default function Contact() {
       </div>
 
       <div className="my-28 mx-24">
-        <div className="grid grid-cols-2 gap-8 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
           <div className="">
             <h1 className="font-bold text-3xl text-secondary-text">
               Apakah Anda memiliki pertanyaan?
@@ -84,7 +84,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="block">
+          <div className="block mt-5 lg:mt-0">
             {Contacts.map((contact, idx) => (
               <div className="flex mb-10 gap-5" key={idx}>
                 <div className="text-base-blue text-4xl">{contact.icon}</div>

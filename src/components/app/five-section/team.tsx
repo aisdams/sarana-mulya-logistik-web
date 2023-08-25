@@ -40,7 +40,7 @@ export default function Team() {
       {teams.map((team, idx) => (
         <div className="grid gap-10" key={idx}>
           {team.children.map((chil, childIdx) => (
-            <div key={childIdx} className="grid grid-cols-2 gap-5">
+            <div key={childIdx} className="grid lg:grid-cols-2 gap-5">
               <div
                 className="relative shadow-[2px_0px_20px_0px_rgba(0,0,0,0.3)] h-max py-5 cursor-pointer "
                 onClick={() => handleTitleClick(chil.image)}

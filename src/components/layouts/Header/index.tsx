@@ -56,6 +56,7 @@ export default function Header() {
                 alt=""
                 width={2000}
                 className="h-screen"
+                style={{ objectFit: 'cover' }}
               />
               <div className="absolute text-white text-center">
                 <h1

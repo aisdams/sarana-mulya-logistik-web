@@ -13,7 +13,7 @@ export default function Client() {
       </div>
 
       <div className="mx-28">
-        <div className="grid grid-cols-4 mx-auto">
+        <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 mx-auto">
           {ClientData.map((client, idx) => (
             <div
               className="border border-secondary-text/20 text-center py-5"

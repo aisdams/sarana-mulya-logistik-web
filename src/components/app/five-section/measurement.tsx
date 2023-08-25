@@ -9,7 +9,7 @@ const measurements = [
 ];
 export default function Measurement() {
   return (
-    <div className="mx-28 mb-20 p-24">
+    <div className="mx-28 mb-20 lg:p-24 mt-20">
       <Image src={ImageKel} alt="" />
     </div>
   );

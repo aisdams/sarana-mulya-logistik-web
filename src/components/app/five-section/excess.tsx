@@ -49,7 +49,7 @@ export default function Excess() {
   return (
     <div className="mx-24 my-20">
       {Kelebihan.map((kel, idx) => (
-        <div className="grid grid-cols-3 gap-8" key={idx}>
+        <div className="grid lg:grid-cols-3 gap-8" key={idx}>
           {kel.children.map((kelChil, kelIdx) => (
             <div className="flex gap-10" key={kelIdx}>
               <Image src={kelChil.icon} alt="" className="w-14 h-14" />
