@@ -12,8 +12,8 @@ export default function Track() {
   };
 
   return (
-    <div className="grid grid-cols-2 my-20">
-      <h1 className="text-base-blue font-extrabold text-[2.7rem] leading-none">
+    <div className="grid lg:grid-cols-2 my-20">
+      <h1 className="text-base-blue font-bold text-[2.7rem] leading-none mb-5 lg:mb-0">
         LACAK <br /> KIRIMAN ANDA
       </h1>
 
@@ -36,7 +36,7 @@ export default function Track() {
             Lacak Status Resi
           </button>
         </div>
-        <div className="flex gap-5">
+        <div className="lg:flex lg:gap-5 grid">
           <input
             type="text"
             name=""

@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '@/components/layouts/navbar';
 import Header from '@/components/layouts/header';
 import Track from '@/components/app/home/track';
 import Why from '@/components/app/home/why';

@@ -10,7 +10,7 @@ export default function OurMission() {
       >
         <div className="absolute inset-0 bg-black/40"></div>{' '}
         {/* Dark overlay */}
-        <div className="absolute top-1/2 transform -translate-y-1/2 w-full text-white text-center flex px-28 items-center gap-5">
+        <div className="absolute top-1/2 transform -translate-y-1/2 w-full text-white text-center grid lg:flex px-28 items-center gap-5">
           <div>
             <h1 className="font-bold text-2xl mb-4">
               Your Trust Is Our Mission
@@ -22,7 +22,7 @@ export default function OurMission() {
               yang terbaik dan bertanggung jawab kepada semua pelanggan kami.
             </p>
           </div>
-          <button className="bg-base-blue text-white rounded-full px-5 py-2 w-[30rem] h-max m-0">
+          <button className="text-center grid mx-auto bg-base-blue text-white rounded-full px-5 py-2 w-[12rem] lg:w-[30rem] h-max m-0">
             +62 21 22815019
           </button>
         </div>

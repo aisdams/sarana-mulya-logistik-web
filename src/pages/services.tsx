@@ -12,37 +12,37 @@ const RenService = [
   {
     image: ServiceIm,
     title: 'Express',
-    link: '/service/express',
+    link: '/services-detail/express',
     desc: 'EXPRESS adalah layanan yang menawarkan jasa pengiriman atau paket door to door dengan waktu yang cepat, sebagian besar melalui jalur udara.',
   },
   {
     image: ServiceIm2,
     title: 'Reguler',
-    link: '/service/reguler',
+    link: '/services-detail/reguler',
     desc: 'REGULER adalah layanan yang menawarkan jasa pengiriman atau paket door-to-door dengan jalur darat dan laut yang berfokus pada biaya yang lebih efisien dengan tetap memberikan kepastian waktu pengiriman.',
   },
   {
     image: ServiceIm3,
     title: 'Container',
-    link: '/service/container',
+    link: '/services-detail/container',
     desc: 'CONTAINER adalah layanan yang menawarkan jasa pengiriman paket atau High Value Shipment secara Door-to-door dengan menyediakan Full Container Load atau Less Container Load yang disesuaikan dengan kebutuhan pelanggan.',
   },
   {
     image: ServiceIm4,
     title: 'Trucking',
-    link: '/service/trucking',
+    link: '/services-detail/trucking',
     desc: 'TRUCKING adalah layanan yang menawarkan jasa pengiriman paket atau High Value Shipment secara door-to-door dengan menyediakan Full Trucking Load atau Less Trucking Load yang disesuaikan dengan kebutuhan pelanggan.',
   },
   {
     image: ServiceIm5,
     title: 'EXIM (EXPORT IMPORT)',
-    link: '/service/exim',
+    link: '/services-detail/exim',
     desc: 'EXIM (EXPORT IMPORT) adalah layanan yang menawarkan jasa pengiriman, baik export maupun import door to door container maupun kg-base, serta layanan custom clearance. Layanan ini hadir dengan dua pilihan, Air Freight dan Sea Freight.',
   },
   {
     image: ServiceIm6,
     title: 'LINKEXPRESS',
-    link: '/service/linkex',
+    link: '/services-detail/linkex',
     desc: 'LINKEXPRESS adalah layanan yang menawarkan jasa pengiriman e-commerce dengan standar layanan reguler dengan leadtime terbaik.',
   },
 ];

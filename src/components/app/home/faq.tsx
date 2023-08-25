@@ -63,8 +63,10 @@ export default function FAQ() {
             }`}
             onClick={() => toggleAccordion(index)}
           >
-            <div className="flex justify-between items-center">
-              <h4 className="text-base font-semibold">{faq.question}</h4>
+            <div className="flex justify-between items-center text-left lg:text-center">
+              <h4 className="text-xs lg:text-base font-semibold">
+                {faq.question}
+              </h4>
               <div className="text-gray-500">
                 {activeIndex === index ? <FaChevronUp /> : <FaChevronDown />}
               </div>

@@ -49,7 +49,7 @@ export default function OurService() {
       </h1>
       <hr className="w-[3rem] bg-base-blue h-1 my-3" />
 
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5">
         {Services.map((service, idx) => (
           <div
             className="hover:shadow-[0px_10px_0px_0px_rgba(43,167,192,0.75)] mb-10 rounded-lg ease-out duration-300 hover:-translate-y-3"

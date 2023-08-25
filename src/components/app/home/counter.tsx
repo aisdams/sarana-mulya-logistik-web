@@ -29,7 +29,7 @@ export default function Counter() {
   return (
     <div className="my-20">
       <h5 className="text-base-blue">Fakta</h5>
-      <div className="grid grid-cols-2">
+      <div className="grid lg:grid-cols-2">
         <div>
           <h1 className="font-bold text-3xl my-5 text-secondary-text">
             Jasa Pengiriman Alat Kesehatan & Farmasi Terbaik di Indonesia
@@ -57,11 +57,11 @@ export default function Counter() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 px-10">
+        <div className="grid md:grid-cols-2 px-10 lg:mt-0 mt-10 md:gap-10">
           {Counters.map((counter, idx) => (
             <div className="text-base-blue" key={idx}>
               <div className="text-3xl"> {counter.icon}</div>
-              <h1 className="font-bold text-[2rem] mt-3">{counter.title}</h1>
+              <h1 className="font-bold text-[2rem] md:mt-3">{counter.title}</h1>
               <p>{counter.paragraf}</p>
             </div>
           ))}

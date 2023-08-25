@@ -1,3 +1,5 @@
+import { BsCaretDownFill } from 'react-icons/bs';
+
 const NavbarData = [
   {
     title: 'BERANDA',
@@ -6,6 +8,7 @@ const NavbarData = [
   },
   {
     title: 'TENTANG',
+    icons: BsCaretDownFill,
     type: 'info',
     children: [
       {
@@ -37,6 +40,7 @@ const NavbarData = [
   },
   {
     title: 'INFORMASI',
+    icons: BsCaretDownFill,
     type: 'info',
     children: [
       {
@@ -52,7 +56,7 @@ const NavbarData = [
       {
         title: 'SYARAT',
         type: 'info',
-        link: '/syarat',
+        link: '/information/terms',
       },
     ],
   },

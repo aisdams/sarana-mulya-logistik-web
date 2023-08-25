@@ -20,6 +20,7 @@ import Animate5 from '../../../public/img/animate/building3.png';
 import ParkAnim from '../../../public/img/animate/park.png';
 import Truck from '../../../public/img/animate/truck2.png';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Footers = [
   {
@@ -48,22 +49,27 @@ const Footers = [
       {
         icons: <BsFacebook />,
         title: 'Facebook',
+        link: 'https://www.facebook.com/saranamulya.logistik.5',
       },
       {
         icons: <BsYoutube />,
         title: 'Youtube',
+        link: 'https://www.youtube.com/channel/UCyYZSQ3vEEAlQ4oCRMexWkA/featured',
       },
       {
         icons: <BsInstagram />,
         title: 'Instagram',
+        link: 'https://www.instagram.com/saranamulyalogistik/',
       },
       {
         icons: <BsWhatsapp />,
         title: 'Whatsapp',
+        link: 'https://api.whatsapp.com/send?phone=6285810558522',
       },
       {
         icons: <BsTiktok />,
         title: 'Tiktok',
+        link: 'https://www.tiktok.com/@saranamulyalogistik',
       },
     ],
   },
@@ -92,7 +98,7 @@ export default function Footer() {
     <>
       {shouldRenderOurMission && <OurMission />}
       <div className="bg-[#081c25] py-20 text-white">
-        <div className="grid grid-cols-4 mx-28 gap-5 mb-28">
+        <div className="grid lg:grid-cols-4 mx-28 gap-5 mb-28 relative">
           {Footers.map((footer, index) => (
             <div className={footer.title} key={index}>
               <h1 className="text-white text-xl">{footer.title}</h1>
@@ -109,28 +115,36 @@ export default function Footer() {
                     footer.children as {
                       icons: React.ReactElement;
                       title: string;
+                      link: string;
                     }[]
                   ).map((child, childIndex) => (
-                    <div className="flex items-center gap-3" key={childIndex}>
-                      <div className="text-xs">
-                        {footer.icon && footer.icon}
-                      </div>
-                      {child.icons}
-                      <p>{child.title}</p>
+                    <div key={childIndex}>
+                      <a
+                        href={child.link}
+                        className="flex items-center gap-3 mb-3 hover:text-base-blue"
+                      >
+                        <div className="text-xs">
+                          {footer.icon && footer.icon}
+                        </div>
+                        {child.icons}
+                        <p>{child.title}</p>
+                      </a>
                     </div>
                   ))}
                 </div>
               )}
 
               {footer.paragrafOne && (
-                <div className="text-white mt-5">
-                  <p>{footer.paragrafOne}</p>
-                  <p>{footer.paragrafTwo}</p>
+                <div className="text-gray-text mt-5">
+                  <p className="mb-3">{footer.paragrafOne}</p>
+                  <p className="mb-3">{footer.paragrafTwo}</p>
                   <p>{footer.paragrafThree}</p>
                 </div>
               )}
             </div>
           ))}
+
+          <div className="bg-[#bbd5e0] rounded-full w-10 h-10 shadow-[0_0_10px_3px_#34ade69c] absolute right-[20rem] top-1/2" />
         </div>
 
         <div className="flex justify-between z-1 px-10 gap-5">

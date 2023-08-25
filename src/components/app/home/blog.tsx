@@ -3,7 +3,7 @@ import React from 'react';
 export default function Blog() {
   return (
     <div className="my-20">
-      <div className="grid grid-cols-2">
+      <div className="grid lg:grid-cols-2">
         <div>
           <h1 className="text-secondary-text text-3xl font-bold">
             <span className="text-base-blue">Blog</span> Terbaru

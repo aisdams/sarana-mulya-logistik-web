@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import LogoSML from '../../../../public/img/icon2.png';
 import Image from 'next/image';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import NavbarData from '@/data/NavbarData';
 import Flag from '../../../../public/img/lang/ind.png';
 
@@ -23,7 +22,7 @@ export default function Navbar({ isScrolled }: NavbarProps) {
 
   return (
     <div
-      className={`w-full absolute top-0 ${
+      className={`w-full absolute top-0 hidden lg:grid ${
         isScrolled
           ? 'bg-white top-0 sticky text-base-blue shadow-[-5px_10px_30px_0px_rgba(0,0,0,0.5)]'
           : 'bg-transparent text-white'
@@ -48,10 +47,10 @@ export default function Navbar({ isScrolled }: NavbarProps) {
               onMouseLeave={handleMouseLeave}
             >
               <a href={navbar.link}>
-                <span>{navbar.title}</span>
+                <h1>{navbar.title} </h1>
               </a>
               {navbar.children && activeMenu === idx && (
-                <ul className="absolute top-full text-[13px] gap-y-5 py-7 grid -right-20 bg-white w-[12rem] p-3 shadow-[-5px_10px_49px_0px_rgba(0,0,0,0.6)]">
+                <ul className="absolute top-full text-[13px] gap-y-5 py-7 grid -right-20 rounded-sm bg-white w-[12rem] p-3 shadow-[-5px_10px_10px_0px_rgba(0,0,0,0.4)]">
                   {navbar.children.map((child, childIdx) => (
                     <li key={childIdx}>
                       <a

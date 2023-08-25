@@ -54,14 +54,28 @@ export default function Trust() {
           delay: 2000,
           disableOnInteraction: false,
         }}
-        className="mySwiper mx-32"
+        breakpoints={{
+          '576': {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          '768': {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          '1024': {
+            slidesPerView: 4,
+            spaceBetween: 10,
+          },
+        }}
+        className="mySwiper"
       >
         {Clients.map((client, idx) => (
           <SwiperSlide key={idx}>
             <Image
               src={client.Image}
               alt=""
-              className="w-40 hover:opacity-70 transition-all duration-300"
+              className="w-40 hover:opacity-70 transition-all duration-300 lg:mx-0 mx-auto grid"
             />
           </SwiperSlide>
         ))}

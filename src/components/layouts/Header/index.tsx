@@ -88,7 +88,7 @@ export default function Header() {
         ))}
       </Swiper>
 
-      <div className="absolute right-24 top-[12rem] z-10">
+      <div className="absolute right-24 top-[12rem] z-10 hidden lg:grid">
         <SpeedDial />
       </div>
     </div>

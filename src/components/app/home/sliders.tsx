@@ -43,7 +43,7 @@ export default function Sliders() {
       >
         {Anns.map((ann, idx) => (
           <SwiperSlide key={idx}>
-            <div className="flex">
+            <div className="lg:flex grid">
               <Image src={ann.Image} alt="" width={600} className="w-full" />
               <div className="py-[7rem] px-[3.5rem]">
                 <h3 className="text-secondary-text text-[14px] leading-relaxed">

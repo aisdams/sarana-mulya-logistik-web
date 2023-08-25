@@ -56,7 +56,7 @@ export default function Why() {
         </h1>
       </div>
 
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5">
         {whys.map((Why, idx) => (
           <div className="flex gap-5" key={idx}>
             <div className="transform rotate-45 border border-base-blue rounded-md h-max p-3">
@@ -68,10 +68,10 @@ export default function Why() {
             </div>
 
             <div className="">
-              <h1 className="text-xl mb-3 font-semibold w-[80%]">
+              <h1 className="w-full text-xl mb-3 font-semibold lg:w-[80%]">
                 {Why.heading}
               </h1>
-              <p className="font-normal text-sm text-gray-600 text-justify w-[80%]">
+              <p className="font-normal text-sm text-gray-600 w-[80%]">
                 {Why.paragraf}
               </p>
             </div>
