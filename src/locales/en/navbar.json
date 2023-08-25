@@ -1,0 +1,24 @@
+{
+  "titleOne": "HOME",
+  "titleTwoChild": [
+    {
+      "titlePar": "ABOUT",
+      "child": [
+        {
+          "title": "PROFILE",
+          "titleTwo": "CLIENT",
+          "titleThree": "BRANCH"
+        }
+      ]
+    }
+  ],
+  "titleThree": "SERVICES",
+  "titleFour": "TRACKING",
+  "titleFive": [
+    {
+      "titlePar": "INFORMATION",
+      "child": [{ "title": "BLOG", "titleTwo": "NEWS", "titleThree": "TERMS" }]
+    }
+  ],
+  "titleSix": "CONTACT"
+}

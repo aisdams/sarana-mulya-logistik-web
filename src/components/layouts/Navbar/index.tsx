@@ -37,6 +37,7 @@ export default function Navbar({ isScrolled }: NavbarProps) {
             height={150}
             className={`${isScrolled ? 'filter-none' : 'brightness-[100]'}`}
           />
+          x``
         </div>
         <div className="navbarnya flex gap-10 font-bold text-[14px] cursor-pointer">
           {NavbarData.map((navbar, idx) => (
@@ -70,8 +71,9 @@ export default function Navbar({ isScrolled }: NavbarProps) {
         </div>
 
         <div className="flex gap-5 items-center">
-          <div className="">
+          <div className="flex gap-3">
             <Image src={Flag} alt="" width={40} />
+            <p className="font-bold">ID</p>
           </div>
           <div className="login border-2 border-blue-300 py-2 px-3 text-base font-semibold">
             Login

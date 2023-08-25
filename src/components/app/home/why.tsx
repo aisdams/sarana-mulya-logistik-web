@@ -12,7 +12,7 @@ const whys = [
     image: LayananProduk,
     heading: 'LAYANAN DAN PRODUK LENGKAP',
     paragraf:
-      'Telah bekerja sama dengan lebih dari 200 klien dan memiliki jenis layanan pengiriman yang lengkap, yaitu Express, Regular, Container, Trucking, Export & Import. Dan menyediakan layanan tambahan seperti asuransi pengiriman, Free Trade Zone (FTZ), packing, wrapping, forklift, dan crane.        ',
+      'Telah bekerja sama dengan lebih dari 200 klien dan memiliki jenis layanan pengiriman yang lengkap, yaitu Express, Regular, Container, Trucking, Export & Import. Dan menyediakan layanan tambahan seperti asuransi pengiriman, Free Trade Zone (FTZ), packing, wrapping, forklift, dan crane.',
   },
   {
     image: PriceTag,
