@@ -104,7 +104,7 @@ const sideBars: Child[] = [
             desc: 'Cairan Korosif, Cairan pembersih kerak',
           },
           {
-            image: dangerousIm8,
+            image: dangerousIm9,
             title:
               'Barang berbahaya kelas 9 : Zat dan benda barang berbahaya lain',
             desc: 'Baterai, Tangki kosong,Baterai Emergency,Baterai Laptop,Power Bank, Aki Kering,Laptop,Cairan racun serangga,Zippo,Timbangan digital,Mic,Dinamo,Cylinder head,Magnet,Baterai Lithium',
@@ -166,7 +166,7 @@ export default function Terms() {
       <div className="mx-28 mt-20">
         {sideBars.map((sidebar, idx) => (
           <div className="flex" key={idx}>
-            <div className="sideLeft w-1/3 bg-red-500 p-4">
+            <div className="sideLeft w-1/3  p-4">
               <h1 className="font-bold">{sidebar.title}</h1>
               <div className="ml-4">
                 {sidebar.children.map((category: any, categoryIdx: number) => (
@@ -180,7 +180,7 @@ export default function Terms() {
                 ))}
               </div>
             </div>
-            <div className="sideRight w-2/3 bg-blue-500 p-4">
+            <div className="sideRight w-2/3  p-4">
               {sidebar.children.map((category: any) => {
                 if (category.title === activeCategory) {
                   return (
