@@ -101,7 +101,7 @@ const sideBars: Child[] = [
           {
             image: dangerousIm8,
             title: 'Barang berbahaya kelas 8 : Korosif',
-            desc: 'Cairan Korosif, Cairan pembersih kerak',
+            desc: 'Cairan Korosif, Cairan tryr pembersih kerak',
           },
           {
             image: dangerousIm9,
