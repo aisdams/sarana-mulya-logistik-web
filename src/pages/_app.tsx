@@ -3,7 +3,6 @@ import { AppProps } from 'next/app';
 import AppProvider from '@/components/providers/app-provider';
 import Head from 'next/head';
 import Navbar from '@/components/layouts/navbar';
-import Header from '@/components/layouts/header';
 import Footer from '@/components/layouts/footer';
 import { ReactElement, ReactNode, useEffect, useState } from 'react';
 import { NextPage } from 'next';
