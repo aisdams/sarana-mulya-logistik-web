@@ -7,11 +7,10 @@ body {
   margin: 0;
   padding: 0;
 }
-
 .carImage {
   animation-name: moveCar;
   animation-iteration-count: infinite;
-  animation-duration: 13s;
+  animation-duration: 8s;
   animation-timing-function: linear;
   animation-delay: 1s;
 }
@@ -21,16 +20,10 @@ body {
     left: -150px;
   }
   to {
-    left: 100%;
+    left: 90%;
   }
 }
 
-#map {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-}
 .loader {
   width: 100px;
   height: 100px;

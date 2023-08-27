@@ -40,8 +40,86 @@
 //   );
 // }
 
-import React from 'react';
+'use client';
+import dynamic from 'next/dynamic';
+import { useEffect } from 'react';
+import { TileLayer, GeoJSON, Marker, Popup } from 'react-leaflet';
+import 'leaflet';
+import L from 'leaflet';
 
-export default function branch() {
-  return <div>branch</div>;
+const MapContainer = dynamic(
+  () => import('react-leaflet').then((module) => module.MapContainer),
+  {
+    ssr: false, // Load the component only on the client side
+  }
+);
+
+export default function Branch() {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      L.Marker.prototype.options.icon = L.icon({
+        iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
+      });
+    }
+  }, []);
+
+  const center = { lat: 59.433421, lng: 24.75224 };
+
+  const sensors = {
+    type: 'FeatureCollection',
+    features: [
+      {
+        type: 'Feature',
+        properties: {
+          name: 'Cabang A',
+          description: 'Ini adalah Cabang A',
+        },
+        geometry: {
+          type: 'Point',
+          coordinates: [106.822745, -6.181539],
+        },
+      },
+      {
+        type: 'Feature',
+        properties: {
+          name: 'Cabang B',
+          description: 'Ini adalah Cabang B',
+        },
+        geometry: {
+          type: 'Point',
+          coordinates: [112.732013, -7.257472],
+        },
+      },
+    ],
+  };
+
+  function onEachFeature(feature: any, layer: L.Layer) {
+    if (feature.properties) {
+      const { popupContent } = feature.properties;
+      layer.bindPopup(popupContent);
+    }
+  }
+
+  return (
+    <div>
+      {typeof window !== 'undefined' && (
+        <MapContainer
+          style={{ height: '80vh', width: '100vw' }}
+          center={center}
+          zoom={2}
+        >
+          <TileLayer
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <Marker position={[59.43046, 24.728563]}>
+            <Popup>
+              A pretty CSS3 popup. <br /> Easily customizable.
+            </Popup>
+          </Marker>
+          <GeoJSON data={sensors as any} onEachFeature={onEachFeature} />
+        </MapContainer>
+      )}
+    </div>
+  );
 }

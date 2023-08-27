@@ -8,6 +8,7 @@ import Footer from '@/components/layouts/footer';
 import { ReactElement, ReactNode, useEffect, useState } from 'react';
 import { NextPage } from 'next';
 import { FaBars } from 'react-icons/fa';
+import Sidebar from '@/components/layouts/navbar/sidebar';
 
 export type NextPageCustomLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -95,7 +96,13 @@ export default function App({
           )}
 
           {/* Render content based on menu icon state */}
-          {isMenuOpen && <div>{/* Render your menu content here */}</div>}
+          {isMenuOpen && (
+            <>
+              <Sidebar />
+              {getLayout(<Component {...pageProps} />)}
+              <Footer />
+            </>
+          )}
 
           {!isMenuOpen && (
             <>

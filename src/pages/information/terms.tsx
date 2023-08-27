@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FAQ from '@/components/app/home/faq';
 import dangerousIm from '../../../public/img/terms/dangerous/001-explosion.png';
 import dangerousIm2 from '../../../public/img/terms/dangerous/001-gas-tank.png';
@@ -15,8 +15,37 @@ import banImage3 from '../../../public/img/terms/ban/animal.png';
 import banImage4 from '../../../public/img/terms/ban/002-drugs.png';
 import banImage5 from '../../../public/img/terms/ban/age-limit.png';
 import banImage6 from '../../../public/img/terms/ban/skull-and-bones.png';
+import Image, { StaticImageData } from 'next/image';
 
-const sideBars = [
+interface ChildWithPages {
+  title: string;
+  pages: React.ReactNode; // Ganti dengan jenis yang sesuai
+}
+
+interface ChildWithChildren {
+  title: string;
+  children: {
+    image: StaticImageData;
+    title: string;
+    desc: string;
+  }[];
+}
+
+interface ChildWithSubchil {
+  title: string;
+  subchil: {
+    image: StaticImageData;
+    title: string;
+    desc: string;
+  }[];
+}
+
+interface Child {
+  title: string;
+  [key: string]: any; // Properti dinamis, bisa berupa children, subchil, atau pages
+}
+
+const sideBars: Child[] = [
   {
     title: 'FAQ',
     children: [
@@ -119,6 +148,12 @@ const sideBars = [
 ];
 
 export default function Terms() {
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+
+  const handleCategoryClick = (categoryTitle: string) => {
+    setActiveCategory(categoryTitle);
+  };
+
   return (
     <>
       <div className="bg-gray-header w-full h-[450px] mb-20 mx-auto grid text-center relative">
@@ -130,20 +165,52 @@ export default function Terms() {
 
       <div className="mx-28 mt-20">
         {sideBars.map((sidebar, idx) => (
-          <>
-            <div className="flex">
-              <div className="sideLeft w-full bg-red-500" key={idx}>
-                <h1 className="font-bold">{sidebar.title}</h1>
-                {sidebar.children.map((childSid, childIdx) => (
-                  <>
-                    <div className="" key={childIdx}>
-                      <h1>{childSid.title}</h1>
-                    </div>
-                  </>
+          <div className="flex" key={idx}>
+            <div className="sideLeft w-1/3 bg-red-500 p-4">
+              <h1 className="font-bold">{sidebar.title}</h1>
+              <div className="ml-4">
+                {sidebar.children.map((category: any, categoryIdx: number) => (
+                  <div
+                    key={categoryIdx}
+                    onClick={() => handleCategoryClick(category.title)}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    <h2>{category.title}</h2>
+                  </div>
                 ))}
               </div>
             </div>
-          </>
+            <div className="sideRight w-2/3 bg-blue-500 p-4">
+              {sidebar.children.map((category: any) => {
+                if (category.title === activeCategory) {
+                  return (
+                    <div key={category.title}>
+                      <h2>{category.title}</h2>
+                      {category.pages
+                        ? category.pages
+                        : category.children.map(
+                            (child: any, childIdx: number) => (
+                              <div key={childIdx}>
+                                {child.image && (
+                                  <Image
+                                    src={child.image}
+                                    alt={child.title}
+                                    width={200}
+                                    height={200}
+                                  />
+                                )}
+                                <h4>{child.title}</h4>
+                                <p>{child.desc}</p>
+                              </div>
+                            )
+                          )}
+                    </div>
+                  );
+                }
+                return null;
+              })}
+            </div>
+          </div>
         ))}
       </div>
     </>

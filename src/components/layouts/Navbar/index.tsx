@@ -4,6 +4,7 @@ import LogoSML from '../../../../public/img/icon2.png';
 import Image from 'next/image';
 import NavbarData from '@/data/NavbarData';
 import Flag from '../../../../public/img/lang/ind.png';
+import { BsCaretDownFill } from 'react-icons/bs';
 
 interface NavbarProps {
   isScrolled: boolean;
@@ -37,19 +38,23 @@ export default function Navbar({ isScrolled }: NavbarProps) {
             height={150}
             className={`${isScrolled ? 'filter-none' : 'brightness-[100]'}`}
           />
-          x``
         </div>
         <div className="navbarnya flex gap-10 font-bold text-[14px] cursor-pointer">
           {NavbarData.map((navbar, idx) => (
             <div
               key={idx}
-              className="relative group"
+              className="relative group flex items-center gap-3"
               onMouseEnter={() => handleMouseEnter(idx)}
               onMouseLeave={handleMouseLeave}
             >
               <a href={navbar.link}>
                 <h1>{navbar.title} </h1>
               </a>
+              {navbar.children && (
+                <div className="icon">
+                  <BsCaretDownFill />
+                </div>
+              )}
               {navbar.children && activeMenu === idx && (
                 <ul className="absolute top-full text-[13px] gap-y-5 py-7 grid -right-20 rounded-sm bg-white w-[12rem] p-3 shadow-[-5px_10px_10px_0px_rgba(0,0,0,0.4)]">
                   {navbar.children.map((child, childIdx) => (
