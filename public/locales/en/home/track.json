@@ -1,15 +1,13 @@
 {
-  "title": "TRACK YOUR SHIPMENT",
-  "button": [
-    {
-      "title": "Tracking Order",
-      "titleTwo": "Tracking POD Status"
-    }
-  ],
-  "search": [
-    {
-      "input": "Enter your tracking number",
-      "buttonTwo": "Search"
-    }
-  ]
+  "heading": {
+    "title": "TRACK YOUR SHIPMENT"
+  },
+  "button": {
+    "title": "Tracking Order",
+    "titleTwo": "Tracking POD Status"
+  },
+  "search": {
+    "input": "Enter your tracking number",
+    "buttonTwo": "Search"
+  }
 }

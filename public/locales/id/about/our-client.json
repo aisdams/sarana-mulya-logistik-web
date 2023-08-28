@@ -1,4 +1,6 @@
 {
-  "title": "PELANGGAN KAMI",
-  "subtitle": "Pelanggan"
+  "hero": {
+    "title": "PELANGGAN KAMI",
+    "subtitle": "Pelanggan"
+  }
 }

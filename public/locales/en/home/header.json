@@ -1,14 +1,10 @@
 {
-  "childOne": [
-    {
-      "title": "GREAT DEMOTE AREA - REACING 514 CITIES/REGENCIES IN INDONESIA",
-      "titleTwo": "HAVE WORKED WITH 200+ COMPANIES AND MADE 20000+ SHIPMENTS",
-      "titleThree": "WE ARE DELIVERY SERVICES, SPECIALIZING IN MEDICAL SERVICES PHARMACY"
-    }
-  ],
-  "button": [
-    {
-      "title": "Watch Company Profile"
-    }
-  ]
+  "childOne": {
+    "title": "GREAT DEMOTE AREA - REACING 514 CITIES/REGENCIES IN INDONESIA",
+    "titleTwo": "HAVE WORKED WITH 200+ COMPANIES AND MADE 20000+ SHIPMENTS",
+    "titleThree": "WE ARE DELIVERY SERVICES, SPECIALIZING IN MEDICAL SERVICES PHARMACY"
+  },
+  "button": {
+    "title": "Watch Company Profile"
+  }
 }

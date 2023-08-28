@@ -1,24 +1,20 @@
 {
-  "titleOne": "HOME",
-  "titleTwoChild": [
-    {
+  "section": {
+    "titleOne": "Home",
+    "titleTwoChild": {
       "titlePar": "ABOUT",
-      "child": [
-        {
-          "title": "PROFILE",
-          "titleTwo": "CLIENT",
-          "titleThree": "BRANCH"
-        }
-      ]
-    }
-  ],
-  "titleThree": "SERVICES",
-  "titleFour": "TRACKING",
-  "titleFive": [
-    {
+      "child": {
+        "title": "PROFILE",
+        "titleTwo": "CUSTOMER",
+        "titleThree": "BRANCH"
+      }
+    },
+    "titleThree": "SERVICE",
+    "titleFour": "RECORD CHECK",
+    "titleFive": {
       "titlePar": "INFORMATION",
       "child": [{ "title": "BLOG", "titleTwo": "NEWS", "titleThree": "TERMS" }]
-    }
-  ],
-  "titleSix": "CONTACT"
+    },
+    "titleSix": "CONTACT"
+  }
 }

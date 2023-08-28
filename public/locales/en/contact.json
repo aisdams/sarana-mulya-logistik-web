@@ -1,23 +1,19 @@
 {
-  "title": "GET SUPPORT 24/7",
-  "subtitle": "Contact us",
+  "hero": {
+    "title": "GET SUPPORT 24/7",
+    "subtitle": "Contact us"
+  },
   "titlecec": "Do you have any questions?",
-  "sideRight": [
-    {
-      "title": "Head office",
-      "desc": "Citra Grand Cibubur CBD Jl. Citra Grand II Blok AR18 - 19 Bekasi City, West Java 17435."
-    },
-    {
-      "title": "Working Hours",
-      "descOne": "Monday - Friday: 09:00 - 17:00",
-      "descTwo": "Saturday: 09:00 - 14:00",
-      "descThree": "Sunday: Closed"
-    },
-    {
-      "title": "Head Office",
-      "email": "Email: info@saranamulyalogisticscorp.com",
-      "phone": "Phone: +62 858-1055-8522"
-    }
-  ],
+  "sideRight": {
+    "title": "Head office",
+    "desc": "Citra Grand Cibubur CBD Jl. Citra Grand II Blok AR18 - 19 Bekasi City, West Java 17435.",
+    "titleTwo": "Working Hours",
+    "descOne": "Monday - Friday: 09:00 - 17:00",
+    "descTwo": "Saturday: 09:00 - 14:00",
+    "descThree": "Sunday: Closed",
+    "titleThree": "Head Office",
+    "email": "Email: info@saranamulyalogisticscorp.com",
+    "phone": "Phone: +62 858-1055-8522"
+  },
   "location": "Find Our Location"
 }

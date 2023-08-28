@@ -1,20 +1,14 @@
 {
-  "header": "FACTS",
-  "title": "Best Medical devices & Pharmaceuticals Delivery Service In Indonesia",
-  "titleTwo": "Sarana Mulya Logistik has made thousands of deliveries to all regions in Indonesia, especially in the delivery of medical devices and pharmaceuticals, as well as contributing to the distribution of medical devices and pharmaceuticals in Indonesia.",
-  "titlePhone": "Call for any query!",
-  "card": [
-    {
-      "title": "Covered Area"
-    },
-    {
-      "title": "Branch"
-    },
-    {
-      "title": "Customer"
-    },
-    {
-      "title": "Shipment"
-    }
-  ]
+  "text": {
+    "header": "FACTS",
+    "title": "Best Medical devices & Pharmaceuticals Delivery Service In Indonesia",
+    "titleTwo": "Sarana Mulya Logistik has made thousands of deliveries to all regions in Indonesia, especially in the delivery of medical devices and pharmaceuticals, as well as contributing to the distribution of medical devices and pharmaceuticals in Indonesia.",
+    "titlePhone": "Call for any query!"
+  },
+  "card": {
+    "title": "Covered Area",
+    "titleTwo": "Branch",
+    "titleThree": "Customer",
+    "titleFour": "Shipment"
+  }
 }

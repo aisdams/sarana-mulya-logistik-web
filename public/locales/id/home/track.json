@@ -1,15 +1,13 @@
 {
-  "title": "LACAK KIRIMAN ANDA",
-  "button": [
-    {
-      "title": "Lacak Pengiriman",
-      "titleTwo": "Lacak Status POD"
-    }
-  ],
-  "search": [
-    {
-      "input": "Masukan Nomor Resi Anda",
-      "buttonTwo": "Cari"
-    }
-  ]
+  "heading": {
+    "title": "LACAK KIRIMAN ANDA"
+  },
+  "button": {
+    "title": "Lacak Pengiriman",
+    "titleTwo": "Lacak Status POD"
+  },
+  "search": {
+    "input": "Masukan Nomor Resi Anda",
+    "buttonTwo": "Cari"
+  }
 }

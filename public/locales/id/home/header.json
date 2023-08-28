@@ -1,14 +1,10 @@
 {
-  "childOne": [
-    {
-      "title": "JAGONYA REMOTE AREA - MENJANGKAU 514 KOTA/KABUPATEN DI INDONESIA",
-      "titleTwo": "TELAH BEKERJA SAMA DENGAN 200+ PERUSAHAAN DAN MELAKUKAN 20000+ PENGIRIMAN",
-      "titleThree": "RAJANYA PENGIRIMAN ALAT KESEHATAN FARMASI DAN KOSMETIK"
-    }
-  ],
-  "button": [
-    {
-      "title": "Tonton Profile Perusahaan"
-    }
-  ]
+  "childOne": {
+    "title": "JAGONYA REMOTE AREA - MENJANGKAU 514 KOTA/KABUPATEN DI INDONESIA",
+    "titleTwo": "TELAH BEKERJA SAMA DENGAN 200+ PERUSAHAAN DAN MELAKUKAN 20000+ PENGIRIMAN",
+    "titleThree": "RAJANYA PENGIRIMAN ALAT KESEHATAN FARMASI DAN KOSMETIK"
+  },
+  "button": {
+    "title": "Tonton Profile Perusahaan"
+  }
 }

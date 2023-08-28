@@ -1,4 +1,6 @@
 {
-  "title": "OUR CLIENT",
-  "subtitle": "CLIENT"
+  "hero": {
+    "title": "OUR CLIENT",
+    "subtitle": "CLIENT"
+  }
 }

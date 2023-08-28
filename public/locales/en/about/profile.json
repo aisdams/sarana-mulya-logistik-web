@@ -1,15 +1,17 @@
 {
-  "heading": "INFORMATION ABOUT THE COMPANY",
-  "headingTwo": "About Us",
-  "card": [
-    {
-      "title": "GET A QUICK RESPONSE FROM OUR TEAM",
-      "heading": "DON'T HESITATE TO CONTACT US",
-      "button": "CONTACT US"
-    }
-  ],
-  "name": "PT Sarana Mulya Logistik",
-  "desc": "Established in 2018, PT. SARANA MULYA LOGISTICS is a shipping service company that provides express (Sameday, ONS, Express Standard, Port to Port), regular (Regular standard and Kubikasi), container (20ft and 40ft), trucking (Blind Van, CDE, CDD, Fuso Tronton, Cold Chain, WingBox) and exim services. Starting from a simple intention, Pt. Sarana Mulya Logistik wants to contribute to the Supply Chain in Indonesia. And at this time PT. Sarana Mulya Logistik also wants to contribute to the distribution of health services in Indonesia. Therefore PT Sarana Mulya Logistik is a shipping service that focuses on shipping medical devices, pharmaceuticals, and cosmetics.",
-  "descTwo": "Part of our success comes from our motto `You Trust Is Our Mission`. This motto has become our DNA in our daily life to provide the best and responsible service to all customers. Customer satisfaction is very important to us, therefore we are committed to always provide the best service standards and provide the right solutions for customer needs.",
-  "descThree": "Through efficient logistics operations, we have been serving clients from various industries across major regions of Indonesia. One of our key strategic growth is to open more representative offices in other parts of Indonesia."
+  "hero": {
+    "heading": "INFORMATION ABOUT THE COMPANY",
+    "headingTwo": "About Us"
+  },
+  "card": {
+    "title": "GET A QUICK RESPONSE FROM OUR TEAM",
+    "heading": "DON'T HESITATE TO CONTACT US",
+    "button": "CONTACT US"
+  },
+  "sectionTwo": {
+    "name": "PT Sarana Mulya Logistik",
+    "desc": "Established in 2018, PT. SARANA MULYA LOGISTICS is a shipping service company that provides express (Sameday, ONS, Express Standard, Port to Port), regular (Regular standard and Kubikasi), container (20ft and 40ft), trucking (Blind Van, CDE, CDD, Fuso Tronton, Cold Chain, WingBox) and exim services. Starting from a simple intention, Pt. Sarana Mulya Logistik wants to contribute to the Supply Chain in Indonesia. And at this time PT. Sarana Mulya Logistik also wants to contribute to the distribution of health services in Indonesia. Therefore PT Sarana Mulya Logistik is a shipping service that focuses on shipping medical devices, pharmaceuticals, and cosmetics.",
+    "descTwo": "Part of our success comes from our motto `You Trust Is Our Mission`. This motto has become our DNA in our daily life to provide the best and responsible service to all customers. Customer satisfaction is very important to us, therefore we are committed to always provide the best service standards and provide the right solutions for customer needs.",
+    "descThree": "Through efficient logistics operations, we have been serving clients from various industries across major regions of Indonesia. One of our key strategic growth is to open more representative offices in other parts of Indonesia."
+  }
 }

@@ -11,6 +11,7 @@ import HeaderTwo from 'public/img/2.png';
 import HeaderThree from 'public/img/3.png';
 import { BsPlayFill } from 'react-icons/bs';
 import SpeedDial from '@/pages/speed-dial';
+import Link from 'next/link';
 
 // Gambar dan konten teks untuk setiap slide
 const slides = [
@@ -69,12 +70,14 @@ export default function Header() {
                 <h3 className="text-base !font-normal mb-5">
                   {slide.description}
                 </h3>
-                <div className="bg-blue-500 max-w-max items-center mx-auto px-3 py-3 rounded-full flex gap-3 cursor-pointer">
-                  <div className="bg-white text-base-blue rounded-full max-w-max text-2xl">
-                    <BsPlayFill />
-                  </div>
-                  Tonton Profile Perusahaan
-                </div>
+                <Link href="https://www.youtube.com/watch?v=0wybm4HFvd4">
+                  <button className="bg-blue-500 max-w-max items-center mx-auto px-3 py-3 rounded-full flex gap-3">
+                    <div className="bg-white text-base-blue rounded-full max-w-max text-2xl">
+                      <BsPlayFill />
+                    </div>
+                    Tonton Profile Perusahaan
+                  </button>
+                </Link>
               </div>
             </div>
           </SwiperSlide>

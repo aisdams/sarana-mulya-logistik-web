@@ -1,26 +1,22 @@
 {
-  "titleOne": "BERANDA",
-  "titleTwoChild": [
-    {
+  "section": {
+    "titleOne": "BERANDA",
+    "titleTwoChild": {
       "titlePar": "TENTANG",
-      "child": [
-        {
-          "title": "PROFILE",
-          "titleTwo": "PELANGGAN",
-          "titleThree": "CABANG"
-        }
-      ]
-    }
-  ],
-  "titleThree": "LAYANAN",
-  "titleFour": "CEK RESI",
-  "titleFive": [
-    {
+      "child": {
+        "title": "PROFILE",
+        "titleTwo": "PELANGGAN",
+        "titleThree": "CABANG"
+      }
+    },
+    "titleThree": "LAYANAN",
+    "titleFour": "CEK RESI",
+    "titleFive": {
       "titlePar": "INFORMASI",
       "child": [
         { "title": "BLOG", "titleTwo": "BERITA", "titleThree": "SYARAT" }
       ]
-    }
-  ],
-  "titleSix": "KONTAK"
+    },
+    "titleSix": "KONTAK"
+  }
 }

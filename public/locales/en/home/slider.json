@@ -1,16 +1,10 @@
 {
-  "slider": [
-    {
-      "title": "“Hi Saraners ! Want to send goods but are afraid that the goods will not be delivered?? Afraid the goods won't arrive, calm down, here are the 5 criteria for a reliable driver””",
-      "button": "Click in Here"
-    },
-    {
-      "title": "“The blessings of Ramadan are still left, this is the moment of excitement for the mulya group facility when breaking fast together. Hopefully we can all still gather and meet Ramadhan again. Amen ”",
-      "button": "Click in Here"
-    },
-    {
-      "title": "“The echo of Takbir will soon be heard, where the day we have been waiting for for a year, by holding back all lust for a month will come, longing for Ramadan will be felt after Syawal, hopefully we can all come back and meet again on a fitri day tomorrow. All leaders and the big family of PT. Sarana Mulya Logistics wishes Minal Aidinwalfaizin, Sorry to be born and in the heart”",
-      "button": "Click in Here"
-    }
-  ]
+  "slider": {
+    "title": "“Hi Saraners ! Want to send goods but are afraid that the goods will not be delivered?? Afraid the goods won't arrive, calm down, here are the 5 criteria for a reliable driver””",
+    "button": "Click in Here",
+    "titleTwo": "“The blessings of Ramadan are still left, this is the moment of excitement for the mulya group facility when breaking fast together. Hopefully we can all still gather and meet Ramadhan again. Amen ”",
+    "buttonTwo": "Click in Here",
+    "titleThree": "“The echo of Takbir will soon be heard, where the day we have been waiting for for a year, by holding back all lust for a month will come, longing for Ramadan will be felt after Syawal, hopefully we can all come back and meet again on a fitri day tomorrow. All leaders and the big family of PT. Sarana Mulya Logistics wishes Minal Aidinwalfaizin, Sorry to be born and in the heart”",
+    "buttonThree": "Click in Here"
+  }
 }
