@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import NavbarData from '@/data/NavbarData';
 import Link from 'next/link';
-import Flag from '../../../../public/img/lang/ind.png';
+import Flag from '../../../public/img/lang/ind.png';
 import Image from 'next/image';
 import { BsPlus, BsDash } from 'react-icons/bs';
 
