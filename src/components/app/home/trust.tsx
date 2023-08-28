@@ -46,7 +46,7 @@ export default function Trust() {
       <hr className="w-[3rem] bg-base-blue h-1 my-3" />
 
       <Swiper
-        slidesPerView={4}
+        slidesPerView={1}
         spaceBetween={10}
         loop={true}
         modules={[Autoplay]}
@@ -55,6 +55,10 @@ export default function Trust() {
           disableOnInteraction: false,
         }}
         breakpoints={{
+          '360': {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
           '576': {
             slidesPerView: 1,
             spaceBetween: 20,

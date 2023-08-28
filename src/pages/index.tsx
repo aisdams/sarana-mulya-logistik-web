@@ -27,16 +27,16 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <div className="mx-28">
+      <div className="lg:mx-28 xs:mx-0">
         <Track />
         <Why />
         <Trust />
         <OurService />
       </div>
-      <div className="mr-28">
+      <div className="lg:mr-28 xs:mr-0">
         <Sliders />
       </div>
-      <div className="mx-28">
+      <div className="lg:mx-28 xs:mx-0">
         <Blog />
         <Counter />
         <Testimoni />

@@ -104,7 +104,7 @@ export default function Testimoni() {
       </h1>
 
       <Swiper
-        slidesPerView={3}
+        slidesPerView={1}
         spaceBetween={30}
         loop={true}
         autoplay={{
@@ -112,6 +112,10 @@ export default function Testimoni() {
           disableOnInteraction: false,
         }}
         breakpoints={{
+          '360': {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
           '576': {
             slidesPerView: 1,
             spaceBetween: 30,

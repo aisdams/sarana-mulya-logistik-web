@@ -98,7 +98,7 @@ export default function Footer() {
     <>
       {shouldRenderOurMission && <OurMission />}
       <div className="bg-[#081c25] py-20 text-white">
-        <div className="grid lg:grid-cols-4 mx-28 gap-5 mb-28 relative">
+        <div className="grid lg:grid-cols-4 lg:mx-28 mx-2 gap-5 mb-28 relative">
           {Footers.map((footer, index) => (
             <div className={footer.title} key={index}>
               <h1 className="text-white text-xl">{footer.title}</h1>
@@ -147,16 +147,16 @@ export default function Footer() {
           <div className="bg-[#bbd5e0] rounded-full w-10 h-10 shadow-[0_0_10px_3px_#34ade69c] absolute right-[20rem] top-1/2" />
         </div>
 
-        <div className="flex justify-between z-1 lg:px-10 gap-5 px-10">
+        <div className="flex justify-between z-1 lg:px-10 gap-5 xs:px-20">
           <div className="flex">
-            <Image src={Animate} alt="" className="lg:w-32 w-20" />
-            <Image src={Animate2} alt="" className="lg:w-32 w-20" />
+            <Image src={Animate} alt="" className="lg:w-32 w-10" />
+            <Image src={Animate2} alt="" className="lg:w-32 w-10" />
           </div>
-          <Image src={ParkAnim} alt="" className="lg:w-32 w-20" />
+          <Image src={ParkAnim} alt="" className="lg:w-32 w-10" />
           <div className="flex">
-            <Image src={Animate3} alt="" className="lg:w-32 w-20" />
-            <Image src={Animate4} alt="" className="lg:w-32 w-20" />
-            <Image src={Animate5} alt="" className="lg:w-32 w-20" />
+            <Image src={Animate3} alt="" className="lg:w-32 w-10" />
+            <Image src={Animate4} alt="" className="lg:w-32 w-10" />
+            <Image src={Animate5} alt="" className="lg:w-32 w-10" />
           </div>
         </div>
         <div className="relative z-[0]">

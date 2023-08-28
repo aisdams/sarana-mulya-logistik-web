@@ -39,7 +39,7 @@ export default function SpeedDial() {
   const [hoveredLabel, setHoveredLabel] = useState<string>('');
 
   return (
-    <div className="flex flex-col gap-5 relative">
+    <div className="flex lg:flex-col gap-5 relative">
       {socialMediaLinks.map((link, index) => (
         <a
           key={index}

@@ -62,7 +62,7 @@ export default function Header() {
               <div className="absolute text-white text-center">
                 <h1 className="text-3xl mb-5 font-bold">{slide.title}</h1>
                 <h1
-                  className="text-5xl mb-6 font-bold leading-6"
+                  className="lg:text-5xl mb-6 font-bold leading-6 xs:text-4xl"
                   style={{ textShadow: '2px 2px 10px #131313' }}
                 >
                   {slide.subtitle}
@@ -84,7 +84,7 @@ export default function Header() {
         ))}
       </Swiper>
 
-      <div className="absolute right-24 top-[12rem] z-[2] hidden lg:grid">
+      <div className="absolute lg:right-24 mx-auto lg:top-[12rem] bottom-[20rem] z-[2]">
         <SpeedDial />
       </div>
     </div>
