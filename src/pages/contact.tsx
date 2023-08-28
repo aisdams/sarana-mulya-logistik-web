@@ -114,9 +114,7 @@ export default function Contact() {
           frameBorder="0"
           scrolling="no"
           src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Pt%20Sarana%20Mulya%20Logistik%20Citra%20Grand%20Cibubur%20CBD%20Jl%20Citra%20Grand%20Cibubur%20II%20Blok%20AR%2018%20&amp;%2019,%20Kota%20Bks,%20Jawa%20Barat%2017435+(Sarana%20Mulya%20Logistik)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-        >
-          <a href="https://www.maps.ie/population/">Find Population on Map</a>
-        </iframe>
+        ></iframe>
       </div>
     </>
   );

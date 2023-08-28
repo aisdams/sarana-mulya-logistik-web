@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import FAQ from '@/components/app/home/faq';
 import dangerousIm from 'public/img/terms/dangerous/001-explosion.png';
 import dangerousIm2 from 'public/img/terms/dangerous/001-gas-tank.png';
 import dangerousIm3 from 'public/img/terms/dangerous/002-toxic-1.png';
@@ -16,6 +15,7 @@ import banImage4 from 'public/img/terms/ban/002-drugs.png';
 import banImage5 from 'public/img/terms/ban/age-limit.png';
 import banImage6 from 'public/img/terms/ban/skull-and-bones.png';
 import Image, { StaticImageData } from 'next/image';
+import Faqcom from '@/components/app/faq/faqcom';
 
 interface ChildWithPages {
   title: string;
@@ -51,7 +51,7 @@ const sideBars: Child[] = [
     children: [
       {
         title: 'FAQ',
-        pages: <FAQ />,
+        pages: <Faqcom />,
       },
     ],
   },
@@ -163,10 +163,10 @@ export default function Terms() {
         </div>
       </div>
 
-      <div className="mx-28 mt-20">
+      <div className="mx-28 mb-20 mt-10">
         {sideBars.map((sidebar, idx) => (
           <div className="flex" key={idx}>
-            <div className="sideLeft w-1/3  p-4">
+            <div className="sideLeft w-1/3 p-4">
               <h1 className="font-bold">{sidebar.title}</h1>
               <div className="ml-4">
                 {sidebar.children.map((category: any, categoryIdx: number) => (
@@ -180,27 +180,37 @@ export default function Terms() {
                 ))}
               </div>
             </div>
-            <div className="sideRight w-2/3  p-4">
+            <div className="sideRight w-2/3 px-4">
               {sidebar.children.map((category: any) => {
                 if (category.title === activeCategory) {
                   return (
                     <div key={category.title}>
-                      <h2>{category.title}</h2>
+                      {/* <h2>{category.title}</h2> */}
                       {category.pages
                         ? category.pages
                         : category.children.map(
                             (child: any, childIdx: number) => (
-                              <div key={childIdx}>
+                              <div
+                                key={childIdx}
+                                className="flex gap-5 mb-5 items-center"
+                              >
                                 {child.image && (
                                   <Image
                                     src={child.image}
                                     alt={child.title}
-                                    width={200}
-                                    height={200}
+                                    width={30}
+                                    height={30}
                                   />
                                 )}
-                                <h4>{child.title}</h4>
-                                <p>{child.desc}</p>
+                                <div className="block">
+                                  <h3 className="text-[#2b2b2b]">
+                                    {child.title}
+                                    <br />
+                                    <span className="text-[#706866]">
+                                      {child.desc}
+                                    </span>
+                                  </h3>
+                                </div>
                               </div>
                             )
                           )}

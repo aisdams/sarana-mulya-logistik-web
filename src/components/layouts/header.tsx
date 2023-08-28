@@ -59,22 +59,14 @@ export default function Header() {
                 style={{ objectFit: 'cover' }}
               />
               <div className="absolute text-white text-center">
+                <h1 className="text-3xl mb-5 font-bold">{slide.title}</h1>
                 <h1
-                  className="text-3xl mb-5 font-bold"
-                  style={{ textShadow: '2px 2px #707371' }}
-                >
-                  {slide.title}
-                </h1>
-                <h1
-                  className="text-4xl mb-6 font-bold"
-                  style={{ textShadow: '2px 2px #707371' }}
+                  className="text-5xl mb-6 font-bold leading-6"
+                  style={{ textShadow: '2px 2px 10px #131313' }}
                 >
                   {slide.subtitle}
                 </h1>
-                <h3
-                  className="text-[14px] !font-normal mb-5"
-                  style={{ textShadow: '2px 2px #707371' }}
-                >
+                <h3 className="text-base !font-normal mb-5">
                   {slide.description}
                 </h3>
                 <div className="bg-blue-500 max-w-max items-center mx-auto px-3 py-3 rounded-full flex gap-3 cursor-pointer">
