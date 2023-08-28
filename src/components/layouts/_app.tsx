@@ -7,7 +7,7 @@ import Footer from '@/components/layouts/footer';
 import { ReactElement, ReactNode, useEffect, useState } from 'react';
 import { NextPage } from 'next';
 import { FaBars } from 'react-icons/fa';
-import Sidebar from '@/components/layouts/navbar/sidebar';
+import Sidebar from '@/components/layouts/sidebar';
 
 export type NextPageCustomLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
