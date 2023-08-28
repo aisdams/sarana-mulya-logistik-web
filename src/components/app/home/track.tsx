@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'next-i18next';
 
 export default function Track() {
   const [activeButton, setActiveButton] = useState<
@@ -10,6 +11,8 @@ export default function Track() {
   ) => {
     setActiveButton(buttonId);
   };
+
+  const { t } = useTranslation('track');
 
   return (
     <div className="grid lg:grid-cols-2 my-20">

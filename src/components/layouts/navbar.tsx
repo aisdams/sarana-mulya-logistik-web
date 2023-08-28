@@ -4,7 +4,7 @@ import LogoSML from 'public/img/icon2.png';
 import Image from 'next/image';
 import NavbarData from '@/data/NavbarData';
 import Flag from 'public/img/lang/ind.png';
-import { BsCaretDownFill } from 'react-icons/bs';
+import { BiSolidDownArrow } from 'react-icons/bi';
 
 interface NavbarProps {
   isScrolled: boolean;
@@ -43,7 +43,7 @@ export default function Navbar({ isScrolled }: NavbarProps) {
           {NavbarData.map((navbar, idx) => (
             <div
               key={idx}
-              className="relative group flex items-center gap-3"
+              className="relative group flex items-center gap-2"
               onMouseEnter={() => handleMouseEnter(idx)}
               onMouseLeave={handleMouseLeave}
             >
@@ -52,7 +52,7 @@ export default function Navbar({ isScrolled }: NavbarProps) {
               </a>
               {navbar.children && (
                 <div className="icon">
-                  <BsCaretDownFill />
+                  <BiSolidDownArrow className="text-[9px]" />
                 </div>
               )}
               {navbar.children && activeMenu === idx && (

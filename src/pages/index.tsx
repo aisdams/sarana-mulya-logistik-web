@@ -1,4 +1,5 @@
 import React from 'react';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Header from '@/components/layouts/header';
 import Track from '@/components/app/home/track';
 import Why from '@/components/app/home/why';
@@ -10,6 +11,17 @@ import Counter from '@/components/app/home/counter';
 import Testimoni from '@/components/app/home/testimoni';
 import FAQ from '@/components/app/home/faq';
 import Recommendation from '@/components/app/home/recommendation';
+import { GetServerSideProps } from 'next';
+
+// export const getStaticProps: GetServerSideProps = async ({ locale }) => {
+//   const selectedLocale = locale || 'id'; // Default to 'en' if locale is not provided
+//   return {
+//     props: {
+//       ...(await serverSideTranslations(selectedLocale, ['navbar'])),
+//       // Will be passed to the page component as props
+//     },
+//   };
+// };
 
 export default function Home() {
   return (

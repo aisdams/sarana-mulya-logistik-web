@@ -1,0 +1,24 @@
+{
+  "title": "WE PROVIDE THE BEST SERVICE",
+  "subtitle": "Our Services",
+  "card": [
+    {
+      "desc": "EXPRESS is a service that offers door to door delivery or packages in a fast time, mostly by air. "
+    },
+    {
+      "desc": "REGULAR is a service that offers door-to-door delivery or package services by land and sea that focuses on more efficient costs while still providing certainty of delivery time."
+    },
+    {
+      "desc": "CONTAINER is a service that offers door-to-door package delivery or High Value Shipment services by providing Full Container Load or Less Container Load tailored to customer needs."
+    },
+    {
+      "desc": "TRUCKING is a service that offers door-to-door package delivery or High Value Shipment services by providing Full Trucking Load or Less Trucking Load tailored to customer needs"
+    },
+    {
+      "desc": "EXIM (EXPORT IMPORT) is a service that offers shipping services, both export and import door to door containers and kg-base, as well as custom clearance services. This service comes with two options, Air Freight and Sea Freight."
+    },
+    {
+      "desc": "LINKEXPRESS is a service that offers e-commerce shipping services with regular service standards with the best leadtime."
+    }
+  ]
+}
