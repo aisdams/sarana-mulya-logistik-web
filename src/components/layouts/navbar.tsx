@@ -1,9 +1,11 @@
 'use client';
 import React, { useState } from 'react';
+import { i18n, useTranslation } from 'next-i18next';
 import LogoSML from 'public/img/icon2.png';
 import Image from 'next/image';
 import NavbarData from '@/data/NavbarData';
 import Flag from 'public/img/lang/ind.png';
+import FlagEng from 'public/img/lang/us.png';
 import { BiSolidDownArrow } from 'react-icons/bi';
 import Link from 'next/link';
 
@@ -12,7 +14,12 @@ interface NavbarProps {
 }
 
 export default function Navbar({ isScrolled }: NavbarProps) {
+  const { t: tHome, i18n: i18nHome } = useTranslation('home');
+  const { t: tAbout, i18n: i18nAbout } = useTranslation('about');
   const [activeMenu, setActiveMenu] = useState<number | null>(null);
+  const [flagToggle, setFlagToggle] = useState<boolean>(false);
+  const [languageDropdownOpen, setLanguageDropdownOpen] =
+    useState<boolean>(false); // Tambah state untuk dropdown bahasa
 
   const handleMouseEnter = (index: number) => {
     setActiveMenu(index);
@@ -20,6 +27,14 @@ export default function Navbar({ isScrolled }: NavbarProps) {
 
   const handleMouseLeave = () => {
     setActiveMenu(null);
+  };
+
+  const handleFlagToggle = () => {
+    setFlagToggle((prevState) => !prevState);
+  };
+
+  const handleLanguageDropdownToggle = () => {
+    setLanguageDropdownOpen((prevState) => !prevState); // Toggle dropdown bahasa
   };
 
   return (
@@ -77,10 +92,38 @@ export default function Navbar({ isScrolled }: NavbarProps) {
         </div>
 
         <div className="flex gap-5 items-center">
-          <div className="flex gap-3">
-            <Image src={Flag} alt="" width={40} />
-            <p className="font-bold">ID</p>
+          <div
+            className="flex gap-3 cursor-pointer relative items-center"
+            onClick={handleLanguageDropdownToggle}
+          >
+            <Image src={flagToggle ? FlagEng : Flag} alt="" width={40} />
+            <p className="font-bold">{flagToggle ? 'EN' : 'ID'}</p>
+            <BiSolidDownArrow className="text-[9px]" />
+            {languageDropdownOpen && (
+              <ul className="absolute top-full text-[13px] gap-y-2 py-2 grid right-0 mt-2 rounded-sm w-[6rem] p-3 shadow-[-5px_10px_10px_0px_rgba(0,0,0,0.4)]">
+                <li className="flex gap-3">
+                  <Image src={flagToggle ? Flag : FlagEng} alt="" width={40} />
+                  <button
+                    className="hover:text-base-blue font-medium"
+                    onClick={() => {
+                      handleFlagToggle();
+                      handleLanguageDropdownToggle();
+                      if (i18nHome && i18nAbout) {
+                        const newLocale = flagToggle ? 'id' : 'en';
+                        i18nHome.changeLanguage(newLocale);
+                        i18nAbout.changeLanguage(newLocale);
+                        // Similar change for other sections
+                      }
+                    }}
+                  >
+                    {flagToggle ? tHome('id') : tAbout('en')}
+                  </button>
+                </li>
+                {/* You can add more language options here */}
+              </ul>
+            )}
           </div>
+
           <button className="login border-2 border-blue-300 py-2 px-3 text-base font-semibold">
             <Link href="https://sml.ops.odisys.id/auth">Login</Link>
           </button>

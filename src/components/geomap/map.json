@@ -1,0 +1,41 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": "1",
+        "daerah": "JABODETABEK",
+        "cabang": "Head Office",
+        "alamat": "Ruko Kawasan Niaga Citra Grand Blok R 15-17\r\nJl Alternatif Cibubur, Cibubur - Bekasi 17435",
+        "latitude": "-6.33000",
+        "longitude": "106.85000",
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.0999430995835!2d106.92495551418419!3d-6.381099564191246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6994a6f5c560ff%3A0x98afbe4373b0317a!2sPT%20Sarana%20Mulya%20Logistik!5e0!3m2!1sid!2sid!4v1637824863378!5m2!1sid!2sid",
+        "url": "https://goo.gl/maps/8tqpNP8MkMntxEnZ9"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [106.85, -6.33]
+      },
+      "map_popup_content": "\r\n <div class=\"my-2\"><strong>Cabang : </strong><br>Head Office</div>\r\n <div class=\"my-2\"><strong>Alamat : </strong><br>Ruko Kawasan Niaga Citra Grand Blok R 15-17\r\nJl Alternatif Cibubur, Cibubur - Bekasi 17435</div>\r\n"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": "2",
+        "daerah": "JAWA",
+        "cabang": "Branch Office Bandung",
+        "alamat": "Kopo Bizpark A1-3 Raya\r\nJl. Raya Kopo, Babakan Ciparay, Bandung 40227",
+        "latitude": "-6.92497",
+        "longitude": "107.62262",
+        "embed": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15841.95968527778!2d107.5863811!3d-6.9513898!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x74597f03dcdbed0f!2sPT.%20SARANA%20MULYA%20LOGISTIK%20BANDUNG!5e0!3m2!1sid!2sid!4v1638409762516!5m2!1sid!2sid",
+        "url": "https://goo.gl/maps/9oDrojb6hiTV7NrL6"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.62262, -6.92497]
+      },
+      "map_popup_content": "\r\n <div class=\"my-2\"><strong>Cabang : </strong><br>Head Office</div>\r\n <div class=\"my-2\"><strong>Alamat : </strong><br>Ruko Kawasan Niaga Citra Grand Blok R 15-17\r\nJl Alternatif Cibubur, Cibubur - Bekasi 17435</div>\r\n"
+    }
+  ]
+}

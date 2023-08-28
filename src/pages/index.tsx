@@ -13,15 +13,24 @@ import FAQ from '@/components/app/home/faq';
 import Recommendation from '@/components/app/home/recommendation';
 import { GetServerSideProps } from 'next';
 
-// export const getStaticProps: GetServerSideProps = async ({ locale }) => {
-//   const selectedLocale = locale || 'id'; // Default to 'en' if locale is not provided
-//   return {
-//     props: {
-//       ...(await serverSideTranslations(selectedLocale, ['navbar'])),
-//       // Will be passed to the page component as props
-//     },
-//   };
-// };
+export const getStaticProps: GetServerSideProps = async ({ locale }) => {
+  const selectedLocale = locale || 'id'; // Default to 'en' if locale is not provided
+  return {
+    props: {
+      ...(await serverSideTranslations(selectedLocale, [
+        'home/header',
+        'home/track',
+        'home/why',
+        'home/trust',
+        'home/slider',
+        'home/counter',
+        'home/testimoni',
+        'home/faq',
+      ])),
+      // Will be passed to the page component as props
+    },
+  };
+};
 
 export default function Home() {
   return (

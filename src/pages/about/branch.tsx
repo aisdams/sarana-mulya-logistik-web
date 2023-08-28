@@ -124,13 +124,40 @@
 //   );
 // }
 'use client';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
+import geoJsonData from '@/components/geomap/map.json'; // Import the JSON file
+import Table from '@/components/map/Table';
 
-export default function branch() {
-  const MapWithNoSSR = dynamic(() => import('@/components/Map'), {
-    ssr: false,
-  });
+interface GeoJsonFeature {
+  type: string;
+  properties: {
+    id_branch: string;
+    daerah: string;
+    cabang: string;
+    alamat: string;
+    latitude: string;
+    longitude: string;
+  };
+  geometry: {
+    type: string;
+    coordinates: [number, number];
+  };
+  map_popup_content: string;
+}
+
+const MapWithNoSSR = dynamic(() => import('@/components/map/Map'), {
+  ssr: false,
+});
+
+export default function Branch() {
+  const [geoJsonDataState, setGeoJsonDataState] = useState<any>(null);
+  const [selectedDaerah, setSelectedDaerah] = useState<string | null>(null);
+
+  useEffect(() => {
+    setGeoJsonDataState(geoJsonData);
+  }, []);
+
   return (
     <div>
       <div className="bg-gray-header w-full h-[450px] mb-20 mx-auto grid text-center relative">
@@ -142,11 +169,46 @@ export default function branch() {
         </div>
       </div>
 
-      <div>
-        <div id="map">
-          <MapWithNoSSR />
+      <div className="">
+        <div className="">
+          <div id="map">
+            {geoJsonDataState && (
+              <MapWithNoSSR
+                geoJsonData={geoJsonDataState}
+                setSelectedDaerah={setSelectedDaerah}
+              />
+            )}
+          </div>
+        </div>
+
+        <div className="mt-5">
+          <div className="grid grid-cols-8 mx-auto justify-center items-center"></div>
+          {geoJsonDataState &&
+            geoJsonDataState.features.map((feature: GeoJsonFeature) => (
+              <button
+                key={feature.properties.daerah}
+                onClick={() => setSelectedDaerah(feature.properties.daerah)}
+                className={`p-2 border-b ${
+                  selectedDaerah === feature.properties.daerah
+                    ? 'border-b-blue-500'
+                    : 'border-white text-gray-700'
+                }`}
+              >
+                {feature.properties.daerah}
+              </button>
+            ))}
         </div>
       </div>
+
+      {selectedDaerah && (
+        <div className="mt-8">
+          <Table
+            geoJsonData={geoJsonDataState}
+            selectedDaerah={selectedDaerah}
+            onDaerahSelect={setSelectedDaerah} // Tambah properti ini
+          />
+        </div>
+      )}
     </div>
   );
 }
