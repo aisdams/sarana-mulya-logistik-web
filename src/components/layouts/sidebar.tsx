@@ -50,9 +50,9 @@ export default function Sidebar() {
                   onClick={() => toggleDropdown(idx)}
                 >
                   {openDropdowns.includes(idx) ? (
-                    <BsDash className="text-white text-3xl absolute right-0 top-0 bg-[#383838]/70 w-14" />
+                    <BsDash className="text-white text-3xl absolute right-0 top-0 bg-[#383838]/80 w-14" />
                   ) : (
-                    <BsPlus className="text-white text-3xl absolute right-0 top-0 bg-[#383838]/70 w-14" />
+                    <BsPlus className="text-white text-3xl absolute right-0 top-0 bg-[#383838]/80 w-14" />
                   )}
                 </button>
               )}

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import NavbarData from '@/data/NavbarData';
 import Flag from 'public/img/lang/ind.png';
 import { BiSolidDownArrow } from 'react-icons/bi';
+import Link from 'next/link';
 
 interface NavbarProps {
   isScrolled: boolean;
@@ -80,9 +81,9 @@ export default function Navbar({ isScrolled }: NavbarProps) {
             <Image src={Flag} alt="" width={40} />
             <p className="font-bold">ID</p>
           </div>
-          <div className="login border-2 border-blue-300 py-2 px-3 text-base font-semibold">
-            Login
-          </div>
+          <button className="login border-2 border-blue-300 py-2 px-3 text-base font-semibold">
+            <Link href="https://sml.ops.odisys.id/auth">Login</Link>
+          </button>
         </div>
       </div>
     </div>
