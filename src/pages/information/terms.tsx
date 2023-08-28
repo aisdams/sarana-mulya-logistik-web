@@ -163,9 +163,9 @@ export default function Terms() {
         </div>
       </div>
 
-      <div className="mx-28 mb-20 mt-10">
+      <div className="lg:mx-28 mb-20 mt-10 mx-5">
         {sideBars.map((sidebar, idx) => (
-          <div className="flex" key={idx}>
+          <div className="lg:flex md:grid" key={idx}>
             <div className="sideLeft w-1/3 p-4">
               <h1 className="font-bold">{sidebar.title}</h1>
               <div className="ml-4">
@@ -180,7 +180,7 @@ export default function Terms() {
                 ))}
               </div>
             </div>
-            <div className="sideRight w-2/3 px-4">
+            <div className="sideRight lg:w-2/3 w-[80%] px-4">
               {sidebar.children.map((category: any) => {
                 if (category.title === activeCategory) {
                   return (
@@ -192,7 +192,7 @@ export default function Terms() {
                             (child: any, childIdx: number) => (
                               <div
                                 key={childIdx}
-                                className="flex gap-5 mb-5 items-center"
+                                className="flex gap-5 mb-5 items-center lg:mt-0 mt-10"
                               >
                                 {child.image && (
                                   <Image

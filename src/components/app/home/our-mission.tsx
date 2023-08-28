@@ -10,7 +10,7 @@ export default function OurMission() {
       >
         <div className="absolute inset-0 bg-black/40"></div>{' '}
         {/* Dark overlay */}
-        <div className="absolute top-1/2 transform -translate-y-1/2 w-full text-white text-center grid lg:flex px-28 items-center gap-5">
+        <div className="absolute top-1/2 transform -translate-y-1/2 w-full text-white text-center grid lg:flex lg:px-28 items-center gap-5">
           <div>
             <h1 className="font-bold text-2xl mb-4">
               Your Trust Is Our Mission

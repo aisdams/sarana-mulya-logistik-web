@@ -144,7 +144,7 @@ export default function Footer() {
             </div>
           ))}
 
-          <div className="bg-[#bbd5e0] rounded-full w-10 h-10 shadow-[0_0_10px_3px_#34ade69c] absolute right-[20rem] top-1/2" />
+          <div className="bg-[#bbd5e0] rounded-full w-10 h-10 shadow-[0_0_10px_3px_#34ade69c] absolute lg:right-[20rem] right-8 top-1/2" />
         </div>
 
         <div className="flex justify-between z-1 lg:px-10 gap-5 xs:px-20">

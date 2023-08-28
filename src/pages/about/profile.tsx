@@ -35,24 +35,24 @@ export default function Profile() {
   return (
     <>
       <div className="bg-gray-header w-full h-[450px] mb-20 mx-auto grid text-center relative">
-        <div className="absolute top-1/2 left-0 right-0 text-white">
+        <div className="absolute lg:top-1/2 top-[45%] left-0 right-0 text-white">
           <h3 className="tracking-[6px] mb-3">INFORMASI SEPUTAR PERUSAHAAN</h3>
-          <h1 className="font-bold text-5xl">Tentang Kami</h1>
+          <h1 className="font-bold lg:text-5xl text-4xl">Tentang Kami</h1>
         </div>
       </div>
 
-      <div className="mt-20 mx-28">
+      <div className="mt-20 lg:mx-28 mx-0">
         <div className="bg-base-blue w-full h-auto mt-24 text-white">
-          <div className="md:flex justify-between mx-20 py-14">
-            <div className="">
+          <div className="md:flex justify-between lg:mx-20 py-14 mx-5">
+            <div className="mb-3">
               <h3 className="text-sm">DAPATKAN RESPON CEPAT DARI TIM KAMI</h3>
-              <h1 className="text-3xl font-semibold mt-2">
+              <h1 className="lg:text-3xl font-semibold mt-2 text-2xl">
                 JANGAN RAGU MENGHUBUNGI KAMI
               </h1>
             </div>
 
             <div className="button">
-              <button className="text-base-blue bg-white px-8 py-5">
+              <button className="text-base-blue bg-white px-8 py-4 grid mx-auto items-center">
                 Hubungi Kami
               </button>
             </div>
@@ -60,7 +60,7 @@ export default function Profile() {
         </div>
       </div>
 
-      <div className="my-20 lg:ml-28 mx-28">
+      <div className="my-20 lg:ml-28 md:mx-28 xs:mx-0">
         <h1 className="font-bold text-secondary-text text-4xl mb-10 lg-mb-10">
           PT. Sarana Mulya Logistik
         </h1>
@@ -153,7 +153,7 @@ export default function Profile() {
       </div>
       <div>{renderSelectedComponent()}</div>
 
-      <div className="mx-28">
+      <div className="lg:mx-28 mx-3">
         <Counter />
         <div className="!my-32">
           <Recommendation />

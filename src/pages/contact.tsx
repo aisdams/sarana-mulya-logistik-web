@@ -29,13 +29,13 @@ export default function Contact() {
   return (
     <>
       <div className="bg-gray-header w-full h-[450px] mb-20 mx-auto grid text-center relative">
-        <div className="absolute top-1/2 left-0 right-0 text-white">
+        <div className="absolute lg:top-1/2 top-[45%] left-0 right-0 text-white">
           <h3 className="tracking-[6px] mb-3">DAPATKAN DUKUNGAN 24/7</h3>
-          <h1 className="font-extrabold text-5xl">Hubungi kami</h1>
+          <h1 className="font-bold lg:text-5xl text-4xl">Hubungi kami</h1>
         </div>
       </div>
 
-      <div className="my-28 mx-24">
+      <div className="my-28 lg:mx-24 mx-10">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           <div className="">
             <h1 className="font-bold text-3xl text-secondary-text">

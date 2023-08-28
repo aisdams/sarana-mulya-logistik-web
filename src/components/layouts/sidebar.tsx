@@ -19,7 +19,7 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="bg-sidebar-bg w-2/3 pb-8 z-10 absolute top-40 grid mx-auto items-center right-0 left-0 pl-8">
+    <div className="bg-sidebar-bg w-[90%] pb-8 z-10 absolute top-28 grid mx-auto items-center right-0 left-0 pl-8">
       {NavbarData.map((navbar, idx) => (
         <div
           className="uppercase text-white border-b-2 border-b-[#383838] py-2 w-full"
@@ -61,9 +61,12 @@ export default function Sidebar() {
 
           {/* Dropdown for children */}
           {navbar.children && openDropdowns.includes(idx) && (
-            <ul className="ml-4 mt-2 space-y-2">
+            <ul className="pl-4 mt-2 space-y-2">
               {navbar.children.map((child, childIdx) => (
-                <li key={childIdx}>
+                <li
+                  key={childIdx}
+                  className="border-b-2 border-b-[#383838] !w-full"
+                >
                   {child.link ? (
                     <Link href={child.link} className="text-white">
                       {child.title}
