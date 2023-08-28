@@ -1,6 +1,6 @@
 import React from 'react';
-import ProductIm from '../../../public/img/service/container1.png';
-import ProductIm2 from '../../../public/img/service/container2.png';
+import ProductIm from 'public/img/service/container1.png';
+import ProductIm2 from 'public/img/service/container2.png';
 import Image from 'next/image';
 
 const products = [

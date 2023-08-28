@@ -1,10 +1,10 @@
 import React from 'react';
-import ImageGrad from '../../../../public/img/gradient/sdm.png';
-import ImageGrad2 from '../../../../public/img/gradient/culture.png';
-import ImageGrad3 from '../../../../public/img/gradient/location.png';
-import ImageGrad4 from '../../../../public/img/gradient/facilities.png';
-import ImageGrad5 from '../../../../public/img/gradient/itsystem.png';
-import ImageGrad6 from '../../../../public/img/gradient/prices.png';
+import ImageGrad from 'public/img/gradient/sdm.png';
+import ImageGrad2 from 'public/img/gradient/culture.png';
+import ImageGrad3 from 'public/img/gradient/location.png';
+import ImageGrad4 from 'public/img/gradient/facilities.png';
+import ImageGrad5 from 'public/img/gradient/itsystem.png';
+import ImageGrad6 from 'public/img/gradient/prices.png';
 import Image from 'next/image';
 
 const Kelebihan = [

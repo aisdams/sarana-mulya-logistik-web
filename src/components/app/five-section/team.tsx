@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import TeamOne from '../../../../public/img/tim/tim1.jpg';
-import TeamTwo from '../../../../public/img/tim/tim2.jpg';
-import TeamThree from '../../../../public/img/tim/tim3.jpg';
+import TeamOne from 'public/img/tim/tim1.jpg';
+import TeamTwo from 'public/img/tim/tim2.jpg';
+import TeamThree from 'public/img/tim/tim3.jpg';
 import Image, { StaticImageData } from 'next/image';
 
 const teams = [

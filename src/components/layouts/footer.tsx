@@ -11,14 +11,14 @@ import {
 } from 'react-icons/bs';
 import OurMission from '@/components/app/home/our-mission';
 
-import Street from '../../../public/img/animate/street.png';
-import Animate from '../../../public/img/animate/building4.png';
-import Animate2 from '../../../public/img/animate/building5.png';
-import Animate3 from '../../../public/img/animate/building1.png';
-import Animate4 from '../../../public/img/animate/building2.png';
-import Animate5 from '../../../public/img/animate/building3.png';
-import ParkAnim from '../../../public/img/animate/park.png';
-import Truck from '../../../public/img/animate/truck2.png';
+import Street from 'public/img/animate/street.png';
+import Animate from 'public/img/animate/building4.png';
+import Animate2 from 'public/img/animate/building5.png';
+import Animate3 from 'public/img/animate/building1.png';
+import Animate4 from 'public/img/animate/building2.png';
+import Animate5 from 'public/img/animate/building3.png';
+import ParkAnim from 'public/img/animate/park.png';
+import Truck from 'public/img/animate/truck2.png';
 import Image from 'next/image';
 import Link from 'next/link';
 

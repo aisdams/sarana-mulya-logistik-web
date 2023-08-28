@@ -6,9 +6,9 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 import Image from 'next/image';
-import HeaderOne from '../../../public/img/1.png';
-import HeaderTwo from '../../../public/img/2.png';
-import HeaderThree from '../../../public/img/3.png';
+import HeaderOne from 'public/img/1.png';
+import HeaderTwo from 'public/img/2.png';
+import HeaderThree from 'public/img/3.png';
 import { BsPlayFill } from 'react-icons/bs';
 import SpeedDial from '@/pages/speed-dial';
 
@@ -89,7 +89,7 @@ export default function Header() {
         ))}
       </Swiper>
 
-      <div className="absolute right-24 top-[12rem] z-10 hidden lg:grid">
+      <div className="absolute right-24 top-[12rem] z-[2] hidden lg:grid">
         <SpeedDial />
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import ImageKel from '../../../../public/img/banner/newkinerja.png';
+import ImageKel from 'public/img/banner/newkinerja.png';
 import Image from 'next/image';
 
 const measurements = [

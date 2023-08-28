@@ -4,13 +4,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 // import required modules
 import { Autoplay } from 'swiper/modules';
-import Client1 from '../../../../public/img/client/medquest.png';
-import Client2 from '../../../../public/img/client/sinergi.png';
-import Client3 from '../../../../public/img/client/zoepelita.png';
-import Client4 from '../../../../public/img/client/genecraft.png';
-import Client5 from '../../../../public/img/client/merapiutama.png';
-import Client6 from '../../../../public/img/client/human.png';
-import Client7 from '../../../../public/img/client/cobra.png';
+import Client1 from 'public/img/client/medquest.png';
+import Client2 from 'public/img/client/sinergi.png';
+import Client3 from 'public/img/client/zoepelita.png';
+import Client4 from 'public/img/client/genecraft.png';
+import Client5 from 'public/img/client/merapiutama.png';
+import Client6 from 'public/img/client/human.png';
+import Client7 from 'public/img/client/cobra.png';
 import Image from 'next/image';
 
 const Clients = [

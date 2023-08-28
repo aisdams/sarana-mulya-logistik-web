@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import ImageSide from '../../../public/img/feature-bg.png';
+import ImageSide from 'public/img/feature-bg.png';
 import VisiMisi from '@/components/app/five-section/visi-misi';
 import Value from '@/components/app/five-section/value';
 import Team from '@/components/app/five-section/team';

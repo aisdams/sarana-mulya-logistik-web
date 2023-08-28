@@ -1,9 +1,9 @@
 'use client';
 import React, { useState } from 'react';
-import LogoSML from '../../../public/img/icon2.png';
+import LogoSML from 'public/img/icon2.png';
 import Image from 'next/image';
 import NavbarData from '@/data/NavbarData';
-import Flag from '../../../public/img/lang/ind.png';
+import Flag from 'public/img/lang/ind.png';
 import { BsCaretDownFill } from 'react-icons/bs';
 
 interface NavbarProps {

@@ -1,5 +1,5 @@
 import React from 'react';
-import Recommendation1 from '../../../../public/img/cta-bg.png';
+import Recommendation1 from 'public/img/cta-bg.png';
 
 export default function OurMission() {
   return (

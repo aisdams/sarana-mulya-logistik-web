@@ -1,10 +1,10 @@
 import React from 'react';
-import ServiceIm from '../../public/img/service/express-1.png';
-import ServiceIm2 from '../../public/img/service/reguler-1.png';
-import ServiceIm3 from '../../public/img/service/container-1.png';
-import ServiceIm4 from '../../public/img/service/trucking-1.png';
-import ServiceIm5 from '../../public/img/service/exim-1.png';
-import ServiceIm6 from '../../public/img/service/linkexpress-1.png';
+import ServiceIm from 'public/img/service/express-1.png';
+import ServiceIm2 from 'public/img/service/reguler-1.png';
+import ServiceIm3 from 'public/img/service/container-1.png';
+import ServiceIm4 from 'public/img/service/trucking-1.png';
+import ServiceIm5 from 'public/img/service/exim-1.png';
+import ServiceIm6 from 'public/img/service/linkexpress-1.png';
 import Image from 'next/image';
 import Link from 'next/link';
 

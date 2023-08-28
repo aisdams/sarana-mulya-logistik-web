@@ -4,9 +4,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay, Pagination } from 'swiper/modules';
-import ImageAnn from '../../../../public/img/ann/322.jpg';
-import ImageAnn2 from '../../../../public/img/ann/311.jpg';
-import ImageAnn3 from '../../../../public/img/ann/300.jpg';
+import ImageAnn from 'public/img/ann/322.jpg';
+import ImageAnn2 from 'public/img/ann/311.jpg';
+import ImageAnn3 from 'public/img/ann/300.jpg';
 import Image from 'next/image';
 
 const Anns = [

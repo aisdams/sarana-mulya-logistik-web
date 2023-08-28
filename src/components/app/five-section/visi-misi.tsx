@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import VisiIm from '../../../../public/img/svg_icon/visi_svg.svg';
+import VisiIm from 'public/img/svg_icon/visi_svg.svg';
 import { BsFillCheckCircleFill } from 'react-icons/bs';
 
 const VisiMisis = [

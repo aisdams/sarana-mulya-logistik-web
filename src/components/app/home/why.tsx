@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import React from 'react';
-import LayananProduk from '../../../../public/img/why/layanan-produk.png';
-import PriceTag from '../../../../public/img/why/price.png';
-import Permission from '../../../../public/img/why/permission.png';
-import Tracking from '../../../../public/img/why/tracking.png';
-import UpdatedInformation from '../../../../public/img/why/updated-information.png';
-import Guaranteed from '../../../../public/img/why/guaranteed.png';
+import LayananProduk from 'public/img/why/layanan-produk.png';
+import PriceTag from 'public/img/why/price.png';
+import Permission from 'public/img/why/permission.png';
+import Tracking from 'public/img/why/tracking.png';
+import UpdatedInformation from 'public/img/why/updated-information.png';
+import Guaranteed from 'public/img/why/guaranteed.png';
 
 const whys = [
   {

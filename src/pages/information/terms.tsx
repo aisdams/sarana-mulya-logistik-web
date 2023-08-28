@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import FAQ from '@/components/app/home/faq';
-import dangerousIm from '../../../public/img/terms/dangerous/001-explosion.png';
-import dangerousIm2 from '../../../public/img/terms/dangerous/001-gas-tank.png';
-import dangerousIm3 from '../../../public/img/terms/dangerous/002-toxic-1.png';
-import dangerousIm4 from '../../../public/img/terms/dangerous/003-gas-cylinder.png';
-import dangerousIm5 from '../../../public/img/terms/dangerous/003-flask.png';
-import dangerousIm6 from '../../../public/img/terms/dangerous/001-toxic.png';
-import dangerousIm7 from '../../../public/img/terms/dangerous/003-radiation.png';
-import dangerousIm8 from '../../../public/img/terms/dangerous/001-corrosive.png';
-import dangerousIm9 from '../../../public/img/terms/dangerous/002-warning.png';
-import banImage from '../../../public/img/terms/ban/003-lungs.png';
-import banImage2 from '../../../public/img/terms/ban/supplies.png';
-import banImage3 from '../../../public/img/terms/ban/animal.png';
-import banImage4 from '../../../public/img/terms/ban/002-drugs.png';
-import banImage5 from '../../../public/img/terms/ban/age-limit.png';
-import banImage6 from '../../../public/img/terms/ban/skull-and-bones.png';
+import dangerousIm from 'public/img/terms/dangerous/001-explosion.png';
+import dangerousIm2 from 'public/img/terms/dangerous/001-gas-tank.png';
+import dangerousIm3 from 'public/img/terms/dangerous/002-toxic-1.png';
+import dangerousIm4 from 'public/img/terms/dangerous/003-gas-cylinder.png';
+import dangerousIm5 from 'public/img/terms/dangerous/003-flask.png';
+import dangerousIm6 from 'public/img/terms/dangerous/001-toxic.png';
+import dangerousIm7 from 'public/img/terms/dangerous/003-radiation.png';
+import dangerousIm8 from 'public/img/terms/dangerous/001-corrosive.png';
+import dangerousIm9 from 'public/img/terms/dangerous/002-warning.png';
+import banImage from 'public/img/terms/ban/003-lungs.png';
+import banImage2 from 'public/img/terms/ban/supplies.png';
+import banImage3 from 'public/img/terms/ban/animal.png';
+import banImage4 from 'public/img/terms/ban/002-drugs.png';
+import banImage5 from 'public/img/terms/ban/age-limit.png';
+import banImage6 from 'public/img/terms/ban/skull-and-bones.png';
 import Image, { StaticImageData } from 'next/image';
 
 interface ChildWithPages {
