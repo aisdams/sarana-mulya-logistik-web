@@ -36,6 +36,654 @@
         "coordinates": [107.62262, -6.92497]
       },
       "map_popup_content": "\r\n <div class=\"my-2\"><strong>Cabang : </strong><br>Head Office</div>\r\n <div class=\"my-2\"><strong>Alamat : </strong><br>Ruko Kawasan Niaga Citra Grand Blok R 15-17\r\nJl Alternatif Cibubur, Cibubur - Bekasi 17435</div>\r\n"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": "3",
+        "daerah": "JABODETABEK",
+        "cabang": "Branch Office Tangerang",
+        "alamat": "Jl. Perumahan Mahkota Indah Blok C5 No. 3 RT. 001/009 Kec. Benda - Tanggerang",
+        "latitude": "-6.33009",
+        "longitude": "106.68",
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253763.22273536967!2d106.79272130926499!3d-6.3875035916358245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e52f6af6ab3b%3A0x5c271a06789d2335!2sPT.%20Sarana%20Mulya%20Logistik%20Cab.%20Tangerang!5e0!3m2!1sid!2sid!4v1638410023084!5m2!1sid!2sid",
+        "url": "https://goo.gl/maps/W269uBpc7QXk9tQWA"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [106.68, -6.33009]
+      },
+      "map_popup_content": "\r\n <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Tangerang</div>\r\n  <div class=\"my-2\"><strong>Alamat : </strong><br>Jl. Perumahan Mahkota Indah Blok C5 No. 3 RT. 001/009 Kec. Benda - Tanggerang</div>\r\n"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": "4",
+        "daerah": "JABODETABEK",
+        "cabang": "Gudang Transit CGK",
+        "alamat": "Ruko Taman Mahkota Blok 20A\r\nRawa Bokor Kel. Benda Kec.Benda, Kota Tangerang",
+        "latitude": "-6.11853",
+        "longitude": "106.68807",
+        "embed": "",
+        "url": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [106.68807, -6.11853]
+      },
+      "map_popup_content": "\r\n <div class=\"my-2\"><strong>Cabang : </strong><br>Gudang Transit CGK</div>\r\n <div class=\"my-2\"><strong>Alamat : </strong><br>Ruko Taman Mahkota Blok 20A\r\nRawa Bokor Kel. Benda Kec.Benda, Kota Tangerang</div>\r\n"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": "5",
+        "daerah": "JABODETABEK",
+        "cabang": "Marketing Office",
+        "alamat": "TB. Simatupang\r\nPerumahan Tanjung Barat Indah Teratai XIII, Blok P No.7, Jakarta Selatan 12530",
+        "latitude": "-6.30484",
+        "longitude": "106.8463",
+        "embed": "",
+        "url": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [106.8463, -6.30484]
+      },
+      "map_popup_content": "\r\n <div class=\"my-2\"><strong>Cabang : </strong><br>Marketing Office</div>\r\n <div class=\"my-2\"><strong>Alamat : </strong><br>TB. Simatupang\r\nPerumahan Tanjung Barat Indah Teratai XIII, Blok P No.7, Jakarta Selatan 12530</div>\r\n"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": "6",
+        "daerah": "JABODETABEK",
+        "cabang": "Branch Office Bekasi",
+        "alamat": "Pasar Modern Harapan Indah R.72\r\nBoulevard Harapan Indah 2, RT 10 RW 08, Pusaka Rakyat, Tarumajaya, Bekasi 17132",
+        "latitude": "-6.21514",
+        "longitude": "107.00348",
+        "embed": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15866.847888897155!2d106.9731997!3d-6.1693093!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xbec13c31cdb44e46!2sPT.%20Sarana%20Mulya%20Logistik%20Cabang%20HI!5e0!3m2!1sid!2sid!4v1638409835115!5m2!1sid!2sid",
+        "url": "https://goo.gl/maps/hGdvkvweTvCavEGs8"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.00348, -6.21514]
+      },
+      "map_popup_content": "\r\n <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Bekasi</div>\r\n <div class=\"my-2\"><strong>Alamat : </strong><br>Pasar Modern Harapan Indah R.72\r\nBoulevard Harapan Indah 2, RT 10 RW 08, Pusaka Rakyat, Tarumajaya, Bekasi 17132</div>\r\n"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": "7",
+        "daerah": "JABODETABEK",
+        "cabang": "Branch Office Cengkareng",
+        "alamat": "Ruko Citra 2 Exstenstion, Blok BG 3B No.3\r\nPerumahan Citra Garden Pergadungan Kalideres, Jakarta Barat",
+        "latitude": "-6.13197",
+        "longitude": "106.69321",
+        "embed": "",
+        "url": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [106.69321, -6.13197]
+      },
+      "map_popup_content": "\r\n <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Cengkareng</div>\r\n <div class=\"my-2\"><strong>Alamat : </strong><br>Ruko Citra 2 Exstenstion, Blok BG 3B No.3\r\nPerumahan Citra Garden Pergadungan Kalideres, Jakarta Barat</div>\r\n"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": "11",
+        "daerah": "MALUKU & PAPUA",
+        "cabang": "Branch Office Sorong",
+        "alamat": "Jl. Pendidikan, Belakang Toko Eigher - Sorong",
+        "latitude": "0",
+        "longitude": "0",
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127658.6886681827!2d131.19435452377422!3d-0.8927347841435654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d5eab02c2d2ddcd%3A0xe32b512ec6c6786!2sSorong%2C%20Sorong%20City%2C%20West%20Papua!5e0!3m2!1sen!2sid!4v1675735083392!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/1FQXG2k6vnKMQ1oP8"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [0, 0]
+      },
+      "map_popup_content": "\r\n <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Sorong</div>\r\n <div class=\"my-2\"><strong>Alamat : </strong><br>Jl. Pendidikan, Belakang Toko Eigher - Sorong</div>\r\n"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": "12",
+        "daerah": "SUMATRA",
+        "cabang": "Branch Office Padang",
+        "alamat": "JL. Datuak Tan Malaka Toko Petak 10 no. 3 pakan ambek nagari ladang laweh Kac. Banuhampu Kabupaten Agam",
+        "latitude": "-0.9342375",
+        "longitude": "100.2511806",
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255314.42851905426!2d100.25118055840616!3d-0.9342374968484778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b942e2b117bb%3A0xb8468cb5c3046ba5!2sPadang%2C%20Padang%20City%2C%20West%20Sumatra!5e0!3m2!1sen!2sid!4v1675734965848!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/m2tBZh5PXsaJ1Yee8"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [100.2511806, -0.9342375]
+      },
+      "map_popup_content": "\r\n <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Padang</div>\r\n <div class=\"my-2\"><strong>Alamat : </strong><br>JL. Datuak Tan Malaka Toko Petak 10 no. 3 pakan ambek nagari ladang laweh Kac. Banuhampu Kabupaten Agam</div>\r\n "
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": "13",
+        "daerah": "KALIMANTAN",
+        "cabang": "Branch Office Banjarmasin",
+        "alamat": "Jl. Yudistira Raya No. 59 Bumi Pemurus Permai Banjarmasin Kota Banjarmasin 70248",
+        "latitude": "-3.3171351",
+        "longitude": "114.5591928",
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63730.13768929408!2d114.5591928387623!3d-3.317135142828595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de4209aa1eec961%3A0x26030bfcc09204d2!2sBanjarmasin%2C%20Banjarmasin%20City%2C%20South%20Kalimantan!5e0!3m2!1sen!2sid!4v1675735049768!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/c4HH6MedMsC73PzN9"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [114.5591928, -3.3171351]
+      },
+      "map_popup_content": "\r\n <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Banjarmasin</div>\r\n <div class=\"my-2\"><strong>Alamat : </strong><br>Jl. Yudistira Raya No. 59 Bumi Pemurus Permai Banjarmasin Kota Banjarmasin 70248</div>\r\n"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": "14",
+        "daerah": "KALIMANTAN",
+        "cabang": "Branch Office Balikpapan",
+        "alamat": "Jl. Sepinggan No. 23 RT. 25 Kel. Sepinggan Balikpapan",
+        "latitude": "-1.1745995",
+        "longitude": "116.7016573",
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255294.74737162289!2d116.70165871302679!3d-1.1742562063803954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df14710964d9c91%3A0xcaa6ec96c2aea6d2!2sBalikpapan%2C%20Balikpapan%20City%2C%20East%20Kalimantan!5e0!3m2!1sen!2sid!4v1675735114818!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/QKAjyvqhptxYy9838"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [116.7016573, -1.1745995]
+      },
+      "map_popup_content": "\r\n <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Balikpapan</div>\r\n <div class=\"my-2\"><strong>Alamat : </strong><br>Jl. Sepinggan No. 23 RT. 25 Kel. Sepinggan Balikpapan</div>\r\n"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": "15",
+        "daerah": "KALIMANTAN",
+        "cabang": "Branch Office Palangkaraya",
+        "alamat": "Jl, Seth Adji No 123 Kel. Panarung Dekat Kampus LP3I Palangkaraya",
+        "latitude": "-2.2097019",
+        "longitude": "113.8666452",
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127579.26319523052!2d113.7663715534719!3d-2.2095246311466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dfcbf116a995427%3A0xfa758015ddea8a0a!2sPalangkaraya%2C%20Jekan%20Raya%2C%20Palangka%20Raya%20City%2C%20Central%20Kalimantan!5e0!3m2!1sen!2sid!4v1675735148528!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/amQwufjG9cyU4oUd8"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [113.8666452, -2.2097019]
+      },
+      "map_popup_content": "\r\n <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Palangkaraya</div>\r\n <div class=\"my-2\"><strong>Alamat : </strong><br>Jl, Seth Adji No 123 Kel. Panarung Dekat Kampus LP3I Palangkaraya</div>\r\n"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": "16",
+        "daerah": "MALUKU & PAPUA",
+        "cabang": "Branch Office Ternate",
+        "alamat": "Jl. Ngara Opas No. 46 Kel. Salero Ternate",
+        "latitude": "0.8928203",
+        "longitude": "126.22288862",
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1021269.1037368511!2d126.22291127381035!3d0.8941939333854926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x328364caea562003%3A0x214be2e09acd56c5!2sTernate%2C%20Ternate%20City%2C%20North%20Maluku!5e0!3m2!1sen!2sid!4v1675735178480!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/3PzWMywxzmzPhEik6"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [126.22288862, 0.8928203]
+      },
+      "map_popup_content": "\r\n <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Ternate</div>\r\n <div class=\"my-2\"><strong>Alamat : </strong><br>Jl. Ngara Opas No. 46 Kel. Salero Ternate</div>\r\n"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": "17",
+        "daerah": "SULAWESI",
+        "cabang": "Branch Office Manado",
+        "alamat": "Jl. Raya Desa Kolongan Kec. Talawaan Kab. Minahasa Utara\r\n\r\n\r\n\r\n",
+        "latitude": "1.5408109",
+        "longitude": "124.6443958",
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255256.00401605296!2d124.64439717541308!3d1.5411541782727887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32879ef9ffb30fd3%3A0x3030bfbcaf77280!2sManado%2C%20Manado%20City%2C%20North%20Sulawesi!5e0!3m2!1sen!2sid!4v1675735219196!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/FPUHDZYorU4bpA258"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [124.6443958, 1.5408109]
+      },
+      "map_popup_content": "\r\n <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Manado</div>\r\n <div class=\"my-2\"><strong>Alamat : </strong><br>Jl. Raya Desa Kolongan Kec. Talawaan Kab. Minahasa Utara\r\n\r\n\r\n\r\n</div>\r\n"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": "18",
+        "daerah": "SUMATRA",
+        "cabang": "Branch Office Lampung",
+        "alamat": "Jl. Perintis Kemerdekaan No. 186 Bandar Lampung",
+        "latitude": "-4.9452474",
+        "longitude": "103.7704351",
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2035191.1813293584!2d103.77053109545793!3d-4.942509082862961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b760153ac22a7%3A0x8f3b58c75f89b09a!2sLampung!5e0!3m2!1sen!2sid!4v1675735278751!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/T3HM6RoU2hvhmnkNA"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [103.7704351, -4.9452474]
+      },
+      "map_popup_content": "\r\n <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Lampung</div>\r\n <div class=\"my-2\"><strong>Alamat : </strong><br>Jl. Perintis Kemerdekaan No. 186 Bandar Lampung</div>\r\n"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": "19",
+        "daerah": "SULAWESI",
+        "cabang": "Branch Office Makassar - Mamuju",
+        "alamat": "Jl. Jend. Sudirman No. 14 Maros (Depan Kantor Buoati Maros / samping masjid Al-Markas Maros)",
+        "latitude": "-5.1114328",
+        "longitude": "119.1319812",
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254333.0664021049!2d119.13199157343966!3d-5.111090700234305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbee329d96c4671%3A0x3030bfbcaf770b0!2sMakassar%2C%20Makassar%20City%2C%20South%20Sulawesi!5e0!3m2!1sen!2sid!4v1675735316344!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/7joqgsc9b8hZGZ5o7"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [119.1319812, -5.1114328]
+      },
+      "map_popup_content": "\r\n <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Makassar - Mamuju</div>\r\n <div class=\"my-2\"><strong>Alamat : </strong><br>Jl. Jend. Sudirman No. 14 Maros (Depan Kantor Buoati Maros / samping masjid Al-Markas Maros)</div>\r\n"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": "20",
+        "daerah": "SULAWESI",
+        "cabang": "Branch Office Gorontalo",
+        "alamat": "Jl, Husin Bilondatu Kompleks Masjid Al-Mubarakah Bulota Talaga Jaya Kab. Gorontalo",
+        "latitude": "0.548922",
+        "longitude": "123.0050007",
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63834.1625589249!2d123.00500083382951!3d0.5490078262882463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32792b4799e5e75d%3A0x6dcc4d0923155967!2sGorontalo%2C%20Gorontalo%20Regency%2C%20Gorontalo!5e0!3m2!1sen!2sid!4v1675735352087!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/BdTQD74Du8yhrJpSA"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [123.0050007, 0.548922]
+      },
+      "map_popup_content": "\r\n <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Gorontalo</div>\r\n <div class=\"my-2\"><strong>Alamat : </strong><br>Jl, Husin Bilondatu Kompleks Masjid Al-Mubarakah Bulota Talaga Jaya Kab. Gorontalo</div>\r\n"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": 21,
+        "daerah": "KALIMANTAN",
+        "cabang": "Branch Office Tarakan",
+        "alamat": "Jl. Gajah Mada No. 23 RT. 05 Kel. Karanganyar Pantai Kec. Tarakan Barat - Tarakan Kalimantan Utara 77111",
+        "latitude": 3.3551555,
+        "longitude": 117.5076683,
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127455.3450699302!2d117.5076682695197!3d3.3551555487548357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32138bb6231349ad%3A0xe8d9849640f31b7e!2sTarakan%2C%20Tarakan%20City%2C%20East%20Kalimantan!5e0!3m2!1sen!2sid!4v1675742289335!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/HsxHtRFbE6qFXzt87"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [117.5076683, 3.3551555]
+      },
+      "map_popup_content": "<div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Tarakan</div><div class=\"my-2\"><strong>Alamat : </strong><br>Jl. Gajah Mada No. 23 RT. 05 Kel. Karanganyar Pantai Kec. Tarakan Barat - Tarakan Kalimantan Utara 77111</div>"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": 22,
+        "daerah": "KALIMANTAN",
+        "cabang": "Branch Office Pontianak",
+        "alamat": "Jl. Dr. Wahidin S, Kec. Pontianak Kota Kalimantan Barat",
+        "latitude": -0.0353948,
+        "longitude": 109.2615089,
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127674.16188929553!2d109.2615089129508!3d-0.0353948235529848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e1d58f604b0799b%3A0x511ef9501fc9ffe3!2sPontianak%2C%20West%20Kalimantan!5e0!3m2!1sen!2sid!4v1675742339251!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/XJnC5d1pPFCb4oy77"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [109.2615089, -0.0353948]
+      },
+      "map_popup_content": "<div class=\"my-2\"><strong>Cabang :</strong><br>Branch Office Pontianak</div><div class=\"my-2\"><strong>Alamat :</strong><br>Jl. Dr. Wahidin S, Kec. Pontianak Kota Kalimantan Barat</div>"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": 23,
+        "daerah": "SUMATRA",
+        "cabang": "Branch Office Banda Aceh",
+        "alamat": "Jl. Tgk Umum Lueng Bata No. 8 Banda Aceh",
+        "latitude": 5.5611009,
+        "longitude": 95.2936826,
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63536.63882862549!2d95.29368264946669!3d5.5611008677540426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3040377ae63dbcdf%3A0x3039d80b220cb90!2sBanda%20Aceh%2C%20Banda%20Aceh%20City%2C%20Aceh!5e0!3m2!1sen!2sid!4v1675742391183!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/NcrQU5JNnY4nT5vEA"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [95.2936826, 5.5611009]
+      },
+      "map_popup_content": "<div class=\"my-2\"><strong>Cabang :</strong><br>Branch Office Banda Aceh</div><div class=\"my-2\"><strong>Alamat :</strong><br>Jl. Tgk Umum Lueng Bata No. 8 Banda Aceh</div>"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": 24,
+        "daerah": "SUMATRA",
+        "cabang": "Branch Office Jambi",
+        "alamat": "Jl. Kol. Pol M Taher No. 14 Thehok Jambi",
+        "latitude": -1.6102634,
+        "longitude": 103.5394873,
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127623.76738268319!2d103.53948727735249!3d-1.6102633955009478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e25889ab3e2cd3b%3A0xd15a99c70ab2d90d!2sJambi%2C%20Jambi%20City%2C%20Jambi!5e0!3m2!1sen!2sid!4v1675742721497!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/yC9X8eqU98LZe3v57"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [103.5394873, -1.6102634]
+      },
+      "map_popup_content": "<div class=\"my-2\"><strong>Cabang :</strong><br>Branch Office Jambi</div><div class=\"my-2\"><strong>Alamat :</strong><br>Jl. Kol. Pol M Taher No. 14 Thehok Jambi</div>"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": 25,
+        "daerah": "JAWA",
+        "cabang": "Branch Office Purwokerto",
+        "alamat": "Jl. Pahlawan No. 34 Tanjung, Purwokerto Selatan - Purwokerto (sebelah asrama tanjung)",
+        "latitude": -7.4301894,
+        "longitude": 109.1994038,
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63301.06337842288!2d109.1994038482625!3d-7.430189415619753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655c3136423d1d%3A0x4027a76e352e4a0!2sPurwokerto%2C%20Banyumas%20Regency%2C%20Central%20Java!5e0!3m2!1sen!2sid!4v1675742932299!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/F9JBRqUMVb3dZsdo6"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [109.1994038, -7.4301894]
+      },
+      "map_popup_content": "<div class=\"my-2\"><strong>Cabang :</strong><br>Branch Office Purwokerto</div><div class=\"my-2\"><strong>Alamat :</strong><br>Jl. Pahlawan No. 34 Tanjung, Purwokerto Selatan - Purwokerto (sebelah asrama tanjung)</div>"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": 26,
+        "daerah": "BALI NTB & NTT",
+        "cabang": "Branch Office Kupang - NTT AREA",
+        "alamat": "Area Pergudangan Bandari Eltari Kupang Jl. Adisucipto Penfui Kupang",
+        "latitude": -10.1748647,
+        "longitude": 123.5796987,
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62833.13988870957!2d123.57969865701727!3d-10.174864656316553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2c569b6760b37163%3A0x26030bfcc0920532!2sKupang%2C%20Kupang%20City%2C%20East%20Nusa%20Tenggara!5e0!3m2!1sen!2sid!4v1675743849915!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/s1S3GA1KSxkYxeHd9"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [123.5796987, -10.1748647]
+      },
+      "map_popup_content": "\r\n                                            <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Kupang - NTT AREA</div>\r\n                                            <div class=\"my-2\"><strong>Alamat : </strong><br>Area Pergudangan Bandari Eltari Kupang Jl. Adisucipto Penfui Kupang</div>\r\n                                            "
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": 27,
+        "daerah": "SULAWESI",
+        "cabang": "Branch Office Palu",
+        "alamat": "Jl. Lasoso VII Kel. Lere bumi bahari - Palu Barat",
+        "latitude": -0.7892164,
+        "longitude": 119.7591847,
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255324.14865392333!2d119.75918465573604!3d-0.7892163670528559!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d8be9e6aeafc433%3A0xb92c5a1c7cc6055e!2sPalu%20City%2C%20Central%20Sulawesi!5e0!3m2!1sen!2sid!4v1675743994387!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/X3eaU8nD6D6CkpeN7"
+      },
+      "geometry": { "type": "Point", "coordinates": [119.7591847, -0.7892164] },
+      "map_popup_content": "\r\n                                            <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Palu</div>\r\n                                            <div class=\"my-2\"><strong>Alamat : </strong><br>Jl. Lasoso VII Kel. Lere bumi bahari - Palu Barat</div>\r\n                                            "
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": 28,
+        "daerah": "BALI NTB & NTT",
+        "cabang": "Branch Office Mataram",
+        "alamat": "Jl. Dr. Wahiding Gg. Batam No. 3 Rembiga - Mataram 83124",
+        "latitude": -8.5886595,
+        "longitude": 116.0852098,
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63121.22135039458!2d116.08520975172335!3d-8.588659499463821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcdbf591a7f5ec7%3A0x830b122bdd101dc5!2sMataram%20City%2C%20West%20Nusa%20Tenggara!5e0!3m2!1sen!2sid!4v1675744104623!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/avECv8dGJ53b8hQ17"
+      },
+      "geometry": { "type": "Point", "coordinates": [116.0852098, -8.5886595] },
+      "map_popup_content": "\r\n                                            <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Mataram</div>\r\n                                            <div class=\"my-2\"><strong>Alamat : </strong><br>Jl. Dr. Wahiding Gg. Batam No. 3 Rembiga - Mataram 83124</div>\r\n                                            "
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": 29,
+        "daerah": "MALUKU & PAPUA",
+        "cabang": "Branch Office Manokwari",
+        "alamat": "Jl. Trikora Rendani No. 17 Manokawari",
+        "latitude": -0.8614531,
+        "longitude": 134.0620421,
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127659.75569865489!2d134.06204206490332!3d-0.8614531206668015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d540abdb9e20b2d%3A0x52f556dada3216a4!2sManokwari%2C%20Manokwari%20Barat%2C%20Manokwari%20Regency%2C%20West%20Papua!5e0!3m2!1sen!2sid!4v1675744275257!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/VZh1sdxc6WitWyj29"
+      },
+      "geometry": { "type": "Point", "coordinates": [134.0620421, -0.8614531] },
+      "map_popup_content": "\r\n                                            <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Manokwari</div>\r\n                                            <div class=\"my-2\"><strong>Alamat : </strong><br>Jl. Trikora Rendani No. 17 Manokawari</div>\r\n                                            "
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": 30,
+        "daerah": "SUMATRA",
+        "cabang": "Branch Office Pangkal Pinang",
+        "alamat": "Jl. KH Abdul Hamid No. 23 Kota Pangkal Pinang",
+        "latitude": -2.1159086,
+        "longitude": 106.0855071,
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63793.56777428737!2d106.08550713681336!3d-2.115908580889708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e22c86f1508987f%3A0x3039d80b220cfb0!2sPangkalpinang%2C%20Pangkal%20Pinang%20City%2C%20Bangka%20Belitung%20Islands!5e0!3m2!1sen!2sid!4v1675744403931!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/aqZ1kQgRyPbWqAsm7"
+      },
+      "geometry": { "type": "Point", "coordinates": [106.0855071, -2.1159086] },
+      "map_popup_content": "\r\n                                            <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Pangkal Pinang</div>\r\n                                            <div class=\"my-2\"><strong>Alamat : </strong><br>Jl. KH Abdul Hamid No. 23 Kota Pangkal Pinang</div>\r\n                                            "
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": 31,
+        "daerah": "SUMATRA",
+        "cabang": "Branch Office Medan",
+        "alamat": "Jl. Beringin Pasar  7 Tembung Gg. Nangka No. 78 Medan",
+        "latitude": 3.6426183,
+        "longitude": 98.5294042,
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254832.5041561456!2d98.52940416840727!3d3.642618304494601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303131cc1c3eb2fd%3A0x23d431c8a6908262!2sMedan%2C%20Medan%20City%2C%20North%20Sumatra!5e0!3m2!1sen!2sid!4v1675752668527!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/ZQ7hZ7NuHVF6Nw6g8"
+      },
+      "geometry": { "type": "Point", "coordinates": [98.5294042, 3.6426183] },
+      "map_popup_content": "\r\n                                            <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Medan</div>\r\n                                            <div class=\"my-2\"><strong>Alamat : </strong><br>Jl. Beringin Pasar  7 Tembung Gg. Nangka No. 78 Medan</div>\r\n                                            "
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": 32,
+        "daerah": "BALI NTB & NTT",
+        "cabang": "Branch Office Denpasar",
+        "alamat": "Jl. Hayam Wuruk GG XI No. 2 Denpasar, Bali",
+        "latitude": -8.6725072,
+        "longitude": 115.1542321,
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126214.40479572091!2d115.15423209146049!3d-8.672507211724254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2409b0e5e80db%3A0xe27334e8ccb9374a!2sDenpasar%2C%20Denpasar%20City%2C%20Bali!5e0!3m2!1sen!2sid!4v1675753037424!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/eqTBk5S6BPBTvcDA6"
+      },
+      "geometry": { "type": "Point", "coordinates": [115.1542321, -8.6725072] },
+      "map_popup_content": "\r\n                                            <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Denpasar</div>\r\n                                            <div class=\"my-2\"><strong>Alamat : </strong><br>Jl. Hayam Wuruk GG XI No. 2 Denpasar, Bali</div>\r\n                                            "
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": 33,
+        "daerah": "SUMATRA",
+        "cabang": "Branch Office Pekanbaru",
+        "alamat": "Jl. Kayu Jati Perum Puri Utama Blok A 11 Simpang Tiga - Pekanbaru",
+        "latitude": 0.5139625,
+        "longitude": 101.3711348,
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127669.0495089486!2d101.3711347683398!3d0.5139624788557661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d5ab80690ee7b1%3A0x94dde92c3823dbe4!2sPekanbaru%2C%20Pekanbaru%20City%2C%20Riau!5e0!3m2!1sen!2sid!4v1675753104508!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/uwRnEyLHmbJcWfEEA"
+      },
+      "geometry": { "type": "Point", "coordinates": [101.3711348, 0.5139625] },
+      "map_popup_content": "\r\n                                            <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Pekanbaru</div>\r\n                                            <div class=\"my-2\"><strong>Alamat : </strong><br>Jl. Kayu Jati Perum Puri Utama Blok A 11 Simpang Tiga - Pekanbaru</div>\r\n                                            "
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": 34,
+        "daerah": "MALUKU & PAPUA",
+        "cabang": "Branch Office Jayapura",
+        "alamat": "Jl. Raya Sentani Pertigaan Perumnas 5 Samping Ruko Briton - Jayapura",
+        "latitude": -2.5649646,
+        "longitude": 140.6109865,
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127546.27225375318!2d140.61098648295672!3d-2.5649646382950904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x686c581e4ec6ff6b%3A0x26030bfcc0920592!2sJayapura%2C%20Jayapura%20City%2C%20Papua!5e0!3m2!1sen!2sid!4v1675753191121!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/L57U7LbTQ12BQWaQA"
+      },
+      "geometry": { "type": "Point", "coordinates": [140.6109865, -2.5649646] },
+      "map_popup_content": "\r\n                                            <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Jayapura</div>\r\n                                            <div class=\"my-2\"><strong>Alamat : </strong><br>Jl. Raya Sentani Pertigaan Perumnas 5 Samping Ruko Briton - Jayapura</div>\r\n                                            "
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": 35,
+        "daerah": "JAWA",
+        "cabang": "Branch Office Cirebon",
+        "alamat": "Komplek Bumi Linggahara IV No. 3A - 4A Jl. Brigjend Dharsono By Pass Cirebon",
+        "latitude": -6.7605414,
+        "longitude": 108.3014404,
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d507145.77625150676!2d108.30144043634586!3d-6.7605413927757025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f1d0f69dbc5d5%3A0x301e8f1fc28ba20!2sCirebon%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1675753234128!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/R61oh32r3d1P1iP96"
+      },
+      "geometry": { "type": "Point", "coordinates": [108.3014404, -6.7605414] },
+      "map_popup_content": "\r\n                                            <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Cirebon</div>\r\n                                            <div class=\"my-2\"><strong>Alamat : </strong><br>Komplek Bumi Linggahara IV No. 3A - 4A Jl. Brigjend Dharsono By Pass Cirebon</div>\r\n                                            "
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": 36,
+        "daerah": "SUMATRA",
+        "cabang": "Branch Office Palembang",
+        "alamat": "Jl. Soekarno Hatta RT. 032 RW. 005 Talang Kelapa Alang Alang Lebar Palembang",
+        "latitude": -2.9545927,
+        "longitude": 104.4923282,
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255008.93734707034!2d104.49232823911433!3d-2.954592654453076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b75e8fc27a3e3%3A0x3039d80b220d0c0!2sPalembang%2C%20Palembang%20City%2C%20South%20Sumatra!5e0!3m2!1sen!2sid!4v1675753293451!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/nXzy3fYvjfvv3oMY7"
+      },
+      "geometry": { "type": "Point", "coordinates": [104.4923282, -2.9545927] },
+      "map_popup_content": "\r\n                                            <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Palembang</div>\r\n                                            <div class=\"my-2\"><strong>Alamat : </strong><br>Jl. Soekarno Hatta RT. 032 RW. 005 Talang Kelapa Alang Alang Lebar Palembang</div>\r\n                                            "
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": 37,
+        "daerah": "SULAWESI",
+        "cabang": "Branch Office Batam",
+        "alamat": "Komplek Bandara Mas Blok B No. 6 Kel. Belian Kec. Batam Kota, Kota Batam",
+        "latitude": 0.8378426,
+        "longitude": 103.7729086,
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d510642.14344869624!2d103.77290857653554!3d0.8378426445041567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d9bce8c054ce05%3A0x3039d80b220cbb0!2sBatam%2C%20Batam%20City%2C%20Riau%20Islands!5e0!3m2!1sen!2sid!4v1675753357446!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/TSX1SakUzkJwxwpv8"
+      },
+      "geometry": { "type": "Point", "coordinates": [103.7729086, 0.8378426] },
+      "map_popup_content": "\r\n                                            <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Batam</div>\r\n                                            <div class=\"my-2\"><strong>Alamat : </strong><br>Komplek Bandara Mas Blok B No. 6 Kel. Belian Kec. Batam Kota, Kota Batam</div>\r\n                                            "
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": 38,
+        "daerah": "MALUKU & PAPUA",
+        "cabang": "Branch Office Ambon / Maluku",
+        "alamat": "Ruko Cendrawarsih Jl. Cenderawasih No. 20 A3 Soya Kecil - Ambon",
+        "latitude": -3.6810619,
+        "longitude": 128.0299197,
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254821.56168870503!2d128.02991967626744!3d-3.6810618790820024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d6ce8f3208a0567%3A0x96bca2f271eda7aa!2sKota%20Ambon%2C%20Maluku!5e0!3m2!1sen!2sid!4v1675753444540!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/t8nRNh9F3EzWkruY6"
+      },
+      "geometry": { "type": "Point", "coordinates": [128.0299197, -3.6810619] },
+      "map_popup_content": "\r\n                                            <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Ambon / Maluku</div>\r\n                                            <div class=\"my-2\"><strong>Alamat : </strong><br>Ruko Cendrawarsih Jl. Cenderawasih No. 20 A3 Soya Kecil - Ambon</div>\r\n                                            "
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": 39,
+        "daerah": "JAWA",
+        "cabang": "Branch Office Jogja",
+        "alamat": "Pamotan Jambidan, Kec. Banguntapan, Bantul, D.I. Yogyakarta 55195",
+        "latitude": -7.80316,
+        "longitude": 110.3072044,
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63245.984231240735!2d110.30720435121812!3d-7.803160035820593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5787bd5b6bc5%3A0x21723fd4d3684f71!2sYogyakarta%2C%20Yogyakarta%20City%2C%20Special%20Region%20of%20Yogyakarta!5e0!3m2!1sen!2sid!4v1675753490128!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/Vo4h4fuYR1cTzmaB6"
+      },
+      "geometry": { "type": "Point", "coordinates": [110.3072044, -7.80316] },
+      "map_popup_content": "\r\n                                            <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Jogja</div>\r\n                                            <div class=\"my-2\"><strong>Alamat : </strong><br>Pamotan Jambidan, Kec. Banguntapan, Bantul, D.I. Yogyakarta 55195</div>\r\n                                            "
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": 40,
+        "daerah": "JAWA",
+        "cabang": "Branch Office Solo",
+        "alamat": "Jl. Indronoto, Indronatan, Ngabeyan Kec. Kartasura, Kab. Sukoharjo, Jawa Tengah 57166",
+        "latitude": -7.6746436,
+        "longitude": 110.7915398,
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63265.26588864572!2d110.79153979896417!3d-7.6746436196697525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a3c13cf3788cd%3A0x4027a76e35301c0!2sSukoharjo%2C%20Sukoharjo%20Regency%2C%20Central%20Java!5e0!3m2!1sen!2sid!4v1675753583809!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/ppAcViR8wy19SHgx9"
+      },
+      "geometry": { "type": "Point", "coordinates": [110.7915398, -7.6746436] },
+      "map_popup_content": "\r\n                                            <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Solo</div>\r\n                                            <div class=\"my-2\"><strong>Alamat : </strong><br>Jl. Indronoto, Indronatan, Ngabeyan Kec. Kartasura, Kab. Sukoharjo, Jawa Tengah 57166</div>\r\n                                            "
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": 41,
+        "daerah": "JAWA",
+        "cabang": "Branch Office Semarang",
+        "alamat": "Jl. Sadewa 3 No. 13 Kel. Pendrikan Kidul Kec. Semarang Tengah, Semarang - Jawa Tengah",
+        "latitude": -6.9792693,
+        "longitude": 110.4075159,
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.254490243749!2d110.40751591420128!3d-6.979269270281533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708b4c4282f651%3A0x4f627951bc9cfb51!2sJl.%20Sadewa%203%20No.13%2C%20Pendrikan%20Kidul%2C%20Kec.%20Semarang%20Tengah%2C%20Kota%20Semarang%2C%20Jawa%20Tengah%2050131!5e0!3m2!1sen!2sid!4v1675753639021!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/GtegrdyzG35MprQPA"
+      },
+      "geometry": { "type": "Point", "coordinates": [110.4075159, -6.9792693] },
+      "map_popup_content": "\r\n                                            <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Semarang</div>\r\n                                            <div class=\"my-2\"><strong>Alamat : </strong><br>Jl. Sadewa 3 No. 13 Kel. Pendrikan Kidul Kec. Semarang Tengah, Semarang - Jawa Tengah</div>\r\n                                            "
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": 42,
+        "daerah": "JAWA",
+        "cabang": "Branch Office Surabaya",
+        "alamat": "Ruko Pesona Permata Gading 1 Blok L35 Jl. Lingkar Timur Sidoarjo, Jawa Timur",
+        "latitude": -7.4527291,
+        "longitude": 112.7381044,
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.113182328744!2d112.7381044!3d-7.452729100000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e7da09b48be3%3A0x5f15e509334915ec!2sRuko%20Pesona%20Permata%20Gading!5e0!3m2!1sen!2sid!4v1675753786519!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/LuEgVTCuPuEbJmFg9"
+      },
+      "geometry": { "type": "Point", "coordinates": [112.7381044, -7.4527291] },
+      "map_popup_content": "\r\n                                            <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Surabaya</div>\r\n                                            <div class=\"my-2\"><strong>Alamat : </strong><br>Ruko Pesona Permata Gading 1 Blok L35 Jl. Lingkar Timur Sidoarjo, Jawa Timur</div>\r\n                                            "
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": 43,
+        "daerah": "SULAWESI",
+        "cabang": "Branch Office Kendari",
+        "alamat": "Jl. R Suprapto No. 10 Mandonga Kendari 93111",
+        "latitude": -3.9608019,
+        "longitude": 122.5071397,
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.2887975159215!2d122.50713971417396!3d-3.9608019455060184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d98f2f3d4859009%3A0x7f0e12c61fe7142a!2sJl.%20Letjen%20Suprapto%20No.10%2C%20Tobuuha%2C%20Kec.%20Puuwatu%2C%20Kota%20Kendari%2C%20Sulawesi%20Tenggara%2093112!5e0!3m2!1sen!2sid!4v1675753844392!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/wGMeTSdnb9Yo1Duy8"
+      },
+      "geometry": { "type": "Point", "coordinates": [122.5071397, -3.9608019] },
+      "map_popup_content": "\r\n                                            <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Kendari</div>\r\n                                            <div class=\"my-2\"><strong>Alamat : </strong><br>Jl. R Suprapto No. 10 Mandonga Kendari 93111</div>\r\n                                            "
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id_branch": 44,
+        "daerah": "SUMATRA",
+        "cabang": "Branch Office Bengkulu",
+        "alamat": "Graha Timur Indah Estate 3 No. 20 RT. 015/004 Timur Indah Ujung Bengkulu",
+        "latitude": -3.8139238,
+        "longitude": 102.3122209,
+        "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.98220196526!2d102.31222091417281!3d-3.8139238446798815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e36b09cc7df9a01%3A0x88bb87ee0c57e3c5!2sGraha%20Timur%20Indah%20Estate-3!5e0!3m2!1sen!2sid!4v1675753920304!5m2!1sen!2sid",
+        "url": "https://goo.gl/maps/GARSqb8G3dJSCE879"
+      },
+      "geometry": { "type": "Point", "coordinates": [102.3122209, -3.8139238] },
+      "map_popup_content": "\r\n                                            <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Bengkulu</div>\r\n                                            <div class=\"my-2\"><strong>Alamat : </strong><br>Graha Timur Indah Estate 3 No. 20 RT. 015/004 Timur Indah Ujung Bengkulu</div>\r\n"
     }
   ]
 }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { GetServerSideProps } from 'next';
 import Image from 'next/image';
 import ImageSide from 'public/img/feature-bg.png';
 import VisiMisi from '@/components/app/five-section/visi-misi';
@@ -11,8 +12,19 @@ import { ImUsers } from 'react-icons/im';
 import { BsHandThumbsUpFill, BsRulers } from 'react-icons/bs';
 import Counter from '@/components/app/home/counter';
 import Recommendation from '@/components/app/home/recommendation';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale!, ['about/profile'])),
+    },
+  };
+};
 
 export default function Profile() {
+  const { t } = useTranslation('about/profile');
   const [selectedComponent, setSelectedComponent] = useState('');
 
   const renderSelectedComponent = () => {
@@ -34,10 +46,12 @@ export default function Profile() {
 
   return (
     <>
-      <div className="bg-gray-header w-full h-[450px] mb-20 mx-auto grid text-center relative">
+      <div className="relative bg-gray-header w-full h-[450px] mb-20 mx-auto grid text-center">
         <div className="absolute lg:top-1/2 top-[45%] left-0 right-0 text-white">
-          <h3 className="tracking-[6px] mb-3">INFORMASI SEPUTAR PERUSAHAAN</h3>
-          <h1 className="font-bold lg:text-5xl text-4xl">Tentang Kami</h1>
+          <h3 className="tracking-[6px] mb-3">{t('hero.heading')}</h3>
+          <h1 className="font-bold  lg:text-5xl text-4xl">
+            {t('hero.headingTwo')}
+          </h1>
         </div>
       </div>
 
@@ -45,15 +59,15 @@ export default function Profile() {
         <div className="bg-base-blue w-full h-auto mt-24 text-white">
           <div className="md:flex justify-between lg:mx-20 py-14 mx-5">
             <div className="mb-3">
-              <h3 className="text-sm">DAPATKAN RESPON CEPAT DARI TIM KAMI</h3>
+              <h3 className="text-sm">{t('card.title')}</h3>
               <h1 className="lg:text-3xl font-semibold mt-2 text-2xl">
-                JANGAN RAGU MENGHUBUNGI KAMI
+                {t('card.heading')}
               </h1>
             </div>
 
             <div className="button">
               <button className="text-base-blue bg-white px-8 py-4 grid mx-auto items-center">
-                Hubungi Kami
+                {t('card.button')}
               </button>
             </div>
           </div>
@@ -62,38 +76,13 @@ export default function Profile() {
 
       <div className="my-20 lg:ml-28 md:mx-28 xs:mx-0">
         <h1 className="font-bold text-secondary-text text-4xl mb-10 lg-mb-10">
-          PT. Sarana Mulya Logistik
+          {t('sectionTwo.name')}
         </h1>
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           <div className="text-justify">
-            <h3>
-              Didirikan pada tahun 2018, PT. SARANA MULYA LOGISTIK merupakan
-              perusahaan jasa pengiriman yang menyediakan jasa express (Sameday,
-              ONS, Express Standard, Port to Port), regular (Reguler standart
-              dan Kubikasi), container (20ft maupun 40ft), trucking (Blind Van,
-              CDE, CDD, Fuso Tronton, Cold Chain, WingBox) dan exim. Mulai dari
-              niat yang sederhana, Pt. Sarana Mulya Logistik ingin berkontribusi
-              pada Supply Chain di Indonesia. Dan pada saat ini PT. Sarana Mulya
-              Logistik juga ingin berkontribusi pada pemerataan pelayanan
-              kesehatan di Indonesia. Maka dari itu PT. Sarana Mulya Logistik
-              adalah jasa pengiriman yang berfokus pada pengiriman alat
-              kesehatan, farmasi, dan kosmetik.
-            </h3>
-            <h3 className="mt-3">
-              Bagian dari kesuksesan kami berasal dari moto kami You Trust Is
-              Our Mission. Moto ini telah menjadi DNA dalam kehidupan
-              sehari-hari untuk memberikan pelayanan yang terbaik dan
-              bertanggung jawab kepada semua pelanggan. Kepuasan pelanggan
-              sangat penting bagi kami, oleh karena itu kami berkomitmen untuk
-              selalu memberikan standar pelayanan terbaik dan memberikan solusi
-              yang tepat untuk kebutuhan pelanggan.
-            </h3>
-            <h3 className="mt-3">
-              Melalui operasi logistik yang efisien, kami telah melayani klien
-              dari berbagai industri di seluruh wilayah utama Indonesia. Salah
-              satu pertumbuhan strategis utama kami adalah membuka lebih banyak
-              kantor perwakilan di bagian lain Indonesia.
-            </h3>
+            <h3>{t('sectionTwo.desc')}</h3>
+            <h3 className="mt-3">{t('sectionTwo.descTwo')}</h3>
+            <h3 className="mt-3"> {t('sectionTwo.descThree')}</h3>
           </div>
 
           <div className="hidden lg:block">

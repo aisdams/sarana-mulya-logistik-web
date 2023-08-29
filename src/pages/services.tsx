@@ -25,37 +25,37 @@ export default function Services() {
       image: ServiceIm,
       title: 'Express',
       link: '/services-detail/express',
-      desc: 'EXPRESS adalah layanan yang menawarkan jasa pengiriman atau paket door to door dengan waktu yang cepat, sebagian besar melalui jalur udara.',
+      desc: t('card.desc'),
     },
     {
       image: ServiceIm2,
       title: 'Reguler',
       link: '/services-detail/reguler',
-      desc: 'REGULER adalah layanan yang menawarkan jasa pengiriman atau paket door-to-door dengan jalur darat dan laut yang berfokus pada biaya yang lebih efisien dengan tetap memberikan kepastian waktu pengiriman.',
+      desc: t('card.desc2'),
     },
     {
       image: ServiceIm3,
       title: 'Container',
       link: '/services-detail/container',
-      desc: 'CONTAINER adalah layanan yang menawarkan jasa pengiriman paket atau High Value Shipment secara Door-to-door dengan menyediakan Full Container Load atau Less Container Load yang disesuaikan dengan kebutuhan pelanggan.',
+      desc: t('card.desc3'),
     },
     {
       image: ServiceIm4,
       title: 'Trucking',
       link: '/services-detail/trucking',
-      desc: 'TRUCKING adalah layanan yang menawarkan jasa pengiriman paket atau High Value Shipment secara door-to-door dengan menyediakan Full Trucking Load atau Less Trucking Load yang disesuaikan dengan kebutuhan pelanggan.',
+      desc: t('card.desc4'),
     },
     {
       image: ServiceIm5,
       title: 'EXIM (EXPORT IMPORT)',
       link: '/services-detail/exim',
-      desc: 'EXIM (EXPORT IMPORT) adalah layanan yang menawarkan jasa pengiriman, baik export maupun import door to door container maupun kg-base, serta layanan custom clearance. Layanan ini hadir dengan dua pilihan, Air Freight dan Sea Freight.',
+      desc: t('card.desc5'),
     },
     {
       image: ServiceIm6,
       title: 'LINKEXPRESS',
       link: '/services-detail/linkex',
-      desc: 'LINKEXPRESS adalah layanan yang menawarkan jasa pengiriman e-commerce dengan standar layanan reguler dengan leadtime terbaik.',
+      desc: t('card.desc6'),
     },
   ];
 
@@ -82,7 +82,7 @@ export default function Services() {
                 />
               </div>
               <Link href={service.link}>
-                <h3 className="text-2xl my-3 group-hover:text-base-blue hover:border-b-2 border-base-blue w-max">
+                <h3 className="text-xl my-3 group-hover:text-base-blue hover:border-b-2 border-base-blue w-max">
                   {service.title}
                 </h3>
               </Link>

@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import { GetServerSideProps } from 'next';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectFade } from 'swiper/modules';
 import 'swiper/css';
@@ -12,32 +12,41 @@ import HeaderThree from 'public/img/3.png';
 import { BsPlayFill } from 'react-icons/bs';
 import SpeedDial from '@/pages/speed-dial';
 import Link from 'next/link';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-// Gambar dan konten teks untuk setiap slide
-const slides = [
-  {
-    image: HeaderOne,
-    title: 'SARANA MULYA LOGISTIK',
-    subtitle: 'YOUR DELIVERY PARTNERT',
-    description:
-      'JAGONYA REMOTE AREA - MENJANGKAU 514 KOTA/KABUPATEN DI INDONESIA',
-  },
-  {
-    image: HeaderTwo,
-    title: 'SARANA MULYA LOGISTIK',
-    subtitle: 'YOUR TRUST OUR MISSION',
-    description:
-      'TELAH BEKERJA SAMA DENGAN 200+ PERUSAHAAN DAN MELAKUKAN 20000+ PENGIRIMAN',
-  },
-  {
-    image: HeaderThree,
-    title: 'SARANA MULYA LOGISTIK',
-    subtitle: 'HEALTHCARE DELIVERY',
-    description: 'RAJANYA PENGIRIMAN ALAT KESEHATAN FARMASI DAN KOSMETIK',
-  },
-];
+// export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+//   return {
+//     props: {
+//       ...(await serverSideTranslations(locale!, ['home/header'])),
+//     },
+//   };
+// };
 
 export default function Header() {
+  const { t } = useTranslation('home/header');
+
+  const slides = [
+    {
+      image: HeaderOne,
+      title: 'SARANA MULYA LOGISTIK',
+      subtitle: 'YOUR DELIVERY PARTNERT',
+      description: t('childOne.title'),
+    },
+    {
+      image: HeaderTwo,
+      title: 'SARANA MULYA LOGISTIK',
+      subtitle: 'YOUR TRUST OUR MISSION',
+      description:
+        'TELAH BEKERJA SAMA DENGAN 200+ PERUSAHAAN DAN MELAKUKAN 20000+ PENGIRIMAN',
+    },
+    {
+      image: HeaderThree,
+      title: 'SARANA MULYA LOGISTIK',
+      subtitle: 'HEALTHCARE DELIVERY',
+      description: 'RAJANYA PENGIRIMAN ALAT KESEHATAN FARMASI DAN KOSMETIK',
+    },
+  ];
   return (
     <div className="relative">
       <Swiper

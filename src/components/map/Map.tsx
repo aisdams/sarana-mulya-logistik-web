@@ -43,7 +43,7 @@ const Map: React.FC<MapProps> = ({ geoJsonData, setSelectedDaerah }) => {
   const [mapState, setMapState] = React.useState({
     lat: initialCenter[1],
     lng: initialCenter[0],
-    zoom: 7,
+    zoom: 3,
   });
 
   return (
@@ -51,7 +51,7 @@ const Map: React.FC<MapProps> = ({ geoJsonData, setSelectedDaerah }) => {
       center={[mapState.lat, mapState.lng]}
       zoom={mapState.zoom}
       scrollWheelZoom={false}
-      style={{ height: '40vh', width: '100wh' }}
+      style={{ height: '50vh', width: '100%', zIndex: 0 }}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

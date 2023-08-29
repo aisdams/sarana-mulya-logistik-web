@@ -13,7 +13,7 @@ const config: Config = {
         'secondary-text': '#2b2b2b',
         'gray-text': '#acb4b8',
         'gray-header': '#374b56',
-        'brown-gray': '#bc9b91',
+        'brown-gray': '#b3a5a7',
         'blue-navy': '#162133',
         'gray-secondary': '#6f6b66',
         'dark-blue': '#051922',

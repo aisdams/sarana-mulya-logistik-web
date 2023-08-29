@@ -100,7 +100,7 @@ export default function Navbar({ isScrolled }: NavbarProps) {
             <p className="font-bold">{flagToggle ? 'EN' : 'ID'}</p>
             <BiSolidDownArrow className="text-[9px]" />
             {languageDropdownOpen && (
-              <ul className="absolute top-full text-[13px] gap-y-2 py-2 grid right-0 mt-2 rounded-sm w-[6rem] p-3 shadow-[-5px_10px_10px_0px_rgba(0,0,0,0.4)]">
+              <ul className="absolute top-full text-[13px] gap-y-2 py-2 grid right-0 mt-2 rounded-sm w-[6rem] p-3 shadow-[-5px_10px_10px_0px_rgba(0,0,0,0.4)] bg-white text-black">
                 <li className="flex gap-3">
                   <Image src={flagToggle ? Flag : FlagEng} alt="" width={40} />
                   <button

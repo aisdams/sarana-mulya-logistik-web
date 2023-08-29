@@ -1,5 +1,5 @@
 {
-  "pahlawan": {
+  "hero": {
     "title": "DAPATKAN DUKUNGAN 24/7",
     "subtitle": "Hubungi kami"
   },
@@ -8,12 +8,12 @@
     "title": "Kantor Pusat",
     "desc": "Citra Grand Cibubur CBD Jalan Citra Grand II Blok AR18 - 19 Kota Bekasi, Jawa Barat 17435.",
     "titleTwo": "Jam Kerja",
-    "descSatu": "Senin - Jumat: 09:00 - 17:00",
-    "descDua": "Sabtu: 09:00 - 14:00",
-    "descTiga": "Minggu: Tutup",
-    "titleThree": "Kantor Pusat",
+    "descOne": "Senin - Jumat: 09:00 - 17:00",
+    "descTwo": "Sabtu: 09:00 - 14:00",
+    "descThree": "Minggu: Tutup",
+    "titleThree": "Kontak",
     "email": "Email: info@saranamulyalogisticscorp.com",
-    "telepon": "Telepon: +62 858-1055-8522"
+    "phone": "Telepon: +62 858-1055-8522"
   },
-  "lokasi": "Temukan Lokasi Kami"
+  "location": "Temukan Lokasi Kami"
 }
