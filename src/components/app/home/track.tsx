@@ -15,15 +15,15 @@ export default function Track() {
   const { t } = useTranslation('track');
 
   return (
-    <div className="grid lg:grid-cols-2 my-20">
-      <h1 className="text-base-blue font-bold text-[2.7rem] leading-none mb-5 lg:mb-0">
+    <div className="grid lg:grid-cols-2 my-20 mx-5">
+      <h1 className="text-base-blue font-bold lg:text-[2.7rem] leading-none mb-5 lg:mb-0 text-3xl">
         LACAK <br /> KIRIMAN ANDA
       </h1>
 
       <div>
         <div className="flex gap-5 mb-4">
           <button
-            className={`px-10 py-4 ${
+            className={`lg:px-10 px-5 lg:py-4 ${
               activeButton === 'lacakStatusPod' ? 'text-white bg-blue-400' : ''
             }`}
             onClick={() => handleButtonClick('lacakStatusPod')}
@@ -31,7 +31,7 @@ export default function Track() {
             Lacak Status POD
           </button>
           <button
-            className={`px-10 py-4 ${
+            className={`lg:px-10 px-5 lg:py-4 ${
               activeButton === 'lacakStatusResi' ? 'text-white bg-blue-400' : ''
             }`}
             onClick={() => handleButtonClick('lacakStatusResi')}

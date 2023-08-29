@@ -46,10 +46,10 @@ export default function Contact() {
           </h1>
         </div>
       </div>
-      <div className="my-28 lg:mx-24 mx-10">
+      <div className="my-28 lg:mx-24 mx-5">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           <div className="">
-            <h1 className="font-bold text-3xl text-secondary-text">
+            <h1 className="font-bold lg:text-3xl text-2xl text-secondary-text">
               {t('titlecec')}
             </h1>
             <div className="mt-8">
@@ -95,9 +95,9 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="block mt-5 lg:mt-0">
+          <div className="grid mt-5">
             {Contacts.map((contact, idx) => (
-              <div className="flex mb-10 gap-5" key={idx}>
+              <div className="lg:flex grid mb-10 gap-5" key={idx}>
                 <div className="text-base-blue text-4xl">{contact.icon}</div>
                 <div>
                   <h1 className="font-semibold text-xl mb-2 text-secondary-text">

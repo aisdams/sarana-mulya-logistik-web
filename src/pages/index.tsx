@@ -45,7 +45,7 @@ export default function Home() {
       <div className="lg:mr-28 xs:mr-0">
         <Sliders />
       </div>
-      <div className="lg:mx-28 xs:mx-0">
+      <div className="lg:mx-28 mx-5">
         <Blog />
         <Counter />
         <Testimoni />

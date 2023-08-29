@@ -43,7 +43,7 @@ const Services = [
 
 export default function OurService() {
   return (
-    <div className="my-20">
+    <div className="my-20 mx-5">
       <h1 className="text-secondary-text text-3xl font-bold">
         <span className="text-base-blue">Layanan</span> Kami
       </h1>

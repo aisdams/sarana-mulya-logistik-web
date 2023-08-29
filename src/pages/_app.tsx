@@ -9,6 +9,10 @@ import { ReactElement, ReactNode, useEffect, useState } from 'react';
 import { NextPage } from 'next';
 import { FaBars } from 'react-icons/fa';
 import Sidebar from '@/components/layouts/sidebar';
+import Loader from '@/components/loader/loader';
+import { Router } from 'next/router';
+import ImageSML from '../../public/img/icon2.png';
+import Image from 'next/image';
 
 export type NextPageCustomLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -24,8 +28,10 @@ function App({
   const getLayout = Component.getLayout ?? ((page) => page);
 
   const [isScrolled, setIsScrolled] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(0); // Track window width
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to track menu open/close
+  const [windowWidth, setWindowWidth] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isLoaderVisible, setIsLoaderVisible] = useState(false);
 
   const handleScroll = () => {
     setIsScrolled(window.scrollY > 0);
@@ -44,7 +50,7 @@ function App({
     window.addEventListener('contextmenu', preventRightClick);
 
     // Initial check on mount
-    setWindowWidth(window.innerWidth); // Track window width on mount
+    setWindowWidth(window.innerWidth);
     handleWindowSizeChange(window.innerWidth);
 
     return () => {
@@ -62,7 +68,7 @@ function App({
   useEffect(() => {
     const handleResize = () => {
       const newWindowWidth = window.innerWidth;
-      setWindowWidth(newWindowWidth); // Update window width on resize
+      setWindowWidth(newWindowWidth);
       handleWindowSizeChange(newWindowWidth);
     };
 
@@ -73,8 +79,32 @@ function App({
     };
   }, []);
 
+  const startLoading = () => {
+    setIsLoading(true);
+    setIsLoaderVisible(true);
+  };
+
+  const stopLoading = () => {
+    setIsLoading(false);
+    setIsLoaderVisible(false);
+  };
+
+  useEffect(() => {
+    Router.events.on('routeChangeStart', startLoading);
+    Router.events.on('routeChangeComplete', stopLoading);
+    Router.events.on('routeChangeError', stopLoading);
+
+    return () => {
+      Router.events.off('routeChangeStart', startLoading);
+      Router.events.off('routeChangeComplete', stopLoading);
+      Router.events.off('routeChangeError', stopLoading);
+    };
+  }, []);
+
   return (
     <>
+      {isLoading && isLoaderVisible && <Loader />}
+
       <Head>
         <title>SARANA MULYA LOGISTIK</title>
         <meta name="keywords" key="keywords" content="Sarana Mulya Logistik" />
@@ -91,11 +121,18 @@ function App({
         <div className={`relative ${isScrolled ? 'bg-white shadow' : ''}`}>
           {/* Conditionally render menu icon */}
           {windowWidth < 992 && (
-            <div
-              className="menu-icon absolute z-20 right-10 top-10 text-white bg-base-blue p-2"
-              onClick={toggleMenu}
-            >
-              <FaBars className="text-xl" />
+            <div className="flex items-center">
+              <Image
+                src={ImageSML}
+                alt=""
+                className="w-32 absolute top-10 z-20 brightness-[100] left-3"
+              />
+              <div
+                className="menu-icon absolute z-20 right-10 top-10 text-white bg-base-blue p-2"
+                onClick={toggleMenu}
+              >
+                <FaBars className="text-xl" />
+              </div>
             </div>
           )}
 

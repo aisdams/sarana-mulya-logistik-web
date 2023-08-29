@@ -3,7 +3,7 @@ import Recommendation1 from 'public/img/cta-bg.png';
 
 export default function OurMission() {
   return (
-    <div className="w-full h-full mt-20 relative">
+    <div className="w-full h-full relative">
       <div
         className="h-[360px] bg-cover bg-fixed"
         style={{ backgroundImage: `url(${Recommendation1.src})` }}

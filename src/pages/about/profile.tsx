@@ -74,7 +74,7 @@ export default function Profile() {
         </div>
       </div>
 
-      <div className="my-20 lg:ml-28 md:mx-28 xs:mx-0">
+      <div className="my-20 lg:ml-28 md:mx-28 mx-5">
         <h1 className="font-bold text-secondary-text text-4xl mb-10 lg-mb-10">
           {t('sectionTwo.name')}
         </h1>
@@ -142,7 +142,7 @@ export default function Profile() {
       </div>
       <div>{renderSelectedComponent()}</div>
 
-      <div className="lg:mx-28 mx-3">
+      <div className="lg:mx-28 mx-3 mb-20">
         <Counter />
         <div className="!my-32">
           <Recommendation />

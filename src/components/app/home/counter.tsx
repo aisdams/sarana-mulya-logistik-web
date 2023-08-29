@@ -31,7 +31,7 @@ export default function Counter() {
       <h5 className="text-base-blue">Fakta</h5>
       <div className="grid lg:grid-cols-2">
         <div>
-          <h1 className="font-bold text-3xl my-5 text-secondary-text">
+          <h1 className="font-bold lg:text-3xl text-2xl my-5 text-secondary-text">
             Jasa Pengiriman Alat Kesehatan & Farmasi Terbaik di Indonesia
           </h1>
           <p className="text-secondary-text text-sm">

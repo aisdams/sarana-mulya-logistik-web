@@ -1,0 +1,39 @@
+{
+  "hero": {
+    "title": "INFORMASI",
+    "desc": "Syarat"
+  },
+  "titleSideLeft": {
+    "title": "Informasi paket",
+    "title2": "Barang Berbahaya",
+    "title3": "Dilarang"
+  },
+  "sideLeftOne": {
+    "title": "Barang berbahaya kelas 1: Barang yang mudah meledak",
+    "desc": "Kembang Api, Amunisi/Kartrid, Inflator Kantung Udara, Komposisi TNT, Suar, Bom",
+    "title2": "Barang berbahaya kelas 2: Gas bertekanan, mudah terbakar jika ditekan/bergerak",
+    "desc2": "Aerosol, Tabung gas (isi), Silikon, Fire Stop, Kutek, Gas CO2, Butana, Hidrogen",
+    "title3": "Barang berbahaya kelas 3: Cairan yang mudah terbakar",
+    "desc3": "Lem, Parfum, Cat kaleng, Oli, Sanpoly, Toner, Bensin mengapung",
+    "title4": "Barang berbahaya kelas 4: Padatan yang mudah terbakar",
+    "desc4": "Logam alkali, Aluminium fosfat, Karbon, Kamper, Kain berminyak, Belerang, Korek api",
+    "title5": "Barang berbahaya kelas 5: Barang yang mudah menghasilkan O2",
+    "desc5": "Peroksida organik, Zat pengoksidasi",
+    "title6": "Barang berbahaya kelas 6: Gas beracun, Zat menular",
+    "desc6": "Obat tanaman, bubuk toner, insektisida",
+    "title7": "Barang berbahaya kelas 7: Bahan radioaktif",
+    "desc7": "Bahan radioaktif",
+    "title8": "Barang berbahaya kelas 8: Korosif",
+    "desc8": "Cairan Korosif, Cairan pembersih kerak",
+    "title9": "Barang berbahaya kelas 9: Zat dan barang berbahaya lainnya",
+    "desc9": "Baterai, Tangki kosong, Baterai darurat, Baterai laptop, Power bank, Baterai kering, Laptop, Cairan racun serangga, Zippo, Timbangan digital, Mikropon, Dinamo, Kepala silinder, Magnet, Baterai litium"
+  },
+  "sisiKiriDua": {
+    "title": "Organ Tubuh Manusia",
+    "title2": "Bahan Makanan Kering",
+    "title3": "Hewan Hidup",
+    "title4": "Barang yang termasuk dalam kategori narkotika dan obat-obatan terlarang seperti ganja, morfin, opium, sabu-sabu, putau, ekstasi, dan sejenisnya",
+    "judul5": "Barang-barang yang mengandung unsur pornografi dalam bentuk cetakan, foto, rekaman, film, dan sejenisnya termasuk terbitan-terbitan lain yang dilarang oleh Pemerintah",
+    "judul6": "Barang lain yang dapat membahayakan keamanan dan keselamatan selama pengangkutan"
+  }
+}

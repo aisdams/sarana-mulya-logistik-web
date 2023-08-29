@@ -56,7 +56,7 @@ export default function Branch() {
         </div>
       </div>
 
-      <div className="">
+      <div className="mb-20">
         <div className="">
           <div id="map ">
             {geoJsonDataState && (

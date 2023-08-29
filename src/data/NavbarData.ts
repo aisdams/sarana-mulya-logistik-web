@@ -46,12 +46,12 @@ const NavbarData = [
       {
         title: 'BLOG ',
         type: 'info',
-        link: '/blog',
+        link: '/information/blog',
       },
       {
         title: 'BERITA ',
         type: 'info',
-        link: '/berita',
+        link: '/information/news',
       },
       {
         title: 'SYARAT',

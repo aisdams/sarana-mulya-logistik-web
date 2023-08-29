@@ -24,7 +24,7 @@ export default function Client() {
         </div>
       </div>
 
-      <div className="mx-28">
+      <div className="lg:mx-28 mb-20 mx-10">
         <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 mx-auto">
           {ClientData.map((client, idx) => (
             <div

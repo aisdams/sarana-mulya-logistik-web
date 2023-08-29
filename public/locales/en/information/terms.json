@@ -1,0 +1,39 @@
+{
+  "hero": {
+    "title": "INFORMATION",
+    "desc": "Terms"
+  },
+  "titleSideLeft": {
+    "title": "Package information",
+    "title2": "Dangerous Good",
+    "title3": "Prohibited"
+  },
+  "sideLeftOne": {
+    "title": "Class 1 dangerous goods: Explosive items",
+    "desc": "Fireworks, Ammunition/Cartridges, Airbag Inflators, TNT Composition, Flares, Bombs",
+    "title2": "Class 2 dangerous goods: Pressurized gas, flammable if pressed/volatile",
+    "desc2": "Aerosol, Gas cylinder (filled), Silicone, Fire Stop, Kutek, CO2 gas, Butane, Hydrogen",
+    "title3": "Class 3 dangerous goods: Flammable liquids",
+    "desc3": "Glue, Perfume, Paint can, Oil, Sanpoly, Toner, Gasoline float",
+    "title4": "Class 4 dangerous goods: Flammable solids",
+    "desc4": "Alkali metal, Aluminum phosphite, Carbon, Camphor, Oily cloth, Sulfur, Matches",
+    "title5": "Class 5 dangerous goods: Items that easily produce O2",
+    "desc5": "Organic peroxides, Oxidizing agents",
+    "title6": "Class 6 dangerous goods: Poisonous gases, Infectious substances",
+    "desc6": "Plant medicine, toner powder, insecticide",
+    "title7": "Class 7 dangerous goods: Radioactive material",
+    "desc7": "Radioactive material",
+    "title8": "Class 8 dangerous goods: Corrosive",
+    "desc8": "Corrosive Liquid, Descaling tryr liquid",
+    "title9": "Class 9 dangerous goods: Other dangerous substances and articles",
+    "desc9": "Battery, Empty tank, Emergency battery, Laptop battery, Power bank, Dry battery, Laptop, Insect poison liquid, Zippo, Digital scale, Mic, Dynamo, Cylinder head, Magnet, Lithium battery"
+  },
+  "sideLeftTwo": {
+    "title": "Human Organ",
+    "title2": "Dried Foodstuffs",
+    "title3": "Live Animals",
+    "title4": "Goods that fall under the category of narcotics and illegal drugs such as marijuana, morphine, opium, methamphetamine, putau, ecstasy, and the like",
+    "title5": "Items with pornographic elements in the form of prints, photographs, recordings, films, and the like including other publications prohibited by the Government",
+    "title6": "Other goods that may endanger security and safety during transportation"
+  }
+}

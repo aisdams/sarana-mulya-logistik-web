@@ -55,7 +55,7 @@ const Recommendations = [
 
 export default function Recommendation() {
   return (
-    <div className="my-20 mx-3">
+    <div className="mt-20 mb-40 ">
       <Swiper
         slidesPerView={1}
         spaceBetween={30}
@@ -67,11 +67,9 @@ export default function Recommendation() {
         breakpoints={{
           '360': {
             slidesPerView: 1,
-            spaceBetween: 20,
           },
           '576': {
             slidesPerView: 1,
-            spaceBetween: 20,
           },
           '768': {
             slidesPerView: 3,
@@ -87,7 +85,7 @@ export default function Recommendation() {
       >
         {Recommendations.map((rec, idx) => (
           <SwiperSlide key={idx}>
-            <Image src={rec.image} alt="" className="w-[180px]" />
+            <Image src={rec.image} alt="" className="w-[180px] mx-auto " />
           </SwiperSlide>
         ))}
       </Swiper>
