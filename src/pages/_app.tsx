@@ -1,4 +1,3 @@
-'use client';
 import '@/styles/globals.css';
 import { AppProps } from 'next/app';
 import { appWithTranslation } from 'next-i18next';
@@ -11,7 +10,7 @@ import { NextPage } from 'next';
 import { FaBars } from 'react-icons/fa';
 import Sidebar from '@/components/layouts/sidebar';
 import Loader from '@/components/loader/loader';
-import { Router, useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import ImageSML from '../../public/img/icon2.png';
 import Image from 'next/image';
 
@@ -19,7 +18,6 @@ export type NextPageCustomLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
   theme?: string;
 };
-
 function App({
   Component,
   pageProps,
@@ -33,8 +31,6 @@ function App({
   const [isScrolled, setIsScrolled] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(false); // Ubah ke 'true' agar loader merah muncul saat pertama kali membuka situs
-  const [isLoaderVisible, setIsLoaderVisible] = useState(true); // Ubah ke 'true' agar loader merah muncul saat pertama kali membuka situs
 
   const handleScroll = () => {
     setIsScrolled(window.scrollY > 0);
@@ -52,7 +48,6 @@ function App({
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('contextmenu', preventRightClick);
 
-    // Initial check on mount
     setWindowWidth(window.innerWidth);
     handleWindowSizeChange(window.innerWidth);
 
@@ -82,39 +77,17 @@ function App({
     };
   }, []);
 
-  const startLoading = () => {
-    setIsLoading(true);
-    setIsLoaderVisible(true);
-  };
-
-  const stopLoading = () => {
-    setIsLoading(false);
-    setIsLoaderVisible(false);
-  };
-
   useEffect(() => {
-    // Jalankan loader pada setiap perubahan rute
     const handleRouteChangeStart = () => {
-      startLoading();
-    };
-    const handleRouteChangeComplete = () => {
-      stopLoading();
-    };
-    const handleRouteChangeError = () => {
-      stopLoading();
+      setIsMenuOpen(false); // Close menu when route changes start
     };
 
     router.events.on('routeChangeStart', handleRouteChangeStart);
-    router.events.on('routeChangeComplete', handleRouteChangeComplete);
-    router.events.on('routeChangeError', handleRouteChangeError);
 
-    // Bersihkan event listener saat komponen unmount
     return () => {
       router.events.off('routeChangeStart', handleRouteChangeStart);
-      router.events.off('routeChangeComplete', handleRouteChangeComplete);
-      router.events.off('routeChangeError', handleRouteChangeError);
     };
-  }, [router.events]); // Tambahkan router.events sebagai dependensi
+  }, [router.events]);
 
   return (
     <>
@@ -131,33 +104,17 @@ function App({
         />
       </Head>
       <AppProvider>
-        {isLoading && isLoaderVisible && (
-          <div className="loader-container">
-            <Loader />
-          </div>
-        )}
         <div className={`relative ${isScrolled ? 'bg-white shadow' : ''}`}>
-          {/* Conditionally render menu icon */}
           {windowWidth < 992 && (
             <div className="flex items-center">
-              <Image
-                src={ImageSML}
-                alt=""
-                className="w-32 absolute top-10 z-20 brightness-[100] left-3"
-              />
-              <div
-                className="menu-icon absolute z-20 right-10 top-10 text-white bg-base-blue p-2"
-                onClick={toggleMenu}
-              >
-                <FaBars className="text-xl" />
-              </div>
+              {/* ... (Image and menu toggle icon) */}
             </div>
           )}
 
-          {/* Render content based on menu icon state */}
           {isMenuOpen && (
             <>
               <Sidebar />
+              <Loader />
               {getLayout(<Component {...pageProps} />)}
               <Footer />
             </>
@@ -165,8 +122,8 @@ function App({
 
           {!isMenuOpen && (
             <>
-              {/* Render Navbar, Component, and Footer */}
               <Navbar isScrolled={isScrolled} />
+              <Loader />
               {getLayout(<Component {...pageProps} />)}
               <Footer />
             </>

@@ -2436,7 +2436,7 @@ react-hook-form@^7.45.4:
   resolved "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.45.4.tgz"
   integrity sha512-HGDV1JOOBPZj10LB3+OZgfDBTn+IeEsNOKiq/cxbQAIbKaiJUe/KV8DBUzsx0Gx/7IG/orWqRRm736JwOfUSWQ==
 
-react-i18next@^13.0.0, react-i18next@^13.2.0:
+react-i18next@^13.0.0, react-i18next@^13.2.1:
   version "13.2.1"
   resolved "https://registry.npmjs.org/react-i18next/-/react-i18next-13.2.1.tgz"
   integrity sha512-XhMsnGgJnytWfi2Q70HMYfm+zysPUu1Pz+It6I87WwaeclGY+W8W1c11uENEMNg+Xb+mNrGuo8GEDuQDOgO+oQ==

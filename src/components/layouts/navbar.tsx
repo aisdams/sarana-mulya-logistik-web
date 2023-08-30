@@ -11,6 +11,7 @@ import { BiSolidDownArrow } from 'react-icons/bi';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { DropdownMenu, Trigger, Content } from '@radix-ui/react-dropdown-menu';
 
 interface NavbarProps {
   isScrolled: boolean;
@@ -38,12 +39,22 @@ export default function Navbar({ isScrolled }: NavbarProps) {
     setLanguageDropdownOpen((prevState) => !prevState); // Toggle dropdown bahasa
   };
 
-  const handleFlagToggle = () => {
-    handleLanguageDropdownToggle(); // Close the dropdown when toggling flag
-    const newLocale = router?.locale === 'id' ? 'en' : 'id';
-    if (i18n) {
-      i18n.changeLanguage(newLocale); // Change the language without altering default locale
-    }
+  const LanguageToggle = () => {
+    const currentLocale = router.locale;
+
+    const toggleLanguage = () => {
+      const newLocale = currentLocale === 'id' ? 'en' : 'id';
+      router.push(router.pathname, `/${newLocale}${router.asPath}`, {
+        locale: newLocale,
+      });
+      // router.push(router.pathname, router.asPath, { locale: newLocale });
+    };
+
+    return (
+      <button onClick={toggleLanguage}>
+        {currentLocale === 'id' ? 'INDONESIA' : 'ENGLISH'}
+      </button>
+    );
   };
 
   return (
@@ -72,7 +83,7 @@ export default function Navbar({ isScrolled }: NavbarProps) {
               onMouseEnter={() => handleMouseEnter(idx)}
               onMouseLeave={handleMouseLeave}
             >
-              <a href={navbar.link}>
+              <a href={`/${router.locale}${navbar.link}`}>
                 <h1>{navbar.title} </h1>
               </a>
               {navbar.children && (
@@ -101,30 +112,27 @@ export default function Navbar({ isScrolled }: NavbarProps) {
         </div>
 
         <div className="flex gap-5 items-center">
-          <div
-            className="flex gap-3 cursor-pointer relative items-center"
-            onClick={handleLanguageDropdownToggle}
-          >
+          <div className="flex gap-3 cursor-pointer relative items-center">
             <Image
-              src={router?.locale === 'id' ? Flag : FlagEng}
+              src={router?.locale === 'en' ? FlagEng : Flag}
               alt=""
               width={40}
             />
-            <p className="font-bold">{flagToggle ? 'ID' : 'EN'}</p>
+            <LanguageToggle />
             <BiSolidDownArrow className="text-[9px]" />
             {languageDropdownOpen && (
               <ul className="absolute top-full text-[13px] gap-y-2 py-2 grid right-0 mt-2 rounded-sm w-[6rem] p-3 shadow-[-5px_10px_10px_0px_rgba(0,0,0,0.4)] bg-white text-black">
                 <li>
                   <button
                     className="hover:text-base-blue font-medium flex gap-3 items-center"
-                    onClick={handleFlagToggle}
+                    onClick={handleLanguageDropdownToggle}
                   >
                     <Image
-                      src={router?.locale === 'en' ? Flag : FlagEng} // Switch the flag image
+                      src={router?.locale === 'en' ? FlagEng : Flag}
                       alt=""
                       width={40}
                     />
-                    {flagToggle ? 'EN' : 'ID'}
+                    {router?.locale === 'id' ? 'ENGLISH' : 'INDONESIA'}
                   </button>
                 </li>
                 {/* You can add more language options here */}
@@ -132,9 +140,11 @@ export default function Navbar({ isScrolled }: NavbarProps) {
             )}
           </div>
 
-          <button className="login border-2 border-blue-300 py-2 px-3 text-base font-semibold">
-            <Link href="https://sml.ops.odisys.id/auth">Login</Link>
-          </button>
+          <Link href={`/${router.locale}/auth`} legacyBehavior>
+            <a className="login border-2 border-blue-300 py-2 px-3 text-base font-semibold">
+              Login
+            </a>
+          </Link>
         </div>
       </div>
     </div>

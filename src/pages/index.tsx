@@ -13,11 +13,10 @@ import FAQ from '@/components/app/home/faq';
 import Recommendation from '@/components/app/home/recommendation';
 import { GetServerSideProps } from 'next';
 
-export const getStaticProps: GetServerSideProps = async ({ locale }) => {
-  const selectedLocale = locale || 'id'; // Default to 'en' if locale is not provided
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(selectedLocale, [
+      ...(await serverSideTranslations(locale!, [
         'home/header',
         'home/track',
         'home/why',

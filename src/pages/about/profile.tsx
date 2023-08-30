@@ -78,7 +78,7 @@ export default function Profile() {
         <h1 className="font-bold text-[#666666]-text text-4xl mb-10 lg-mb-10">
           {t('sectionTwo.name')}
         </h1>
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 items-center relative -top-14">
           <div className="text-justify">
             <h3>{t('sectionTwo.desc')}</h3>
             <h3 className="mt-3">{t('sectionTwo.descTwo')}</h3>
