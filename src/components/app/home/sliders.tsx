@@ -8,23 +8,30 @@ import ImageAnn from 'public/img/ann/322.jpg';
 import ImageAnn2 from 'public/img/ann/311.jpg';
 import ImageAnn3 from 'public/img/ann/300.jpg';
 import Image from 'next/image';
-
-const Anns = [
-  {
-    Image: ImageAnn,
-    title: `“Hai Saraners ! Yuk kita bermain pantun dengan karyawan sarana mulya logistik, semoga terhibur.”`,
-  },
-  {
-    Image: ImageAnn2,
-    title: `“Berikut tipe - tipe customer & solusi layanannya, simak videonya sampai habis, semoga bermanfaat. ”`,
-  },
-  {
-    Image: ImageAnn3,
-    title: `“Berikut prosedur pengiriman barang jalur udara, simak videonya sampai habis, semoga bermanfaat.”`,
-  },
-];
+import Link from 'next/link';
+import { useTranslation } from 'next-i18next';
 
 export default function Sliders() {
+  const { t } = useTranslation('home/slider');
+
+  const Anns = [
+    {
+      Image: ImageAnn,
+      title: t('slider.title'),
+      link: 'https://www.youtube.com/watch?v=p9-HgzQ76gw',
+    },
+    {
+      Image: ImageAnn2,
+      title: t('slider.title2'),
+      link: 'https://www.youtube.com/watch?v=9cET48zjfbQ',
+    },
+    {
+      Image: ImageAnn3,
+      title: t('slider.title3'),
+      link: 'https://www.youtube.com/watch?v=wMRxu9xMlXY',
+    },
+  ];
+
   return (
     <div className="my-20">
       <Swiper
@@ -34,6 +41,7 @@ export default function Sliders() {
           delay: 2500,
           disableOnInteraction: false,
         }}
+        loop={true}
         pagination={{
           clickable: true,
         }}
@@ -44,14 +52,26 @@ export default function Sliders() {
         {Anns.map((ann, idx) => (
           <SwiperSlide key={idx}>
             <div className="lg:flex grid">
-              <Image src={ann.Image} alt="" width={600} className="w-full" />
+              <Image
+                src={ann.Image}
+                alt=""
+                width={700}
+                height={400}
+                className="w-full"
+              />
               <div className="py-[7rem] px-[3.5rem]">
-                <h3 className="text-secondary-text text-[14px] leading-relaxed">
+                <h3 className="text-secondary-text text-[14px] leading-relaxed mb-3">
                   {ann.title}
                 </h3>
-                <button className="bg-base-blue text-white text-sm px-2 py-1 mt-5 rounded-md">
-                  Klik Disini
-                </button>
+                <Link href={ann.link} passHref legacyBehavior>
+                  <a
+                    className="bg-base-blue text-white text-sm rounded-md px-2 py-1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t('button.title')}
+                  </a>
+                </Link>
               </div>
             </div>
           </SwiperSlide>

@@ -21,69 +21,11 @@ import ParkAnim from 'public/img/animate/park.png';
 import Truck from 'public/img/animate/truck2.png';
 import Image from 'next/image';
 import Link from 'next/link';
-
-const Footers = [
-  {
-    title: 'Tentang Kami',
-    content: `Sarana Mulya Logistik adalah jasa pengiriman yang berfokus pada pengiriman alat kesehatan, farmasi, dan kosmetik. Dengan menjunjung tinggi motto kami “Your Trust is Our Mision” yang menjadi DNA dalam kehidupan sehari-hari kami.`,
-  },
-  {
-    title: 'Jam Kerja',
-    icon: <MdOutlineArrowForwardIos />,
-    children: [
-      {
-        title: `Senin - Jum'at: 09:00 - 17:00`,
-      },
-      {
-        title: `Sabtu: 09:00 - 14:00`,
-      },
-      {
-        title: `Minggu: Tutup`,
-      },
-    ],
-  },
-  {
-    title: 'Msdia Sosial',
-    icon: <MdOutlineArrowForwardIos />,
-    children: [
-      {
-        icons: <BsFacebook />,
-        title: 'Facebook',
-        link: 'https://www.facebook.com/saranamulya.logistik.5',
-      },
-      {
-        icons: <BsYoutube />,
-        title: 'Youtube',
-        link: 'https://www.youtube.com/channel/UCyYZSQ3vEEAlQ4oCRMexWkA/featured',
-      },
-      {
-        icons: <BsInstagram />,
-        title: 'Instagram',
-        link: 'https://www.instagram.com/saranamulyalogistik/',
-      },
-      {
-        icons: <BsWhatsapp />,
-        title: 'Whatsapp',
-        link: 'https://api.whatsapp.com/send?phone=6285810558522',
-      },
-      {
-        icons: <BsTiktok />,
-        title: 'Tiktok',
-        link: 'https://www.tiktok.com/@saranamulyalogistik',
-      },
-    ],
-  },
-  {
-    title: 'Kontak',
-    paragrafOne: `Citra Grand Cibubur CBD Jl. Citra Grand II Blok AR18 - 19 Kota
-    Bekasi, Jawa Barat 17435`,
-    paragrafTwo: `info@saranamulyalogisticscorp.com`,
-    paragrafThree: `+62 21 22815019`,
-  },
-];
+import { useTranslation } from 'next-i18next';
 
 export default function Footer() {
   const router = useRouter();
+  const { t } = useTranslation('footer');
   const [shouldRenderOurMission, setShouldRenderOurMission] = useState(true);
 
   useEffect(() => {
@@ -94,6 +36,65 @@ export default function Footer() {
     }
   }, [router.pathname]);
 
+  const Footers = [
+    {
+      title: t('navigation.nav1'),
+      content: t('textNav1'),
+    },
+    {
+      title: t('navigation.nav2'),
+      icon: <MdOutlineArrowForwardIos />,
+      children: [
+        {
+          title: t('textNav3.text'),
+        },
+        {
+          title: t('textNav3.text2'),
+        },
+        {
+          title: t('textNav3.text3'),
+        },
+      ],
+    },
+    {
+      title: t('navigation.nav3'),
+      icon: <MdOutlineArrowForwardIos />,
+      children: [
+        {
+          icons: <BsFacebook />,
+          title: 'Facebook',
+          link: 'https://www.facebook.com/saranamulya.logistik.5',
+        },
+        {
+          icons: <BsYoutube />,
+          title: 'Youtube',
+          link: 'https://www.youtube.com/channel/UCyYZSQ3vEEAlQ4oCRMexWkA/featured',
+        },
+        {
+          icons: <BsInstagram />,
+          title: 'Instagram',
+          link: 'https://www.instagram.com/saranamulyalogistik/',
+        },
+        {
+          icons: <BsWhatsapp />,
+          title: 'Whatsapp',
+          link: 'https://api.whatsapp.com/send?phone=6285810558522',
+        },
+        {
+          icons: <BsTiktok />,
+          title: 'Tiktok',
+          link: 'https://www.tiktok.com/@saranamulyalogistik',
+        },
+      ],
+    },
+    {
+      title: t('navigation.nav4'),
+      paragrafOne: `Citra Grand Cibubur CBD Jl. Citra Grand II Blok AR18 - 19 Kota
+    Bekasi, Jawa Barat 17435`,
+      paragrafTwo: `info@saranamulyalogisticscorp.com`,
+      paragrafThree: `+62 21 22815019`,
+    },
+  ];
   return (
     <>
       {shouldRenderOurMission && <OurMission />}
@@ -101,7 +102,7 @@ export default function Footer() {
         <div className="grid lg:grid-cols-4 lg:mx-28 mx-2 gap-5 mb-28 relative">
           {Footers.map((footer, index) => (
             <div className={footer.title} key={index}>
-              <h1 className="text-white text-xl">{footer.title}</h1>
+              <h1 className="text-white text-2xl">{footer.title}</h1>
               <hr className="bg-base-blue w-5 h-[2px] mt-2" />
 
               {/* Render content based on footer type */}

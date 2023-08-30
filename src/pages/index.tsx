@@ -22,12 +22,14 @@ export const getStaticProps: GetServerSideProps = async ({ locale }) => {
         'home/track',
         'home/why',
         'home/trust',
+        'home/our-services',
         'home/slider',
         'home/counter',
         'home/testimoni',
         'home/faq',
+        'home/our-mission',
+        'footer',
       ])),
-      // Will be passed to the page component as props
     },
   };
 };

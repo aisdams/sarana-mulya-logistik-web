@@ -12,31 +12,31 @@ export default function Track() {
     setActiveButton(buttonId);
   };
 
-  const { t } = useTranslation('track');
+  const { t } = useTranslation('home/track');
 
   return (
     <div className="grid lg:grid-cols-2 my-20 mx-5">
       <h1 className="text-base-blue font-bold lg:text-[2.7rem] leading-none mb-5 lg:mb-0 text-3xl">
-        LACAK <br /> KIRIMAN ANDA
+        {t('heading.title')} <br /> {t('heading.titleTwo')}
       </h1>
 
       <div>
         <div className="flex gap-5 mb-4">
           <button
             className={`lg:px-10 px-5 lg:py-4 ${
-              activeButton === 'lacakStatusPod' ? 'text-white bg-blue-400' : ''
-            }`}
-            onClick={() => handleButtonClick('lacakStatusPod')}
-          >
-            Lacak Status POD
-          </button>
-          <button
-            className={`lg:px-10 px-5 lg:py-4 ${
               activeButton === 'lacakStatusResi' ? 'text-white bg-blue-400' : ''
             }`}
             onClick={() => handleButtonClick('lacakStatusResi')}
           >
-            Lacak Status Resi
+            {t('button.title')}
+          </button>
+          <button
+            className={`lg:px-10 px-5 lg:py-4 ${
+              activeButton === 'lacakStatusPod' ? 'text-white bg-blue-400' : ''
+            }`}
+            onClick={() => handleButtonClick('lacakStatusPod')}
+          >
+            {t('button.titleTwo')}
           </button>
         </div>
         <div className="lg:flex lg:gap-5 grid">

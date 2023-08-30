@@ -12,36 +12,39 @@ import Client5 from 'public/img/client/merapiutama.png';
 import Client6 from 'public/img/client/human.png';
 import Client7 from 'public/img/client/cobra.png';
 import Image from 'next/image';
-
-const Clients = [
-  {
-    Image: Client1,
-  },
-  {
-    Image: Client2,
-  },
-  {
-    Image: Client3,
-  },
-  {
-    Image: Client4,
-  },
-  {
-    Image: Client5,
-  },
-  {
-    Image: Client6,
-  },
-  {
-    Image: Client7,
-  },
-];
+import { useTranslation } from 'next-i18next';
 
 export default function Trust() {
+  const { t } = useTranslation('home/trust');
+
+  const Clients = [
+    {
+      Image: Client1,
+    },
+    {
+      Image: Client2,
+    },
+    {
+      Image: Client3,
+    },
+    {
+      Image: Client4,
+    },
+    {
+      Image: Client5,
+    },
+    {
+      Image: Client6,
+    },
+    {
+      Image: Client7,
+    },
+  ];
   return (
     <div className="my-20">
       <h1 className="text-secondary-text text-3xl font-bold">
-        <span className="text-base-blue">Dipercaya</span> oleh
+        <span className="text-base-blue">{t('heading.title')}</span>{' '}
+        {t('heading.title2')}
       </h1>
       <hr className="w-[3rem] bg-base-blue h-1 my-3" />
 

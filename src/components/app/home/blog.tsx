@@ -1,6 +1,8 @@
 import React from 'react';
+import { useTranslation } from 'next-i18next';
 
 export default function Blog() {
+  const { t } = useTranslation('home/slider');
   return (
     <div className="my-20">
       <div className="grid lg:grid-cols-2">

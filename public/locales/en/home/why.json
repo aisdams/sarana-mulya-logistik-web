@@ -2,20 +2,18 @@
   "heading": {
     "title": "Why"
   },
-  "card": [
-    {
-      "title": "COMPLETE TYPE OF SERVICES",
-      "desc": "Has collaborated with more than 200 clients and has complete types of delivery services, which are Express, Regular, Container, Trucking, Export & Import. Also, provide several products option and additional services such as shipment insurance, Free Trade Zone (FTZ), packing, wrapping, forklift, and crane.",
-      "title2": "COMPETITIVE PRICE",
-      "desc2": "We provide prices that are commensurate with the quality of our services and products. That we have large selection of products, safety delivery process starting from picking up until receiving the goods, and excellent after-sales service.",
-      "title3": "COMPLETE LICENSES",
-      "desc3": "Have complete licenses to reach 514 Regencies/Cities for domestic destinations such as ISO 9001, ISO 45001, Asperindo, Kominfo, and IUJPT. We cooperated with 42 regional agent in 34 Provinces and 8 Major cities",
-      "title4": "24/7 ONLINE TRACKING",
-      "desc4": "We provide an online tracking feature that can be used anytime and anywhere to make it easier for customers to find out shipping information.",
-      "title5": "RESPONSIVE & UPDATED INFORMATION",
-      "desc5": "We always provide a fast response and updated and accurate shipping information to all our customers. So that customers feel satisfied using Sarana Mulya Logistics services.",
-      "title6": "CLAIM GUARANTEE",
-      "desc6": "We provide additional services, one of which is insurance. Every customer has the right to use insurance to increase the safety of goods. And we are always ready to guarantee and be responsible for customer goods that have been insured."
-    }
-  ]
+  "card": {
+    "title": "COMPLETE TYPE OF SERVICES",
+    "desc": "Has collaborated with more than 200 clients and has complete types of delivery services, which are Express, Regular, Container, Trucking, Export & Import. Also, provide several products option and additional services such as shipment insurance, Free Trade Zone (FTZ), packing, wrapping, forklift, and crane.",
+    "title2": "COMPETITIVE PRICE",
+    "desc2": "We provide prices that are commensurate with the quality of our services and products. That we have large selection of products, safety delivery process starting from picking up until receiving the goods, and excellent after-sales service.",
+    "title3": "COMPLETE LICENSES",
+    "desc3": "Have complete licenses to reach 514 Regencies/Cities for domestic destinations such as ISO 9001, ISO 45001, Asperindo, Kominfo, and IUJPT. We cooperated with 42 regional agent in 34 Provinces and 8 Major cities",
+    "title4": "24/7 ONLINE TRACKING",
+    "desc4": "We provide an online tracking feature that can be used anytime and anywhere to make it easier for customers to find out shipping information.",
+    "title5": "RESPONSIVE & UPDATED INFORMATION",
+    "desc5": "We always provide a fast response and updated and accurate shipping information to all our customers. So that customers feel satisfied using Sarana Mulya Logistics services.",
+    "title6": "CLAIM GUARANTEE",
+    "desc6": "We provide additional services, one of which is insurance. Every customer has the right to use insurance to increase the safety of goods. And we are always ready to guarantee and be responsible for customer goods that have been insured."
+  }
 }

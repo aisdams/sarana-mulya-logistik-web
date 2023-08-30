@@ -7,6 +7,10 @@ body {
   margin: 0;
   padding: 0;
 }
+img {
+  pointer-events: none;
+}
+
 .carImage {
   animation-name: moveCar;
   animation-iteration-count: infinite;
@@ -34,7 +38,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Make sure it's above other content */
+  z-index: 1000;
 }
 
 .loader {
@@ -47,6 +51,7 @@ body {
   border-color: #fff #000 transparent transparent;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
+  overflow: hidden;
 }
 
 .loader::after,

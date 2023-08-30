@@ -1,10 +1,10 @@
 {
   "slider": {
     "title": "“Hai Saraners ! Yuk kita bermain pantun dengan karyawan sarana mulya logistik, semoga terhibur.”",
-    "button": "Klik Disini",
-    "titleTwo": "“Berikut tipe - tipe customer & solusi layanannya, simak videonya sampai habis, semoga bermanfaat.",
-    "buttonTwo": "Klik Disini",
-    "titleThree": "“Berikut prosedur pengiriman barang jalur udara, simak videonya sampai habis, semoga bermanfaat.",
-    "buttonThree": "Klik Disini"
+    "title2": "“Berikut tipe - tipe customer & solusi layanannya, simak videonya sampai habis, semoga bermanfaat.",
+    "title3": "“Berikut prosedur pengiriman barang jalur udara, simak videonya sampai habis, semoga bermanfaat."
+  },
+  "button": {
+    "title": "klik di sini"
   }
 }

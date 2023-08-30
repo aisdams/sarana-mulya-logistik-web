@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'next-i18next';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 interface FaqItem {
@@ -6,32 +7,8 @@ interface FaqItem {
   answer: string;
 }
 
-const FaqData: FaqItem[] = [
-  {
-    question:
-      'Apakah PT. Sarana Mulya Logistik memiliki perizinan yang lengkap ?',
-    answer:
-      'PT. Sarana Mulya Logistik sudah memiliki perizinan domestik yang lengkap seperti ISO 9001, ISO 45001, asperindo, kominfo, dan SIUJPT.',
-  },
-  {
-    question: 'Berapa prosentase cover Asuransi PT. Sarana Mulya Logistik ?',
-    answer:
-      'PT. Sarana Mulya Logistik mengganti sesuai kerusakan/kehilangan hingga 99,001%.',
-  },
-  {
-    question:
-      'Apakah PT. Sarana Mulya Logistik memiliki pick up time dan delivery ?',
-    answer:
-      'PT. Sarana Mulya Logistik menyediakan pick up time and delivery pada office hour tepatnya pada jam 9:00 s/d 17:00 WIB atau dapat melakukan koordinasi dengan pihak internal (customize).',
-  },
-  {
-    question: 'Berapa lama  Lead time POD Balik ?',
-    answer:
-      'Untuk coverage Kota +/-: 4 - 7 hari Untuk kota kabupaten +/-: 14 - 20 hari',
-  },
-];
-
 export default function Faqcom() {
+  const { t } = useTranslation('home/faq');
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
   const toggleAccordion = (index: number) => {
@@ -41,6 +18,25 @@ export default function Faqcom() {
       setActiveIndex(index);
     }
   };
+
+  const FaqData: FaqItem[] = [
+    {
+      question: t('faq.question'),
+      answer: t('faq.answer'),
+    },
+    {
+      question: t('faq.questionTwo'),
+      answer: t('faq.answerTwo'),
+    },
+    {
+      question: t('faq.questionThree'),
+      answer: t('faq.answerThree'),
+    },
+    {
+      question: t('faq.questionFour'),
+      answer: t('faq.answerFour'),
+    },
+  ];
 
   return (
     <div className="">

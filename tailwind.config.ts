@@ -18,6 +18,7 @@ const config: Config = {
         'gray-secondary': '#6f6b66',
         'dark-blue': '#051922',
         'sidebar-bg': '#0c1923',
+        'gray-paragraph': '#66666b',
       },
       screens: {
         xs: '360px',

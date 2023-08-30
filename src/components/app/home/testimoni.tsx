@@ -8,99 +8,90 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
 import Indec from '../../../../public/img/client/indec.png';
-
-const Testimonies = [
-  {
-    icon: <BsQuote />,
-    title:
-      'Best service! Cara tim marketing menyampaikan apa yang belum dipahami customer baik dan sabar, sampai saat ini belum ada komplain dari client. Big Thanks pokoknya, Langganan SML ini pasti.',
-    user: <BiUser />,
-    pt: 'PT. Mitra Jaya Relasi',
-  },
-  {
-    icon: <BsQuote />,
-    title:
-      'Baguss, masih sesuai prediksi dan dokumen foto sekaligus resi lengkap 👍',
-    user: <BiUser />,
-    pt: 'PT SCB, CV BMM, PT. Langgeng Lestari',
-  },
-  {
-    icon: <BsQuote />,
-    title:
-      'Alhamdulillah PT. Sarana Mulya Logistik solusi terbaik. Bisa pick up paket, sekaligus nambah packing kayu dan packing ekstra. Barang aman terjaga, terpercaya, dan selamat sampai tujuan 🥰 tenag banget rasanya kirim mesin senilai 1,2M.',
-    user: <BiUser />,
-    pt: 'PT Kita Cinta Kecantikan',
-  },
-  {
-    icon: <BsQuote />,
-    title:
-      'Terima kasih PT. Sarana Mulya Logistik telah memberikan layanan yang baik. Pick up dan proses pengiriman lancar dan tepat waktu. Baik barang besar maupun kecil semua terlayani dengan baik.',
-    user: <BiUser />,
-    pt: 'Pelita Santoso Jaya',
-  },
-  {
-    icon: <BsQuote />,
-    title:
-      'Alhamdulillah, dapet ekspedisi yang amanah menjaga barang kami sampai tujuan, bisa nego ongkir, mudah nge klaimnya, pastinya aman kirim barang alkes pakai PT. Sarana Mulya Logistik.. Sukses teruss.. ✊💪',
-    user: <BiUser />,
-    pt: 'PT. Bintang Sarana Medika',
-  },
-  {
-    icon: <BsQuote />,
-    title:
-      'Pengiriman lancar, barang tiba sesuai estimasi, harga terjangkau, pelayanannya ramah dan responsif. Terima kasih kerjasamanya semoga dilain waktu bisa menggunakan SML lagi.',
-    user: <BiUser />,
-    pt: 'Merie Estu Indonesia',
-  },
-  {
-    icon: <BsQuote />,
-    title:
-      'Pertama saya ingin ucapkan banyak terima kasih kepada PT. Sarana Mulya Logistik atas kerjasama yang selama ini terjalin, mudah-mudahan terus berlanjut seterusnya. Alhamdulillah berkat adanya PT. Sarana Mulya Logistik pengiriman barang baik lewat udara, darat, maupun laut sangat begitu cepat dan aman terkendali, untuk trackng barang begitu cepat dan langsung direspon dengan sangat baik.',
-    user: <BiUser />,
-    pt: 'Salipolapa',
-  },
-  {
-    icon: <BsQuote />,
-    title:
-      'Alhamdulillah sangat suka dengan kinerja PT. Sarana Mulya Logistik dan pelaynannya bagus banget.',
-    user: <BiUser />,
-    pt: 'PT Innovation',
-  },
-  {
-    icon: <BsQuote />,
-    title:
-      'Komunikasi ke customer OK Armada cukup OK Ketepatan waktu pick up OK Ketepatan waktu sampai ke tujuan cukup OK Attitude OK Cost Kompetitif',
-    user: <BiUser />,
-    pt: 'Biomedika',
-  },
-  {
-    icon: <BsQuote />,
-    title:
-      'Terima kasih saya puas dengan kinerja PT. Sarana Mulya Logistik. Barang terkordinasi dengan baik. Semoga PT. Sarana Mulya Logisik semakin maju kedepannya.',
-    user: <BiUser />,
-    pt: 'PT. Tecom',
-  },
-  {
-    icon: <BsQuote />,
-    title:
-      'Selama 3 tahun bekerja sama dengan Sarana Mulya Logistik tidak ada kendala apapun, dalam artian pengiriman yang cepat dan tepat sasaran.',
-    user: <BiUser />,
-    pt: 'PT. Indec Diagnostics',
-  },
-];
+import { useTranslation } from 'next-i18next';
 
 export default function Testimoni() {
+  const { t } = useTranslation('home/testimoni');
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
   const onSlideChange = (swiper: any) => {
     setActiveIndex(swiper.realIndex);
   };
 
+  const Testimonies = [
+    {
+      icon: <BsQuote />,
+      title: t('card.desc'),
+      user: <BiUser />,
+      pt: 'PT. Mitra Jaya Relasi',
+    },
+    {
+      icon: <BsQuote />,
+      title: t('card.desc2'),
+      user: <BiUser />,
+      pt: 'PT SCB, CV BMM, PT. Langgeng Lestari',
+    },
+    {
+      icon: <BsQuote />,
+      title: t('card.desc3'),
+      user: <BiUser />,
+      pt: 'PT Kita Cinta Kecantikan',
+    },
+    {
+      icon: <BsQuote />,
+      title: t('card.desc4'),
+      user: <BiUser />,
+      pt: 'Pelita Santoso Jaya',
+    },
+    {
+      icon: <BsQuote />,
+      title: t('card.desc5'),
+      user: <BiUser />,
+      pt: 'PT. Bintang Sarana Medika',
+    },
+    {
+      icon: <BsQuote />,
+      title: t('card.desc6'),
+      user: <BiUser />,
+      pt: 'Merie Estu Indonesia',
+    },
+    {
+      icon: <BsQuote />,
+      title: t('card.desc7'),
+      user: <BiUser />,
+      pt: 'Salipolapa',
+    },
+    {
+      icon: <BsQuote />,
+      title: t('card.desc8'),
+      user: <BiUser />,
+      pt: 'PT Innovation',
+    },
+    {
+      icon: <BsQuote />,
+      title: t('card.desc9'),
+      user: <BiUser />,
+      pt: 'Biomedika',
+    },
+    {
+      icon: <BsQuote />,
+      title: t('card.desc10'),
+      user: <BiUser />,
+      pt: 'PT. Tecom',
+    },
+    {
+      icon: <BsQuote />,
+      title: t('card.desc11'),
+      user: <BiUser />,
+      pt: 'PT. Indec Diagnostics',
+    },
+  ];
+
   return (
     <div className="my-20 mx-auto text-center">
-      <h1 className="text-base-blue">Testimoni</h1>
+      <h1 className="text-base-blue">{t('heading.title')}</h1>
       <h1 className="text-secondary-text font-bold text-2xl">
-        Kata Klien Kami!
+        {t('heading.title2')}
       </h1>
 
       <Swiper

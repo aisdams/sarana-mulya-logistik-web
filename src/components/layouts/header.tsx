@@ -15,14 +15,6 @@ import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-// export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
-//   return {
-//     props: {
-//       ...(await serverSideTranslations(locale!, ['home/header'])),
-//     },
-//   };
-// };
-
 export default function Header() {
   const { t } = useTranslation('home/header');
 
@@ -37,14 +29,13 @@ export default function Header() {
       image: HeaderTwo,
       title: 'SARANA MULYA LOGISTIK',
       subtitle: 'YOUR TRUST OUR MISSION',
-      description:
-        'TELAH BEKERJA SAMA DENGAN 200+ PERUSAHAAN DAN MELAKUKAN 20000+ PENGIRIMAN',
+      description: t('childOne.titleTwo'),
     },
     {
       image: HeaderThree,
       title: 'SARANA MULYA LOGISTIK',
       subtitle: 'HEALTHCARE DELIVERY',
-      description: 'RAJANYA PENGIRIMAN ALAT KESEHATAN FARMASI DAN KOSMETIK',
+      description: t('childOne.titleThree'),
     },
   ];
   return (
@@ -84,7 +75,7 @@ export default function Header() {
                     <div className="bg-white text-base-blue rounded-full max-w-max text-2xl">
                       <BsPlayFill />
                     </div>
-                    Tonton Profile Perusahaan
+                    {t('button.title')}
                   </button>
                 </Link>
               </div>
