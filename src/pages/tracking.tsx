@@ -12,7 +12,7 @@ export default function Tracking() {
         </div>
       </div>
 
-      <div className="my-20 lg:mx-28 mx-10">
+      <div className="my-20 lg:mx-28 mx-2">
         <div className="grid lg:grid-cols-2 text-[#97667f] gap-5">
           <div className="grid border border-[#97667f]/30 px-4 py-2">
             <h1 className="text-center text-lg text-base-blue font-bold">

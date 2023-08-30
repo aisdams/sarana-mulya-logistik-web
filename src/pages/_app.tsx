@@ -1,3 +1,4 @@
+'use client';
 import '@/styles/globals.css';
 import { AppProps } from 'next/app';
 import { appWithTranslation } from 'next-i18next';
@@ -10,9 +11,10 @@ import { NextPage } from 'next';
 import { FaBars } from 'react-icons/fa';
 import Sidebar from '@/components/layouts/sidebar';
 import Loader from '@/components/loader/loader';
-import { Router } from 'next/router';
+import { Router, useRouter } from 'next/router';
 import ImageSML from '../../public/img/icon2.png';
 import Image from 'next/image';
+import Script from 'next/script';
 
 export type NextPageCustomLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -27,10 +29,12 @@ function App({
 }) {
   const getLayout = Component.getLayout ?? ((page) => page);
 
+  const router = useRouter();
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [isLoaderVisible, setIsLoaderVisible] = useState(false);
 
   const handleScroll = () => {
@@ -90,20 +94,36 @@ function App({
   };
 
   useEffect(() => {
-    Router.events.on('routeChangeStart', startLoading);
-    Router.events.on('routeChangeComplete', stopLoading);
-    Router.events.on('routeChangeError', stopLoading);
-
-    return () => {
-      Router.events.off('routeChangeStart', startLoading);
-      Router.events.off('routeChangeComplete', stopLoading);
-      Router.events.off('routeChangeError', stopLoading);
+    // Jalankan loader pada setiap perubahan rute
+    const handleRouteChangeStart = () => {
+      startLoading();
     };
-  }, []);
+    const handleRouteChangeComplete = () => {
+      stopLoading();
+    };
+    const handleRouteChangeError = () => {
+      stopLoading();
+    };
+
+    router.events.on('routeChangeStart', handleRouteChangeStart);
+    router.events.on('routeChangeComplete', handleRouteChangeComplete);
+    router.events.on('routeChangeError', handleRouteChangeError);
+
+    // Bersihkan event listener saat komponen unmount
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChangeStart);
+      router.events.off('routeChangeComplete', handleRouteChangeComplete);
+      router.events.off('routeChangeError', handleRouteChangeError);
+    };
+  }, [router.events]); // Tambahkan router.events sebagai dependensi
 
   return (
     <>
-      {isLoading && isLoaderVisible && <Loader />}
+      {isLoading && isLoaderVisible && (
+        <div className="loader-container">
+          <Loader />
+        </div>
+      )}
 
       <Head>
         <title>SARANA MULYA LOGISTIK</title>
@@ -112,11 +132,13 @@ function App({
           rel="shortcut icon"
           href="https://saranamulyalogisticscorp.com/assets/img/logo.png"
         />
-        <script
+        {/* <script
           src="https://embed.tawk.to/64ec3a37a91e863a5c102bcb/1h8tc6qjl"
           async
-        />
+        /> */}
       </Head>
+
+      <Script src="https://embed.tawk.to/64ec3a37a91e863a5c102bcb/1h8tc6qjl" />
       <AppProvider>
         <div className={`relative ${isScrolled ? 'bg-white shadow' : ''}`}>
           {/* Conditionally render menu icon */}
