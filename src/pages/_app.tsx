@@ -34,7 +34,7 @@ function App({
   const [isScrolled, setIsScrolled] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [isLoaderVisible, setIsLoaderVisible] = useState(false);
 
   const handleScroll = () => {
@@ -63,6 +63,38 @@ function App({
     };
   }, []);
 
+  function Loading() {
+    useEffect(() => {
+      // Jalankan loader pada setiap perubahan rute
+      const handleRouteChangeStart = (url: string) =>
+        url !== router.asPath && setIsLoading(true);
+      const handleRouteChangeComplete = (url: string) =>
+        url !== router.asPath &&
+        setTimeout(() => {
+          setIsLoading(false);
+        });
+      // const handleRouteChangeError = () => {};
+
+      router.events.on('routeChangeStart', handleRouteChangeStart);
+      router.events.on('routeChangeComplete', handleRouteChangeComplete);
+      router.events.on('routeChangeError', handleRouteChangeComplete);
+
+      // Bersihkan event listener saat komponen unmount
+      return () => {
+        router.events.off('routeChangeStart', handleRouteChangeStart);
+        router.events.off('routeChangeComplete', handleRouteChangeComplete);
+        router.events.off('routeChangeError', handleRouteChangeComplete);
+      };
+    }); // Tambahkan router.events sebagai dependensi
+    return (
+      isLoading && (
+        <div className="loader-container">
+          <Loader />
+        </div>
+      )
+    );
+  }
+
   const handleWindowSizeChange = (width: number) => {
     if (width >= 992) {
       setIsMenuOpen(false);
@@ -83,48 +115,18 @@ function App({
     };
   }, []);
 
-  const startLoading = () => {
-    setIsLoading(true);
-    setIsLoaderVisible(true);
-  };
+  // const startLoading = () => {
+  //   setIsLoading(true);
+  //   setIsLoaderVisible(true);
+  // };
 
-  const stopLoading = () => {
-    setIsLoading(false);
-    setIsLoaderVisible(false);
-  };
-
-  useEffect(() => {
-    // Jalankan loader pada setiap perubahan rute
-    const handleRouteChangeStart = () => {
-      startLoading();
-    };
-    const handleRouteChangeComplete = () => {
-      stopLoading();
-    };
-    const handleRouteChangeError = () => {
-      stopLoading();
-    };
-
-    router.events.on('routeChangeStart', handleRouteChangeStart);
-    router.events.on('routeChangeComplete', handleRouteChangeComplete);
-    router.events.on('routeChangeError', handleRouteChangeError);
-
-    // Bersihkan event listener saat komponen unmount
-    return () => {
-      router.events.off('routeChangeStart', handleRouteChangeStart);
-      router.events.off('routeChangeComplete', handleRouteChangeComplete);
-      router.events.off('routeChangeError', handleRouteChangeError);
-    };
-  }, [router.events]); // Tambahkan router.events sebagai dependensi
+  // const stopLoading = () => {
+  //   setIsLoading(false);
+  //   setIsLoaderVisible(false);
+  // };
 
   return (
     <>
-      {isLoading && isLoaderVisible && (
-        <div className="loader-container">
-          <Loader />
-        </div>
-      )}
-
       <Head>
         <title>SARANA MULYA LOGISTIK</title>
         <meta name="keywords" key="keywords" content="Sarana Mulya Logistik" />
@@ -140,6 +142,7 @@ function App({
 
       <Script src="https://embed.tawk.to/64ec3a37a91e863a5c102bcb/1h8tc6qjl" />
       <AppProvider>
+        <Loading />
         <div className={`relative ${isScrolled ? 'bg-white shadow' : ''}`}>
           {/* Conditionally render menu icon */}
           {windowWidth < 992 && (
