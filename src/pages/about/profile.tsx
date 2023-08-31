@@ -18,7 +18,14 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale!, ['about/profile'])),
+      ...(await serverSideTranslations(locale!, [
+        'about/profile',
+        'fivesec/visi',
+        'fivesec/value',
+        'fivesec/team',
+        'fivesec/excess',
+        'home/counter',
+      ])),
     },
   };
 };
@@ -95,7 +102,7 @@ export default function Profile() {
         <div className="flex justify-center items-center">
           <div className="flex flex-wrap justify-center">
             <div
-              className="bg-transparent p-6 rounded shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] w-40 h-max m-2 text-center cursor-pointer"
+              className="bg-transparent p-6 rounded shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] w-52 h-max m-2 text-center cursor-pointer"
               onClick={() => setSelectedComponent('VisiMisi')}
             >
               <div className="rounded-full border-2 border-purple-600 w-10 h-10 mx-auto grid text-center items-center mb-3">
@@ -103,14 +110,16 @@ export default function Profile() {
                   <div className="rounded-full border-2 border-purple-600 w-4 h-4 mx-auto grid justify-center place-content-center items-center"></div>
                 </div>
               </div>
-              <h2 className="text-lg font-semibold">Visi & Misi</h2>
+              <h2 className="text-lg font-semibold">{t('fiveSec.title')}</h2>
             </div>
             <div
               className="bg-transparent p-1 rounded shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] w-40 h-max m-2 text-center cursor-pointer"
               onClick={() => setSelectedComponent('Value')}
             >
               <IoDiamondOutline className="text-[#20c9a4] mt-6 text-[2.5rem] items-center justify-center grid mx-auto mb-2" />
-              <h2 className="text-lg font-semibold mb-4">Value</h2>
+              <h2 className="text-lg font-semibold mb-4">
+                {t('fiveSec.title2')}
+              </h2>
             </div>
           </div>
         </div>
@@ -121,21 +130,27 @@ export default function Profile() {
               onClick={() => setSelectedComponent('Team')}
             >
               <ImUsers className="text-[#df1529] mt-6 text-[2.5rem] items-center justify-center grid mx-auto mb-2" />
-              <h2 className="text-lg font-semibold mb-4">Team</h2>
+              <h2 className="text-lg font-semibold mb-4">
+                {t('fiveSec.title3')}
+              </h2>
             </div>
             <div
               className="bg-transparent p-1 rounded shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] w-40 h-max m-2 text-center cursor-pointer"
               onClick={() => setSelectedComponent('Excess')}
             >
               <BsHandThumbsUpFill className="text-[#0d6efd] mt-6 text-[2.5rem] items-center justify-center grid mx-auto mb-2" />
-              <h2 className="text-lg font-semibold mb-4">Kelebihan</h2>
+              <h2 className="text-lg font-semibold mb-4">
+                {t('fiveSec.title4')}
+              </h2>
             </div>
             <div
               className="bg-transparent p-1 rounded shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] w-40 h-max m-2 text-center cursor-pointer"
               onClick={() => setSelectedComponent('Measurement')}
             >
               <BsRulers className="text-[#fd7e14] mt-6 text-[2.5rem] items-center justify-center grid mx-auto mb-2" />
-              <h2 className="text-lg font-semibold mb-4">Pengukuran</h2>
+              <h2 className="text-lg font-semibold mb-4">
+                {t('fiveSec.title5')}
+              </h2>
             </div>
           </div>
         </div>

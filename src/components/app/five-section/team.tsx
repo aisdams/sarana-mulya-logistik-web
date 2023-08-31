@@ -3,30 +3,33 @@ import TeamOne from 'public/img/tim/tim1.jpg';
 import TeamTwo from 'public/img/tim/tim2.jpg';
 import TeamThree from 'public/img/tim/tim3.jpg';
 import Image, { StaticImageData } from 'next/image';
+import { useTranslation } from 'next-i18next';
 
-const teams = [
-  {
-    title: 'Tim',
-    children: [
-      {
-        image: TeamOne,
-        title: 'Tim Marketing',
-        desc: 'Tim penjualan kami selalu siap membantu klien menemukan layanan dan produk yang tepat untuk meningkatkan kualitas pekerjaan mereka dan meningkatkan efisiensi alur kerja.',
-      },
-      {
-        image: TeamTwo,
-        title: 'Tim Customer Service',
-        desc: 'Tim customer service kami memastikan pengiriman dilakukan secara efisien dan aman. Selain itu, kami hadir untuk membantu pelanggan dalam memahami fitur dan fungsi layanan yang dibutuhkan.',
-      },
-      {
-        image: TeamThree,
-        title: 'Tim Kami',
-        desc: 'Tim kami akan membantu Anda untuk lebih memahami layanan, produk, dan sistem kami. Penting bagi kami bahwa klien kami dapat memastikan bahwa semua layanan yang kami tawarkan bernilai tambah untuk bisnis mereka.',
-      },
-    ],
-  },
-];
 export default function Team() {
+  const { t } = useTranslation('fivesec/team');
+  const teams = [
+    {
+      title: 'Tim',
+      children: [
+        {
+          image: TeamOne,
+          title: t('children.title'),
+          desc: t('children.desc'),
+        },
+        {
+          image: TeamTwo,
+          title: t('children.title2'),
+          desc: t('children.desc2'),
+        },
+        {
+          image: TeamThree,
+          title: t('children.title3'),
+          desc: t('children.desc3'),
+        },
+      ],
+    },
+  ];
+
   const [selectedImage, setSelectedImage] = useState<StaticImageData | null>(
     teams[0].children[0].image // Atur gambar pertama sebagai nilai awal
   );

@@ -1,0 +1,24 @@
+{
+  "hero": {
+    "title": "SERVICE DETAIL"
+  },
+  "children": {
+    "desc": "This service is delivery by land mode for the destination areas of Java, Bali, NTB and Sumatra and sea mode for the destination areas of Kalimantan, NTT, Batam and all parts of eastern Indonesia",
+    "title2": "Regular Cubication",
+    "desc2": "This service is a regular delivery by calculating costs based on the volume of goods based on cubication for expedition needs. Cubication calculation (CBM/Cubic Meters) is based on the formula: (Length x Width x Height)/1000000 = cubication (m3) Volume for shipments via land & sea that use cubication calculation (m3)."
+  },
+  "childrenTwo": {
+    "title": "Regular service leadtime varies according to destination, and PT Sarana Mulya Logistik focuses on providing the best lead time at competitive prices.",
+    "title2": "Regular services that PT Sarana Mulya Logistik provides include proof of delivery (POD) returns with a standard POD return time between 10 to 25 days (unless there is a special request for acceleration).",
+    "title3": "In this service PT Sarana Mulya Logistik also provides customer DO/SJ (Surat Jalan) and FTZ (Free Trade Zone) document management services.",
+    "title4": "As well as serving FTL (Full Trucking Load) both CDE (colt diesel ankle) capacity of 2 tons, CDD (colt diesel double) capacity of 4 tons, Fuso capacity of 8 tons, tronton / wing box capacity of 15 tons and FCL (Full Container Load) both 20 'container capacity of 20 tons and 40 'Container capacity of 35 tons",
+    "title5": "For shipment by air, the size of the aircraft door is generally taken as 300 cm x 90 cm x 85 cm (P x L x T)"
+  },
+  "bold": {
+    "text": "Product",
+    "text2": "of Reguler services, among others:",
+    "text3": "Available",
+    "text4": "some things",
+    "text5": "related to PT Sarana Mulya Logistik Reguler services which include:"
+  }
+}

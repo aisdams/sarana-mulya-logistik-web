@@ -6,46 +6,48 @@ import ImageGrad4 from 'public/img/gradient/facilities.png';
 import ImageGrad5 from 'public/img/gradient/itsystem.png';
 import ImageGrad6 from 'public/img/gradient/prices.png';
 import Image from 'next/image';
-
-const Kelebihan = [
-  {
-    title: 'Kelebihan',
-    children: [
-      {
-        title: 'SDM',
-        icon: ImageGrad,
-        desc: 'Memiliki sumber daya manusia tingkat manajerial dan operasional yang berpengalaman dan komitmen yang tinggi serta sangat memahami bisnis logistik dan kargo sehingga dapat memberikan solusi terbaik atas kebutuhan pelanggan.',
-      },
-      {
-        title: 'Budaya Perusahaan',
-        icon: ImageGrad2,
-        desc: 'Budaya perusahaan yang kuat, terutama dalam service culture dan customer focus dengan nilai utama "Customer Come First".',
-      },
-      {
-        title: 'Operasional Area',
-        icon: ImageGrad3,
-        desc: 'Memiliki 34 cabang yang berada di seluruh provinsi di Indonesia dengan coverage area 514 kabupaten/kota baik dalam layanan ekspres maupun reguler.',
-      },
-      {
-        title: 'Fasilitas Layanan',
-        icon: ImageGrad4,
-        desc: 'Penyediaan fasilitas Proof of Delivery (POD), asuransi, packing dan wrapping, pengurusan dokumen Free Trade Zone (FTZ) sampai pada keperluan forklift dan crane untuk memenuhi kebutuhan pelanggan.',
-      },
-      {
-        title: 'Sistem IT',
-        icon: ImageGrad5,
-        desc: 'Menggunakan sistem yang berbasis IT untuk mendukung layanan yang prima bagi pelanggan yang terus dikembangkan baik di pusat maupun di cabang.',
-      },
-      {
-        title: 'Harga',
-        icon: ImageGrad6,
-        desc: 'Harga yang kompetitif dengan standar layanan dan solusi layanan terbaik bagi semua pelanggan.',
-      },
-    ],
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 export default function Excess() {
+  const { t } = useTranslation('fivesec/excess');
+  const Kelebihan = [
+    {
+      title: 'Kelebihan',
+      children: [
+        {
+          title: t('children.title'),
+          icon: ImageGrad,
+          desc: t('children.desc'),
+        },
+        {
+          title: t('children.title2'),
+          icon: ImageGrad2,
+          desc: t('children.desc2'),
+        },
+        {
+          title: t('children.title3'),
+          icon: ImageGrad3,
+          desc: t('children.desc3'),
+        },
+        {
+          title: t('children.title4'),
+          icon: ImageGrad4,
+          desc: t('children.desc4'),
+        },
+        {
+          title: t('children.title5'),
+          icon: ImageGrad5,
+          desc: t('children.desc5'),
+        },
+        {
+          title: t('children.title6'),
+          icon: ImageGrad6,
+          desc: t('children.desc6'),
+        },
+      ],
+    },
+  ];
+
   return (
     <div className="mx-24 my-20">
       {Kelebihan.map((kel, idx) => (

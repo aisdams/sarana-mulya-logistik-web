@@ -13,6 +13,7 @@ import Loader from '@/components/loader/loader';
 import { useRouter } from 'next/router';
 import ImageSML from '../../public/img/icon2.png';
 import Image from 'next/image';
+import Script from 'next/script';
 
 export type NextPageCustomLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -98,11 +99,16 @@ function App({
           rel="shortcut icon"
           href="https://saranamulyalogisticscorp.com/assets/img/logo.png"
         />
-        <script
+        {/* <script
           src="https://embed.tawk.to/64ec3a37a91e863a5c102bcb/1h8tc6qjl"
           async
-        />
+        /> */}
       </Head>
+
+      <Script
+        src="https://embed.tawk.to/64ec3a37a91e863a5c102bcb/1h8tc6qjl"
+        async
+      />
       <AppProvider>
         <div className={`relative ${isScrolled ? 'bg-white shadow' : ''}`}>
           {windowWidth < 992 && (

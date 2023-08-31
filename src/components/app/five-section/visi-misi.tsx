@@ -2,28 +2,26 @@ import React from 'react';
 import Image from 'next/image';
 import VisiIm from 'public/img/svg_icon/visi_svg.svg';
 import { BsFillCheckCircleFill } from 'react-icons/bs';
+import { useTranslation } from 'next-i18next';
 
-const VisiMisis = [
-  {
-    title: 'Visi & Misi',
-    titleTwo: 'Visi',
-    titleThere: 'Misi',
-    visiContent:
-      'Visi kami adalah menjadi salah satu perusahaan jasa pengiriman domestik terbaik yang berkomitmen terhadap pengembangan sumber daya manusia, kuantitas jaringan dan sistem operasional yang andal.',
-    children: [
-      {
-        misiOne:
-          'Berkomitmen untuk memberikan pelayanan terbaik terhadap pelanggan.',
-        misiTwo: 'B Meningkatkan performa perusahaan secara berkesinambungan.',
-        misiThree:
-          'Menjadi solusi atas kebutuhan jasa pengiriman domestik area.',
-        misiFour:
-          'Berperan aktif dalam meningkatkan pengetahuan dan keterampilan logistik.',
-      },
-    ],
-  },
-];
 export default function VisiMisi() {
+  const { t } = useTranslation('fivesec/visi');
+  const VisiMisis = [
+    {
+      title: t('text.title'),
+      titleTwo: t('text.titleTwo'),
+      titleThree: t('text.titleThree'),
+      visiContent: t('text.visionContent'),
+      children: [
+        {
+          misiOne: t('children.missionOne'),
+          misiTwo: t('children.missionTwo'),
+          misiThree: t('children.missionThree'),
+          misiFour: t('children.missionFour'),
+        },
+      ],
+    },
+  ];
   return (
     <>
       <div className="lg:flex mx-28 my-20">
@@ -36,7 +34,7 @@ export default function VisiMisi() {
               <p className="text-brown-gray">{visimisi.visiContent}</p>
 
               <h1 className="text-4xl text-secondary-text font-semibold mt-7">
-                {visimisi.titleThere}
+                {visimisi.titleThree}
               </h1>
               <div className="flex items-center my-6">
                 <BsFillCheckCircleFill className="mr-2 text-base-blue text-[22px]" />

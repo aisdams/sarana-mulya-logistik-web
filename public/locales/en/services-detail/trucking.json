@@ -1,0 +1,26 @@
+{
+  "hero": {
+    "title": "SERVICES DETAILS"
+  },
+  "children": {
+    "desc": "This service is delivery using blind van car transportation.",
+    "desc2": "This service is a delivery using CDE truck transportation while being able to deliver packages / goods with a maximum weight of 2 tons, with a box size of : 340 x 180 x 190 cm. With destination coverage to the islands of Sumatra (apart from bangka belitung, batam, and tanjung pinang), Java, and West Nusa Tenggara.",
+    "desc3": "This service is delivery using CDD truck transportation while being able to deliver packages/goods with a maximum weight of 4 tons, with a box size of : 435 x 200 x 200 cm (17 cbm). With destination coverage to the islands of Sumatra (apart from bangka belitung, batam, and tanjung pinang), Java, and West Nusa Tenggara.",
+    "desc4": "This service is a delivery using CDD Cold Chain truck transportation while being able to deliver packages/goods with a maximum weight of 4 tons. With destination coverage to the islands of Sumatra (apart from bangka belitung, batam, and tanjung pinang), Java, and West Nusa Tenggara.",
+    "desc5": "This service is delivery using Fuso truck transportation as well as being able to deliver packages/goods with a maximum weight of 8 tons, with Box size: 650 x 220 x 240 cm (30 cbm). With destination coverage to the islands of Sumatra (apart from bangka belitung, batam, and tanjung pinang), Java, and West Nusa Tenggara.",
+    "desc6": "This service is a delivery using Fuso Cold Chain truck transportation while being able to deliver packages/goods with a maximum weight of 9 tons. With destination coverage to the islands of Sumatra (apart from bangka belitung, batam, and tanjung pinang), Java, and West Nusa Tenggara.",
+    "desc7": "This service is delivery using wingbox truck transportation while being able to deliver packages/goods with a maximum weight of 15 tons, with Box size: 720 x 250 x 250 cm (45 cbm). With destination coverage to the islands of Sumatra (apart from bangka belitung, batam, and tanjung pinang), Java, and West Nusa Tenggara."
+  },
+  "childrenTwo": {
+    "title": "The lead time of trucking services varies greatly according to destination, and PT Sarana Mulya Logistik focuses on providing the best lead time at competitive prices.",
+    "title2": "The trucking services that PT Sarana Mulya Logistik provides include proof of delivery (POD) returns with a standard POD return time between 7 to 14 days (unless there is a special request for acceleration).",
+    "title3": "At the same time serving FTL (Full Trucking Load) and FCL (Less Trucking Load)."
+  },
+  "bold": {
+    "text": "Product",
+    "text2": "of Trucking services, including:",
+    "text3": "Available",
+    "text4": "some things",
+    "text5": "related to PT Sarana Mulya Logistik's trucking services which include:"
+  }
+}

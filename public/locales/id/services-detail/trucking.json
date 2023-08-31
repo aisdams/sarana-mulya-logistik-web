@@ -1,0 +1,26 @@
+{
+  "hero": {
+    "title": "DETAILS LAYANAN"
+  },
+  "children": {
+    "desc": "Layanan ini adalah pengiriman menggunakan transportasi mobil blind van.",
+    "desc2": "Layanan ini adalah pengiriman menggunakan transportasi truk CDE sekaligus mampu mengantar paket/barang dengan maksimal berat sebesar 2 ton, dengan ukuran Box : 340 x 180 x 190 cm. Dengan cakupan destinasi ke pulau Sumatra (selain bangka belitung, batam, dan tanjung pinang), Jawa, serta Nusa Tenggara Barat.",
+    "desc3": "Layanan ini adalah pengiriman menggunakan transportasi truk CDD sekaligus mampu mengantar paket/barang dengan maksimal berat sebesar 4 ton, dengan ukuran Box : 435 x 200 x 200 cm (17 cbm). Dengan cakupan destinasi ke pulau Sumatra (selain bangka belitung, batam, dan tanjung pinang), Jawa, serta Nusa Tenggara Barat.",
+    "desc4": "Layanan ini adalah pengiriman menggunakan transportasi truk CDD Cold Chain sekaligus mampu mengantar paket/barang dengan maksimal berat sebesar 4 ton. Dengan cakupan destinasi ke pulau Sumatra (selain bangka belitung, batam, dan tanjung pinang), Jawa, serta Nusa Tenggara Barat.",
+    "desc5": "Layanan ini adalah pengiriman menggunakan transportasi truk Fuso sekaligus mampu mengantar paket/barang dengan maksimal berat sebesar 8 ton, dengan ukuran Box : 650 x 220 x 240 cm (30 cbm). Dengan cakupan destinasi ke pulau Sumatra (selain bangka belitung, batam, dan tanjung pinang), Jawa, serta Nusa Tenggara Barat.",
+    "desc6": "Layanan ini adalah pengiriman menggunakan transportasi truk Fuso Cold Chain sekaligus mampu mengantar paket/barang dengan maksimal berat sebesar 9 ton. Dengan cakupan destinasi ke pulau Sumatra (selain bangka belitung, batam, dan tanjung pinang), Jawa, serta Nusa Tenggara Barat.",
+    "desc7": "Layanan ini adalah pengiriman menggunakan transportasi truk wingbox sekaligus mampu mengantar paket/barang dengan maksimal berat sebesar 15 ton, dengan ukuran Box : 720 x 250 x 250 cm (45 cbm). Dengan cakupan destinasi ke pulau Sumatra (selain bangka belitung, batam, dan tanjung pinang), Jawa, serta Nusa Tenggara Barat."
+  },
+  "childrenTwo": {
+    "title": "Leadtime layanan trucking sangat bervariatif sesuai destinasi tujuan, dan PT. Sarana Mulya Logistik fokus memberikan lead time yang terbaik dengan harga yang kompetitif.",
+    "title2": "Layanan trucking yang PT. Sarana Mulya Logistik berikan include bukti serah terima barang atau POD (Proof of delivery) kembali dengan waktu standar pengembalian POD antar 7 s/d 14 hari (kecuali ada request khusus untuk percepatan).",
+    "title3": "Sekaligus melayani FTL (Full Trucking Load) dan FCL (Less Trucking Load)."
+  },
+  "bold": {
+    "text": "Produk",
+    "text2": "dari layanan Trucking, antara lain :",
+    "text3": "Terdapat",
+    "text4": "beberapa hal",
+    "text5": "terkait layanan Trucking PT. Sarana Mulya Logistik yang meliputi :"
+  }
+}

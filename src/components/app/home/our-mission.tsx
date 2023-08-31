@@ -5,7 +5,7 @@ import { useTranslation } from 'next-i18next';
 export default function OurMission() {
   const { t } = useTranslation('home/our-mission');
   return (
-    <div className="w-full h-full relative">
+    <div className="w-full h-full relative mt-20">
       <div
         className="h-[360px] bg-cover bg-fixed"
         style={{ backgroundImage: `url(${Recommendation1.src})` }}
@@ -17,7 +17,12 @@ export default function OurMission() {
             <h1 className="font-bold text-2xl mb-4">
               Your Trust Is Our Mission
             </h1>
-            <p className="mb-4">{t('text.header')}</p>
+            <p className="mb-4">
+              Bagian dari kesuksesan kami berasal dari moto kami Your Trust is
+              Our Mission. Motto ini telah menjadi DNA dalam kehidupan kita
+              sehari-hari dimana kami selalu berusaha untuk memberikan pelayanan
+              yang terbaik dan bertanggung jawab kepada semua pelanggan kami
+            </p>
           </div>
           <button className="text-center grid mx-auto bg-base-blue text-white rounded-full px-5 py-2 w-[12rem] lg:w-[30rem] h-max m-0">
             +62 21 22815019

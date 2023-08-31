@@ -11,7 +11,6 @@ import { BiSolidDownArrow } from 'react-icons/bi';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { DropdownMenu, Trigger, Content } from '@radix-ui/react-dropdown-menu';
 
 interface NavbarProps {
   isScrolled: boolean;
@@ -39,6 +38,31 @@ export default function Navbar({ isScrolled }: NavbarProps) {
     setLanguageDropdownOpen((prevState) => !prevState); // Toggle dropdown bahasa
   };
 
+  const ChangeLanguage = () => {
+    const currentLocale = router.locale;
+
+    const toggleSwitchLanguage = () => {
+      const newLocale = currentLocale === 'id' ? 'en' : 'id';
+      router.push(router.pathname, `/${newLocale}${router.asPath}`, {
+        locale: newLocale,
+      });
+    };
+
+    return (
+      <div
+        className="flex items-center px-3 gap-3"
+        onClick={toggleSwitchLanguage}
+      >
+        <Image
+          src={router?.locale === 'en' ? Flag : FlagEng}
+          alt=""
+          width={40}
+        />
+        <h3>{router?.locale === 'en' ? 'IND' : 'ENG'}</h3>
+      </div>
+    );
+  };
+
   const LanguageToggle = () => {
     const currentLocale = router.locale;
 
@@ -47,12 +71,11 @@ export default function Navbar({ isScrolled }: NavbarProps) {
       router.push(router.pathname, `/${newLocale}${router.asPath}`, {
         locale: newLocale,
       });
-      // router.push(router.pathname, router.asPath, { locale: newLocale });
     };
 
     return (
       <button onClick={toggleLanguage}>
-        {currentLocale === 'id' ? 'INDONESIA' : 'ENGLISH'}
+        {currentLocale === 'id' ? 'IND' : 'ENG'}
       </button>
     );
   };
@@ -96,7 +119,7 @@ export default function Navbar({ isScrolled }: NavbarProps) {
                   {navbar.children.map((child, childIdx) => (
                     <li key={childIdx}>
                       <a
-                        href={child.link}
+                        href={`/${router.locale}${child.link}`}
                         className={`hover:text-base-blue font-medium ${
                           isScrolled ? 'text-base-blue' : 'text-secondary-text'
                         } z-10`}
@@ -118,29 +141,29 @@ export default function Navbar({ isScrolled }: NavbarProps) {
               alt=""
               width={40}
             />
-            <LanguageToggle />
-            <BiSolidDownArrow className="text-[9px]" />
+            {/* <LanguageToggle /> */}
+            <h3 onClick={handleLanguageDropdownToggle}>
+              {router?.locale === 'en' ? 'Eng' : 'IDN'}
+            </h3>
+            <BiSolidDownArrow
+              className="text-[9px]"
+              onClick={handleLanguageDropdownToggle}
+            />
             {languageDropdownOpen && (
-              <ul className="absolute top-full text-[13px] gap-y-2 py-2 grid right-0 mt-2 rounded-sm w-[6rem] p-3 shadow-[-5px_10px_10px_0px_rgba(0,0,0,0.4)] bg-white text-black">
+              <ul className="absolute top-full text-[13px] gap-y-2 py-2 grid right-0 mt-2 rounded-sm w-max shadow-[-5px_10px_10px_0px_rgba(0,0,0,0.4)] bg-white text-black">
                 <li>
                   <button
                     className="hover:text-base-blue font-medium flex gap-3 items-center"
                     onClick={handleLanguageDropdownToggle}
                   >
-                    <Image
-                      src={router?.locale === 'en' ? FlagEng : Flag}
-                      alt=""
-                      width={40}
-                    />
-                    {router?.locale === 'id' ? 'ENGLISH' : 'INDONESIA'}
+                    <ChangeLanguage />
                   </button>
                 </li>
-                {/* You can add more language options here */}
               </ul>
             )}
           </div>
 
-          <Link href={`/${router.locale}/auth`} legacyBehavior>
+          <Link href="https://sml.ops.odisys.id/auth" legacyBehavior>
             <a className="login border-2 border-blue-300 py-2 px-3 text-base font-semibold">
               Login
             </a>

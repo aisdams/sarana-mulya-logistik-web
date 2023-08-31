@@ -1,26 +1,28 @@
 import React from 'react';
-
-const values = [
-  {
-    title: 'Nilai',
-    children: [
-      {
-        title: 'Berkomitmen Tinggi',
-        desc: 'Seluruh insan SML memberikan komitmen yang tinggi terhadap seluruh aktivitas untuk mencapai hasil yang optimal dan memberikan solusi yang terbaik di setiap tanggung jawab yang diberikan.',
-      },
-      {
-        title: 'Ramah',
-        desc: 'Seluruh insan SML memberikan komitmen yang tinggi terhadap seluruh aktivitas untuk mencapai hasil yang optimal dan memberikan solusi yang terbaik di setiap tanggung jawab yang diberikan.',
-      },
-      {
-        title: 'Berkelas',
-        desc: 'Seluruh insan SML memberikan komitmen yang tinggi terhadap seluruh aktivitas untuk mencapai hasil yang optimal dan memberikan solusi yang terbaik di setiap tanggung jawab yang diberikan.',
-      },
-    ],
-  },
-];
+import { useTranslation } from 'next-i18next';
 
 export default function Value() {
+  const { t } = useTranslation('fivesec/value');
+  const values = [
+    {
+      title: 'Nilai',
+      children: [
+        {
+          title: t('children.title'),
+          desc: t('children.desc'),
+        },
+        {
+          title: t('children.title2'),
+          desc: t('children.desc2'),
+        },
+        {
+          title: t('children.title3'),
+          desc: t('children.desc3'),
+        },
+      ],
+    },
+  ];
+
   let number = 1;
   return (
     <div>

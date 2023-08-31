@@ -23,33 +23,13 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale!, ['about/branch'])),
+      ...(await serverSideTranslations(locale!, [
+        'information/terms',
+        'home/faq',
+      ])),
     },
   };
 };
-
-interface ChildWithPages {
-  title: string;
-  pages: React.ReactNode; // Ganti dengan jenis yang sesuai
-}
-
-interface ChildWithChildren {
-  title: string;
-  children: {
-    image: StaticImageData;
-    title: string;
-    desc: string;
-  }[];
-}
-
-interface ChildWithSubchil {
-  title: string;
-  subchil: {
-    image: StaticImageData;
-    title: string;
-    desc: string;
-  }[];
-}
 
 interface Child {
   title: string;
@@ -57,7 +37,7 @@ interface Child {
 }
 
 export default function Terms() {
-  const { t } = useTranslation('about/branch');
+  const { t } = useTranslation('information/terms');
   const sideBars: Child[] = [
     {
       title: 'FAQ',
@@ -69,90 +49,84 @@ export default function Terms() {
       ],
     },
     {
-      title: 'Informasi Pengiriman',
+      title: t('titleSideLeft.title'),
       children: [
         {
-          title: 'Barang Berbahaya',
+          title: t('titleSideLeft.title2'),
           children: [
             {
               image: dangerousIm,
-              title: 'Barang berbahaya kelas 1 : Barang yang mudah meledak',
-              desc: 'Kembang Api, Amunisi/Kartrid, Inflator Airbag, Komposisi TNT, Suar, Bom.',
+              title: t('sideLeftOne.title'),
+              desc: t('sideLeftOne.desc'),
             },
             {
               image: dangerousIm2,
-              title:
-                'Barang berbahaya kelas 2 : Gas bertekanan, mudah terbakar jika ditekan/mudah menguap',
-              desc: 'Aerosol, Tabung Gas (berisi), Silikon, Fire Stop, Kutek, Gas CO2, Butane, Hydrogen.',
+              title: t('sideLeftOne.title2'),
+              desc: t('sideLeftOne.desc2'),
             },
             {
               image: dangerousIm3,
-              title: 'Barang berbahaya kelas 3 : Cairan yang mudah terbakar',
-              desc: 'Lem, Parfum, Cat kaleng, Oli, Sanpoly, Toner, Pelampung bensin.',
+              title: t('sideLeftOne.title3'),
+              desc: t('sideLeftOne.desc3'),
             },
             {
               image: dangerousIm4,
-              title: 'Barang berbahaya kelas 4 : Zat padat yang mudah terbakar',
-              desc: 'Alkali metal, Alumunium fosfit, Karbon, Kamper, Kain berminyak, Sulfur, Korek Api.',
+              title: t('sideLeftOne.title4'),
+              desc: t('sideLeftOne.desc4'),
             },
             {
               image: dangerousIm5,
-              title:
-                'Barang berbahaya kelas 5 : Barang yang mudah menghasilkan O2',
-              desc: 'Peroksida organik, Zat oksidator',
+              title: t('sideLeftOne.title5'),
+              desc: t('sideLeftOne.desc5'),
             },
             {
               image: dangerousIm6,
-              title: 'Barang berbahaya kelas 6 : Gas beracun, Zat menular',
-              desc: 'Obat Tanaman, Serbuk Toner, Insektisida',
+              title: t('sideLeftOne.title6'),
+              desc: t('sideLeftOne.desc6'),
             },
             {
               image: dangerousIm7,
-              title: 'Barang berbahaya kelas 7 : Bahan radioaktif',
-              desc: 'Material Radioaktif',
+              title: t('sideLeftOne.title7'),
+              desc: t('sideLeftOne.desc7'),
             },
             {
               image: dangerousIm8,
-              title: 'Barang berbahaya kelas 8 : Korosif',
-              desc: 'Cairan Korosif, Cairan tryr pembersih kerak',
+              title: t('sideLeftOne.title8'),
+              desc: t('sideLeftOne.desc8'),
             },
             {
               image: dangerousIm9,
-              title:
-                'Barang berbahaya kelas 9 : Zat dan benda barang berbahaya lain',
-              desc: 'Baterai, Tangki kosong,Baterai Emergency,Baterai Laptop,Power Bank, Aki Kering,Laptop,Cairan racun serangga,Zippo,Timbangan digital,Mic,Dinamo,Cylinder head,Magnet,Baterai Lithium',
+              title: t('sideLeftOne.title9'),
+              desc: t('sideLeftOne.desc9'),
             },
           ],
         },
         {
-          title: 'Larangan',
+          title: t('titleSideLeft.title3'),
           children: [
             {
               image: banImage,
-              title: 'Organ Manusia',
+              title: t('sideLeftTwo.title'),
             },
             {
               image: banImage2,
-              title: 'Bahan Makanan Kering',
+              title: t('sideLeftTwo.title2'),
             },
             {
-              image: banImage,
-              title: 'Hewan Hidup',
+              image: banImage3,
+              title: t('sideLeftTwo.title3'),
             },
             {
-              image: banImage,
-              title:
-                'Barang - barang yang termasuk kategori narkotika dan obat-obatan terlarang seperti ganja, morfin, opium, sabu-sabu, putau, ekstasi, dan sejenisnya',
+              image: banImage4,
+              title: t('sideLeftTwo.title4'),
             },
             {
-              image: banImage,
-              title:
-                'Barang - barang dengan unsur pornografi baik berupa cetakan, foto, rekaman, film, dan sejenisnya termasuk publikasi lainnya yang dilarang oleh Pemerintah',
+              image: banImage5,
+              title: t('sideLeftTwo.title5'),
             },
             {
-              image: banImage,
-              title:
-                'Barang-barang lainnya yang dapat membahayakan keamanan dan keselamatan selama pengangkutan',
+              image: banImage6,
+              title: t('sideLeftTwo.title6'),
             },
           ],
         },
@@ -169,8 +143,8 @@ export default function Terms() {
     <>
       <div className="bg-gray-header w-full h-[450px] mb-20 mx-auto grid text-center relative">
         <div className="absolute lg:top-1/2 top-[45%] left-0 right-0 text-white">
-          <h3 className="tracking-[6px] mb-3">INFORMASI</h3>
-          <h1 className="font-bold text-5xl">Syarat</h1>
+          <h3 className="tracking-[6px] mb-3">{t('hero.title')}</h3>
+          <h1 className="font-bold text-5xl">{t('hero.desc')}</h1>
         </div>
       </div>
 

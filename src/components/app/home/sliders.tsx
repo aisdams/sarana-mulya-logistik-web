@@ -77,6 +77,14 @@ export default function Sliders() {
           </SwiperSlide>
         ))}
       </Swiper>
+
+      <div className="rhombus-parent">
+        <img
+          src="https://picsum.photos/id/237/200/300"
+          className="rhombus"
+          alt=""
+        />
+      </div>
     </div>
   );
 }

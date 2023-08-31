@@ -1,0 +1,24 @@
+{
+  "hero": {
+    "title": "DETAIL LAYANAN"
+  },
+  "children": {
+    "title": "Container 20 ft",
+    "desc": "Layanan ini adalah pengiriman menggunakan container sepanjang 20 feet atau 6 x 2,4 m x 2,6 m (P x L x T) sekaligus mampu mengantar paket/barang dengan maksimal berat sebesar 20 ton. Dengan jumlah destinasi ke 29 kota di Indonesia, mulai dari pulau sumatera, kalimantan, sulawesi, maluku, papua, plus kota kupang.",
+    "title2": "Container 40 ft",
+    "desc2": "Layanan ini adalah pengiriman menggunakan container sepanjang 40 feet atau 12 m x 2,4 m, 2,9 m (P x L x T) sekaligus mampu mengantar paket/barang dengan maksimal berat sebesar 32 ton. Dengan jumlah destinasi ke 29 kota di Indonesia, mulai dari pulau sumatera, kalimantan, sulawesi, maluku, papua, plus kota kupang."
+  },
+  "childrenTwo": {
+    "title": "Leadtime layanan container sangat bervariatif sesuai destinasi tujuan, dan PT. Sarana Mulya Logistik fokus memberikan lead time yang terbaik dengan harga yang kompetitif.",
+    "title2": "Layanan container yang PT. Sarana Mulya Logistik berikan include bukti serah terima barang atau POD (Proof of delivery) kembali dengan waktu standar pengembalian POD antar 7 s/d 14 hari (kecuali ada request khusus untuk percepatan).",
+    "title3": "Dalam layanan ini PT. Sarana Mulya Logistik juga menyediakan layanan pengurusan dokumen DO/SJ (Surat Jalan) pelanggan dan FTZ (Free Trade Zone).",
+    "title4": "Sekaligus melayani FTL (Full Container Load) dan FCL (Less Container Load)."
+  },
+  "bold": {
+    "text": "Produk",
+    "text2": "dari layanan Container, antara lain :",
+    "text3": "Terdapat",
+    "text4": "beberapa hal",
+    "text5": "terkait layanan Container PT. Sarana Mulya Logistik yang meliputi :"
+  }
+}

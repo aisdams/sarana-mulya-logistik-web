@@ -1,0 +1,25 @@
+{
+  "hero": {
+    "title": "SERVICE DETAILS"
+  },
+  "children": {
+    "desc": "This service is a delivery that is delivered within the same day or less than 24 hours to the destination address.",
+    "desc2": "This service is a tomorrow-to-destination delivery. With a total number of destinations to 34 provinces and 8 major cities. (Outside of the 42 destinations that PT Sarana Mulya Logistik has determined, you can make a request for ONS handling).",
+    "desc3": "This service is an express delivery whose lead time is 2-3 days for the main destination after pick-up (leadtime is very dependent on the destination) while for remote area destinations, the express standard service is adjusted to the applicable remote area lead time. The destinations for this service reach all districts and cities in Indonesia (514 destinations).",
+    "desc4": "This service is the delivery of packages/goods from the origin airport to the destination airport. Destinations for this service reach all airports in Indonesia"
+  },
+  "childrenTwo": {
+    "title": "Express services both One Night Service (ONS) and Express Standard include proof of delivery (POD) returns with a standard return time of proof of delivery (POD) between 7 to 14 days (unless there is a special request for acceleration).",
+    "title2": "In this service PT Sarana Mulya Logistik also provides customer DO/SJ (Surat Jalan) and FTZ (Free Trade Zone) document management services.",
+    "title3": "For DG (Dangerous Goods) Shipments, a 300% surcharge will be charged from the shipping cost and for goods weighing above 70 kg, a 100% surcharge will be charged from the shipping cost (in accordance with airline regulations).",
+    "title4": "PT Sarana Mulya Logistik also serves the delivery of vaccines or other media whose temperature is 2 to 8 degrees.",
+    "title5": "For shipping by air, the size of the airplane door is generally taken as 300 cm x 90 cm x 85 cm (P x L x T)."
+  },
+  "bold": {
+    "text": "Product",
+    "text2": "of Expree services, among others:",
+    "text3": "Available",
+    "text4": "some things",
+    "text5": "related to PT Sarana Mulya Logistik Express services which include:"
+  }
+}

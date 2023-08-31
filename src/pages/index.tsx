@@ -27,7 +27,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
         'home/testimoni',
         'home/faq',
         'home/our-mission',
-        'footer',
+        'layouts/footer',
       ])),
     },
   };

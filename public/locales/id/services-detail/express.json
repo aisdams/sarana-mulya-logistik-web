@@ -1,0 +1,25 @@
+{
+  "hero": {
+    "title": "DETAIL LAYANAN"
+  },
+  "children": {
+    "desc": "Layanan ini merupakan pengiriman yang diantar dalam hari yang sama atau kurang dari 24 jam sudah sampai ke alamat tujuan.",
+    "desc2": "Layanan ini merupakan pengiriman besok sampai tujuan. Dengan jumlah destinasi ke 34 provinsi dan 8 kota besar. (Di Luar ke 42 destinasi yang sudah PT. Sarana Mulya Logistik tentukan, maka dapat melakukan request untuk dilakukan penanganan ONS).",
+    "desc3": "Layanan ini adalah pengiriman express yang lead timenya 2-3 hari untuk main destination setelah pick-up (leadtime sangat tergantung destinasi tujuan) sedangkan untuk destinasi remote area, layanan express standard disesuaikan dengan lead time remote area yang berlaku. Destinasi untuk layanan ini menjangkau ke seluruh kabupaten dan kota di indonesia (514 destinasi).",
+    "desc4": "Layanan ini merupakan pengiriman paket/barang dari bandara asal ke bandara tujuan. Destinasi untuk layanan ini menjangkau ke seluruh bandara di Indonesia"
+  },
+  "childrenTwo": {
+    "title": "Layanan Express baik One Night Service (ONS) maupun Express Standard include bukti serah terima barang atau POD (Proof of delivery) kembali dengan waktu standar pengembalian bukti serah terima barang atau POD (Proof of delivery) antar 7 s/d 14 hari (kecuali ada request khusus untuk percepatan).",
+    "title2": "Dalam layanan ini PT. Sarana Mulya Logistik juga menyediakan layanan pengurusan dokumen DO/SJ (Surat Jalan) pelanggan dan FTZ (Free Trade Zone).",
+    "title3": "Khusus Shipment DG (Dangerous Goods) maka dikenakan 300% surcharge dari biaya kirim dan untuk barang yang beratnya diatas 70 kg dikenakan surcharge 100% dari biaya kirim (sesuai dengan peraturan airline).",
+    "title4": "PT. Sarana Mulya Logistik juga melayani pengiriman vaksin atau media lain yang suhunya 2 s/d 8 derajat.",
+    "title5": "Untuk pengiriman melalui udara, ukuran pintu pesawat diambil secara umum adalah 300 cm x 90 cm x 85 cm (P x L x T)."
+  },
+  "bold": {
+    "text": "Produk",
+    "text2": "dari layanan Express, antara lain :",
+    "text3": "Terdapat",
+    "text4": "beberapa hal",
+    "text5": "terkait layanan Express PT. Sarana Mulya Logistik yang meliputi :"
+  }
+}

@@ -58,12 +58,12 @@ export default function Why() {
       <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5">
         {whys.map((Why, idx) => (
           <div className="flex gap-5" key={idx}>
-            <div className="transform rotate-45 border border-base-blue rounded-md h-max p-3">
-              {/* <Image
+            <div className="transform rotate-45 border border-base-blue rounded-md h-max p-3 hover:bg-base-blue group transition-all duration-300">
+              <Image
                 src={Why.image}
                 alt=""
-                className="h-full w-[300px] rounded-md !transform !rotate-0"
-              /> */}
+                className="h-full w-[300px] rounded-md !transform !rotate-[-45deg] group-hover:brightness-[100]"
+              />
             </div>
 
             <div className="">

@@ -1,0 +1,24 @@
+{
+  "hero": {
+    "title": "DETAIL LAYANAN"
+  },
+  "children": {
+    "desc": "Layanan ini adalah pengiriman dengan moda darat untuk area destinasi jawa, bali, NTB dan Sumatera dan moda laut untuk area destinasi kalimantan, NTT, Batam dan semua bagian indonesia timur ",
+    "title2": "Reguler Kubikasi",
+    "desc2": "Layanan ini adalah pengiriman reguler dengan menghitung biaya berdasarkan volume barang berdasarkan kubikasi untuk kebutuhan ekspedisi. Perhitungan kubikasi (CBM/Cubic Meters) berdasarkan rumus: (Panjang x Lebar x Tinggi)/1000000 = kubikasi (m3) Volume untuk pengiriman via darat & laut yang menggunakan perhitungan kubikasi (m3)."
+  },
+  "childrenTwo": {
+    "title": "Leadtime layanan Reguler sangat bervariatif sesuai destinasi tujuan, dan PT. Sarana Mulya Logistik fokus memberikan lead time yang terbaik dengan harga yang kompetitif.",
+    "title2": "Layanan Reguler yang PT. Sarana Mulya Logistik berikan include bukti serah terima barang atau POD (Proof of delivery) kembali dengan waktu standar pengembalian POD antar 10 s/d 25 hari (kecuali ada request khusus untuk percepatan).",
+    "title3": "Dalam layanan ini PT. Sarana Mulya Logistik juga menyediakan layanan pengurusan dokumen DO/SJ (Surat Jalan) pelanggan dan FTZ (Free Trade Zone).",
+    "title4": "Sekaligus melayani FTL (Full Trucking Load) baik CDE (colt diesel engkel) kapasitas 2 Ton, CDD (colt diesel double) kapasitas 4 ton, Fuso kapasitas 8 ton, tronton/wing box kapasitas 15 ton dan FCL (Full Container Load) baik container 20 'kapasitas 20 ton maupun Container 40' kapasitas 35 ton",
+    "title5": "Untuk pengiriman melalui udara, ukuran pintu pesawat diambil secara umum adalah 300 cm x 90 cm x 85 cm (P x L x T)"
+  },
+  "bold": {
+    "text": "Produk",
+    "text2": "dari layanan Reguler, antara lain :",
+    "text3": "Terdapat",
+    "text4": "beberapa hal",
+    "text5": "terkait layanan Reguler PT. Sarana Mulya Logistik yang meliputi :"
+  }
+}

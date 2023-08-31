@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { GetServerSideProps } from 'next';
 // import '@/styles/Animation.css';
 import { MdOutlineArrowForwardIos } from 'react-icons/md';
 import { useRouter } from 'next/router';
@@ -24,8 +25,8 @@ import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 
 export default function Footer() {
-  const router = useRouter();
   const { t } = useTranslation('footer');
+  const router = useRouter();
   const [shouldRenderOurMission, setShouldRenderOurMission] = useState(true);
 
   useEffect(() => {
@@ -39,7 +40,7 @@ export default function Footer() {
   const Footers = [
     {
       title: t('navigation.nav1'),
-      content: t('textNav1'),
+      content: t('textNav1.title'),
     },
     {
       title: t('navigation.nav2'),

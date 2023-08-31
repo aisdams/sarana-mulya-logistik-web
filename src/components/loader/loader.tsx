@@ -7,7 +7,7 @@ export default function Loader() {
     setIsVisible(true);
     setTimeout(() => {
       setIsVisible(false);
-    }, 5000); // Hide the loader after 5 seconds
+    }, 3000);
   }, []);
 
   return isVisible ? (

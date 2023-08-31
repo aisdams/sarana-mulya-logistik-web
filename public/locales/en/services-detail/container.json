@@ -1,0 +1,24 @@
+{
+  "hero": {
+    "title": "SERVICE DETAILS"
+  },
+  "children": {
+    "title": "20 ft Container",
+    "desc": "This service is a delivery using a 20 feet long container or 6 x 2.4 m x 2.6 m (P x L x T) while being able to deliver packages / goods with a maximum weight of 20 tons. With a number of destinations to 29 cities in Indonesia, starting from the islands of Sumatra, Kalimantan, Sulawesi, Maluku, Papua, plus the city of Kupang.",
+    "title2": "40 ft container",
+    "desc2": "This service is shipping using a 40 feet long container or 12 m x 2.4 m, 2.9 m (P x L x T) while being able to deliver packages / goods with a maximum weight of 32 tons. With a number of destinations to 29 cities in Indonesia, starting from the islands of Sumatra, Kalimantan, Sulawesi, Maluku, Papua, plus the city of Kupang."
+  },
+  "childrenTwo": {
+    "title": "The lead time of container services varies according to the destination, and PT Sarana Mulya Logistik focuses on providing the best lead time at competitive prices.",
+    "title2": "The container service that PT Sarana Mulya Logistik provides includes proof of delivery (POD) back with a standard POD return time between 7 to 14 days (unless there is a special request for acceleration).",
+    "title3": "In this service PT Sarana Mulya Logistik also provides customer DO/SJ (Surat Jalan) and FTZ (Free Trade Zone) document management services.",
+    "title4": "As well as serving FTL (Full Container Load) and FCL (Less Container Load)."
+  },
+  "bold": {
+    "text": "product",
+    "text2": "of Container services, among others:",
+    "text3": "Available",
+    "text4": "some things",
+    "text5": "related to PT Sarana Mulya Logistik Container services which include:"
+  }
+}
