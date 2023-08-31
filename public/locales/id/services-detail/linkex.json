@@ -1,0 +1,30 @@
+{
+  "hero": {
+    "title": "DETAIL LAYANAN"
+  },
+  "children": {
+    "desc": "Sebuah gerai ekspedisi dari LinkExpress yang membantu para pelaku usaha untuk mengembangkan bisnisnya melalui moda darat dan laut yang berfokus pada biaya yang lebih efisien dengan tetap memberikan kepastian waktu pengiriman. LinkSHop ini juga memiliki 3 jenis yaitu Ruby, Safir, dan Diamond.",
+    "desc2": "Sebuah produk dari LinkExpress yang membantu para pelaku E-Commerce mengantarkan paketnya dengan cepat, hemat dan praktis melalui moda darat dan laut yang berfokus pada biaya yang lebih efisien dengan tetap memberikan kepastian waktu pengiriman.",
+    "desc3": "Layanan jasa antar barang yang bekerja sama dengan hotel mengantarkan paketnya dengan cepat, hemat dan praktis melalui moda darat dan laut yang berfokus pada biaya yang lebih efisien dengan tetap memberikan kepastian waktu pengiriman.",
+    "desc4": "Sebuah produk dari LinkExpress yang membantu para pelaku Travel Haji atau Umroh mengantarkan paketnya dengan cepat, hemat dan praktis melalui moda darat dan laut yang berfokus pada biaya yang lebih efisien dengan tetap memberikan kepastian waktu pengiriman."
+  },
+  "children2": {
+    "bold": "Satu Kota Satu Harga.",
+    "text": "LinkExpress menyeragamkan harga dalam setiap satu kota. Ketika ada perbedaan kabupaten tetapi masih dalam area kota yang sama, maka harga yang diberikan tetap sama.",
+    "bold2": "Rajanya Remote Area.",
+    "text2": "LinkExpress menjangkau area terjauh hingga pelosok-pelosok Indonesia. Sehingga pelanggan tidak perlu takut tidak adanya pengiriman ke daerah tersebut. Karena LinkExpress rajanya pengiriman ke remote area.",
+    "bold3": "Jagonya Kiriman Online.",
+    "text3": "LinkExpress siap dan ahli dalam mengirimkan berbagai macam paket dan tujuan. Sehingga untuk para bisnis online dan corporate tidak perlu bingung lagi untuk pengiriman karena LinkExpress jagonya kiriman online.",
+    "bold4": "Top Priority Guarantee.",
+    "text4": "LinkExpress siap ganti rugi untuk barang yang hilang maupun rusak ketika pengiriman. LinkExpress akan ganti 100%.",
+    "bold5": "Melayani pengiriman ke 514 kota/kabupaten di Indonesia.",
+    "text5": "LinkExpress menjangkau 514 Kota/Kabupaten di Indonesia dan tidak perlu khawatir karena LinkExpress sudah berpengalaman dalam melakukan pengiriman ke seluruh wilayah di Indonesia."
+  },
+  "bold": {
+    "text": "Produk",
+    "text2": "dari layanan LinkExpress, antara lain :",
+    "text3": "Terdapat",
+    "text4": "beberapa hal",
+    "text5": "terkait layanan LinkExpress PT. Sarana Mulya Logistik yang meliputi :"
+  }
+}

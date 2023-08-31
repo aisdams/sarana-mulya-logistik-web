@@ -1,6 +1,4 @@
 import React from 'react';
-import ProductIm from 'public/img/service/container1.png';
-import ProductIm2 from 'public/img/service/container2.png';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -9,39 +7,53 @@ import { GetServerSideProps } from 'next';
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale!, ['services-detail/container'])),
+      ...(await serverSideTranslations(locale!, ['services-detail/linkex'])),
     },
   };
 };
 
-export default function Container() {
-  const { t } = useTranslation('services-detail/container');
+export default function Linkex() {
+  const { t } = useTranslation('services-detail/linkex');
   const products = [
     {
       children: [
         {
-          title: t('children.title'),
+          title: 'LinkShop',
           desc: t('children.desc'),
-          image: ProductIm,
         },
         {
-          title: t('children.title2'),
+          title: 'LinkBiz',
           desc: t('children.desc2'),
-          image: ProductIm2,
+        },
+        {
+          title: 'LinkTravel',
+          desc: t('children.desc3'),
+        },
+        {
+          title: 'LinkHajj',
+          desc: t('children.desc4'),
         },
       ],
       childrenTwo: [
         {
-          title: t('childrenTwo.title'),
+          bold: t('children2.bold'),
+          title: t('children2.text'),
         },
         {
-          title: t('childrenTwo.title2'),
+          bold: t('children2.bold2'),
+          title: t('chidlren2.text2'),
         },
         {
-          title: t('childrenTwo.title3'),
+          bold: t('children2.bold3'),
+          title: t('chidlren2.text3'),
         },
         {
-          title: t('childrenTwo.title4'),
+          bold: t('children2.bold4'),
+          title: t('chidlren2.text4'),
+        },
+        {
+          bold: t('children2.bold5'),
+          title: t('chidlren2.text5'),
         },
       ],
     },
@@ -52,7 +64,7 @@ export default function Container() {
       <div className="bg-gray-header w-full h-[450px] mb-20 mx-auto grid text-center relative">
         <div className="absolute top-1/2 left-0 right-0 text-white">
           <h3 className="tracking-[6px] mb-3">{t('hero.title')}</h3>
-          <h1 className="font-bold text-5xl">Container</h1>
+          <h1 className="font-bold text-5xl">LinkExpress</h1>
         </div>
       </div>
 
@@ -68,7 +80,6 @@ export default function Container() {
                 <ul key={childIdx} className="!list-disc pl-8">
                   <li>{childPro.title}</li>
                   <p>{childPro.desc}</p>
-                  <Image src={childPro.image} alt="" className="my-5" />
                 </ul>
               ))}
             </div>
@@ -80,7 +91,10 @@ export default function Container() {
             </h3>
             {product.childrenTwo?.map((childTwoPro, childTwoIdx) => (
               <ul key={childTwoIdx} className="!list-disc pl-8">
-                <li>{childTwoPro.title}</li>
+                <li>
+                  <span className="font-bold">{childTwoPro.bold}</span>{' '}
+                  {childTwoPro.title}
+                </li>
               </ul>
             ))}
           </>

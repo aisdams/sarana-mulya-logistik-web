@@ -1,0 +1,30 @@
+{
+  "hero": {
+    "title": "SERVICE DETAIL"
+  },
+  "children": {
+    "desc": "An expedition outlet from LinkExpress that helps businesses to grow their business through land and sea modes that focus on more efficient costs while still providing certainty of delivery time. This LinkSHop also has 3 types namely Ruby, Sapphire, and Diamond.",
+    "desc2": "A product from LinkExpress that helps E-Commerce players deliver their packages quickly, economically and practically through land and sea modes that focus on more efficient costs while still providing certainty of delivery time.",
+    "desc3": "Freight services that work with hotels to deliver packages quickly, economically and practically through land and sea modes that focus on more efficient costs while still providing certainty of delivery time.",
+    "desc4": "A product from LinkExpress that helps Hajj or Umrah Travelers deliver their packages quickly, economically and practically through land and sea modes that focus on more efficient costs while still providing certainty of delivery time."
+  },
+  "children2": {
+    "bold": "One City One Price.",
+    "text": "LinkExpress homogenizes the price within each city. When there are different districts but still within the same city area, the price remains the same.",
+    "bold2": "The King of Remote Area.",
+    "text2": "LinkExpress reaches the farthest areas to remote parts of Indonesia. So customers don't need to be afraid of no delivery to the area. Because LinkExpress is the king of delivery to remote areas.",
+    "bold3": "The champion of online delivery.",
+    "text3": "LinkExpress is ready and expert in sending various kinds of packages and destinations. So for online and corporate businesses do not need to be confused anymore for delivery because LinkExpress is the champion of online delivery.",
+    "bold4": "Top Priority Guarantee.",
+    "text4": "LinkExpress is ready to compensate for items that are lost or damaged during delivery. LinkExpress will compensate 100%.",
+    "bold5": "Serving delivery to 514 cities/districts in Indonesia.",
+    "text5": "LinkExpress reaches 514 cities / regencies in Indonesia and there is no need to worry because LinkExpress is experienced in making shipments to all regions in Indonesia."
+  },
+  "bold": {
+    "text": "Product",
+    "text2": "from LinkExpress services, including:",
+    "text3": "Available",
+    "text4": "some things",
+    "text5": "related to PT Sarana Mulya Logistik's LinkExpress service which includes:"
+  }
+}

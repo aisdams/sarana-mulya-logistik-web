@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "title": "SERVICES DETAILS"
+  },
+  "children": {
+    "desc": "Layanan ini adalah pengiriman door to door dari Indonesia ke luar negeri baik container maupun kg-base serta memberikan layanan customs clearance (dimana memerlukan beberapa dokumen yang terdaftar di poin 10). Layanan ini menawarkan dua pilihan yaitu air freight (pengiriman menggunakan moda udara) dan sea freight (pengiriman menggunakan moda laut dengan pilihan layanan LCL dan FCL).",
+    "desc2": "Layanan ini adalah pengiriman door to door dari luar negeri ke Indonesia baik container maupun kg-base serta memberikan layanan customs clearance (dimana memerlukan beberapa dokumen yang terdaftar di poin 10). Layanan ini menawarkan dua pilihan yaitu air freight (pengiriman menggunakan moda udara) dan sea freight (pengiriman menggunakan moda laut dengan pilihan layanan LCL dan FCL)."
+  },
+  "chidlren2": {
+    "title": "Leadtime layanan exim sangat bervariatif sesuai destinasi tujuan, dan PT. Tri Buana Selaras fokus memberikan lead time yang terbaik dengan harga yang kompetitif.",
+    "title2": "Layanan exim yang PT. Sarana Mulya Logistik berikan include bukti serah terima barang atau POD (Proof of delivery) kembali dengan waktu standar pengembalian POD antara 10 s/d 25 hari (kecuali ada request khusus untuk percepatan).",
+    "title3": "Sekaligus melayani FTL (Full Container Load) dan FCL (Less Container Load).",
+    "title4": "Maksimal pengiriman paket via Udara (Air Freight) ukuran maksimalnya adalah 2 m x 1,8 m x 1,2 m sedangkan maksimal berat barang per paket adalah 500kg."
+  },
+  "bold": {
+    "text": "Produk",
+    "text2": "dari layanan Exim, antara lain :",
+    "text3": "Terdapat",
+    "text4": "beberapa hal",
+    "text5": "terkait layanan Exim PT. Sarana Mulya Logistik yang meliputi :"
+  }
+}

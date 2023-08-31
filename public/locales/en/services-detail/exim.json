@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "title": "SERVICES DETAILS"
+  },
+  "children": {
+    "desc": "This service is a door to door delivery from Indonesia to overseas both container and kg-base and provides customs clearance services (which requires several documents listed in point 10). This service offers two options, namely air freight (shipping using air mode) and sea freight (shipping using sea mode with LCL and FCL service options).",
+    "desc2": "This service is a door to door delivery from overseas to Indonesia both container and kg-base and provides customs clearance services (which requires several documents listed in point 10). This service offers two options, namely air freight (shipping using air mode) and sea freight (shipping using sea mode with LCL and FCL service options)."
+  },
+  "chidlren2": {
+    "title": "The lead time of exim services varies according to the destination, and PT Tri Buana Selaras focuses on providing the best lead time with competitive prices.",
+    "title2": "The exim service that PT Sarana Mulya Logistik provides includes proof of delivery of goods or POD (Proof of delivery) back with a standard POD return time between 10 to 25 days (unless there is a special request for acceleration).",
+    "title3": "At the same time serving FTL (Full Container Load) and FCL (Less Container Load).",
+    "title4": "Maximum package delivery via Air (Air Freight) maximum size is 2 m x 1.8 m x 1.2 m while the maximum weight of goods per package is 500kg."
+  },
+  "bold": {
+    "text": "product",
+    "text2": "from Exim services, among others:",
+    "text3": "Available",
+    "text4": "some things",
+    "text5": "related to PT Sarana Mulya Logistik's Exim services which include:"
+  }
+}

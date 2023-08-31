@@ -1,6 +1,4 @@
 import React from 'react';
-import ProductIm from 'public/img/service/container1.png';
-import ProductIm2 from 'public/img/service/container2.png';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -9,39 +7,37 @@ import { GetServerSideProps } from 'next';
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale!, ['services-detail/container'])),
+      ...(await serverSideTranslations(locale!, ['services-detail/exim'])),
     },
   };
 };
 
-export default function Container() {
-  const { t } = useTranslation('services-detail/container');
+export default function Exiom() {
+  const { t } = useTranslation('services-detail/exim');
   const products = [
     {
       children: [
         {
-          title: t('children.title'),
-          desc: t('children.desc'),
-          image: ProductIm,
+          title: 'Ekspor',
+          desc: t('children.desc2'),
         },
         {
-          title: t('children.title2'),
+          title: 'Impor',
           desc: t('children.desc2'),
-          image: ProductIm2,
         },
       ],
       childrenTwo: [
         {
-          title: t('childrenTwo.title'),
+          title: t('chidlren2.title'),
         },
         {
-          title: t('childrenTwo.title2'),
+          title: t('chidlren2.title2'),
         },
         {
-          title: t('childrenTwo.title3'),
+          title: t('chidlren2.title3'),
         },
         {
-          title: t('childrenTwo.title4'),
+          title: t('chidlren2.title4'),
         },
       ],
     },
@@ -52,7 +48,7 @@ export default function Container() {
       <div className="bg-gray-header w-full h-[450px] mb-20 mx-auto grid text-center relative">
         <div className="absolute top-1/2 left-0 right-0 text-white">
           <h3 className="tracking-[6px] mb-3">{t('hero.title')}</h3>
-          <h1 className="font-bold text-5xl">Container</h1>
+          <h1 className="font-bold text-5xl">Exim</h1>
         </div>
       </div>
 
@@ -68,7 +64,6 @@ export default function Container() {
                 <ul key={childIdx} className="!list-disc pl-8">
                   <li>{childPro.title}</li>
                   <p>{childPro.desc}</p>
-                  <Image src={childPro.image} alt="" className="my-5" />
                 </ul>
               ))}
             </div>
