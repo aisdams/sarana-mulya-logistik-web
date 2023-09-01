@@ -62,7 +62,7 @@ export default function Why() {
               <Image
                 src={Why.image}
                 alt=""
-                className="h-full w-[300px] rounded-md !transform !rotate-[-45deg] group-hover:brightness-[100]"
+                className="h-full lg:w-[300px] w-48 rounded-md !transform !rotate-[-45deg] group-hover:brightness-[100]"
               />
             </div>
 

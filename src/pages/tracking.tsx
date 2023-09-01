@@ -1,14 +1,28 @@
 import React from 'react';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { GetServerSideProps } from 'next';
+import { useTranslation } from 'next-i18next';
+
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale!, [
+        'home/our-mission',
+        'tracking',
+        'layouts/footer',
+      ])),
+    },
+  };
+};
 
 export default function Tracking() {
+  const { t } = useTranslation('tracking');
   return (
     <>
       <div className="bg-gray-header w-full h-[450px] mb-20 mx-auto grid text-center relative">
         <div className="absolute top-1/2 left-0 right-0 text-white">
-          <h3 className="tracking-[6px] mb-3">
-            LACAK KIRIMAN DAN DOKUMEN ANDA
-          </h3>
-          <h1 className="font-bold lg:text-5xl text-3xl">Cek Resi</h1>
+          <h3 className="tracking-[6px] mb-3">{t('hero.title')}</h3>
+          <h1 className="font-bold lg:text-5xl text-3xl">{t('hero.header')}</h1>
         </div>
       </div>
 

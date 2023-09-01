@@ -28,7 +28,7 @@ export default function Value() {
     <div>
       {values.map((value, idx) => (
         <div
-          className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 text-center mx-44 my-20"
+          className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 text-center lg:mx-44 mx-3 my-20"
           key={idx}
         >
           {value.children.map((child, childIdx) => (

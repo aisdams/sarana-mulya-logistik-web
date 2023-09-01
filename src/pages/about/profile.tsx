@@ -84,7 +84,7 @@ export default function Profile() {
       </div>
 
       <div className="my-20 lg:ml-28 md:mx-28 mx-5">
-        <h1 className="font-bold text-[#666666]-text text-4xl mb-10 lg-mb-10">
+        <h1 className="font-bold text-[#666666]-text text-4xl mb-16 lg-mb-10">
           {t('sectionTwo.name')}
         </h1>
         <div className="grid lg:grid-cols-2 gap-10 items-center relative -top-14">

@@ -9,6 +9,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { motion } from 'framer-motion';
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
@@ -79,11 +80,13 @@ export default function Services() {
           {RenService.map((service, idx) => (
             <div className="text-justify pb-8 overflow-hidden group" key={idx}>
               <div className="relative overflow-hidden">
-                <Image
-                  src={service.image}
-                  alt=""
-                  className="transition-transform group-hover:scale-110 duration-300 transform-origin-center"
-                />
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 1 }}
+                  className="duration-300"
+                >
+                  <Image src={service.image} alt="" />
+                </motion.button>
               </div>
               <Link href={service.link}>
                 <h3 className="text-xl my-3 group-hover:text-base-blue hover:border-b-2 border-base-blue w-max">

@@ -39,7 +39,7 @@ export default function Team() {
   };
 
   return (
-    <div className="mx-28 items-center my-20 relative">
+    <div className="lg:mx-28 mx-0 items-center my-20 relative">
       {teams.map((team, idx) => (
         <div className="grid gap-10" key={idx}>
           {team.children.map((chil, childIdx) => (
@@ -56,7 +56,7 @@ export default function Team() {
                   <p className="text-gray-secondary text-[15px]">{chil.desc}</p>
                 </div>
               </div>
-              <div className="absolute right-0 top-0 mt-10">
+              <div className="lg:absolute lg:right-0 lg:top-0 mt-10">
                 {selectedImage === chil.image && (
                   <Image src={selectedImage} alt="" width={550} />
                 )}

@@ -100,7 +100,7 @@ export default function Footer() {
     <>
       {shouldRenderOurMission && <OurMission />}
       <div className="bg-[#081c25] py-20 text-white">
-        <div className="grid lg:grid-cols-4 lg:mx-28 mx-2 gap-5 mb-28 relative">
+        <div className="grid lg:grid-cols-4 lg:mx-28 mx-2 gap-5 mb-28 relative pl-5">
           {Footers.map((footer, index) => (
             <div className={footer.title} key={index}>
               <h1 className="text-white text-2xl">{footer.title}</h1>

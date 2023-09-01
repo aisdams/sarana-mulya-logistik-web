@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'next-i18next';
 import { FaHeadphones, FaGlobe, FaUsers, FaTruck } from 'react-icons/fa';
 import { PiGarage } from 'react-icons/pi';
@@ -27,6 +27,42 @@ export default function Counter() {
       paragraf: t('card.title4'),
     },
   ];
+
+  const [countedTitles, setCountedTitles] = useState(
+    Counters.map((counter) => 0)
+  );
+
+  useEffect(() => {
+    const delay = 100;
+    const step = 1;
+
+    const interval = setInterval(() => {
+      let updatedCountedTitles = [...countedTitles];
+      let allTitlesCounted = true;
+
+      Counters.forEach((counter, idx) => {
+        const targetCount = parseInt(counter.title, 10);
+        if (countedTitles[idx] < targetCount) {
+          updatedCountedTitles[idx] = Math.min(
+            countedTitles[idx] + step,
+            targetCount
+          );
+          allTitlesCounted = false;
+        }
+      });
+
+      if (allTitlesCounted) {
+        clearInterval(interval);
+      }
+
+      setCountedTitles(updatedCountedTitles);
+    }, delay);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [countedTitles]);
+
   return (
     <div className="my-20">
       <h5 className="text-base-blue">{t('text.header')}</h5>
@@ -55,7 +91,9 @@ export default function Counter() {
           {Counters.map((counter, idx) => (
             <div className="text-base-blue" key={idx}>
               <div className="text-3xl"> {counter.icon}</div>
-              <h1 className="font-bold text-[2rem] md:mt-3">{counter.title}</h1>
+              <h1 className="font-bold text-[2rem] md:mt-3">
+                {countedTitles[idx]}
+              </h1>
               <p>{counter.paragraf}</p>
             </div>
           ))}

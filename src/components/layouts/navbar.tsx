@@ -19,8 +19,6 @@ interface NavbarProps {
 export default function Navbar({ isScrolled }: NavbarProps) {
   const router = useRouter();
   const { t } = useTranslation('navbar');
-  const { t: tHome, i18n: i18nHome } = useTranslation('home');
-  const { t: tAbout, i18n: i18nAbout } = useTranslation('about');
   const [activeMenu, setActiveMenu] = useState<number | null>(null);
   const [flagToggle, setFlagToggle] = useState<boolean>(false);
   const [languageDropdownOpen, setLanguageDropdownOpen] =
@@ -82,7 +80,7 @@ export default function Navbar({ isScrolled }: NavbarProps) {
 
   return (
     <div
-      className={`w-full absolute top-0 hidden lg:grid ${
+      className={`w-full absolute top-0 hidden lg:grid transition-all z ${
         isScrolled
           ? 'bg-white top-0 sticky text-base-blue shadow-[-5px_10px_30px_0px_rgba(0,0,0,0.5)]'
           : 'bg-transparent text-white'

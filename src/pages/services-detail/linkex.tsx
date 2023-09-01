@@ -10,6 +10,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
       ...(await serverSideTranslations(locale!, [
         'services-detail/linkex',
         'home/our-mission',
+        'layouts/footer',
       ])),
     },
   };
@@ -71,7 +72,7 @@ export default function Linkex() {
         </div>
       </div>
 
-      <div className="mx-28 text-[#666666]">
+      <div className="lg:mx-28 mx-5 text-[#666666]">
         <h3 className="mb-5">
           <span className="font-bold">{t('bold.text')} </span>
           {t('bold.text2')}

@@ -24,7 +24,7 @@ export default function VisiMisi() {
   ];
   return (
     <>
-      <div className="lg:flex mx-28 my-20">
+      <div className="lg:flex lg:mx-28 mx-3 my-20">
         {VisiMisis.map((visimisi, idx) => (
           <>
             <div key={idx}>

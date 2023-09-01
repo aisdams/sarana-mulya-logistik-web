@@ -2,12 +2,20 @@ import React, { useState } from 'react';
 import NavbarData from '@/data/NavbarData';
 import Link from 'next/link';
 import Flag from 'public/img/lang/ind.png';
+import FlagEng from 'public/img/lang/us.png';
 import Image from 'next/image';
 import { BsPlus, BsDash } from 'react-icons/bs';
+import { BiSolidDownArrow } from 'react-icons/bi';
+import { useRouter } from 'next/router';
 
 export default function Sidebar() {
+  const router = useRouter();
   // State to track the open/closed state of dropdowns
   const [openDropdowns, setOpenDropdowns] = useState<number[]>([]); // Use an array of numbers
+
+  const [flagToggle, setFlagToggle] = useState<boolean>(false);
+  const [languageDropdownOpen, setLanguageDropdownOpen] =
+    useState<boolean>(false); // Tambah state untuk dropdown bahasa
 
   // Function to toggle the dropdown state
   const toggleDropdown = (idx: number) => {
@@ -16,6 +24,54 @@ export default function Sidebar() {
     } else {
       setOpenDropdowns([...openDropdowns, idx]);
     }
+  };
+
+  const handleLanguageDropdownToggle = () => {
+    setLanguageDropdownOpen((prevState) => !prevState); // Toggle dropdown bahasa
+  };
+
+  const ChangeLanguage = () => {
+    const currentLocale = router.locale;
+
+    const toggleSwitchLanguage = () => {
+      const newLocale = currentLocale === 'id' ? 'en' : 'id';
+      router.push(router.pathname, `/${newLocale}${router.asPath}`, {
+        locale: newLocale,
+      });
+    };
+
+    return (
+      <div
+        className="flex items-center px-3 gap-3"
+        onClick={toggleSwitchLanguage}
+      >
+        <Image
+          src={router?.locale === 'en' ? Flag : FlagEng}
+          alt=""
+          width={40}
+        />
+        <h3 className="text-white">
+          {router?.locale === 'en' ? 'IND' : 'ENG'}
+        </h3>
+      </div>
+    );
+  };
+
+  const LanguageToggle = () => {
+    const currentLocale = router.locale;
+
+    const toggleLanguage = () => {
+      const newLocale = currentLocale === 'id' ? 'en' : 'id';
+      router.push(router.pathname, `/${newLocale}${router.asPath}`, {
+        locale: newLocale,
+      });
+    };
+
+    return (
+      <button onClick={toggleLanguage}>
+        {currentLocale === 'id' ? 'IND' : 'ENG'}
+      </button>
+    );
   };
 
   return (
@@ -81,14 +137,41 @@ export default function Sidebar() {
         </div>
       ))}
 
-      <button className="border border-[#383838] mt-3 text-white cursor-pointer pr-[50%] py-2 pl-2 text-left">
-        <Link href="">LOGIN</Link>
-      </button>
-
-      <div className="flex text-white items-center relative">
-        <Image className="w-10 mt-5" src={Flag} alt="" />
-        <h1 className="absolute left-14 top-1/2 text-lg">ID</h1>
+      <div className="flex gap-5 items-center mt-5">
+        <div className="flex gap-3 cursor-pointer relative items-center">
+          <Image
+            src={router?.locale === 'en' ? FlagEng : Flag}
+            alt=""
+            width={40}
+          />
+          {/* <LanguageToggle /> */}
+          <h3 onClick={handleLanguageDropdownToggle} className="text-white">
+            {router?.locale === 'en' ? 'Eng' : 'IDN'}
+          </h3>
+          <BiSolidDownArrow
+            className="text-[9px]"
+            onClick={handleLanguageDropdownToggle}
+          />
+          {languageDropdownOpen && (
+            <ul className="absolute top-full text-[13px] gap-y-2 py-2 grid right-0 mt-2 rounded-sm w-max shadow-[-5px_10px_10px_0px_rgba(0,0,0,0.4)] bg-white text-black">
+              <li>
+                <button
+                  className="hover:text-base-blue font-medium flex gap-3 items-center"
+                  onClick={handleLanguageDropdownToggle}
+                >
+                  <ChangeLanguage />
+                </button>
+              </li>
+            </ul>
+          )}
+        </div>
       </div>
+
+      <Link href="https://sml.ops.odisys.id/auth" legacyBehavior>
+        <a className="border border-[#383838] mt-3 text-white cursor-pointer py-2 pl-2 text-left w-max">
+          Login
+        </a>
+      </Link>
     </div>
   );
 }
