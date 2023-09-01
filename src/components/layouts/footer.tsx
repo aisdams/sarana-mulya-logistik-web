@@ -25,7 +25,7 @@ import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 
 export default function Footer() {
-  const { t } = useTranslation('footer');
+  const { t } = useTranslation('layouts/footer');
   const router = useRouter();
   const [shouldRenderOurMission, setShouldRenderOurMission] = useState(true);
 

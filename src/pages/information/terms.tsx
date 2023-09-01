@@ -26,6 +26,8 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
       ...(await serverSideTranslations(locale!, [
         'information/terms',
         'home/faq',
+        'home/our-mission',
+        'layouts/footer',
       ])),
     },
   };

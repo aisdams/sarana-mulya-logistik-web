@@ -7,7 +7,10 @@ import { GetServerSideProps } from 'next';
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale!, ['services-detail/linkex'])),
+      ...(await serverSideTranslations(locale!, [
+        'services-detail/linkex',
+        'home/our-mission',
+      ])),
     },
   };
 };

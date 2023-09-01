@@ -1,7 +1,8 @@
 import 'react-toastify/dist/ReactToastify.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { ToastContainer } from 'react-toastify';
+import Loader from '@/components/loader/loader';
 
 type AppProviderProps = {
   children: React.ReactNode;
@@ -9,16 +10,25 @@ type AppProviderProps = {
 
 const AppProvider = ({ children }: AppProviderProps) => {
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const body = document.querySelector('body') as HTMLBodyElement;
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
 
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
+  useEffect(() => {
     const handleRouteChangeStart = () => {
-      body.classList.add('overflow-y-hidden');
+      setIsLoading(true);
     };
 
     const handleRouteChangeComplete = () => {
-      body.classList.remove('overflow-y-hidden');
+      setIsLoading(false);
     };
 
     router.events.on('routeChangeStart', handleRouteChangeStart);
@@ -32,12 +42,11 @@ const AppProvider = ({ children }: AppProviderProps) => {
 
   return (
     <>
+      {isLoading && <Loader />}
       {children}
       <ToastContainer
         position="top-right"
         autoClose={4000}
-        hideProgressBar={false}
-        newestOnTop={false}
         closeOnClick
         rtl={false}
         pauseOnFocusLoss

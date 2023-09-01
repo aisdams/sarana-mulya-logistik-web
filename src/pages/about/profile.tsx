@@ -25,6 +25,8 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
         'fivesec/team',
         'fivesec/excess',
         'home/counter',
+        'home/our-mission',
+        'layouts/footer',
       ])),
     },
   };

@@ -6,7 +6,10 @@ import { GetServerSideProps } from 'next';
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale!, ['services-detail/reguler'])),
+      ...(await serverSideTranslations(locale!, [
+        'services-detail/reguler',
+        'home/our-mission',
+      ])),
     },
   };
 };
