@@ -4,15 +4,16 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL;
 const API_USERNAME = process.env.NEXT_AUTH_USERNAME!;
 const API_PASSWORD = process.env.NEXT_AUTH_PASSWORD!;
 
-// Fungsi ini akan menggunakan username dan password dari .env.local
-export const searchHotels = async (receipt_no: string) => {
+export const trackings = async (receipt_no: string) => {
   try {
+    const username = API_USERNAME;
+    const password = API_PASSWORD;
+
     const response = await axios.get(
-      `${API_URL}/tracking/public/?receipt_no=${receipt_no}`,
+      `${API_URL}/tracking/public/${receipt_no}`,
       {
-        auth: {
-          username: API_USERNAME,
-          password: API_PASSWORD,
+        headers: {
+          Authorization: `Basic ${btoa(`${username}:${password}`)}`,
         },
       }
     );

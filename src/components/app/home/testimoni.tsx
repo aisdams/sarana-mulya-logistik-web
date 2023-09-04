@@ -9,6 +9,7 @@ import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
 import Indec from '../../../../public/img/client/indec.png';
 import { useTranslation } from 'next-i18next';
+import { motion } from 'framer-motion';
 
 export default function Testimoni() {
   const { t } = useTranslation('home/testimoni');
@@ -88,91 +89,95 @@ export default function Testimoni() {
   ];
 
   return (
-    <div className="my-20 mx-auto text-center">
-      <h1 className="text-base-blue">{t('heading.title')}</h1>
-      <h1 className="text-secondary-text font-bold text-2xl">
-        {t('heading.title2')}
-      </h1>
+    <motion.div>
+      <div className="my-20 mx-auto text-center">
+        <h1 className="text-base-blue">{t('heading.title')}</h1>
+        <h1 className="text-secondary-text font-bold text-2xl">
+          {t('heading.title2')}
+        </h1>
 
-      <Swiper
-        slidesPerView={1}
-        spaceBetween={30}
-        loop={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        breakpoints={{
-          '360': {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-          '576': {
-            slidesPerView: 1,
-            spaceBetween: 30,
-          },
-          '768': {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-          '992': {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-        }}
-        modules={[Pagination, Autoplay]}
-        className="mySwiper"
-        onSlideChange={onSlideChange}
-        centeredSlides={true}
-      >
-        {Testimonies.map((testimoni, idx) => (
-          <SwiperSlide key={idx}>
-            <div className={`box mt-5 ${idx === activeIndex ? 'center' : ''}`}>
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={30}
+          loop={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          breakpoints={{
+            '360': {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            '576': {
+              slidesPerView: 1,
+              spaceBetween: 30,
+            },
+            '768': {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            '992': {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+          }}
+          modules={[Pagination, Autoplay]}
+          className="mySwiper"
+          onSlideChange={onSlideChange}
+          centeredSlides={true}
+        >
+          {Testimonies.map((testimoni, idx) => (
+            <SwiperSlide key={idx}>
               <div
-                className={`rounded-lg pb-5 ${
-                  idx === activeIndex ? 'bg-gray-500' : ''
-                }`}
+                className={`box mt-5 ${idx === activeIndex ? 'center' : ''}`}
               >
-                <hr className="bg-base-blue w-full h-1 relative" />
-                <div className="mx-5">
-                  <div
-                    className={`absolute top-0 rounded-full bg-base-blue text-white p-3 max-w-max z-10 ${
-                      idx === activeIndex ? 'center' : ''
-                    }`}
-                  >
-                    {testimoni.icon}
-                  </div>
-
-                  <h1
-                    className={`text-${
-                      idx === activeIndex ? 'white' : 'black'
-                    } text-justify text-sm mt-8`}
-                  >
-                    {testimoni.title}
-                  </h1>
-
-                  <div className="flex mt-5 gap-2 items-center">
+                <div
+                  className={`rounded-lg pb-5 ${
+                    idx === activeIndex ? 'bg-gray-500' : ''
+                  }`}
+                >
+                  <hr className="bg-base-blue w-full h-1 relative" />
+                  <div className="mx-5">
                     <div
-                      className={`bg-base-blue text-${
-                        idx === activeIndex ? 'white' : 'black'
-                      } rounded-full p-2 text-3xl`}
+                      className={`absolute top-0 rounded-full bg-base-blue text-white p-3 max-w-max z-10 ${
+                        idx === activeIndex ? 'center' : ''
+                      }`}
                     >
-                      {testimoni.user}
+                      {testimoni.icon}
                     </div>
+
                     <h1
                       className={`text-${
                         idx === activeIndex ? 'white' : 'black'
-                      } text-sm text-left`}
+                      } text-justify text-sm mt-8`}
                     >
-                      {testimoni.pt}
+                      {testimoni.title}
                     </h1>
+
+                    <div className="flex mt-5 gap-2 items-center">
+                      <div
+                        className={`bg-base-blue text-${
+                          idx === activeIndex ? 'white' : 'black'
+                        } rounded-full p-2 text-3xl`}
+                      >
+                        {testimoni.user}
+                      </div>
+                      <h1
+                        className={`text-${
+                          idx === activeIndex ? 'white' : 'black'
+                        } text-sm text-left`}
+                      >
+                        {testimoni.pt}
+                      </h1>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </motion.div>
   );
 }

@@ -1,5 +1,6 @@
 import '@/styles/globals.css';
 import { AppProps } from 'next/app';
+import { appWithTranslation } from 'next-i18next';
 import AppProvider from '@/components/providers/app-provider';
 import Head from 'next/head';
 import Navbar from '@/components/layouts/navbar';
@@ -14,7 +15,7 @@ export type NextPageCustomLayout<P = {}, IP = P> = NextPage<P, IP> & {
   theme?: string;
 };
 
-export default function App({
+function App({
   Component,
   pageProps,
 }: AppProps & {
@@ -81,6 +82,10 @@ export default function App({
           rel="shortcut icon"
           href="https://saranamulyalogisticscorp.com/assets/img/logo.png"
         />
+        <script
+          src="https://embed.tawk.to/64ec3a37a91e863a5c102bcb/1h8tc6qjl"
+          async
+        />
       </Head>
       <AppProvider>
         <div className={`relative ${isScrolled ? 'bg-white shadow' : ''}`}>
@@ -116,3 +121,5 @@ export default function App({
     </>
   );
 }
+
+export default appWithTranslation(App);

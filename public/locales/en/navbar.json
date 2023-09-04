@@ -1,6 +1,6 @@
 {
   "section": {
-    "titleOne": "Home",
+    "titleOne": "HOME",
     "titleTwoChild": {
       "titlePar": "ABOUT",
       "child": {
@@ -10,10 +10,10 @@
       }
     },
     "titleThree": "SERVICE",
-    "titleFour": "RECORD CHECK",
+    "titleFour": "TRACKING",
     "titleFive": {
       "titlePar": "INFORMATION",
-      "child": [{ "title": "BLOG", "titleTwo": "NEWS", "titleThree": "TERMS" }]
+      "child": { "title": "BLOG", "titleTwo": "NEWS", "titleThree": "TERMS" }
     },
     "titleSix": "CONTACT"
   }

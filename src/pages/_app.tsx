@@ -130,7 +130,6 @@ function App({
           {isMenuOpen && (
             <>
               <Sidebar />
-              <Loader />
               {getLayout(<Component {...pageProps} />)}
               <Footer />
             </>
@@ -139,7 +138,6 @@ function App({
           {!isMenuOpen && (
             <>
               <Navbar isScrolled={isScrolled} />
-              <Loader />
               {getLayout(<Component {...pageProps} />)}
               <Footer />
             </>

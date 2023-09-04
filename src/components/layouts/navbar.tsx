@@ -4,13 +4,15 @@ import { GetServerSideProps } from 'next';
 import { i18n, useTranslation } from 'next-i18next';
 import LogoSML from 'public/img/icon2.png';
 import Image from 'next/image';
-import NavbarData from '@/data/NavbarData';
 import Flag from 'public/img/lang/ind.png';
 import FlagEng from 'public/img/lang/us.png';
 import { BiSolidDownArrow } from 'react-icons/bi';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { motion } from 'framer-motion';
+import { BsCaretDownFill } from 'react-icons/bs';
+motion;
 
 interface NavbarProps {
   isScrolled: boolean;
@@ -24,6 +26,72 @@ export default function Navbar({ isScrolled }: NavbarProps) {
   const [languageDropdownOpen, setLanguageDropdownOpen] =
     useState<boolean>(false); // Tambah state untuk dropdown bahasa
 
+  const NavbarData = [
+    {
+      title: t('section.titleOne'),
+      type: 'info',
+      link: '/',
+    },
+    {
+      title: t('section.titleTwoChild.titlePar'),
+      icons: BsCaretDownFill,
+      type: 'info',
+      children: [
+        {
+          title: t('section.titleTwoChild.child.title'),
+          type: 'info',
+          link: '/about/profile',
+        },
+        {
+          title: t('section.titleTwoChild.child.titleTwo'),
+          type: 'info',
+          link: '/about/client',
+        },
+        {
+          title: t('section.titleTwoChild.child.titleThree'),
+          type: 'info',
+          link: '/about/branch',
+        },
+      ],
+    },
+    {
+      title: t('section.titleThree'),
+      type: 'info',
+      link: '/services',
+    },
+    {
+      title: t('section.titleFour'),
+      type: 'info',
+      link: '/tracking',
+    },
+    {
+      title: t('section.titleFive.titlePar'),
+      icons: BsCaretDownFill,
+      type: 'info',
+      children: [
+        {
+          title: t('section.titleFive.child.title'),
+          type: 'info',
+          link: '/information/blog',
+        },
+        {
+          title: t('section.titleFive.child.titleTwo'),
+          type: 'info',
+          link: '/information/news',
+        },
+        {
+          title: t('section.titleFive.child.titleThree'),
+          type: 'info',
+          link: '/information/terms',
+        },
+      ],
+    },
+    {
+      title: t('section.titleSix'),
+      type: 'info',
+      link: '/contact',
+    },
+  ];
   const handleMouseEnter = (index: number) => {
     setActiveMenu(index);
   };
@@ -105,7 +173,7 @@ export default function Navbar({ isScrolled }: NavbarProps) {
               onMouseLeave={handleMouseLeave}
             >
               <a href={`/${router.locale}${navbar.link}`}>
-                <h1>{navbar.title} </h1>
+                <h1>{t(navbar.title)}</h1>
               </a>
               {navbar.children && (
                 <div className="icon">
@@ -143,10 +211,6 @@ export default function Navbar({ isScrolled }: NavbarProps) {
             <h3 onClick={handleLanguageDropdownToggle}>
               {router?.locale === 'en' ? 'Eng' : 'IDN'}
             </h3>
-            <BiSolidDownArrow
-              className="text-[9px]"
-              onClick={handleLanguageDropdownToggle}
-            />
             {languageDropdownOpen && (
               <ul className="absolute top-full text-[13px] gap-y-2 py-2 grid right-0 mt-2 rounded-sm w-max shadow-[-5px_10px_10px_0px_rgba(0,0,0,0.4)] bg-white text-black">
                 <li>
