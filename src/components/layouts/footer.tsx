@@ -175,7 +175,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="bg-dark-blue w-full h-14 text-white py-2 pl-28">
+      <div className="bg-dark-blue w-full h-14 text-white py-2 lg:pl-28">
         <h1 className="text-white">
           Copyrights © 2022 -{' '}
           <span className="text-base-blue">Sarana Mulya Logistik</span> All
