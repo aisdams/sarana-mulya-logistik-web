@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'next-i18next';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 
 export default function Track() {
+  const { t } = useTranslation('home/track');
   const [activeButton, setActiveButton] = useState<
     'lacakStatusPod' | 'lacakStatusResi'
   >('lacakStatusPod');
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleButtonClick = (
     buttonId: 'lacakStatusPod' | 'lacakStatusResi'
@@ -13,10 +15,39 @@ export default function Track() {
     setActiveButton(buttonId);
   };
 
-  const { t } = useTranslation('home/track');
+  const controls = useAnimation();
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 4000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    // Efek fade saat scroll
+    const handleScroll = () => {
+      const offset = 100;
+
+      if (!isLoading) {
+        if (window.scrollY > offset) {
+          controls.start({ opacity: 1 });
+        } else {
+          controls.start({ opacity: 0 });
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isLoading, controls]);
 
   return (
-    <motion.div>
+    <motion.div initial={{ opacity: 0 }} animate={controls}>
       <div className="grid lg:grid-cols-2 my-20 mx-5">
         <h1 className="text-base-blue font-bold lg:text-[2.7rem] leading-none mb-5 lg:mb-0 text-3xl">
           {t('heading.title')} <br /> {t('heading.titleTwo')}

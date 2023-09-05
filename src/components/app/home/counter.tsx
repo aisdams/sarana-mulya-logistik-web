@@ -1,11 +1,16 @@
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'next-i18next';
 import { FaHeadphones, FaGlobe, FaUsers, FaTruck } from 'react-icons/fa';
 import { PiGarage } from 'react-icons/pi';
-import { motion } from 'framer-motion';
+import { animations, motion, useAnimation } from 'framer-motion';
 
 export default function Counter() {
   const { t } = useTranslation('home/counter');
+  const controls = useAnimation();
+  const [isLoading, setIsLoading] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
+
   const Counters = [
     {
       icon: <FaGlobe />,
@@ -34,7 +39,7 @@ export default function Counter() {
   );
 
   useEffect(() => {
-    const delay = 100;
+    const delay = 50;
     const step = 1;
 
     const interval = setInterval(() => {
@@ -64,8 +69,62 @@ export default function Counter() {
     };
   }, [countedTitles]);
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 4000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = 3300;
+
+      if (!isLoading) {
+        if (window.scrollY > offset) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isLoading]);
+
+  useEffect(() => {
+    if (isVisible) {
+      controls.start({ opacity: 1, y: 0, transition: { duration: 1 } });
+    } else {
+      controls.start({ opacity: 0, y: 50, transition: { duration: 1 } });
+    }
+  }, [controls, isVisible]);
+
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      y: 50,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
+
   return (
-    <motion.div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={controls}
+      variants={cardVariants}
+    >
       <div className="my-20">
         <h5 className="text-base-blue">{t('text.header')}</h5>
         <div className="grid lg:grid-cols-2">

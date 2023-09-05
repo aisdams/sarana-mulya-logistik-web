@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import LayananProduk from 'public/img/why/layanan-produk.png';
 import PriceTag from 'public/img/why/price.png';
 import Permission from 'public/img/why/permission.png';
@@ -7,10 +7,13 @@ import Tracking from 'public/img/why/tracking.png';
 import UpdatedInformation from 'public/img/why/updated-information.png';
 import Guaranteed from 'public/img/why/guaranteed.png';
 import { useTranslation } from 'next-i18next';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 
 export default function Why() {
   const { t } = useTranslation('home/why');
+  const [isLoading, setIsLoading] = useState(true);
+  const controls = useAnimation();
+  const [isVisible, setIsVisible] = useState(false);
 
   const whys = [
     {
@@ -45,8 +48,58 @@ export default function Why() {
     },
   ];
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 4000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = 600;
+
+      if (!isLoading) {
+        if (window.scrollY > offset) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isLoading]);
+
+  useEffect(() => {
+    if (isVisible) {
+      controls.start({ opacity: 1, x: 0, transition: { duration: 1 } });
+    } else {
+      controls.start({ opacity: 0, x: -50, transition: { duration: 1 } });
+    }
+  }, [controls, isVisible]);
+
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      x: -50,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
+
   return (
-    <motion.div>
+    <motion.div initial="hidden" animate={controls} variants={cardVariants}>
       <div className="my-24">
         <div className="text-center mb-14 block items-center">
           <h3 className="text-base-blue text-xl font-medium mb-3">

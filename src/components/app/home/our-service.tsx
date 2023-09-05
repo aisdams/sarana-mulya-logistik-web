@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Service1 from 'public/img/service/express-1.png';
 import Service2 from 'public/img/service/reguler-1.png';
 import Service3 from 'public/img/service/trucking-1.png';
@@ -8,10 +8,13 @@ import Service6 from 'public/img/service/linkexpress-1.png';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 
 export default function OurService() {
   const { t } = useTranslation('home/our-services');
+  const [isLoading, setIsLoading] = useState(true);
+  const controls = useAnimation();
+  const [isVisible, setIsVisible] = useState(false);
 
   const Services = [
     {
@@ -46,8 +49,62 @@ export default function OurService() {
     },
   ];
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 4000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = 1700;
+
+      if (!isLoading) {
+        if (window.scrollY > offset) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isLoading]);
+
+  useEffect(() => {
+    if (isVisible) {
+      controls.start({ opacity: 1, y: 0, transition: { duration: 1 } });
+    } else {
+      controls.start({ opacity: 0, y: -50, transition: { duration: 1 } });
+    }
+  }, [controls, isVisible]);
+
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      y: -50,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
+
   return (
-    <motion.div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={controls}
+      variants={cardVariants}
+    >
       <div className="my-20 mx-5">
         <h1 className="text-secondary-text text-3xl font-bold">
           <span className="text-base-blue">{t('heading.title')}</span>{' '}

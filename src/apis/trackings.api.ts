@@ -6,14 +6,12 @@ const API_PASSWORD = process.env.NEXT_AUTH_PASSWORD!;
 
 export const trackings = async (receipt_no: string) => {
   try {
-    const username = API_USERNAME;
-    const password = API_PASSWORD;
-
     const response = await axios.get(
       `${API_URL}/tracking/public/${receipt_no}`,
       {
-        headers: {
-          Authorization: `Basic ${btoa(`${username}:${password}`)}`,
+        auth: {
+          username: API_USERNAME,
+          password: API_PASSWORD,
         },
       }
     );

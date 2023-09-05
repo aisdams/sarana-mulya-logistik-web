@@ -15,16 +15,16 @@ import banImage3 from 'public/img/terms/ban/animal.png';
 import banImage4 from 'public/img/terms/ban/002-drugs.png';
 import banImage5 from 'public/img/terms/ban/age-limit.png';
 import banImage6 from 'public/img/terms/ban/skull-and-bones.png';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Faqcom from '@/components/app/faq/faqcom';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { motion } from 'framer-motion';
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale!, [
+        'navbar',
         'information/terms',
         'home/faq',
         'home/our-mission',
@@ -36,7 +36,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
 
 interface Child {
   title: string;
-  [key: string]: any; // Properti dinamis, bisa berupa children, subchil, atau pages
+  [key: string]: any;
 }
 
 export default function Terms() {
@@ -144,77 +144,74 @@ export default function Terms() {
 
   return (
     <>
-      <motion.div>
-        <div className="bg-gray-header w-full h-[450px] mb-20 mx-auto grid text-center relative">
-          <div className="absolute lg:top-1/2 top-[45%] left-0 right-0 text-white">
-            <h3 className="tracking-[6px] mb-3">{t('hero.title')}</h3>
-            <h1 className="font-bold text-5xl">{t('hero.desc')}</h1>
-          </div>
+      <div className="bg-gray-header w-full h-[450px] mb-20 mx-auto grid text-center relative">
+        <div className="absolute lg:top-1/2 top-[45%] left-0 right-0 text-white">
+          <h3 className="tracking-[6px] mb-3">{t('hero.title')}</h3>
+          <h1 className="font-bold text-5xl">{t('hero.desc')}</h1>
         </div>
+      </div>
 
-        <div className="lg:mx-28 mb-20 mt-10 mx-5">
-          {sideBars.map((sidebar, idx) => (
-            <div className="lg:flex md:grid" key={idx}>
-              <div className="sideLeft lg:w-1/3 w-full p-4">
-                <h1 className="font-bold">{sidebar.title}</h1>
-                <div className="ml-4">
-                  {sidebar.children.map(
-                    (category: any, categoryIdx: number) => (
-                      <div
-                        key={categoryIdx}
-                        onClick={() => handleCategoryClick(category.title)}
-                        style={{ cursor: 'pointer' }}
-                      >
-                        <h2>{category.title}</h2>
-                      </div>
-                    )
-                  )}
-                </div>
-              </div>
-              <div className="sideRight lg:w-2/3 w-[80%] px-4">
-                {sidebar.children.map((category: any) => {
-                  if (category.title === activeCategory) {
-                    return (
-                      <div key={category.title}>
-                        {/* <h2>{category.title}</h2> */}
-                        {category.pages
-                          ? category.pages
-                          : category.children.map(
-                              (child: any, childIdx: number) => (
-                                <div
-                                  key={childIdx}
-                                  className="flex gap-5 mb-5 items-center lg:mt-0 mt-10"
-                                >
-                                  {child.image && (
-                                    <Image
-                                      src={child.image}
-                                      alt={child.title}
-                                      width={30}
-                                      height={30}
-                                    />
-                                  )}
-                                  <div className="block">
-                                    <h3 className="text-[#2b2b2b]">
-                                      {child.title}
-                                      <br />
-                                      <span className="text-[#706866]">
-                                        {child.desc}
-                                      </span>
-                                    </h3>
-                                  </div>
-                                </div>
-                              )
-                            )}
-                      </div>
-                    );
-                  }
-                  return null;
-                })}
+      <div className="lg:mx-28 mb-20 mt-10 mx-1">
+        {sideBars.map((sidebar, idx) => (
+          <div className="lg:flex md:grid mx-0" key={idx}>
+            <div className="sideLeft lg:w-1/3 w-full p-4">
+              <h1 className="font-bold">{sidebar.title}</h1>
+              <div className="ml-4">
+                {sidebar.children.map((category: any, categoryIdx: number) => (
+                  <div
+                    key={categoryIdx}
+                    onClick={() => handleCategoryClick(category.title)}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    <h2>{category.title}</h2>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
-        </div>
-      </motion.div>
+            <div className="sideRight lg:w-2/3 w-full lg:px-4">
+              {sidebar.children.map((category: any) => {
+                if (category.title === activeCategory) {
+                  return (
+                    <div key={category.title}>
+                      {/* <h2>{category.title}</h2> */}
+                      {category.pages
+                        ? category.pages
+                        : category.children.map(
+                            (child: any, childIdx: number) => (
+                              <div
+                                key={childIdx}
+                                className="lg:flex gap-5 mb-5 items-center text-center lg:mt-0 mt-10 px-2 grid mx-auto"
+                              >
+                                {child.image && (
+                                  <Image
+                                    src={child.image}
+                                    alt={child.title}
+                                    width={30}
+                                    height={30}
+                                    className="mx-auto"
+                                  />
+                                )}
+                                <div className="block">
+                                  <h3 className="text-[#2b2b2b]">
+                                    {child.title}
+                                    <br />
+                                    <span className="text-[#706866]">
+                                      {child.desc}
+                                    </span>
+                                  </h3>
+                                </div>
+                              </div>
+                            )
+                          )}
+                    </div>
+                  );
+                }
+                return null;
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
     </>
   );
 }

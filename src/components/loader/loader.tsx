@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 
 export default function Loader() {
@@ -12,11 +11,9 @@ export default function Loader() {
   }, []);
 
   return isVisible ? (
-    <motion.div>
-      <div className="loader-container">
-        {' '}
-        <span className="loader"></span>{' '}
-      </div>
-    </motion.div>
+    <div className="loader-container">
+      {' '}
+      <span className="loader"></span>{' '}
+    </div>
   ) : null;
 }

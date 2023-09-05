@@ -80,7 +80,7 @@ function App({
 
   useEffect(() => {
     const handleRouteChangeStart = () => {
-      setIsMenuOpen(false); // Close menu when route changes start
+      setIsMenuOpen(false);
     };
 
     router.events.on('routeChangeStart', handleRouteChangeStart);

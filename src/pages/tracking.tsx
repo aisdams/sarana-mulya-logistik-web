@@ -5,11 +5,13 @@ import { useTranslation } from 'next-i18next';
 import { trackings } from '@/apis/trackings.api';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Loader from '@/components/loader/loader';
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale!, [
+        'navbar',
         'home/our-mission',
         'tracking',
         'layouts/footer',
@@ -35,6 +37,7 @@ export default function Tracking() {
   const [selectedTracking, setSelectedTracking] = useState<trakings | null>(
     null
   );
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSearch = async () => {
     try {
@@ -43,18 +46,33 @@ export default function Tracking() {
         return;
       }
 
-      const results = await trackings(searchQuery);
+      setIsLoading(true);
 
-      if (results.length === 0) {
-        setSearchResults(null); // Set null untuk menunjukkan bahwa hasil kosong
-      } else {
-        setSearchResults(results.data);
-      }
+      setTimeout(async () => {
+        try {
+          const results = await trackings(searchQuery);
 
-      console.log('Data dari API:', results);
+          if (results.length === 0) {
+            setSearchResults(null);
+          } else {
+            setSearchResults(results.data);
+          }
+
+          console.log('Data dari API:', results);
+          setIsLoading(false);
+        } catch (error: any) {
+          console.error('Error:', error);
+          toast.error(
+            error.response?.data?.message ||
+              'Terjadi kesalahan saat mencoba melacak.'
+          );
+          setIsLoading(false);
+        }
+      }, 4000);
     } catch (error) {
       console.error('Error:', error);
-      toast.error('Maaf, terjadi kesalahan saat mencoba melacak.'); // Menampilkan pesan kesalahan
+      toast.error('Maaf, terjadi kesalahan saat mencoba melacak.');
+      setIsLoading(false);
     }
   };
 
@@ -87,6 +105,16 @@ export default function Tracking() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
+            <label htmlFor="Nomor Resi" className="py-3">
+              Tanggal (Opsional)
+            </label>
+            <input
+              type="date"
+              placeholder="Click tanggal resi anda"
+              className="border border-[#97667f]/50 p-2"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
 
             <button
               type="button"
@@ -103,6 +131,7 @@ export default function Tracking() {
             <h1 className="text-center text-lg text-base-blue font-bold">
               Lacak Status POD
             </h1>
+
             <label htmlFor="Nomor Resi" className="py-3">
               Nomor Resi
             </label>
@@ -114,6 +143,16 @@ export default function Tracking() {
               onChange={(e) => setSearchQuery(e.target.value)}
             />
 
+            <label htmlFor="Nomor Resi" className="py-3">
+              Tanggal (Opsional)
+            </label>
+            <input
+              type="date"
+              placeholder="Click tanggal resi anda"
+              className="border border-[#97667f]/50 p-2"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
             <button
               type="button"
               className="px-2 py-2 bg-base-blue text-white w-max text-xs mt-2"
@@ -123,6 +162,12 @@ export default function Tracking() {
             </button>
           </div>
         </div>
+
+        {isLoading && (
+          <div className="text-center">
+            <Loader />
+          </div>
+        )}
       </div>
 
       <div className="my-20 mx-28">

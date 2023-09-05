@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BsQuote } from 'react-icons/bs';
 import { BiUser } from 'react-icons/bi';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -9,11 +9,14 @@ import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
 import Indec from '../../../../public/img/client/indec.png';
 import { useTranslation } from 'next-i18next';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 
 export default function Testimoni() {
   const { t } = useTranslation('home/testimoni');
   const [activeIndex, setActiveIndex] = useState<number>(0);
+  const controls = useAnimation();
+  const [isLoading, setIsLoading] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
 
   const onSlideChange = (swiper: any) => {
     setActiveIndex(swiper.realIndex);
@@ -88,8 +91,62 @@ export default function Testimoni() {
     },
   ];
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 4000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = 3600;
+
+      if (!isLoading) {
+        if (window.scrollY > offset) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isLoading]);
+
+  useEffect(() => {
+    if (isVisible) {
+      controls.start({ opacity: 1, y: 0, transition: { duration: 1 } });
+    } else {
+      controls.start({ opacity: 0, y: -50, transition: { duration: 1 } });
+    }
+  }, [controls, isVisible]);
+
+  const cardVariants = {
+    hidden: {
+      opacity: 0,
+      y: -50,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 3,
+      },
+    },
+  };
+
   return (
-    <motion.div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={controls}
+      variants={cardVariants}
+    >
       <div className="my-20 mx-auto text-center">
         <h1 className="text-base-blue">{t('heading.title')}</h1>
         <h1 className="text-secondary-text font-bold text-2xl">
@@ -101,7 +158,7 @@ export default function Testimoni() {
           spaceBetween={30}
           loop={true}
           autoplay={{
-            delay: 2500,
+            delay: 3500,
             disableOnInteraction: false,
           }}
           breakpoints={{

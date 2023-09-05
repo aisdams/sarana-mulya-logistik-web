@@ -6,12 +6,12 @@ import geoJsonData from '@/components/geomap/map.json'; // Import the JSON file
 import Table from '@/components/map/Table';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { motion } from 'framer-motion';
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale!, [
+        'navbar',
         'about/branch',
         'home/our-mission',
         'layouts/footer',
@@ -52,68 +52,66 @@ export default function Branch() {
 
   return (
     <div>
-      <motion.div>
-        <div className="bg-gray-header w-full h-[450px] mb-20 mx-auto grid text-center relative">
-          <div className="absolute lg:top-1/2 top-[45%] left-0 right-0 text-white">
-            <h3 className="tracking-[6px] mb-3">{t('hero.title')}</h3>
-            <h1 className="font-bold text-5xl">{t('hero.desc')}</h1>
+      <div className="bg-gray-header w-full h-[450px] mb-20 mx-auto grid text-center relative">
+        <div className="absolute lg:top-1/2 top-[45%] left-0 right-0 text-white">
+          <h3 className="tracking-[6px] mb-3">{t('hero.title')}</h3>
+          <h1 className="font-bold text-5xl">{t('hero.desc')}</h1>
+        </div>
+      </div>
+
+      <div className="mb-20">
+        <div className="">
+          <div id="map ">
+            {geoJsonDataState && (
+              <MapWithNoSSR
+                geoJsonData={geoJsonDataState}
+                setSelectedDaerah={setSelectedDaerah}
+              />
+            )}
           </div>
         </div>
 
-        <div className="mb-20">
-          <div className="">
-            <div id="map ">
-              {geoJsonDataState && (
-                <MapWithNoSSR
-                  geoJsonData={geoJsonDataState}
-                  setSelectedDaerah={setSelectedDaerah}
-                />
-              )}
+        <div className="mt-5 mx-24 ">
+          <div className="grid grid-cols-8 mx-auto justify-center items-center"></div>
+          {geoJsonDataState && (
+            <div className="mt-5 border-2">
+              <div className="grid grid-cols-8 mx-auto justify-center items-center font-semibold text-sm text-left">
+                {geoJsonDataState.features
+                  .map((feature: GeoJsonFeature) => feature.properties.daerah)
+                  .filter(
+                    (value: string, index: number, self: string[]) =>
+                      self.indexOf(value) === index
+                  )
+                  .map((uniqueDaerah: string) => (
+                    <button
+                      key={uniqueDaerah}
+                      onClick={() => setSelectedDaerah(uniqueDaerah)}
+                      className={`p-2 border-b ${
+                        selectedDaerah === uniqueDaerah
+                          ? 'border-b-blue-500 text-base-blue'
+                          : 'border-transparent'
+                      }`}
+                    >
+                      {uniqueDaerah}
+                    </button>
+                  ))}
+              </div>
             </div>
-          </div>
+          )}
 
-          <div className="mt-5 mx-24 ">
-            <div className="grid grid-cols-8 mx-auto justify-center items-center"></div>
-            {geoJsonDataState && (
-              <div className="mt-5 border-2">
-                <div className="grid grid-cols-8 mx-auto justify-center items-center font-semibold text-sm text-left">
-                  {geoJsonDataState.features
-                    .map((feature: GeoJsonFeature) => feature.properties.daerah)
-                    .filter(
-                      (value: string, index: number, self: string[]) =>
-                        self.indexOf(value) === index
-                    )
-                    .map((uniqueDaerah: string) => (
-                      <button
-                        key={uniqueDaerah}
-                        onClick={() => setSelectedDaerah(uniqueDaerah)}
-                        className={`p-2 border-b ${
-                          selectedDaerah === uniqueDaerah
-                            ? 'border-b-blue-500 text-base-blue'
-                            : 'border-transparent'
-                        }`}
-                      >
-                        {uniqueDaerah}
-                      </button>
-                    ))}
-                </div>
+          <div>
+            {selectedDaerah && (
+              <div className="mt-8">
+                <Table
+                  geoJsonData={geoJsonDataState}
+                  selectedDaerah={selectedDaerah}
+                  onDaerahSelect={setSelectedDaerah} // Tambah properti ini
+                />
               </div>
             )}
-
-            <div>
-              {selectedDaerah && (
-                <div className="mt-8">
-                  <Table
-                    geoJsonData={geoJsonDataState}
-                    selectedDaerah={selectedDaerah}
-                    onDaerahSelect={setSelectedDaerah} // Tambah properti ini
-                  />
-                </div>
-              )}
-            </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }

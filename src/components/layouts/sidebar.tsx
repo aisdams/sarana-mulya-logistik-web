@@ -1,17 +1,83 @@
 import React, { useState } from 'react';
-import NavbarData from '@/data/NavbarData';
 import Link from 'next/link';
 import Flag from 'public/img/lang/ind.png';
 import FlagEng from 'public/img/lang/us.png';
 import Image from 'next/image';
-import { BsPlus, BsDash } from 'react-icons/bs';
+import { BsPlus, BsDash, BsCaretDownFill } from 'react-icons/bs';
 import { BiSolidDownArrow } from 'react-icons/bi';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'react-i18next';
 
 export default function Sidebar() {
   const router = useRouter();
-  // State to track the open/closed state of dropdowns
-  const [openDropdowns, setOpenDropdowns] = useState<number[]>([]); // Use an array of numbers
+  const { t } = useTranslation('navbar');
+  const [openDropdowns, setOpenDropdowns] = useState<number[]>([]);
+  const NavbarData = [
+    {
+      title: t('section.titleOne'),
+      type: 'info',
+      link: '/',
+    },
+    {
+      title: t('section.titleTwoChild.titlePar'),
+      icons: BsCaretDownFill,
+      type: 'info',
+      children: [
+        {
+          title: t('section.titleTwoChild.child.title'),
+          type: 'info',
+          link: '/about/profile',
+        },
+        {
+          title: t('section.titleTwoChild.child.titleTwo'),
+          type: 'info',
+          link: '/about/client',
+        },
+        {
+          title: t('section.titleTwoChild.child.titleThree'),
+          type: 'info',
+          link: '/about/branch',
+        },
+      ],
+    },
+    {
+      title: t('section.titleThree'),
+      type: 'info',
+      link: '/services',
+    },
+    {
+      title: t('section.titleFour'),
+      type: 'info',
+      link: '/tracking',
+    },
+    {
+      title: t('section.titleFive.titlePar'),
+      icons: BsCaretDownFill,
+      type: 'info',
+      children: [
+        {
+          title: t('section.titleFive.child.title'),
+          type: 'info',
+          link: '/information/blog',
+        },
+        {
+          title: t('section.titleFive.child.titleTwo'),
+          type: 'info',
+          link: '/information/news',
+        },
+        {
+          title: t('section.titleFive.child.titleThree'),
+          type: 'info',
+          link: '/information/terms',
+        },
+      ],
+    },
+    {
+      title: t('section.titleSix'),
+      type: 'info',
+      link: '/contact',
+    },
+  ];
 
   const [flagToggle, setFlagToggle] = useState<boolean>(false);
   const [languageDropdownOpen, setLanguageDropdownOpen] =
@@ -27,7 +93,7 @@ export default function Sidebar() {
   };
 
   const handleLanguageDropdownToggle = () => {
-    setLanguageDropdownOpen((prevState) => !prevState); // Toggle dropdown bahasa
+    setLanguageDropdownOpen((prevState) => !prevState);
   };
 
   const ChangeLanguage = () => {
