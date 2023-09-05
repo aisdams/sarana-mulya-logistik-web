@@ -9,12 +9,16 @@ import { ReactElement, ReactNode, useEffect, useState } from 'react';
 import { NextPage } from 'next';
 import { FaBars } from 'react-icons/fa';
 import Sidebar from '@/components/layouts/sidebar';
+import Loader from '@/components/loader/loader';
+import { useRouter } from 'next/router';
+import ImageSML from '../../public/img/icon2.png';
+import Image from 'next/image';
+import Script from 'next/script';
 
 export type NextPageCustomLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
   theme?: string;
 };
-
 function App({
   Component,
   pageProps,
@@ -23,9 +27,11 @@ function App({
 }) {
   const getLayout = Component.getLayout ?? ((page) => page);
 
+  const router = useRouter();
+
   const [isScrolled, setIsScrolled] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(0); // Track window width
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to track menu open/close
+  const [windowWidth, setWindowWidth] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleScroll = () => {
     setIsScrolled(window.scrollY > 0);
@@ -41,15 +47,14 @@ function App({
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-    window.addEventListener('contextmenu', preventRightClick);
+    // window.addEventListener('contextmenu', preventRightClick);
 
-    // Initial check on mount
-    setWindowWidth(window.innerWidth); // Track window width on mount
+    setWindowWidth(window.innerWidth);
     handleWindowSizeChange(window.innerWidth);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('contextmenu', preventRightClick);
+      // window.removeEventListener('contextmenu', preventRightClick);
     };
   }, []);
 
@@ -62,7 +67,7 @@ function App({
   useEffect(() => {
     const handleResize = () => {
       const newWindowWidth = window.innerWidth;
-      setWindowWidth(newWindowWidth); // Update window width on resize
+      setWindowWidth(newWindowWidth);
       handleWindowSizeChange(newWindowWidth);
     };
 
@@ -73,6 +78,18 @@ function App({
     };
   }, []);
 
+  useEffect(() => {
+    const handleRouteChangeStart = () => {
+      setIsMenuOpen(false);
+    };
+
+    router.events.on('routeChangeStart', handleRouteChangeStart);
+
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChangeStart);
+    };
+  }, [router.events]);
+
   return (
     <>
       <Head>
@@ -82,24 +99,34 @@ function App({
           rel="shortcut icon"
           href="https://saranamulyalogisticscorp.com/assets/img/logo.png"
         />
-        <script
+        {/* <script
           src="https://embed.tawk.to/64ec3a37a91e863a5c102bcb/1h8tc6qjl"
           async
-        />
+        /> */}
       </Head>
+
+      <Script
+        src="https://embed.tawk.to/64ec3a37a91e863a5c102bcb/1h8tc6qjl"
+        async
+      />
       <AppProvider>
         <div className={`relative ${isScrolled ? 'bg-white shadow' : ''}`}>
-          {/* Conditionally render menu icon */}
           {windowWidth < 992 && (
-            <div
-              className="menu-icon absolute z-20 right-10 top-10 text-white bg-base-blue p-2"
-              onClick={toggleMenu}
-            >
-              <FaBars className="text-xl" />
+            <div className="flex items-center">
+              <Image
+                src={ImageSML}
+                alt=""
+                className="w-32 absolute top-10 z-20 brightness-[100] left-3"
+              />
+              <div
+                className="menu-icon absolute z-20 right-10 top-10 text-white bg-base-blue p-2"
+                onClick={toggleMenu}
+              >
+                <FaBars className="text-xl" />
+              </div>
             </div>
           )}
 
-          {/* Render content based on menu icon state */}
           {isMenuOpen && (
             <>
               <Sidebar />
@@ -110,7 +137,6 @@ function App({
 
           {!isMenuOpen && (
             <>
-              {/* Render Navbar, Component, and Footer */}
               <Navbar isScrolled={isScrolled} />
               {getLayout(<Component {...pageProps} />)}
               <Footer />

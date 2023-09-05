@@ -66,11 +66,9 @@ export default function Sliders() {
   const cardVariants = {
     hidden: {
       opacity: 0,
-      y: 50,
     },
     visible: {
       opacity: 1,
-      y: 0,
       transition: {
         duration: 3,
       },
@@ -106,7 +104,7 @@ export default function Sliders() {
                   src={ann.Image}
                   alt=""
                   width={700}
-                  height={400}
+                  height={300}
                   className="w-full"
                 />
                 <div className="py-[7rem] px-[3.5rem]">

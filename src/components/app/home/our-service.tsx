@@ -20,32 +20,32 @@ export default function OurService() {
     {
       Image: Service1,
       title: 'Express',
-      link: '/',
+      link: '/services-detail/express',
     },
     {
       Image: Service2,
       title: 'Reguler',
-      link: '/',
+      link: '/services-detail/reguler',
     },
     {
       Image: Service3,
       title: 'Trucking',
-      link: '/',
+      link: '/services-detail/trucking',
     },
     {
       Image: Service4,
       title: 'Container',
-      link: '/',
+      link: '/services-detail/container',
     },
     {
       Image: Service5,
       title: 'Export Import',
-      link: '/',
+      link: '/services-detail/exim',
     },
     {
       Image: Service6,
       title: 'Linkexpress',
-      link: '/',
+      link: '/services-detail/linkex',
     },
   ];
 
@@ -79,22 +79,21 @@ export default function OurService() {
 
   useEffect(() => {
     if (isVisible) {
-      controls.start({ opacity: 1, y: 0, transition: { duration: 1 } });
+      controls.start({ opacity: 1, transition: { duration: 2 } });
     } else {
-      controls.start({ opacity: 0, y: -50, transition: { duration: 1 } });
+      controls.start({ opacity: 0, transition: { duration: 2 } });
     }
   }, [controls, isVisible]);
 
   const cardVariants = {
     hidden: {
       opacity: 0,
-      y: -50,
     },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 1,
+        duration: 2,
       },
     },
   };
