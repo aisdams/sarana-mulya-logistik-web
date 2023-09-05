@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface GeoJsonFeature {
   type: string;
@@ -25,20 +25,31 @@ interface GeoJsonData {
 interface TableProps {
   geoJsonData: GeoJsonData;
   selectedDaerah: string | null;
-  onDaerahSelect: (daerah: string | null) => void; // Tambah properti ini
+  onDaerahSelect: (daerah: string | null) => void;
 }
 
 const Table: React.FC<TableProps> = ({
   geoJsonData,
   selectedDaerah,
-  onDaerahSelect, // Terima properti ini
+  onDaerahSelect,
 }) => {
+  const [showModal, setShowModal] = React.useState(false);
+  const [selectedFeature, setSelectedFeature] = useState<GeoJsonFeature | null>(
+    null
+  );
+
   const uniqueDaerahs = Array.from(
     new Set(geoJsonData.features.map((feature) => feature.properties.daerah))
   );
   const handleDetailClick = (feature: GeoJsonFeature) => {
-    // Handle detail click logic here
+    setSelectedFeature(feature);
+    setShowModal(true);
     console.log('Detail clicked for:', feature);
+  };
+
+  const closeModal = () => {
+    setSelectedFeature(null);
+    setShowModal(false);
   };
 
   return (
@@ -85,6 +96,63 @@ const Table: React.FC<TableProps> = ({
                   Lihat
                 </button>
               </td>
+
+              {/* Modal */}
+              {selectedFeature && showModal && (
+                <div className="fixed z-10 inset-0 overflow-y-auto">
+                  <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                    <div
+                      className="fixed inset-0 transition-opacity"
+                      aria-hidden="true"
+                    >
+                      <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
+                    </div>
+
+                    <span
+                      className="hidden sm:inline-block sm:align-middle sm:h-screen"
+                      aria-hidden="true"
+                    >
+                      &#8203;
+                    </span>
+
+                    <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle w-1/2">
+                      <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                        <div className="grid grid-cols-2 items-center gap-5">
+                          <div style={{ width: '100%' }}>
+                            <iframe
+                              width="100%"
+                              height="400"
+                              frameBorder="0"
+                              scrolling="no"
+                              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253763.22273536967!2d106.79272130926499!3d-6.3875035916358245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e52f6af6ab3b%3A0x5c271a06789d2335!2sPT.%20Sarana%20Mulya%20Logistik%20Cab.%20Tangerang!5e0!3m2!1sid!2sid!4v1638410023084!5m2!1sid!2sid"
+                            ></iframe>
+                          </div>
+
+                          <div>
+                            <h1 className="font-bold text-3xl">
+                              Branch Office
+                            </h1>
+                            <h3>Daerah : JABODETABEK</h3>
+                            <h3>
+                              Alamat : Jl. Perumahan Mahkota Indah Blok C5 No. 3
+                              RT. 001/009 Kec. Benda - Tanggerang
+                            </h3>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                        <button
+                          type="button"
+                          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 sm:ml-3 sm:w-auto w-full"
+                          onClick={closeModal}
+                        >
+                          Tutup
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </tr>
           ))}
       </tbody>

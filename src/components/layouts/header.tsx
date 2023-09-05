@@ -38,7 +38,7 @@ export default function Header() {
     },
   ];
   return (
-    <div className="relative">
+    <div>
       <Swiper
         centeredSlides={true}
         autoplay={{
@@ -47,6 +47,7 @@ export default function Header() {
         loop={true}
         effect={'fade'}
         modules={[EffectFade, Autoplay]}
+        className="relative"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
@@ -77,15 +78,15 @@ export default function Header() {
                     {t('button.title')}
                   </button>
                 </Link>
-
-                <div className="lg:absolute lg:-top-5 lg:-right-40 z-[2] top-0 mt-5 lg:mt-0 grid mx-auto items-center justify-center">
-                  <SpeedDial />
-                </div>
               </div>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
+
+      <div className="lg:absolute lg:translate-y-1/2 lg:right-40 z-[2] top-0 mt-5 lg:mt-0 grid mx-auto items-center justify-center">
+        <SpeedDial />
+      </div>
     </div>
   );
 }

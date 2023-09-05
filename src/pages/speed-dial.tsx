@@ -7,36 +7,36 @@ import {
   BsTiktok,
 } from 'react-icons/bs';
 
-const socialMediaLinks = [
-  {
-    href: 'https://www.facebook.com',
-    icon: BsFacebook,
-    label: 'Facebook',
-  },
-  {
-    href: 'https://www.youtube.com',
-    icon: BsYoutube,
-    label: 'Youtube',
-  },
-  {
-    href: 'https://www.instagram.com',
-    icon: BsInstagram,
-    label: 'Instagram',
-  },
-  {
-    href: 'https://api.whatsapp.com',
-    icon: BsWhatsapp,
-    label: 'WhatsApp',
-  },
-  {
-    href: 'https://www.tiktok.com',
-    icon: BsTiktok,
-    label: 'TikTok',
-  },
-];
-
 export default function SpeedDial() {
   const [hoveredLabel, setHoveredLabel] = useState<string>('');
+
+  const socialMediaLinks = [
+    {
+      href: 'https://www.facebook.com',
+      icon: BsFacebook,
+      label: 'Facebook',
+    },
+    {
+      href: 'https://www.youtube.com',
+      icon: BsYoutube,
+      label: 'Youtube',
+    },
+    {
+      href: 'https://www.instagram.com',
+      icon: BsInstagram,
+      label: 'Instagram',
+    },
+    {
+      href: 'https://api.whatsapp.com',
+      icon: BsWhatsapp,
+      label: 'WhatsApp',
+    },
+    {
+      href: 'https://www.tiktok.com',
+      icon: BsTiktok,
+      label: 'TikTok',
+    },
+  ];
 
   return (
     <div className="flex lg:flex-col gap-5">

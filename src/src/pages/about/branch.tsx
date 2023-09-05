@@ -43,6 +43,7 @@ const MapWithNoSSR = dynamic(() => import('@/components/map/Map'), {
 
 export default function Branch() {
   const { t } = useTranslation('about/branch');
+  const [showModal, setShowModal] = React.useState(false);
   const [geoJsonDataState, setGeoJsonDataState] = useState<any>(null);
   const [selectedDaerah, setSelectedDaerah] = useState<string | null>(null);
 

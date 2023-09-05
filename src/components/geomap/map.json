@@ -134,14 +134,14 @@
         "daerah": "MALUKU & PAPUA",
         "cabang": "Branch Office Sorong",
         "alamat": "Jl. Pendidikan, Belakang Toko Eigher - Sorong",
-        "latitude": "0",
-        "longitude": "0",
+        "latitude": "-3.11884",
+        "longitude": "129.42078",
         "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127658.6886681827!2d131.19435452377422!3d-0.8927347841435654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d5eab02c2d2ddcd%3A0xe32b512ec6c6786!2sSorong%2C%20Sorong%20City%2C%20West%20Papua!5e0!3m2!1sen!2sid!4v1675735083392!5m2!1sen!2sid",
         "url": "https://goo.gl/maps/1FQXG2k6vnKMQ1oP8"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [0, 0]
+        "coordinates": [129.42078, -3.11884]
       },
       "map_popup_content": "\r\n <div class=\"my-2\"><strong>Cabang : </strong><br>Branch Office Sorong</div>\r\n <div class=\"my-2\"><strong>Alamat : </strong><br>Jl. Pendidikan, Belakang Toko Eigher - Sorong</div>\r\n"
     },
