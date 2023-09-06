@@ -9,6 +9,7 @@ interface GeoJsonFeature {
     alamat: string;
     latitude: string;
     longitude: string;
+    embed: string;
   };
   geometry: {
     type: string;
@@ -122,9 +123,7 @@ const Table: React.FC<TableProps> = ({
                             <iframe
                               width="100%"
                               height="400"
-                              frameBorder="0"
-                              scrolling="no"
-                              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253763.22273536967!2d106.79272130926499!3d-6.3875035916358245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e52f6af6ab3b%3A0x5c271a06789d2335!2sPT.%20Sarana%20Mulya%20Logistik%20Cab.%20Tangerang!5e0!3m2!1sid!2sid!4v1638410023084!5m2!1sid!2sid"
+                              src={selectedFeature.properties.embed}
                             ></iframe>
                           </div>
 
@@ -132,10 +131,11 @@ const Table: React.FC<TableProps> = ({
                             <h1 className="font-bold text-3xl">
                               Branch Office
                             </h1>
-                            <h3>Daerah : JABODETABEK</h3>
                             <h3>
-                              Alamat : Jl. Perumahan Mahkota Indah Blok C5 No. 3
-                              RT. 001/009 Kec. Benda - Tanggerang
+                              Daerah : {selectedFeature.properties.daerah}
+                            </h3>
+                            <h3>
+                              Alamat : {selectedFeature.properties.alamat}
                             </h3>
                           </div>
                         </div>

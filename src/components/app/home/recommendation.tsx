@@ -69,7 +69,7 @@ export default function Recommendation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const offset = 4500;
+      const offset = 300;
 
       if (!isLoading) {
         if (window.scrollY > offset) {

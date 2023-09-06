@@ -99,10 +99,6 @@ function App({
           rel="shortcut icon"
           href="https://saranamulyalogisticscorp.com/assets/img/logo.png"
         />
-        {/* <script
-          src="https://embed.tawk.to/64ec3a37a91e863a5c102bcb/1h8tc6qjl"
-          async
-        /> */}
       </Head>
 
       <Script
@@ -116,7 +112,7 @@ function App({
               <Image
                 src={ImageSML}
                 alt=""
-                className="w-32 absolute top-10 z-20 brightness-[100] left-3"
+                className="w-32 absolute top-10 z-20 brightness-[100] left-10"
               />
               <div
                 className="menu-icon absolute z-20 right-10 top-10 text-white bg-base-blue p-2"

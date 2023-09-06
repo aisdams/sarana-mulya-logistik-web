@@ -26,8 +26,12 @@ export default function VisiMisi() {
     <>
       <div className="lg:flex lg:mx-28 mx-3 my-20">
         {VisiMisis.map((visimisi, idx) => (
-          <>
-            <div key={idx}>
+          <div className="lg:flex lg:items-center gap-5" key={idx}>
+            <div className="lg:w-1/2 lg:order-last">
+              <Image src={VisiIm} alt="" />
+            </div>
+
+            <div className="lg:w-1/2 lg:order-first">
               <h1 className="text-4xl text-secondary-text font-semibold my-3">
                 {visimisi.titleTwo}
               </h1>
@@ -53,11 +57,7 @@ export default function VisiMisi() {
                 <p>{visimisi.children[0].misiFour}</p>
               </div>
             </div>
-
-            <div className="">
-              <Image src={VisiIm} alt="" />
-            </div>
-          </>
+          </div>
         ))}
       </div>
     </>

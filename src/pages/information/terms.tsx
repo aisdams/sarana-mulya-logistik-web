@@ -136,7 +136,7 @@ export default function Terms() {
       ],
     },
   ];
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string | null>('FAQ');
 
   const handleCategoryClick = (categoryTitle: string) => {
     setActiveCategory(categoryTitle);
@@ -154,7 +154,11 @@ export default function Terms() {
       <div className="lg:mx-28 mb-20 mt-10 mx-1">
         {sideBars.map((sidebar, idx) => (
           <div className="lg:flex md:grid mx-0" key={idx}>
-            <div className="sideLeft lg:w-1/3 w-full p-4">
+            <div
+              className={`sideLeft lg:w-1/3 w-full ${
+                sidebar.title === activeCategory ? 'active' : ''
+              }`}
+            >
               <h1 className="font-bold">{sidebar.title}</h1>
               <div className="ml-4">
                 {sidebar.children.map((category: any, categoryIdx: number) => (
@@ -162,13 +166,16 @@ export default function Terms() {
                     key={categoryIdx}
                     onClick={() => handleCategoryClick(category.title)}
                     style={{ cursor: 'pointer' }}
+                    className={
+                      category.title === activeCategory ? 'active' : ''
+                    }
                   >
                     <h2>{category.title}</h2>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="sideRight lg:w-2/3 w-full lg:px-4">
+            <div className="sideRight lg:w-2/3 w-[80%] px-4">
               {sidebar.children.map((category: any) => {
                 if (category.title === activeCategory) {
                   return (
@@ -180,7 +187,7 @@ export default function Terms() {
                             (child: any, childIdx: number) => (
                               <div
                                 key={childIdx}
-                                className="lg:flex gap-5 mb-5 items-center text-center lg:mt-0 mt-10 px-2 grid mx-auto"
+                                className="flex gap-5 mb-5 lg:mt-0 mt-10"
                               >
                                 {child.image && (
                                   <Image
@@ -188,7 +195,6 @@ export default function Terms() {
                                     alt={child.title}
                                     width={30}
                                     height={30}
-                                    className="mx-auto"
                                   />
                                 )}
                                 <div className="block">

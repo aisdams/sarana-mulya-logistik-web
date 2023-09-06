@@ -13,9 +13,7 @@
     "titleFour": "CEK RESI",
     "titleFive": {
       "titlePar": "INFORMASI",
-      "child": [
-        { "title": "BLOG", "titleTwo": "BERITA", "titleThree": "SYARAT" }
-      ]
+      "child": { "title": "BLOG", "titleTwo": "BERITA", "titleThree": "SYARAT" }
     },
     "titleSix": "KONTAK"
   }

@@ -4,9 +4,11 @@ import { useTranslation } from 'next-i18next';
 import { FaHeadphones, FaGlobe, FaUsers, FaTruck } from 'react-icons/fa';
 import { PiGarage } from 'react-icons/pi';
 import { animations, motion, useAnimation } from 'framer-motion';
+import { useRouter } from 'next/router';
 
 export default function Counter() {
   const { t } = useTranslation('home/counter');
+  const router = useRouter();
   const controls = useAnimation();
   const [isLoading, setIsLoading] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
@@ -79,7 +81,7 @@ export default function Counter() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const offset = 3300;
+      const offset = router.pathname === '/' ? 3200 : 300;
 
       if (!isLoading) {
         if (window.scrollY > offset) {

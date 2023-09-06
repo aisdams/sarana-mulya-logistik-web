@@ -24,7 +24,7 @@ export default function Navbar({ isScrolled }: NavbarProps) {
   const [activeMenu, setActiveMenu] = useState<number | null>(null);
   const [flagToggle, setFlagToggle] = useState<boolean>(false);
   const [languageDropdownOpen, setLanguageDropdownOpen] =
-    useState<boolean>(false); // Tambah state untuk dropdown bahasa
+    useState<boolean>(false);
 
   const NavbarData = [
     {
@@ -101,7 +101,7 @@ export default function Navbar({ isScrolled }: NavbarProps) {
   };
 
   const handleLanguageDropdownToggle = () => {
-    setLanguageDropdownOpen((prevState) => !prevState); // Toggle dropdown bahasa
+    setLanguageDropdownOpen((prevState) => !prevState);
   };
 
   const ChangeLanguage = () => {
@@ -201,7 +201,7 @@ export default function Navbar({ isScrolled }: NavbarProps) {
         </div>
 
         <div className="flex gap-5 items-center">
-          <div className="flex gap-3 cursor-pointer relative items-center">
+          <div className="flex gap-3 cursor-pointer relative items-center font-semibold">
             <Image
               src={router?.locale === 'en' ? FlagEng : Flag}
               alt=""

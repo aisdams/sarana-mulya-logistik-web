@@ -116,7 +116,7 @@ export default function Sidebar() {
           alt=""
           width={40}
         />
-        <h3 className="text-white">
+        <h3 className="text-black">
           {router?.locale === 'en' ? 'IND' : 'ENG'}
         </h3>
       </div>
