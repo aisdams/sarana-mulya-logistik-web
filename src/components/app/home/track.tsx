@@ -18,6 +18,7 @@ export default function Track() {
   const [showModal, setShowModal] = React.useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [isLoadingTrack, setIsLoadingTrack] = useState(false);
+  const [pageTitle, setPageTitle] = useState<string>('Detail Track');
 
   type TrackingData = {
     receipt_no: string;
@@ -117,6 +118,12 @@ export default function Track() {
     buttonId: 'lacakStatusPod' | 'lacakStatusResi'
   ) => {
     setActiveButton(buttonId);
+    // Ganti judul sesuai dengan tombol yang aktif
+    // if (buttonId === 'lacakStatusPod') {
+    //   setPageTitle('Detail POD');
+    // } else {
+    //   setPageTitle('Detail Resi');
+    // }
   };
 
   const controls = useAnimation();

@@ -6,6 +6,7 @@ import imgBlog4 from 'public/img/3.png';
 import Link from 'next/link';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetServerSideProps } from 'next';
+import { useRouter } from 'next/router';
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
@@ -20,6 +21,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
 };
 
 export default function Idx() {
+  const router = useRouter();
   return (
     <>
       <div className="bg-gray-header w-full h-[450px] mb-20 mx-auto grid text-center relative">
