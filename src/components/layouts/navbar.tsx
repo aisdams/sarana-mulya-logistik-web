@@ -209,7 +209,7 @@ export default function Navbar({ isScrolled }: NavbarProps) {
             />
             {/* <LanguageToggle /> */}
             <h3 onClick={handleLanguageDropdownToggle}>
-              {router?.locale === 'en' ? 'Eng' : 'IDN'}
+              {router?.locale === 'en' ? 'En' : 'ID'}
             </h3>
             {languageDropdownOpen && (
               <ul className="absolute top-full text-[13px] gap-y-2 py-2 grid right-0 mt-2 rounded-sm w-max shadow-[-5px_10px_10px_0px_rgba(0,0,0,0.4)] bg-white text-black">

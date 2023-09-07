@@ -81,7 +81,7 @@ export default function Sidebar() {
 
   const [flagToggle, setFlagToggle] = useState<boolean>(false);
   const [languageDropdownOpen, setLanguageDropdownOpen] =
-    useState<boolean>(false); // Tambah state untuk dropdown bahasa
+    useState<boolean>(false);
 
   // Function to toggle the dropdown state
   const toggleDropdown = (idx: number) => {
@@ -116,9 +116,7 @@ export default function Sidebar() {
           alt=""
           width={40}
         />
-        <h3 className="text-black">
-          {router?.locale === 'en' ? 'IND' : 'ENG'}
-        </h3>
+        <h3 className="text-black">{router?.locale === 'en' ? 'ID' : 'EN'}</h3>
       </div>
     );
   };
@@ -135,7 +133,7 @@ export default function Sidebar() {
 
     return (
       <button onClick={toggleLanguage}>
-        {currentLocale === 'id' ? 'IND' : 'ENG'}
+        {currentLocale === 'id' ? 'ID' : 'EN'}
       </button>
     );
   };

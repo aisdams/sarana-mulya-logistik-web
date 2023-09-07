@@ -104,7 +104,7 @@ export default function OurService() {
       animate={controls}
       variants={cardVariants}
     >
-      <div className="my-20 mx-5">
+      <div className="my-20 mx-5 lg:mx-28">
         <h1 className="text-secondary-text text-3xl font-bold">
           <span className="text-base-blue">{t('heading.title')}</span>{' '}
           {t('heading.title2')}

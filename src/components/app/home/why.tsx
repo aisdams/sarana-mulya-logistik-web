@@ -100,7 +100,7 @@ export default function Why() {
 
   return (
     <motion.div initial="hidden" animate={controls} variants={cardVariants}>
-      <div className="my-24">
+      <div className="my-24 lg:mx-28 xs:mx-0">
         <div className="text-center mb-14 block items-center">
           <h3 className="text-base-blue text-xl font-medium mb-3">
             {t('heading.title')}

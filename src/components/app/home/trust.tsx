@@ -92,7 +92,7 @@ export default function Trust() {
       animate={controls}
       variants={cardVariants}
     >
-      <div className="my-20">
+      <div className="my-20 lg:mx-28 xs:mx-0">
         <h1 className="text-secondary-text text-3xl font-bold">
           <span className="text-base-blue">{t('heading.title')}</span>{' '}
           {t('heading.title2')}

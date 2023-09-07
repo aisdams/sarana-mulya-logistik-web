@@ -48,7 +48,7 @@ export default function Track() {
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={controls}>
-      <div className="grid lg:grid-cols-2 my-20 mx-5">
+      <div className="grid lg:grid-cols-2 my-20 mx-5 lg:mx-28 xs:mx-0">
         <h1 className="text-base-blue font-bold lg:text-[2.7rem] leading-none mb-5 lg:mb-0 text-3xl">
           {t('heading.title')} <br /> {t('heading.titleTwo')}
         </h1>

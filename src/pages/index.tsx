@@ -38,22 +38,16 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <div className="lg:mx-28 xs:mx-0">
-        <Track />
-        <Why />
-        <Trust />
-        <OurService />
-      </div>
-      <div className="lg:mr-28 xs:mr-0">
-        <Sliders />
-      </div>
-      <div className="lg:mx-28 mx-5">
-        <Blog />
-        <Counter />
-        <Testimoni />
-        <FAQ />
-        <Recommendation />
-      </div>
+      <Track />
+      <Why />
+      <Trust />
+      <OurService />
+      <Sliders />
+      <Blog />
+      <Counter />
+      <Testimoni />
+      <FAQ />
+      <Recommendation />
     </div>
   );
 }

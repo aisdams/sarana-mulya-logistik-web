@@ -127,7 +127,7 @@ export default function Counter() {
       animate={controls}
       variants={cardVariants}
     >
-      <div className="my-20">
+      <div className="my-20 lg:mx-28 mx-5">
         <h5 className="text-base-blue">{t('text.header')}</h5>
         <div className="grid lg:grid-cols-2">
           <div>

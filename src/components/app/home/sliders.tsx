@@ -81,7 +81,7 @@ export default function Sliders() {
       animate={controls}
       variants={cardVariants}
     >
-      <div className="my-20">
+      <div className="my-20 lg:mr-28 xs:mr-0">
         <Swiper
           spaceBetween={30}
           centeredSlides={true}

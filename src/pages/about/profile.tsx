@@ -160,7 +160,7 @@ export default function Profile() {
       </div>
       <div>{renderSelectedComponent()}</div>
 
-      <div className="lg:mx-28 mx-3 mb-20">
+      <div className="mb-20">
         <Counter />
         <div className="!my-32">
           <Recommendation />

@@ -64,7 +64,7 @@ export default function Blog() {
       animate={controls}
       variants={cardVariants}
     >
-      <div className="my-20">
+      <div className="my-20 lg:mx-28 mx-5">
         <div className="grid lg:grid-cols-2">
           <div>
             <h1 className="text-secondary-text text-3xl font-bold">

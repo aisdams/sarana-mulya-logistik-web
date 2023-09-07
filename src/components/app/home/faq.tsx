@@ -64,7 +64,7 @@ export default function FAQ() {
       animate={controls}
       variants={cardVariants}
     >
-      <div className="mt-20 mb-32 mx-auto text-center">
+      <div className="mt-20 mb-32 text-center lg:mx-28 mx-auto">
         <h1 className="font-extrabold text-secondary-text text-5xl tracking-widest mb-5">
           FAQ
         </h1>

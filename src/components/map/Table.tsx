@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useState } from 'react';
 
 interface GeoJsonFeature {
@@ -10,6 +11,7 @@ interface GeoJsonFeature {
     latitude: string;
     longitude: string;
     embed: string;
+    url: string;
   };
   geometry: {
     type: string;
@@ -45,7 +47,6 @@ const Table: React.FC<TableProps> = ({
   const handleDetailClick = (feature: GeoJsonFeature) => {
     setSelectedFeature(feature);
     setShowModal(true);
-    console.log('Detail clicked for:', feature);
   };
 
   const closeModal = () => {
@@ -116,27 +117,51 @@ const Table: React.FC<TableProps> = ({
                       &#8203;
                     </span>
 
-                    <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle w-1/2">
+                    <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle w-7/12">
                       <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                        <div className="grid grid-cols-2 items-center gap-5">
-                          <div style={{ width: '100%' }}>
+                        <div>
+                          <div>
+                            <div className="flex justify-between">
+                              <h1 className="font-semibold text-xl mb-10 h-max">
+                                Detail
+                              </h1>
+
+                              <button
+                                className="bg-[#f0f0f0] px-3 border border-secondary-text h-max"
+                                onClick={closeModal}
+                                type="button"
+                              >
+                                X
+                              </button>
+                            </div>
+                          </div>
+
+                          <div className="flex gap-5">
                             <iframe
                               width="100%"
                               height="400"
                               src={selectedFeature.properties.embed}
-                            ></iframe>
-                          </div>
-
-                          <div>
-                            <h1 className="font-bold text-3xl">
-                              Branch Office
-                            </h1>
-                            <h3>
-                              Daerah : {selectedFeature.properties.daerah}
-                            </h3>
-                            <h3>
-                              Alamat : {selectedFeature.properties.alamat}
-                            </h3>
+                            />
+                            <div className="-top-10 relative">
+                              <h1 className="font-bold text-3xl mt-10 mb-5 text-black">
+                                Branch Office{' '}
+                                {selectedFeature.properties.cabang}
+                              </h1>
+                              <h3 className="mb-5">
+                                Daerah : {selectedFeature.properties.daerah}
+                              </h3>
+                              <h3 className="mb-5">
+                                Alamat : {selectedFeature.properties.alamat}
+                              </h3>
+                              <button className="bg-base-blue text-white px-3 py-2">
+                                <Link
+                                  href={selectedFeature.properties.url}
+                                  target="_blank"
+                                >
+                                  Buka di Google Maps
+                                </Link>
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </div>

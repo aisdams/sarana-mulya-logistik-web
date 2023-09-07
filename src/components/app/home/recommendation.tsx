@@ -17,9 +17,11 @@ import Recommendation10 from 'public/img/rekomendasi/10.png';
 import Recommendation11 from 'public/img/rekomendasi/11.png';
 import Image from 'next/image';
 import { motion, useAnimation } from 'framer-motion';
+import { useRouter } from 'next/router';
 
 export default function Recommendation() {
   const controls = useAnimation();
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -69,7 +71,7 @@ export default function Recommendation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const offset = 300;
+      const offset = router.pathname === '/' ? 3600 : 300;
 
       if (!isLoading) {
         if (window.scrollY > offset) {
@@ -115,7 +117,7 @@ export default function Recommendation() {
       animate={controls}
       variants={cardVariants}
     >
-      <div className="mt-20 mb-40 ">
+      <div className="mt-20 mb-40 lg:mx-28 mx-5">
         <Swiper
           slidesPerView={1}
           spaceBetween={30}

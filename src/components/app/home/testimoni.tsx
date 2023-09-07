@@ -147,7 +147,7 @@ export default function Testimoni() {
       animate={controls}
       variants={cardVariants}
     >
-      <div className="my-20 mx-auto text-center">
+      <div className="my-20 text-center lg:mx-28 mx-auto">
         <h1 className="text-base-blue">{t('heading.title')}</h1>
         <h1 className="text-secondary-text font-bold text-2xl">
           {t('heading.title2')}
