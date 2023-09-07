@@ -39,6 +39,21 @@ export default function Tracking() {
     }>;
   };
 
+  const formatDate = (dateString: any) => {
+    const options: Intl.DateTimeFormatOptions = {
+      year: 'numeric',
+      month: 'long',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+    };
+    const formattedDate = new Date(dateString).toLocaleDateString(
+      'en-US',
+      options
+    );
+    return formattedDate;
+  };
+
   const { t } = useTranslation('tracking');
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<TrackingData[]>([]);
@@ -82,10 +97,10 @@ export default function Tracking() {
 
         setIsLoading(false);
 
-        console.log('Response Data:', response.data);
+        // console.log('Response Data:', response.data);
       } catch (error: any) {
-        console.error('Error:', error);
-        console.log('Response:', error.response);
+        // console.error('Error:', error);
+        // console.log('Response:', error.response);
         toast.error(
           error.response?.data?.message ||
             'Terjadi kesalahan saat mencoba melacak.'
@@ -93,7 +108,7 @@ export default function Tracking() {
         setIsLoading(false);
       }
     } catch (error) {
-      console.error('Error:', error);
+      // console.error('Error:', error);
       toast.error('Maaf, terjadi kesalahan saat mencoba melacak.');
       setIsLoading(false);
     }
@@ -201,7 +216,7 @@ export default function Tracking() {
                 {searchResults.map((result, index) => (
                   <tr key={index}>
                     <td className="p-3">{result.receipt_no}</td>
-                    <td className="p-3">{result.p_date}</td>
+                    <td className="p-3">{formatDate(result.p_date)}</td>
                     <td className="p-3">{result.p_shipper_name}</td>
                     <td className="p-3">{result.destination}</td>
                     <td className="p-3">{result.p_product}</td>

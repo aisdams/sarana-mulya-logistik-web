@@ -102,3 +102,16 @@ img {
 .html-overflow-hidden {
   overflow: hidden;
 }
+
+.swiper-pagination-bullet {
+  border-radius: 50% !important;
+  width: 15px !important;
+  height: 15px !important;
+}
+
+.swiper-pagination-bullet-active {
+  border-radius: 40% !important;
+  width: 20px !important;
+  height: 15px !important;
+  background: #7f7f7f !important;
+}

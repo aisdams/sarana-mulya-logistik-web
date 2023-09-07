@@ -90,9 +90,6 @@ export default function Sliders() {
             disableOnInteraction: false,
           }}
           loop={true}
-          pagination={{
-            clickable: true,
-          }}
           navigation={true}
           modules={[Autoplay, Pagination]}
           className="mySwiper"

@@ -33,7 +33,7 @@ interface MapProps {
 }
 
 const Map: React.FC<MapProps> = ({ geoJsonData, setSelectedDaerah }) => {
-  console.log('Received geoJsonData:', geoJsonData);
+  // console.log('Received geoJsonData:', geoJsonData);
   const handleMarkerClick = (daerah: string) => {
     setSelectedDaerah(daerah);
   };

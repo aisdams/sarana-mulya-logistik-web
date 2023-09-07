@@ -47,14 +47,14 @@ function App({
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-    // window.addEventListener('contextmenu', preventRightClick);
+    window.addEventListener('contextmenu', preventRightClick);
 
     setWindowWidth(window.innerWidth);
     handleWindowSizeChange(window.innerWidth);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      // window.removeEventListener('contextmenu', preventRightClick);
+      window.removeEventListener('contextmenu', preventRightClick);
     };
   }, []);
 

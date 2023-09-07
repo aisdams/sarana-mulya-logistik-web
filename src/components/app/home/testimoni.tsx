@@ -161,6 +161,9 @@ export default function Testimoni() {
             delay: 3500,
             disableOnInteraction: false,
           }}
+          pagination={{
+            clickable: true,
+          }}
           breakpoints={{
             '360': {
               slidesPerView: 1,
