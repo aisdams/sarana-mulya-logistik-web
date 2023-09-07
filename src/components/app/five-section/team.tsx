@@ -31,7 +31,7 @@ export default function Team() {
   ];
 
   const [selectedImage, setSelectedImage] = useState<StaticImageData | null>(
-    teams[0].children[0].image // Atur gambar pertama sebagai nilai awal
+    teams[0].children[0].image
   );
 
   const handleTitleClick = (image: StaticImageData) => {

@@ -57,6 +57,7 @@ export default function Tracking() {
   const { t } = useTranslation('tracking');
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<TrackingData[]>([]);
+  const [searchResultsTwo, setSearchResultsTwo] = useState<TrackingData[]>([]);
   const [selectedTracking, setSelectedTracking] = useState<TrackingData | null>(
     null
   );
@@ -90,8 +91,10 @@ export default function Tracking() {
           const responseData = response.data.data;
           // setSearchResults([responseData]);
           setSearchResults([responseData]);
+          // setSearchResultsTwo([responseData]);
         } else {
           setSearchResults([]);
+          // setSearchResultsTwo([]);
           toast.error('Maaf, data pelacakan tidak ada.');
         }
 
