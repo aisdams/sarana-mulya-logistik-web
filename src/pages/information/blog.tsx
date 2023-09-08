@@ -16,6 +16,7 @@ import imgBlog8 from 'public/img/cta-bg2.jpg';
 import imgBlog9 from 'public/img/cta-bg.png';
 import Image, { StaticImageData } from 'next/image';
 import avatar from 'public/img/avaters/avatar1.png';
+import { useRouter } from 'next/router';
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   return {
@@ -30,7 +31,17 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
 };
 
 export default function Blog() {
-  const category = [
+  const router = useRouter();
+
+  type BlogCategory = {
+    title: string;
+    link?: string;
+    children?: BlogCategory[];
+    image?: StaticImageData;
+    category?: string;
+  };
+
+  const category: BlogCategory[] = [
     {
       title: 'All',
       link: '/blog',
@@ -48,52 +59,28 @@ export default function Blog() {
           category: 'all',
         },
         {
-          title: 'Entertainment',
-          link: '/blog/entertainment',
-          children: [
-            {
-              title:
-                'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
-              image: imgBlog3,
-              category: 'all',
-            },
-          ],
+          title:
+            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
+          image: imgBlog3,
+          category: 'all',
         },
         {
-          title: 'Bisnis',
-          link: '/blog/bisnis',
-          children: [
-            {
-              title:
-                'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
-              image: imgBlog4,
-              category: 'all',
-            },
-          ],
+          title:
+            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
+          image: imgBlog4,
+          category: 'all',
         },
         {
-          title: 'Teknologi',
-          link: '/blog/teknologi',
-          children: [
-            {
-              title:
-                'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
-              image: imgBlog5,
-              category: 'all',
-            },
-          ],
+          title:
+            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
+          image: imgBlog5,
+          category: 'all',
         },
         {
-          title: 'Pendidikan',
-          link: '/blog/pendidikan',
-          children: [
-            {
-              title:
-                'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
-              image: imgBlog6,
-              category: 'all',
-            },
-          ],
+          title:
+            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
+          image: imgBlog6,
+          category: 'all',
         },
       ],
     },
@@ -296,6 +283,13 @@ export default function Blog() {
       ],
     },
   ];
+
+  const handleCategoryClick = (category: any) => {
+    router.push({
+      pathname: '/category-blog/idx',
+      query: { category },
+    });
+  };
   return (
     <>
       <div className="bg-gray-header w-full h-[450px] mb-20 mx-auto grid text-center relative">
@@ -315,10 +309,17 @@ export default function Blog() {
           {category.map((listcate, idx) => (
             <div key={idx}>
               <div>
-                <Link href={listcate.link}>{listcate.title}</Link>
+                {listcate.link ? (
+                  <Link href={`/category-detail/idx/${listcate.title}`}>
+                    {listcate.title}
+                  </Link>
+                ) : (
+                  listcate.title
+                )}
               </div>
             </div>
           ))}
+
           <MdKeyboardArrowRight />
         </div>
 
@@ -329,30 +330,37 @@ export default function Blog() {
 
       {category.map((listTwo, idxList) => (
         <div className="grid grid-cols-3 gap-5 mx-24" key={idxList}>
-          {listTwo.children.map((childTwo, idxTwo) => (
-            <div className="grid" key={idxTwo}>
-              <Image src={imgBlog} alt="" className="rounded-xl" />
+          {listTwo.title === 'All' &&
+            listTwo.children?.map((childTwo, idxTwo) => (
+              <div className="bg-white rounded-xl shadow-md p-4" key={idxTwo}>
+                <Image
+                  src={childTwo.image || '/placeholder.png'}
+                  alt=""
+                  className="rounded-xl"
+                  width={400}
+                  height={250}
+                />
 
-              <div className="flex justify-between mt-5">
-                <div className="flex items-center gap-3">
-                  <Image
-                    src={avatar}
-                    alt=""
-                    className="rounded-full w-10 h-10"
-                  />
-                  <h1>Ahmad tatang</h1>
-                </div>
-                <div className="flex items-center gap-3">
-                  <BsFillHeartFill />
-                  66
-                </div>
-                <div className="flex items-center gap-3">
-                  <BsFillEyeFill />
-                  2.2k
+                <div className="flex justify-between mt-4">
+                  <div className="flex items-center gap-3">
+                    <Image
+                      src={avatar}
+                      alt=""
+                      className="rounded-full w-10 h-10"
+                    />
+                    <h1 className="text-xl font-semibold">Ahmad Tatang</h1>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <BsFillHeartFill />
+                    <span className="text-sm">66</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <BsFillEyeFill />
+                    <span className="text-sm">2.2k</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       ))}
 

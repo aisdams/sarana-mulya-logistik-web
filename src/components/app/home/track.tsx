@@ -87,6 +87,7 @@ export default function Track() {
         }
 
         setIsLoadingTrack(false);
+        setSearchQuery('');
 
         // console.log('Response Data:', response.data);
       } catch (error: any) {
@@ -118,12 +119,12 @@ export default function Track() {
     buttonId: 'lacakStatusPod' | 'lacakStatusResi'
   ) => {
     setActiveButton(buttonId);
-    // Ganti judul sesuai dengan tombol yang aktif
-    // if (buttonId === 'lacakStatusPod') {
-    //   setPageTitle('Detail POD');
-    // } else {
-    //   setPageTitle('Detail Resi');
-    // }
+    // Ganti judul sesuai dengan tombol yang aktif.
+    if (buttonId === 'lacakStatusPod') {
+      setPageTitle('Detail POD');
+    } else {
+      setPageTitle('Detail Resi');
+    }
   };
 
   const controls = useAnimation();
@@ -210,7 +211,7 @@ export default function Track() {
           {searchResults.length > 0 ? (
             <div>
               <h2 className="text-xl font-bold mb-4 text-center text-base-blue">
-                Detail Track
+                {pageTitle}
               </h2>
               <table className="min-w-full border-collapse border border-gray-300 text-[#555555] text-sm">
                 <thead>
@@ -248,7 +249,7 @@ export default function Track() {
               </table>
             </div>
           ) : (
-            isLoading && (
+            isLoadingTrack && (
               <div className="text-center">
                 <Loader />
               </div>

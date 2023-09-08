@@ -99,6 +99,7 @@ export default function Tracking() {
         }
 
         setIsLoading(false);
+        setSearchQuery('');
 
         // console.log('Response Data:', response.data);
       } catch (error: any) {
