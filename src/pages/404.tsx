@@ -2,6 +2,20 @@ import React from 'react';
 import ImageErr from '../../public/img/avaters/error.svg';
 import Image from 'next/image';
 import Link from 'next/link';
+import { GetServerSideProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+// export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+//   return {
+//     props: {
+//       ...(await serverSideTranslations(locale!, [
+//         'navbar',
+//         'home/our-mission',
+//         'layouts/footer',
+//       ])),
+//     },
+//   };
+// };
 
 export default function Custom404() {
   return (

@@ -85,7 +85,7 @@ export default function Profile() {
       </div>
 
       <div className="my-20 lg:ml-28 md:mx-28 mx-5">
-        <h1 className="font-bold text-[#666666]-text text-4xl mb-16 lg-mb-10">
+        <h1 className="font-bold text-[#666666]-text text-3xl mb-20 lg-mb-10">
           {t('sectionTwo.name')}
         </h1>
         <div className="grid lg:grid-cols-2 gap-10 items-center relative -top-14">
@@ -105,7 +105,7 @@ export default function Profile() {
         <div className="flex justify-center items-center">
           <div className="flex flex-wrap justify-center">
             <div
-              className="bg-transparent p-6 rounded shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] w-52 h-max m-2 text-center cursor-pointer"
+              className="bg-transparent p-6 rounded shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] w-40 h-max m-2 text-center cursor-pointer"
               onClick={() => setSelectedComponent('VisiMisi')}
             >
               <div className="rounded-full border-2 border-purple-600 w-10 h-10 mx-auto grid text-center items-center mb-3">

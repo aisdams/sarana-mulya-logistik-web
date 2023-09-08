@@ -78,15 +78,15 @@ export default function Header() {
                     {t('button.title')}
                   </button>
                 </Link>
+
+                <div className="lg:absolute -right-44 z-[2] -top-10 mt-5 lg:mt-0 grid mx-auto items-center justify-center">
+                  <SpeedDial />
+                </div>
               </div>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
-
-      <div className="lg:absolute lg:translate-y-1/2 lg:right-40 z-[2] top-0 mt-5 lg:mt-0 grid mx-auto items-center justify-center">
-        <SpeedDial />
-      </div>
     </div>
   );
 }

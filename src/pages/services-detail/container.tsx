@@ -13,6 +13,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
         'navbar',
         'services-detail/container',
         'home/our-mission',
+        'layouts/footer',
       ])),
     },
   };

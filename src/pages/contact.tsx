@@ -51,7 +51,7 @@ export default function Contact() {
           </h1>
         </div>
       </div>
-      <div className="my-28 lg:mx-24 mx-3">
+      <div className="my-28 lg:mx-24 mx-5">
         <div className="grid lg:grid-cols-2 lg:gap-8 lg:items-center">
           <div className="">
             <h1 className="font-bold lg:text-3xl text-2xl text-secondary-text">
@@ -117,7 +117,7 @@ export default function Contact() {
       </div>
 
       <div className="bg-blue-navy w-full h-[250px] mx-auto  grid text-center items-center place-content-center">
-        <div className="flex gap-5">
+        <div className="flex gap-5 lg:mx-0 mx-5">
           <FaMapMarkerAlt className="text-base-blue text-5xl" />
           <h1 className="text-white text-4xl">{t('location')}</h1>
         </div>

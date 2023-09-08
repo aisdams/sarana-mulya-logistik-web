@@ -83,7 +83,6 @@ export default function Sidebar() {
   const [languageDropdownOpen, setLanguageDropdownOpen] =
     useState<boolean>(false);
 
-  // Function to toggle the dropdown state
   const toggleDropdown = (idx: number) => {
     if (openDropdowns.includes(idx)) {
       setOpenDropdowns(openDropdowns.filter((item) => item !== idx));

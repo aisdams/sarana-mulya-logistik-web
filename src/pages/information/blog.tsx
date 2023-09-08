@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import { BsFilter, BsFillEyeFill, BsFillHeartFill } from 'react-icons/bs';
@@ -16,6 +16,8 @@ import imgBlog8 from 'public/img/cta-bg2.jpg';
 import imgBlog9 from 'public/img/cta-bg.png';
 import Image, { StaticImageData } from 'next/image';
 import avatar from 'public/img/avaters/avatar1.png';
+import avatar2 from 'public/img/avaters/avatar2.png';
+import avatar3 from 'public/img/avaters/avatar3.png';
 import { useRouter } from 'next/router';
 
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
@@ -32,13 +34,18 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
 
 export default function Blog() {
   const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
 
   type BlogCategory = {
     title: string;
+    desc?: string;
     link?: string;
     children?: BlogCategory[];
     image?: StaticImageData;
     category?: string;
+    name?: string;
+    avatar?: StaticImageData;
+    categoryTitle?: string;
   };
 
   const category: BlogCategory[] = [
@@ -48,105 +55,116 @@ export default function Blog() {
       children: [
         {
           title:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
+            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut',
           image: imgBlog,
           category: 'all',
+          name: 'Akita Razel',
+          avatar: avatar,
         },
         {
           title:
             'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
           image: imgBlog2,
           category: 'all',
+          name: 'Justin Timb',
+          avatar: avatar3,
         },
         {
           title:
             'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
           image: imgBlog3,
           category: 'all',
+          name: 'Lola Renata',
+          avatar: avatar,
         },
         {
           title:
             'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
           image: imgBlog4,
           category: 'all',
+          name: 'Medea Alter',
+          avatar: avatar3,
         },
         {
           title:
             'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
           image: imgBlog5,
           category: 'all',
+          name: 'Zeber Uncle',
+          avatar: avatar3,
         },
         {
           title:
             'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
           image: imgBlog6,
           category: 'all',
+          name: 'Violetta',
+          avatar: avatar,
+        },
+        {
+          title:
+            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
+          image: imgBlog7,
+          category: 'all',
+          name: 'Luci Amelthea',
+          avatar: avatar,
+        },
+        {
+          title:
+            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
+          image: imgBlog8,
+          category: 'all',
+          name: 'Three Krap',
+          avatar: avatar2,
+        },
+        {
+          title:
+            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
+          image: imgBlog9,
+          category: 'all',
+          name: 'Crazy Stone',
+          avatar: avatar3,
         },
       ],
     },
     {
       title: 'Politik',
-      link: '/blog/bolitic',
+      link: '/blog/politic',
       children: [
         {
-          title:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
+          title: 'Test Lorem',
+          desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
           image: imgBlog,
           category: 'all',
+          categoryTitle: '#Pendidikan #Politik #Bisnis',
         },
         {
-          title:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
+          title: 'Test Lorem2',
+          desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
           image: imgBlog2,
           category: 'all',
+          categoryTitle: '#Entertainment #Teknologi #Otomotif',
         },
         {
-          title: 'Entertainment',
-          link: '/blog/entertainment',
-          children: [
-            {
-              title:
-                'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
-              image: imgBlog3,
-              category: 'all',
-            },
-          ],
+          title: 'Test Lorem3',
+          desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
+          image: imgBlog3,
+          category: 'all',
+          categoryTitle: '#Pendidikan #Politik #Bisnis',
         },
         {
-          title: 'Bisnis',
-          link: '/blog/bisnis',
-          children: [
-            {
-              title:
-                'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
-              image: imgBlog4,
-              category: 'all',
-            },
-          ],
+          title: 'Test Lorem4',
+          desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
+          image: imgBlog,
+          category: 'all',
+          categoryTitle: '#Pendidikan #Politik #Bisnis',
         },
         {
-          title: 'Teknologi',
-          link: '/blog/teknologi',
-          children: [
-            {
-              title:
-                'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
-              image: imgBlog5,
-              category: 'all',
-            },
-          ],
-        },
-        {
-          title: 'Pendidikan',
-          link: '/blog/pendidikan',
-          children: [
-            {
-              title:
-                'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
-              image: imgBlog6,
-              category: 'all',
-            },
-          ],
+          title: 'Test Lorem5',
+          desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
+          image: imgBlog,
+          category: 'all',
+          categoryTitle: '#Pendidikan #Politik #Bisnis',
         },
       ],
     },
@@ -155,64 +173,39 @@ export default function Blog() {
       link: '/blog/entertainment',
       children: [
         {
-          title:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
+          title: 'Test Lorem',
+          desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
           image: imgBlog,
           category: 'all',
+          categoryTitle: '#Pendidikan #Politik #Bisnis',
         },
         {
-          title:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
+          title: 'Test Lorem',
+          desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
           image: imgBlog2,
           category: 'all',
+          categoryTitle: '#Entertainment #Teknologi #Otomotif',
         },
         {
-          title: 'Entertainment',
-          link: '/blog/entertainment',
-          children: [
-            {
-              title:
-                'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
-              image: imgBlog3,
-              category: 'all',
-            },
-          ],
+          title: 'Test Lorem',
+          desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
+          image: imgBlog3,
+          category: 'all',
+          categoryTitle: '#Pendidikan #Politik #Bisnis',
         },
         {
-          title: 'Bisnis',
-          link: '/blog/bisnis',
-          children: [
-            {
-              title:
-                'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
-              image: imgBlog4,
-              category: 'all',
-            },
-          ],
+          title: 'Test Lorem',
+          desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
+          image: imgBlog,
+          category: 'all',
+          categoryTitle: '#Pendidikan #Politik #Bisnis',
         },
         {
-          title: 'Teknologi',
-          link: '/blog/teknologi',
-          children: [
-            {
-              title:
-                'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
-              image: imgBlog5,
-              category: 'all',
-            },
-          ],
-        },
-        {
-          title: 'Pendidikan',
-          link: '/blog/pendidikan',
-          children: [
-            {
-              title:
-                'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
-              image: imgBlog6,
-              category: 'all',
-            },
-          ],
+          title: 'Test Lorem',
+          desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
+          image: imgBlog,
+          category: 'all',
+          categoryTitle: '#Pendidikan #Politik #Bisnis',
         },
       ],
     },
@@ -221,8 +214,8 @@ export default function Blog() {
       link: '/blog/bisnis',
       children: [
         {
-          title:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
+          title: 'Text Lorem',
+          desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
           image: imgBlog4,
         },
       ],
@@ -232,8 +225,8 @@ export default function Blog() {
       link: '/blog/teknologi',
       children: [
         {
-          title:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
+          title: 'Text Lorem',
+          desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
           image: imgBlog5,
         },
       ],
@@ -243,8 +236,8 @@ export default function Blog() {
       link: '/blog/pendidikan',
       children: [
         {
-          title:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
+          title: 'Text Lorem',
+          desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
           image: imgBlog6,
         },
       ],
@@ -254,8 +247,8 @@ export default function Blog() {
       link: '/blog/otomotif',
       children: [
         {
-          title:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
+          title: 'Text Lorem',
+          desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
           image: imgBlog7,
         },
       ],
@@ -265,8 +258,8 @@ export default function Blog() {
       link: '/blog/pemasaran',
       children: [
         {
-          title:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
+          title: 'Text Lorem',
+          desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
           image: imgBlog8,
         },
       ],
@@ -276,20 +269,14 @@ export default function Blog() {
       link: '/blog/keuangan',
       children: [
         {
-          title:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
+          title: 'Text Lorem',
+          desc: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. A laudantium autem ut perspiciatis error? Consectetur eligendi corporis delectus blanditiis sequi.',
           image: imgBlog9,
         },
       ],
     },
   ];
 
-  const handleCategoryClick = (category: any) => {
-    router.push({
-      pathname: '/category-blog/idx',
-      query: { category },
-    });
-  };
   return (
     <>
       <div className="bg-gray-header w-full h-[450px] mb-20 mx-auto grid text-center relative">
@@ -301,16 +288,37 @@ export default function Blog() {
         </div>
       </div>
 
-      <div className="mx-24 mb-20 flex justify-between ">
-        <div className="border border-secondary-text flex items-center gap-5 pl-2 rounded-sm">
-          Populer <MdKeyboardArrowDown />
+      <div className="lg:mx-24 mx-5 mb-20 lg:flex grid lg:justify-between">
+        <div className="grid !relative">
+          <button
+            className="border border-secondary-text flex items-center gap-5 pl-2 rounded-sm w-max"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            Populer <MdKeyboardArrowDown />
+          </button>
+          {isOpen && (
+            <div className="absolute top-6 z-20 px-5 py-3 bg-white right-2 shadow-[2px_0px_20px_0px_rgba(0,0,0,0.3)]">
+              <Link href="http://localhost:3000/information/category-blog/Politik">
+                <p className="mb-3">Politik</p>
+              </Link>
+              <Link href="http://localhost:3000/information/category-blog/Entertainment">
+                <p className="mb-3">Entertainment</p>
+              </Link>
+              <Link href="http://localhost:3000/information/category-blog/Bisnis">
+                <p className="mb-3">Bisnis C</p>
+              </Link>
+              <Link href="http://localhost:3000/information/category-blog/Teknologi">
+                <p className="mb-3">Teknologi C</p>
+              </Link>
+            </div>
+          )}
         </div>
-        <div className="flex gap-5 items-center">
+        <div className="flex gap-5 items-center overflow-x-scroll lg:my-0 my-5">
           {category.map((listcate, idx) => (
             <div key={idx}>
               <div>
                 {listcate.link ? (
-                  <Link href={`/category-detail/idx/${listcate.title}`}>
+                  <Link href={`/information/category-blog/${listcate.title}`}>
                     {listcate.title}
                   </Link>
                 ) : (
@@ -329,34 +337,44 @@ export default function Blog() {
       </div>
 
       {category.map((listTwo, idxList) => (
-        <div className="grid grid-cols-3 gap-5 mx-24" key={idxList}>
+        <div
+          className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 lg:mx-24 mx-5"
+          key={idxList}
+        >
           {listTwo.title === 'All' &&
             listTwo.children?.map((childTwo, idxTwo) => (
-              <div className="bg-white rounded-xl shadow-md p-4" key={idxTwo}>
+              <div
+                className="bg-white rounded-xl shadow-md p-4 grid"
+                key={idxTwo}
+              >
                 <Image
                   src={childTwo.image || '/placeholder.png'}
                   alt=""
-                  className="rounded-xl"
-                  width={400}
-                  height={250}
+                  className="rounded-xl w-full h-full"
                 />
 
                 <div className="flex justify-between mt-4">
                   <div className="flex items-center gap-3">
                     <Image
-                      src={avatar}
+                      src={childTwo.avatar || '/avatar.png'}
                       alt=""
                       className="rounded-full w-10 h-10"
                     />
-                    <h1 className="text-xl font-semibold">Ahmad Tatang</h1>
+                    <h1 className="text-lg text-secondary-text">
+                      {childTwo.name}
+                    </h1>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <BsFillHeartFill />
-                    <span className="text-sm">66</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <BsFillEyeFill />
-                    <span className="text-sm">2.2k</span>
+                  <div className="flex gap-5">
+                    <div className="flex items-center gap-3">
+                      <button className="flex items-center gap-3 group">
+                        <BsFillHeartFill className="group-hover:text-red-500" />
+                        <span className="text-sm">66</span>
+                      </button>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <BsFillEyeFill />
+                      <span className="text-sm">2.2k</span>
+                    </div>
                   </div>
                 </div>
               </div>

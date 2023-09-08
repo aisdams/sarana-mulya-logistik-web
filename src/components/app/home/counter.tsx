@@ -81,7 +81,7 @@ export default function Counter() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const offset = router.pathname === '/' ? 3200 : 300;
+      const offset = router.pathname === '/' ? 3200 : 2000;
 
       if (!isLoading) {
         if (window.scrollY > offset) {
@@ -152,9 +152,9 @@ export default function Counter() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 px-10 lg:mt-0 mt-10 md:gap-10">
+          <div className="grid md:grid-cols-2 lg:px-10 lg:mt-0 mt-10 md:gap-10 px-5">
             {Counters.map((counter, idx) => (
-              <div className="text-base-blue" key={idx}>
+              <div className="text-base-blue mb-5" key={idx}>
                 <div className="text-3xl"> {counter.icon}</div>
                 <h1 className="font-bold text-[2rem] md:mt-3">
                   {countedTitles[idx]}

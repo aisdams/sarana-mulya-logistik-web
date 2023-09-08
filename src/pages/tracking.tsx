@@ -3,6 +3,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetServerSideProps } from 'next';
 import { useTranslation } from 'next-i18next';
 import { toast } from 'react-toastify';
+import { useRouter } from 'next/router';
 import axios from 'axios';
 import Loader from '@/components/loader/loader';
 
@@ -55,6 +56,7 @@ export default function Tracking() {
   };
 
   const { t } = useTranslation('tracking');
+  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<TrackingData[]>([]);
   const [searchResultsTwo, setSearchResultsTwo] = useState<TrackingData[]>([]);
@@ -89,22 +91,17 @@ export default function Tracking() {
 
         if (response.data && response.data.data) {
           const responseData = response.data.data;
-          // setSearchResults([responseData]);
           setSearchResults([responseData]);
-          // setSearchResultsTwo([responseData]);
+          setSearchQuery('');
+
+          router.push(router.pathname, `/tracking/public/${searchQuery}`);
         } else {
           setSearchResults([]);
-          // setSearchResultsTwo([]);
           toast.error('Maaf, data pelacakan tidak ada.');
         }
 
         setIsLoading(false);
-        setSearchQuery('');
-
-        // console.log('Response Data:', response.data);
       } catch (error: any) {
-        // console.error('Error:', error);
-        // console.log('Response:', error.response);
         toast.error(
           error.response?.data?.message ||
             'Terjadi kesalahan saat mencoba melacak.'
@@ -112,7 +109,6 @@ export default function Tracking() {
         setIsLoading(false);
       }
     } catch (error) {
-      // console.error('Error:', error);
       toast.error('Maaf, terjadi kesalahan saat mencoba melacak.');
       setIsLoading(false);
     }
@@ -198,46 +194,48 @@ export default function Tracking() {
         </div>
       </div>
 
-      <div className="my-20 mx-28">
+      <div className="my-20 lg:mx-28 mx-5">
         {searchResults.length > 0 ? (
           <div>
             <h2 className="text-xl font-bold mb-4 text-center text-base-blue">
               Detail Track
             </h2>
-            <table className="min-w-full border-collapse border border-gray-300 text-[#555555] text-sm">
-              <thead>
-                <tr>
-                  <th className="p-3 text-left">No Resi</th>
-                  <th className="p-3 text-left">Tanggal</th>
-                  <th className="p-3 text-left">Pengirim</th>
-                  <th className="p-3 text-left">Tujuan</th>
-                  <th className="p-3 text-left">Service</th>
-                  <th className="p-3 text-left">Status</th>
-                  <th className="p-3 text-left">Detail</th>
-                </tr>
-              </thead>
-              <tbody>
-                {searchResults.map((result, index) => (
-                  <tr key={index}>
-                    <td className="p-3">{result.receipt_no}</td>
-                    <td className="p-3">{formatDate(result.p_date)}</td>
-                    <td className="p-3">{result.p_shipper_name}</td>
-                    <td className="p-3">{result.destination}</td>
-                    <td className="p-3">{result.p_product}</td>
-                    <td className="p-3">{result.p_consignee_name}</td>
-                    <td className="p-3">
-                      <button
-                        type="button"
-                        className="bg-base-blue px-3 py-1 text-white"
-                        onClick={() => handleDetailTracking(result)}
-                      >
-                        Lihat Detail
-                      </button>
-                    </td>
+            <div className="overflow-auto">
+              <table className="min-w-full border-collapse border border-gray-300 text-[#555555] text-sm">
+                <thead>
+                  <tr>
+                    <th className="p-3 text-left">No Resi</th>
+                    <th className="p-3 text-left">Tanggal</th>
+                    <th className="p-3 text-left">Pengirim</th>
+                    <th className="p-3 text-left">Tujuan</th>
+                    <th className="p-3 text-left">Service</th>
+                    <th className="p-3 text-left">Status</th>
+                    <th className="p-3 text-left">Detail</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {searchResults.map((result, index) => (
+                    <tr key={index}>
+                      <td className="p-3">{result.receipt_no}</td>
+                      <td className="p-3">{formatDate(result.p_date)}</td>
+                      <td className="p-3">{result.p_shipper_name}</td>
+                      <td className="p-3">{result.destination}</td>
+                      <td className="p-3">{result.p_product}</td>
+                      <td className="p-3">{result.p_consignee_name}</td>
+                      <td className="p-3">
+                        <button
+                          type="button"
+                          className="bg-base-blue px-3 py-1 text-white"
+                          onClick={() => handleDetailTracking(result)}
+                        >
+                          Lihat Detail
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         ) : (
           isLoading && (

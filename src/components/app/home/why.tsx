@@ -100,7 +100,7 @@ export default function Why() {
 
   return (
     <motion.div initial="hidden" animate={controls} variants={cardVariants}>
-      <div className="my-24 lg:mx-28 xs:mx-0">
+      <div className="my-24 lg:mx-28 mx-5">
         <div className="text-center mb-14 block items-center">
           <h3 className="text-base-blue text-xl font-medium mb-3">
             {t('heading.title')}
@@ -122,10 +122,10 @@ export default function Why() {
               </div>
 
               <div className="">
-                <h1 className="w-full text-xl mb-3 font-semibold lg:w-[80%]">
+                <h1 className="w-full text-xl mb-3 font-semibold lg:w-[80%] w-full">
                   {Why.heading}
                 </h1>
-                <p className="font-normal text-sm text-gray-600 w-[80%]">
+                <p className="font-normal text-sm text-gray-600 lg:w-[80%] w-full">
                   {Why.paragraf}
                 </p>
               </div>

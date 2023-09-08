@@ -11,6 +11,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
         'navbar',
         'services-detail/express',
         'home/our-mission',
+        'layouts/footer',
       ])),
     },
   };

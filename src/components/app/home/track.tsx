@@ -4,6 +4,7 @@ import { motion, useAnimation } from 'framer-motion';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 import Loader from '@/components/loader/loader';
+import { useRouter } from 'next/router';
 
 export default function Track() {
   const { t } = useTranslation('home/track');
@@ -15,6 +16,7 @@ export default function Track() {
   const [selectedTracking, setSelectedTracking] = useState<TrackingData | null>(
     null
   );
+  const router = useRouter();
   const [showModal, setShowModal] = React.useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [isLoadingTrack, setIsLoadingTrack] = useState(false);
@@ -79,8 +81,8 @@ export default function Track() {
 
         if (response.data && response.data.data) {
           const responseData = response.data.data;
-          // setSearchResults([responseData]);
           setSearchResults([responseData]);
+          router.push(router.pathname, `/no_resi/=${searchQuery}`);
         } else {
           setSearchResults([]);
           toast.error('Maaf, data pelacakan tidak ada.');
@@ -88,11 +90,7 @@ export default function Track() {
 
         setIsLoadingTrack(false);
         setSearchQuery('');
-
-        // console.log('Response Data:', response.data);
       } catch (error: any) {
-        // console.error('Error:', error);
-        // console.log('Response:', error.response);
         toast.error(
           error.response?.data?.message ||
             'Terjadi kesalahan saat mencoba melacak.'
@@ -100,7 +98,6 @@ export default function Track() {
         setIsLoadingTrack(false);
       }
     } catch (error) {
-      // console.error('Error:', error);
       toast.error('Maaf, terjadi kesalahan saat mencoba melacak.');
       setIsLoadingTrack(false);
     }
@@ -119,7 +116,6 @@ export default function Track() {
     buttonId: 'lacakStatusPod' | 'lacakStatusResi'
   ) => {
     setActiveButton(buttonId);
-    // Ganti judul sesuai dengan tombol yang aktif.
     if (buttonId === 'lacakStatusPod') {
       setPageTitle('Detail POD');
     } else {
@@ -138,7 +134,6 @@ export default function Track() {
   }, []);
 
   useEffect(() => {
-    // Efek fade saat scroll
     const handleScroll = () => {
       const offset = 100;
 
@@ -166,7 +161,7 @@ export default function Track() {
         </h1>
 
         <div>
-          <div className="flex gap-5 mb-4">
+          <div className="grid lg:grid-cols-2 gap-5 mb-4">
             <button
               className={`lg:px-10 px-5 lg:py-4 ${
                 activeButton === 'lacakStatusResi'
@@ -207,46 +202,48 @@ export default function Track() {
       </div>
 
       <div className="">
-        <div className="my-20 mx-28">
+        <div className="my-20 lg:mx-28 mx-5">
           {searchResults.length > 0 ? (
             <div>
               <h2 className="text-xl font-bold mb-4 text-center text-base-blue">
                 {pageTitle}
               </h2>
-              <table className="min-w-full border-collapse border border-gray-300 text-[#555555] text-sm">
-                <thead>
-                  <tr>
-                    <th className="p-3 text-left">No Resi</th>
-                    <th className="p-3 text-left">Tanggal</th>
-                    <th className="p-3 text-left">Pengirim</th>
-                    <th className="p-3 text-left">Tujuan</th>
-                    <th className="p-3 text-left">Service</th>
-                    <th className="p-3 text-left">Status</th>
-                    <th className="p-3 text-left">Detail</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {searchResults.map((result, index) => (
-                    <tr key={index}>
-                      <td className="p-3">{result.receipt_no}</td>
-                      <td className="p-3">{formatDate(result.p_date)}</td>
-                      <td className="p-3">{result.p_shipper_name}</td>
-                      <td className="p-3">{result.destination}</td>
-                      <td className="p-3">{result.p_product}</td>
-                      <td className="p-3">{result.p_consignee_name}</td>
-                      <td className="p-3">
-                        <button
-                          type="button"
-                          className="bg-base-blue px-3 py-1 text-white"
-                          onClick={() => handleDetailTracking(result)}
-                        >
-                          Lihat Detail
-                        </button>
-                      </td>
+              <div className="overflow-auto">
+                <table className="min-w-full border-collapse border border-gray-300 text-[#555555] text-sm">
+                  <thead>
+                    <tr>
+                      <th className="p-3 text-left">No Resi</th>
+                      <th className="p-3 text-left">Tanggal</th>
+                      <th className="p-3 text-left">Pengirim</th>
+                      <th className="p-3 text-left">Tujuan</th>
+                      <th className="p-3 text-left">Service</th>
+                      <th className="p-3 text-left">Status</th>
+                      <th className="p-3 text-left">Detail</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {searchResults.map((result, index) => (
+                      <tr key={index}>
+                        <td className="p-3">{result.receipt_no}</td>
+                        <td className="p-3">{formatDate(result.p_date)}</td>
+                        <td className="p-3">{result.p_shipper_name}</td>
+                        <td className="p-3">{result.destination}</td>
+                        <td className="p-3">{result.p_product}</td>
+                        <td className="p-3">{result.p_consignee_name}</td>
+                        <td className="p-3">
+                          <button
+                            type="button"
+                            className="bg-base-blue px-3 py-1 text-white"
+                            onClick={() => handleDetailTracking(result)}
+                          >
+                            Lihat Detail
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           ) : (
             isLoadingTrack && (
