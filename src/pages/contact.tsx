@@ -129,7 +129,7 @@ export default function Contact() {
           height="400"
           frameBorder="0"
           scrolling="no"
-          src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Pt%20Sarana%20Mulya%20Logistik%20Citra%20Grand%20Cibubur%20CBD%20Jl%20Citra%20Grand%20Cibubur%20II%20Blok%20AR%2018%20&amp;%2019,%20Kota%20Bks,%20Jawa%20Barat%2017435+(Sarana%20Mulya%20Logistik)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.0999430995835!2d106.92495551418419!3d-6.381099564191246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6994a6f5c560ff%3A0x98afbe4373b0317a!2sPT%20Sarana%20Mulya%20Logistik!5e0!3m2!1sid!2sid!4v1637824863378!5m2!1sid!2sid"
         ></iframe>
       </div>
     </>

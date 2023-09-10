@@ -35,7 +35,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
 
 export default function Profile() {
   const { t } = useTranslation('about/profile');
-  const [selectedComponent, setSelectedComponent] = useState('');
+  const [selectedComponent, setSelectedComponent] = useState('VisiMisi');
 
   const renderSelectedComponent = () => {
     switch (selectedComponent) {
@@ -52,6 +52,14 @@ export default function Profile() {
       default:
         return null;
     }
+  };
+
+  const getCardStyle = (clickCard: any) => {
+    return {
+      backgroundColor:
+        selectedComponent === clickCard ? '#2BA7C0' : 'transparent',
+      color: selectedComponent === clickCard ? '#fff' : '#000',
+    };
   };
 
   return (
@@ -105,8 +113,9 @@ export default function Profile() {
         <div className="flex justify-center items-center">
           <div className="flex flex-wrap justify-center">
             <div
-              className="bg-transparent p-6 rounded shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] w-40 h-max m-2 text-center cursor-pointer"
+              className="bg-transparent p-6 rounded shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] lg:w-52 w-40 h-max m-2 text-center cursor-pointer"
               onClick={() => setSelectedComponent('VisiMisi')}
+              style={getCardStyle('VisiMisi')}
             >
               <div className="rounded-full border-2 border-purple-600 w-10 h-10 mx-auto grid text-center items-center mb-3">
                 <div className="rounded-full border-2 border-purple-600 w-7 h-7 mx-auto grid justify-center place-content-center items-center">
@@ -118,6 +127,7 @@ export default function Profile() {
             <div
               className="bg-transparent p-1 rounded shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] w-40 h-max m-2 text-center cursor-pointer"
               onClick={() => setSelectedComponent('Value')}
+              style={getCardStyle('Value')}
             >
               <IoDiamondOutline className="text-[#20c9a4] mt-6 text-[2.5rem] items-center justify-center grid mx-auto mb-2" />
               <h2 className="text-lg font-semibold mb-4">
@@ -131,6 +141,7 @@ export default function Profile() {
             <div
               className="bg-transparent p-1 rounded shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] w-40 h-max m-2 text-center cursor-pointer"
               onClick={() => setSelectedComponent('Team')}
+              style={getCardStyle('Team')}
             >
               <ImUsers className="text-[#df1529] mt-6 text-[2.5rem] items-center justify-center grid mx-auto mb-2" />
               <h2 className="text-lg font-semibold mb-4">
@@ -140,6 +151,7 @@ export default function Profile() {
             <div
               className="bg-transparent p-1 rounded shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] w-40 h-max m-2 text-center cursor-pointer"
               onClick={() => setSelectedComponent('Excess')}
+              style={getCardStyle('Excess')}
             >
               <BsHandThumbsUpFill className="text-[#0d6efd] mt-6 text-[2.5rem] items-center justify-center grid mx-auto mb-2" />
               <h2 className="text-lg font-semibold mb-4">
@@ -149,6 +161,7 @@ export default function Profile() {
             <div
               className="bg-transparent p-1 rounded shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] w-40 h-max m-2 text-center cursor-pointer"
               onClick={() => setSelectedComponent('Measurement')}
+              style={getCardStyle('Measurement')}
             >
               <BsRulers className="text-[#fd7e14] mt-6 text-[2.5rem] items-center justify-center grid mx-auto mb-2" />
               <h2 className="text-lg font-semibold mb-4">

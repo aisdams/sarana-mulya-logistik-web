@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import imgBlog from 'public/img/1.png';
 import imgBlog2 from 'public/img/2.png';
 import imgBlog3 from 'public/img/2-3.png';
@@ -30,6 +30,14 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
 export default function Idx() {
   const router = useRouter();
   const { idx } = router.query;
+  const [shuffledSubCategory, setShuffledSubCategory] = useState<
+    {
+      title: string;
+      Image: any;
+      desc: string;
+      tag: string;
+    }[]
+  >([]);
 
   const SubCategory = [
     {
@@ -70,6 +78,19 @@ export default function Idx() {
     },
   ];
 
+  useEffect(() => {
+    const shuffleArray = (array: any) => {
+      const shuffled = array.slice();
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled;
+    };
+
+    setShuffledSubCategory(shuffleArray(SubCategory));
+  }, []);
+
   return (
     <>
       <div className="bg-gray-header w-full h-[450px] mb-20 mx-auto grid text-center relative">
@@ -88,7 +109,7 @@ export default function Idx() {
           <h1>Back</h1>
         </button>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 lg:mx-24 mx-5">
-          {SubCategory.map((category, idx) => (
+          {shuffledSubCategory.map((category, idx) => (
             <div className="grid" key={idx}>
               <Image src={category.Image} alt="" className="rounded-xl" />
               <h2 className="font-bold mt-3">{category.title}</h2>
