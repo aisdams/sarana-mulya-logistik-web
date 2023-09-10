@@ -51,14 +51,14 @@ export default function Contact() {
           </h1>
         </div>
       </div>
-      <div className="my-28 lg:mx-24 mx-5">
-        <div className="grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+      <div className="my-28 lg:mx-24">
+        <div className="grid lg:grid-cols-2 lg:gap-8 lg:items-center mx-5">
           <div className="">
             <h1 className="font-bold lg:text-3xl text-2xl text-secondary-text">
               {t('titlecec')}
             </h1>
             <div className="mt-8">
-              <div className="grid grid-cols-2 gap-5">
+              <div className="grid lg:grid-cols-2 gap-5">
                 <input
                   type="text"
                   name="name"
@@ -108,7 +108,16 @@ export default function Contact() {
                   <h1 className="font-semibold text-xl mb-2 text-secondary-text">
                     {contact.title}
                   </h1>
-                  <p className="text-brown-gray">{contact.desc}</p>
+                  {Array.isArray(contact.desc) ? (
+                    contact.desc.map((descItem, descIdx) => (
+                      <p key={descIdx} className="text-brown-gray">
+                        {descItem}
+                      </p>
+                    ))
+                  ) : (
+                    // Jika desc bukan array, tampilkan langsung
+                    <p className="text-brown-gray">{contact.desc}</p>
+                  )}
                 </div>
               </div>
             ))}

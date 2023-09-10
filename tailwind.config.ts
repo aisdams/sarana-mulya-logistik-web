@@ -25,12 +25,8 @@ const config: Config = {
         sm: '576px',
         md: '768px',
         lg: '992px',
-
         xl: '1200px',
-        // => @media (min-width: 1280px) { ... }
-
-        '2xl': '1400px',
-        // => @media (min-width: 1536px) { ... }
+        xxl: '1400px',
       },
     },
   },

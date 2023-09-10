@@ -58,7 +58,12 @@ export default function Tracking() {
   const { t } = useTranslation('tracking');
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState<TrackingData[]>([]);
+  const [searchQueryPOD, setSearchQueryPOD] = useState('');
+  const [searchResultsPesanan, setSearchResultsPesanan] = useState<
+    TrackingData[]
+  >([]);
+  const [searchResultsPOD, setSearchResultsPOD] = useState<TrackingData[]>([]);
+
   const [searchResultsTwo, setSearchResultsTwo] = useState<TrackingData[]>([]);
   const [selectedTracking, setSelectedTracking] = useState<TrackingData | null>(
     null
@@ -69,7 +74,7 @@ export default function Tracking() {
   const username = 'sml_serverapi';
   const password = 'sml123';
 
-  const handleSearch = async () => {
+  const handleSearchPesanan = async () => {
     try {
       if (!searchQuery) {
         toast.error('Masukkan nomor resi untuk melakukan pencarian.');
@@ -91,12 +96,57 @@ export default function Tracking() {
 
         if (response.data && response.data.data) {
           const responseData = response.data.data;
-          setSearchResults([responseData]);
+          setSearchResultsPesanan([responseData]);
           setSearchQuery('');
 
           router.push(router.pathname, `/tracking/public/${searchQuery}`);
         } else {
-          setSearchResults([]);
+          setSearchResultsPesanan([]);
+          toast.error('Maaf, data pelacakan tidak ada.');
+        }
+
+        setIsLoading(false);
+      } catch (error: any) {
+        toast.error(
+          error.response?.data?.message ||
+            'Terjadi kesalahan saat mencoba melacak.'
+        );
+        setIsLoading(false);
+      }
+    } catch (error) {
+      toast.error('Maaf, terjadi kesalahan saat mencoba melacak.');
+      setIsLoading(false);
+    }
+  };
+
+  const handleSearchPOD = async () => {
+    try {
+      if (!searchQueryPOD) {
+        toast.error('Masukkan nomor resi untuk melakukan pencarian.');
+        return;
+      }
+
+      setIsLoading(true);
+
+      try {
+        const base64Credentials = btoa(`${username}:${password}`);
+        const response = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/tracking/public/${searchQueryPOD}`,
+          {
+            headers: {
+              Authorization: `Basic ${base64Credentials}`,
+            },
+          }
+        );
+
+        if (response.data && response.data.data) {
+          const responseData = response.data.data;
+          setSearchResultsPOD([responseData]);
+          setSearchQueryPOD('');
+
+          router.push(router.pathname, `/tracking/public/${searchQueryPOD}`);
+        } else {
+          setSearchResultsPOD([]);
           toast.error('Maaf, data pelacakan tidak ada.');
         }
 
@@ -118,6 +168,8 @@ export default function Tracking() {
     setShowModal(true);
     setSelectedTracking(tracking);
   };
+  const detailText =
+    searchResultsPesanan.length > 0 ? 'Detail Pesanan' : 'Detail POD';
 
   const closeModal = () => {
     setShowModal(false);
@@ -156,7 +208,7 @@ export default function Tracking() {
             <button
               type="button"
               className="px-2 py-2 bg-base-blue text-white w-max text-xs mt-2"
-              onClick={handleSearch}
+              onClick={handleSearchPesanan}
             >
               LACAK
             </button>
@@ -175,8 +227,8 @@ export default function Tracking() {
               type="text"
               placeholder="Masukan nomer resi anda"
               className="border border-[#97667f]/50 p-2"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              value={searchQueryPOD}
+              onChange={(e) => setSearchQueryPOD(e.target.value)}
             />
             <label htmlFor="Nomor Resi" className="py-3">
               Tanggal (Opsional)
@@ -186,7 +238,7 @@ export default function Tracking() {
             <button
               type="button"
               className="px-2 py-2 bg-base-blue text-white w-max text-xs mt-2"
-              onClick={handleSearch}
+              onClick={handleSearchPOD}
             >
               LACAK
             </button>
@@ -195,10 +247,14 @@ export default function Tracking() {
       </div>
 
       <div className="my-20 lg:mx-28 mx-5">
-        {searchResults.length > 0 ? (
+        {searchResultsPesanan.length > 0 || searchResultsPOD.length > 0 ? (
           <div>
             <h2 className="text-xl font-bold mb-4 text-center text-base-blue">
-              Detail Track
+              {searchResultsPesanan.length > 0
+                ? 'Detail Pesanan'
+                : searchResultsPOD.length > 0
+                ? 'Detail POD'
+                : 'Detail'}
             </h2>
             <div className="overflow-auto">
               <table className="min-w-full border-collapse border border-gray-300 text-[#555555] text-sm">
@@ -214,7 +270,10 @@ export default function Tracking() {
                   </tr>
                 </thead>
                 <tbody>
-                  {searchResults.map((result, index) => (
+                  {(searchResultsPesanan.length > 0
+                    ? searchResultsPesanan
+                    : searchResultsPOD
+                  ).map((result, index) => (
                     <tr key={index}>
                       <td className="p-3">{result.receipt_no}</td>
                       <td className="p-3">{formatDate(result.p_date)}</td>
