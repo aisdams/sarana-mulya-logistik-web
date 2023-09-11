@@ -95,7 +95,7 @@ export default function Sliders() {
                   height={300}
                   className="w-full"
                 />
-                <div className="py-[7rem] px-[3.5rem]">
+                <div className="lg:py-[7rem] px-[3.5rem] py-[2rem]">
                   <h3 className="text-secondary-text text-[14px] leading-relaxed mb-3">
                     {ann.title}
                   </h3>
