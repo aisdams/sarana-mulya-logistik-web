@@ -42,7 +42,7 @@ export default function Header() {
       <Swiper
         centeredSlides={true}
         autoplay={{
-          delay: 3000,
+          delay: 3500,
         }}
         loop={true}
         effect={'fade'}

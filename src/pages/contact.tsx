@@ -58,7 +58,7 @@ export default function Contact() {
               {t('titlecec')}
             </h1>
             <div className="mt-8">
-              <div className="grid lg:grid-cols-2 gap-5">
+              <div className="grid lg:grid-cols-2 gap-5 w-full">
                 <input
                   type="text"
                   name="name"
@@ -100,7 +100,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="grid mt-5">
+          <div className="grid mt-10">
             {Contacts.map((contact, idx) => (
               <div className="lg:flex grid mb-10 gap-5" key={idx}>
                 <div className="text-base-blue text-4xl">{contact.icon}</div>

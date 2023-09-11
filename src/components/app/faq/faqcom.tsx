@@ -43,7 +43,7 @@ export default function Faqcom() {
       {FaqData.map((faq, index) => (
         <div
           key={index}
-          className={`border rounded-lg p-4 my-3 cursor-pointer transition${
+          className={`border rounded-lg p-4 my-3 cursor-pointer ${
             activeIndex === index ? '' : 'bg-white text-secondary-text'
           }`}
           onClick={() => toggleAccordion(index)}

@@ -52,8 +52,8 @@ export default function SpeedDial() {
           <span
             className={`absolute top-1/2 right-full transform -translate-x-full -translate-y-1/2 text-lg text-white px-3 py-1 rounded ${
               hoveredLabel === link.label
-                ? 'opacity-100 translate-x-0 transition-opacity duration-[1s]'
-                : 'opacity-0 translate-x-full transition-opacity duration-[1s]'
+                ? 'opacity-100 -translate-x-2 transition-opacity duration-[1s]'
+                : 'opacity-0 translate-x-0 transition-opacity duration-[.5s]'
             }`}
           >
             {link.label}
