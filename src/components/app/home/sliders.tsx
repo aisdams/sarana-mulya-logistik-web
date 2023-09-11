@@ -11,6 +11,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { motion, useAnimation } from 'framer-motion';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Carousel } from 'react-responsive-carousel';
 
 export default function Sliders() {
   const { t } = useTranslation('home/slider');
@@ -81,21 +83,10 @@ export default function Sliders() {
       animate={controls}
       variants={cardVariants}
     >
-      <div className="my-20 lg:mr-28 xs:mr-0">
-        <Swiper
-          spaceBetween={30}
-          centeredSlides={true}
-          autoplay={{
-            delay: 3500,
-            disableOnInteraction: false,
-          }}
-          loop={true}
-          navigation={true}
-          modules={[Autoplay, Pagination]}
-          className="mySwiper"
-        >
+      <div className="my-20 lg:mr-28 xs:mr-0 !relative">
+        <Carousel autoPlay interval={2500} infiniteLoop emulateTouch>
           {Anns.map((ann, idx) => (
-            <SwiperSlide key={idx}>
+            <div key={idx}>
               <div className="lg:flex grid">
                 <Image
                   src={ann.Image}
@@ -119,9 +110,9 @@ export default function Sliders() {
                   </Link>
                 </div>
               </div>
-            </SwiperSlide>
+            </div>
           ))}
-        </Swiper>
+        </Carousel>
       </div>
     </motion.div>
   );

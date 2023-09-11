@@ -115,3 +115,19 @@ img {
   height: 15px !important;
   background: #7f7f7f !important;
 }
+.control-dots {
+  position: absolute !important;
+  left: 35rem !important;
+  z-index: 10px;
+}
+
+.dot {
+  border-radius: 2px !important;
+  width: 20px !important;
+  height: 4px !important;
+  background: #7f7f7f !important;
+}
+
+.dot.selected {
+  background: #2ba7c0 !important;
+}
