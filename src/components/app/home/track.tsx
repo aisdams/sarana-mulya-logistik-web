@@ -5,6 +5,8 @@ import { toast } from 'react-toastify';
 import axios from 'axios';
 import Loader from '@/components/loader/loader';
 import { useRouter } from 'next/router';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Track() {
   const { t } = useTranslation('home/track');
@@ -128,34 +130,22 @@ export default function Track() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsLoading(false);
-    }, 4000);
+    }, 2000);
 
     return () => clearTimeout(timeout);
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const offset = 100;
-
-      if (!isLoading) {
-        if (window.scrollY > offset) {
-          controls.start({ opacity: 1 });
-        } else {
-          controls.start({ opacity: 0 });
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [isLoading, controls]);
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={controls}>
-      <div className="grid lg:grid-cols-2 my-20 mx-5 lg:mx-28 xs:mx-0">
+    <>
+      <div
+        className="grid lg:grid-cols-2 my-20 mx-5 lg:mx-28 xs:mx-0"
+        data-aos="fade-up"
+      >
         <h1 className="text-base-blue font-bold lg:text-[2.7rem] leading-none mb-5 lg:mb-0 text-3xl">
           {t('heading.title')} <br /> {t('heading.titleTwo')}
         </h1>
@@ -339,6 +329,6 @@ export default function Track() {
           </div>
         )}
       </div>
-    </motion.div>
+    </>
   );
 }

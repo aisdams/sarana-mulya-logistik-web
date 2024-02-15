@@ -9,14 +9,12 @@ import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
 import Indec from '../../../../public/img/client/indec.png';
 import { useTranslation } from 'next-i18next';
-import { motion, useAnimation } from 'framer-motion';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Testimoni() {
   const { t } = useTranslation('home/testimoni');
   const [activeIndex, setActiveIndex] = useState<number>(0);
-  const controls = useAnimation();
-  const [isLoading, setIsLoading] = useState(true);
-  const [isVisible, setIsVisible] = useState(false);
 
   const onSlideChange = (swiper: any) => {
     setActiveIndex(swiper.realIndex);
@@ -92,152 +90,103 @@ export default function Testimoni() {
   ];
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setIsLoading(false);
-    }, 4000);
-
-    return () => clearTimeout(timeout);
+    AOS.init();
+    AOS.refresh();
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const offset = 3600;
-
-      if (!isLoading) {
-        if (window.scrollY > offset) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [isLoading]);
-
-  useEffect(() => {
-    if (isVisible) {
-      controls.start({ opacity: 1, y: 0, transition: { duration: 1 } });
-    } else {
-      controls.start({ opacity: 0, y: -50, transition: { duration: 1 } });
-    }
-  }, [controls, isVisible]);
-
-  const cardVariants = {
-    hidden: {
-      opacity: 0,
-      y: -50,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 3,
-      },
-    },
-  };
-
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={controls}
-      variants={cardVariants}
+    <div
+      className="my-20 text-center lg:mx-28 mx-auto"
+      data-aos="fade-up"
+      data-aos-delay="900"
     >
-      <div className="my-20 text-center lg:mx-28 mx-auto">
-        <h1 className="text-base-blue">{t('heading.title')}</h1>
-        <h1 className="text-secondary-text font-bold text-2xl">
-          {t('heading.title2')}
-        </h1>
+      <h1 className="text-base-blue">{t('heading.title')}</h1>
+      <h1 className="text-secondary-text font-bold text-2xl">
+        {t('heading.title2')}
+      </h1>
 
-        <Swiper
-          slidesPerView={1}
-          spaceBetween={30}
-          loop={true}
-          autoplay={{
-            delay: 3500,
-            disableOnInteraction: false,
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          breakpoints={{
-            '360': {
-              slidesPerView: 1,
-              spaceBetween: 10,
-            },
-            '576': {
-              slidesPerView: 1,
-              spaceBetween: 30,
-            },
-            '768': {
-              slidesPerView: 3,
-              spaceBetween: 30,
-            },
-            '992': {
-              slidesPerView: 3,
-              spaceBetween: 30,
-            },
-          }}
-          modules={[Pagination, Autoplay]}
-          className="mySwiper"
-          onSlideChange={onSlideChange}
-          centeredSlides={true}
-        >
-          {Testimonies.map((testimoni, idx) => (
-            <SwiperSlide key={idx}>
+      <Swiper
+        slidesPerView={1}
+        spaceBetween={30}
+        loop={true}
+        autoplay={{
+          delay: 3500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        breakpoints={{
+          '360': {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          '576': {
+            slidesPerView: 1,
+            spaceBetween: 30,
+          },
+          '768': {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          '992': {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        }}
+        modules={[Pagination, Autoplay]}
+        className="mySwiper"
+        onSlideChange={onSlideChange}
+        centeredSlides={true}
+      >
+        {Testimonies.map((testimoni, idx) => (
+          <SwiperSlide key={idx}>
+            <div className={`box mt-5 ${idx === activeIndex ? 'center' : ''}`}>
               <div
-                className={`box mt-5 ${idx === activeIndex ? 'center' : ''}`}
+                className={`rounded-lg pb-5 ${
+                  idx === activeIndex ? 'bg-gray-500' : ''
+                }`}
               >
-                <div
-                  className={`rounded-lg pb-5 ${
-                    idx === activeIndex ? 'bg-gray-500' : ''
-                  }`}
-                >
-                  <hr className="bg-base-blue w-full h-1 relative" />
-                  <div className="mx-5">
-                    <div
-                      className={`absolute top-0 rounded-full bg-base-blue text-white p-3 max-w-max z-10 ${
-                        idx === activeIndex ? 'center' : ''
-                      }`}
-                    >
-                      {testimoni.icon}
-                    </div>
+                <hr className="bg-base-blue w-full h-1 relative" />
+                <div className="mx-5">
+                  <div
+                    className={`absolute top-0 rounded-full bg-base-blue text-white p-3 max-w-max z-10 ${
+                      idx === activeIndex ? 'center' : ''
+                    }`}
+                  >
+                    {testimoni.icon}
+                  </div>
 
+                  <h1
+                    className={`text-${
+                      idx === activeIndex ? 'white' : 'black'
+                    } text-justify text-sm mt-8`}
+                  >
+                    {testimoni.title}
+                  </h1>
+
+                  <div className="flex mt-5 gap-2 items-center">
+                    <div
+                      className={`bg-base-blue text-${
+                        idx === activeIndex ? 'white' : 'black'
+                      } rounded-full p-2 text-3xl`}
+                    >
+                      {testimoni.user}
+                    </div>
                     <h1
                       className={`text-${
                         idx === activeIndex ? 'white' : 'black'
-                      } text-justify text-sm mt-8`}
+                      } text-sm text-left`}
                     >
-                      {testimoni.title}
+                      {testimoni.pt}
                     </h1>
-
-                    <div className="flex mt-5 gap-2 items-center">
-                      <div
-                        className={`bg-base-blue text-${
-                          idx === activeIndex ? 'white' : 'black'
-                        } rounded-full p-2 text-3xl`}
-                      >
-                        {testimoni.user}
-                      </div>
-                      <h1
-                        className={`text-${
-                          idx === activeIndex ? 'white' : 'black'
-                        } text-sm text-left`}
-                      >
-                        {testimoni.pt}
-                      </h1>
-                    </div>
                   </div>
                 </div>
               </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    </motion.div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 }

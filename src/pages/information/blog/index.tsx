@@ -33,8 +33,8 @@ export default function Blog() {
         <h1 className="uppercase font-bold text-4xl text-[#2b2b2b]">Tags</h1>
 
         <div className="my-20">
-          <div className="w-[25rem] shadow-2xl pb-10">
-            <div className="shape bg-gray-400 w-full h-56 rounded-md mb-10"></div>
+          <div className="w-[25rem] shadow-2xl pb-10 rounded-tl-xl rounded-tr-xl overflow-hidden">
+            <div className="shape bg-gray-400 w-full h-56 mb-10"></div>
             <div className="grid pl-5">
               <h3 className="font-light">September 21, 2022 at 10:00:54</h3>
               <Link href="/information/blog/blog-details">

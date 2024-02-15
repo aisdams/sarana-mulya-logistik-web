@@ -13,6 +13,8 @@ import { useTranslation } from 'next-i18next';
 import { motion, useAnimation } from 'framer-motion';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Sliders() {
   const { t } = useTranslation('home/slider');
@@ -46,74 +48,45 @@ export default function Sliders() {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const offset = 2600;
-
-      if (!isLoading) {
-        if (window.scrollY > offset) {
-          controls.start({ opacity: 1 });
-        } else {
-          controls.start({ opacity: 0 });
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [isLoading, controls]);
-
-  const cardVariants = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 3,
-      },
-    },
-  };
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={controls}
-      variants={cardVariants}
+    <div
+      className="my-20 lg:mr-28 xs:mr-0 !relative"
+      data-aos="fade-up"
+      data-aos-delay="500"
     >
-      <div className="my-20 lg:mr-28 xs:mr-0 !relative">
-        <Carousel autoPlay interval={2500} infiniteLoop emulateTouch>
-          {Anns.map((ann, idx) => (
-            <div key={idx}>
-              <div className="lg:flex grid">
-                <Image
-                  src={ann.Image}
-                  alt=""
-                  width={700}
-                  height={300}
-                  className="w-full"
-                />
-                <div className="lg:py-[7rem] px-[3.5rem] py-[2rem]">
-                  <h3 className="text-secondary-text text-[14px] leading-relaxed mb-3">
-                    {ann.title}
-                  </h3>
-                  <Link href={ann.link} passHref legacyBehavior>
-                    <a
-                      className="bg-base-blue text-white text-sm rounded-md px-2 py-1"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {t('button.title')}
-                    </a>
-                  </Link>
-                </div>
+      <Carousel autoPlay interval={2500} infiniteLoop emulateTouch>
+        {Anns.map((ann, idx) => (
+          <div key={idx}>
+            <div className="lg:flex grid">
+              <Image
+                src={ann.Image}
+                alt=""
+                width={700}
+                height={300}
+                className="w-full"
+              />
+              <div className="lg:py-[7rem] px-[3.5rem] py-[2rem]">
+                <h3 className="text-secondary-text text-[14px] leading-relaxed mb-3">
+                  {ann.title}
+                </h3>
+                <Link href={ann.link} passHref legacyBehavior>
+                  <a
+                    className="bg-base-blue text-white text-sm rounded-md px-2 py-1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t('button.title')}
+                  </a>
+                </Link>
               </div>
             </div>
-          ))}
-        </Carousel>
-      </div>
-    </motion.div>
+          </div>
+        ))}
+      </Carousel>
+    </div>
   );
 }

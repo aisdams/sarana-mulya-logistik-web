@@ -8,6 +8,8 @@ import UpdatedInformation from 'public/img/why/updated-information.png';
 import Guaranteed from 'public/img/why/guaranteed.png';
 import { useTranslation } from 'next-i18next';
 import { motion, useAnimation } from 'framer-motion';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Why() {
   const { t } = useTranslation('home/why');
@@ -57,82 +59,47 @@ export default function Why() {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const offset = 600;
-
-      if (!isLoading) {
-        if (window.scrollY > offset) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [isLoading]);
-
-  useEffect(() => {
-    if (isVisible) {
-      controls.start({ opacity: 1, x: 0, transition: { duration: 1 } });
-    } else {
-      controls.start({ opacity: 0, x: -50, transition: { duration: 1 } });
-    }
-  }, [controls, isVisible]);
-
-  const cardVariants = {
-    hidden: {
-      opacity: 0,
-      x: -50,
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 1,
-      },
-    },
-  };
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
   return (
-    <motion.div initial="hidden" animate={controls} variants={cardVariants}>
-      <div className="my-24 lg:mx-28 mx-5">
-        <div className="text-center mb-14 block items-center">
-          <h3 className="text-base-blue text-xl font-medium mb-3">
-            {t('heading.title')}
-          </h3>
-          <h1 className="font-bold text-4xl text-secondary-text mb-20">
-            Sarana Mulya Logistik
-          </h1>
-        </div>
-
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5">
-          {whys.map((Why, idx) => (
-            <div className="flex gap-5" key={idx}>
-              <div className="transform rotate-45 border border-base-blue rounded-md h-max p-3 hover:bg-base-blue group transition-all duration-300">
-                <Image
-                  src={Why.image}
-                  alt=""
-                  className="h-full lg:w-[300px] w-48 rounded-md !transform !rotate-[-45deg] group-hover:brightness-[100]"
-                />
-              </div>
-
-              <div className="">
-                <h1 className="w-full text-xl mb-3 font-semibold lg:w-[80%] w-full">
-                  {Why.heading}
-                </h1>
-                <p className="font-normal text-sm text-gray-600 lg:w-[80%] w-full">
-                  {Why.paragraf}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+    <div
+      className="my-24 lg:mx-28 mx-5"
+      data-aos="fade-up"
+      data-aos-delay="300"
+    >
+      <div className="text-center mb-14 block items-center">
+        <h3 className="text-base-blue text-xl font-medium mb-3">
+          {t('heading.title')}
+        </h3>
+        <h1 className="font-bold text-4xl text-secondary-text mb-20">
+          Sarana Mulya Logistik
+        </h1>
       </div>
-    </motion.div>
+
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5">
+        {whys.map((Why, idx) => (
+          <div className="flex gap-5" key={idx}>
+            <div className="transform rotate-45 border border-base-blue rounded-md h-max p-3 hover:bg-base-blue group transition-all duration-300">
+              <Image
+                src={Why.image}
+                alt=""
+                className="h-full lg:w-[300px] w-48 rounded-md !transform !rotate-[-45deg] group-hover:brightness-[100]"
+              />
+            </div>
+
+            <div className="">
+              <h1 className="w-full text-xl mb-3 font-semibold lg:w-[80%]">
+                {Why.heading}
+              </h1>
+              <p className="font-normal text-sm text-gray-600 lg:w-[80%] w-full">
+                {Why.paragraf}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }

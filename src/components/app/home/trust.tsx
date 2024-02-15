@@ -11,6 +11,8 @@ import Client4 from 'public/img/client/genecraft.png';
 import Client5 from 'public/img/client/merapiutama.png';
 import Client6 from 'public/img/client/human.png';
 import Client7 from 'public/img/client/cobra.png';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
 import { animations, motion, useAnimation } from 'framer-motion';
@@ -53,92 +55,61 @@ export default function Trust() {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const offset = 1200;
-
-      if (!isLoading) {
-        if (window.scrollY > offset) {
-          controls.start({ opacity: 1 });
-        } else {
-          controls.start({ opacity: 0 });
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [isLoading, controls]);
-
-  const cardVariants = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 3,
-      },
-    },
-  };
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={controls}
-      variants={cardVariants}
+    <div
+      className="my-20 lg:mx-28 mx-5"
+      data-aos="fade-up"
+      data-aos-delay="500"
     >
-      <div className="my-20 lg:mx-28 mx-5">
-        <h1 className="text-secondary-text text-3xl font-bold">
-          <span className="text-base-blue">{t('heading.title')}</span>{' '}
-          {t('heading.title2')}
-        </h1>
-        <hr className="w-[3rem] bg-base-blue h-1 my-3" />
+      <h1 className="text-secondary-text text-3xl font-bold">
+        <span className="text-base-blue">{t('heading.title')}</span>{' '}
+        {t('heading.title2')}
+      </h1>
+      <hr className="w-[3rem] bg-base-blue h-1 my-3" />
 
-        <Swiper
-          slidesPerView={1}
-          spaceBetween={10}
-          loop={true}
-          modules={[Autoplay]}
-          autoplay={{
-            delay: 2000,
-            disableOnInteraction: false,
-          }}
-          breakpoints={{
-            '360': {
-              slidesPerView: 1,
-              spaceBetween: 20,
-            },
-            '576': {
-              slidesPerView: 1,
-              spaceBetween: 20,
-            },
-            '768': {
-              slidesPerView: 3,
-              spaceBetween: 30,
-            },
-            '1024': {
-              slidesPerView: 4,
-              spaceBetween: 10,
-            },
-          }}
-          className="mySwiper"
-        >
-          {Clients.map((client, idx) => (
-            <SwiperSlide key={idx}>
-              <Image
-                src={client.Image}
-                alt=""
-                className="w-40 hover:opacity-70 transition-all duration-300 lg:mx-0 mx-auto grid"
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    </motion.div>
+      <Swiper
+        slidesPerView={1}
+        spaceBetween={10}
+        loop={true}
+        modules={[Autoplay]}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
+        breakpoints={{
+          '360': {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          '576': {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          '768': {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          '1024': {
+            slidesPerView: 4,
+            spaceBetween: 10,
+          },
+        }}
+        className="mySwiper"
+      >
+        {Clients.map((client, idx) => (
+          <SwiperSlide key={idx}>
+            <Image
+              src={client.Image}
+              alt=""
+              className="w-40 hover:opacity-70 transition-all duration-300 lg:mx-0 mx-auto grid"
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 }

@@ -9,6 +9,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { motion, useAnimation } from 'framer-motion';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function OurService() {
   const { t } = useTranslation('home/our-services');
@@ -58,81 +60,43 @@ export default function OurService() {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const offset = 1700;
-
-      if (!isLoading) {
-        if (window.scrollY > offset) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [isLoading]);
-
-  useEffect(() => {
-    if (isVisible) {
-      controls.start({ opacity: 1, transition: { duration: 2 } });
-    } else {
-      controls.start({ opacity: 0, transition: { duration: 2 } });
-    }
-  }, [controls, isVisible]);
-
-  const cardVariants = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 2,
-      },
-    },
-  };
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={controls}
-      variants={cardVariants}
+    <div
+      className="my-20 mx-5 lg:mx-28"
+      data-aos="fade-up"
+      data-aos-delay="700"
     >
-      <div className="my-20 mx-5 lg:mx-28">
-        <h1 className="text-secondary-text text-3xl font-bold">
-          <span className="text-base-blue">{t('heading.title')}</span>{' '}
-          {t('heading.title2')}
-        </h1>
-        <hr className="w-[3rem] bg-base-blue h-1 my-3" />
+      <h1 className="text-secondary-text text-3xl font-bold">
+        <span className="text-base-blue">{t('heading.title')}</span>{' '}
+        {t('heading.title2')}
+      </h1>
+      <hr className="w-[3rem] bg-base-blue h-1 my-3" />
 
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 mt-10">
-          {Services.map((service, idx) => (
-            <div
-              className="hover:shadow-[0px_10px_0px_0px_rgba(43,167,192,0.75)] mb-10 rounded-lg ease-out duration-300 hover:-translate-y-3"
-              key={idx}
-            >
-              <Image src={service.Image} alt="" />
-              <Link href={service.link}>
-                <h1 className="font-bold text-2xl mt-10 ml-5 pb-24">
-                  {service.title}
-                </h1>
-              </Link>
-            </div>
-          ))}
-        </div>
-
-        <Link href="http://localhost:3000/services">
-          <button className="bg-base-blue rounded-full py-2 px-3 text-center mx-auto items-center grid text-white">
-            {t('button.title')}
-          </button>
-        </Link>
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 mt-10">
+        {Services.map((service, idx) => (
+          <div
+            className="hover:shadow-[0px_10px_0px_0px_rgba(43,167,192,0.75)] mb-10 rounded-lg ease-out duration-300 hover:-translate-y-3"
+            key={idx}
+          >
+            <Image src={service.Image} alt="" />
+            <Link href={service.link}>
+              <h1 className="font-bold text-2xl mt-10 ml-5 pb-24">
+                {service.title}
+              </h1>
+            </Link>
+          </div>
+        ))}
       </div>
-    </motion.div>
+
+      <Link href="http://localhost:3000/services">
+        <button className="bg-base-blue rounded-full py-2 px-3 text-center mx-auto items-center grid text-white">
+          {t('button.title')}
+        </button>
+      </Link>
+    </div>
   );
 }

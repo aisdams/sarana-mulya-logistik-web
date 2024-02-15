@@ -5,13 +5,12 @@ import { FaHeadphones, FaGlobe, FaUsers, FaTruck } from 'react-icons/fa';
 import { PiGarage } from 'react-icons/pi';
 import { animations, motion, useAnimation } from 'framer-motion';
 import { useRouter } from 'next/router';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Counter() {
   const { t } = useTranslation('home/counter');
   const router = useRouter();
-  const controls = useAnimation();
-  const [isLoading, setIsLoading] = useState(true);
-  const [isVisible, setIsVisible] = useState(false);
 
   const Counters = [
     {
@@ -72,99 +71,50 @@ export default function Counter() {
   }, [countedTitles]);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setIsLoading(false);
-    }, 4000);
-
-    return () => clearTimeout(timeout);
+    AOS.init();
+    AOS.refresh();
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const offset = router.pathname === '/' ? 3200 : 2000;
-
-      if (!isLoading) {
-        if (window.scrollY > offset) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [isLoading]);
-
-  useEffect(() => {
-    if (isVisible) {
-      controls.start({ opacity: 1, y: 0, transition: { duration: 1 } });
-    } else {
-      controls.start({ opacity: 0, y: 50, transition: { duration: 1 } });
-    }
-  }, [controls, isVisible]);
-
-  const cardVariants = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-      },
-    },
-  };
-
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={controls}
-      variants={cardVariants}
+    <div
+      className="my-20 lg:mx-28 mx-5"
+      data-aos="fade-up"
+      data-aos-delay="800"
     >
-      <div className="my-20 lg:mx-28 mx-5">
-        <h5 className="text-base-blue">{t('text.header')}</h5>
-        <div className="grid lg:grid-cols-2">
-          <div>
-            <h1 className="font-bold lg:text-3xl text-2xl my-5 text-secondary-text">
-              {t('text.title')}
-            </h1>
-            <p className="text-secondary-text text-sm">{t('text.title2')}</p>
+      <h5 className="text-base-blue">{t('text.header')}</h5>
+      <div className="grid lg:grid-cols-2">
+        <div>
+          <h1 className="font-bold lg:text-3xl text-2xl my-5 text-secondary-text">
+            {t('text.title')}
+          </h1>
+          <p className="text-secondary-text text-sm">{t('text.title2')}</p>
 
-            <div className="flex gap-5 items-center">
-              <div className="bg-white p-3 shadow-[2px_10px_10px_0px_rgba(0,0,0,0.2)]">
-                <FaHeadphones className="text-3xl text-base-blue" />
-              </div>
-              <div className="mt-10">
-                <h3 className="font-bold text-sm mb-5">
-                  {t('text.titlePhone')}
-                </h3>
-                <div className="text-base-blue text-[14px]">
-                  <h3>Phone : 021 - 2281 - 5019</h3>
-                  <h3>WhatsApp : 0858 - 1055 - 8522</h3>
-                </div>
+          <div className="flex gap-5 items-center">
+            <div className="bg-white p-3 shadow-[2px_10px_10px_0px_rgba(0,0,0,0.2)]">
+              <FaHeadphones className="text-3xl text-base-blue" />
+            </div>
+            <div className="mt-10">
+              <h3 className="font-bold text-sm mb-5">{t('text.titlePhone')}</h3>
+              <div className="text-base-blue text-[14px]">
+                <h3>Phone : 021 - 2281 - 5019</h3>
+                <h3>WhatsApp : 0858 - 1055 - 8522</h3>
               </div>
             </div>
           </div>
+        </div>
 
-          <div className="grid md:grid-cols-2 lg:px-10 lg:mt-0 mt-10 md:gap-10 px-5">
-            {Counters.map((counter, idx) => (
-              <div className="text-base-blue mb-5" key={idx}>
-                <div className="text-3xl"> {counter.icon}</div>
-                <h1 className="font-bold text-[2rem] md:mt-3">
-                  {countedTitles[idx]}
-                </h1>
-                <p>{counter.paragraf}</p>
-              </div>
-            ))}
-          </div>
+        <div className="grid md:grid-cols-2 lg:px-10 lg:mt-0 mt-10 md:gap-10 px-5">
+          {Counters.map((counter, idx) => (
+            <div className="text-base-blue mb-5" key={idx}>
+              <div className="text-3xl"> {counter.icon}</div>
+              <h1 className="font-bold text-[2rem] md:mt-3">
+                {countedTitles[idx]}
+              </h1>
+              <p>{counter.paragraf}</p>
+            </div>
+          ))}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
