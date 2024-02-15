@@ -2,6 +2,7 @@ import '@/styles/globals.css';
 import { AppProps } from 'next/app';
 import { appWithTranslation } from 'next-i18next';
 import AppProvider from '@/components/providers/app-provider';
+import ProgressBarProvider from '../providers/progress-bar-provider';
 import Head from 'next/head';
 import Navbar from '@/components/layouts/navbar';
 import Footer from '@/components/layouts/footer';
@@ -9,7 +10,6 @@ import { ReactElement, ReactNode, useEffect, useState } from 'react';
 import { NextPage } from 'next';
 import { FaBars } from 'react-icons/fa';
 import Sidebar from '@/components/layouts/sidebar';
-import Loader from '@/components/loader/loader';
 import { useRouter } from 'next/router';
 import ImageSML from '../../public/img/icon2.png';
 import Image from 'next/image';
@@ -110,39 +110,41 @@ function App({
         async
       />
       <AppProvider>
-        <div className={`relative ${isScrolled ? 'bg-white shadow' : ''}`}>
-          {windowWidth < 992 && (
-            <div className="flex items-center">
-              <Image
-                src={ImageSML}
-                alt=""
-                className="w-32 absolute top-10 z-20 brightness-[100] left-3"
-              />
-              <div
-                className="menu-icon absolute z-20 right-10 top-10 text-white bg-base-blue p-2"
-                onClick={toggleMenu}
-              >
-                <FaBars className="text-xl" />
+        <ProgressBarProvider>
+          <div className={`relative ${isScrolled ? 'bg-white shadow' : ''}`}>
+            {windowWidth < 992 && (
+              <div className="flex items-center">
+                <Image
+                  src={ImageSML}
+                  alt=""
+                  className="w-32 absolute top-10 z-20 brightness-[100] left-3"
+                />
+                <div
+                  className="menu-icon absolute z-20 right-10 top-10 text-white bg-base-blue p-2"
+                  onClick={toggleMenu}
+                >
+                  <FaBars className="text-xl" />
+                </div>
               </div>
-            </div>
-          )}
+            )}
 
-          {isMenuOpen && (
-            <>
-              <Sidebar />
-              {getLayout(<Component {...pageProps} />)}
-              <Footer />
-            </>
-          )}
+            {isMenuOpen && (
+              <>
+                <Sidebar />
+                {getLayout(<Component {...pageProps} />)}
+                <Footer />
+              </>
+            )}
 
-          {!isMenuOpen && (
-            <>
-              <Navbar isScrolled={isScrolled} />
-              {getLayout(<Component {...pageProps} />)}
-              <Footer />
-            </>
-          )}
-        </div>
+            {!isMenuOpen && (
+              <>
+                <Navbar isScrolled={isScrolled} />
+                {getLayout(<Component {...pageProps} />)}
+                <Footer />
+              </>
+            )}
+          </div>
+        </ProgressBarProvider>
       </AppProvider>
     </>
   );

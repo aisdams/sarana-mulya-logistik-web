@@ -230,10 +230,12 @@ export default function Sidebar() {
         </div>
       </div>
 
-      <Link href="https://sml.ops.odisys.id/auth" legacyBehavior>
-        <a className="border border-[#383838] mt-3 text-white cursor-pointer py-2 pl-2 text-left w-max">
-          Login
-        </a>
+      <Link
+        href="https://sml.ops.odisys.id/auth"
+        legacyBehavior
+        className="border border-[#383838] mt-3 text-white cursor-pointer py-2 pl-2 text-left w-max"
+      >
+        Login
       </Link>
     </div>
   );

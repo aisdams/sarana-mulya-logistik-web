@@ -12,6 +12,7 @@ import Link from 'next/link';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { motion } from 'framer-motion';
 import { BsCaretDownFill } from 'react-icons/bs';
+import { LiaLinkSolid } from 'react-icons/lia';
 motion;
 
 interface NavbarProps {
@@ -172,9 +173,9 @@ export default function Navbar({ isScrolled }: NavbarProps) {
               onMouseEnter={() => handleMouseEnter(idx)}
               onMouseLeave={handleMouseLeave}
             >
-              <a href={`/${router.locale}${navbar.link}`}>
+              <Link href={`/${router.locale}${navbar.link}`}>
                 <h1>{t(navbar.title)}</h1>
-              </a>
+              </Link>
               {navbar.children && (
                 <div className="icon">
                   <BiSolidDownArrow className="text-[9px]" />
@@ -184,14 +185,14 @@ export default function Navbar({ isScrolled }: NavbarProps) {
                 <ul className="absolute top-full text-[13px] gap-y-5 py-7 grid -right-20 rounded-sm bg-white w-[12rem] p-3 shadow-[-5px_10px_10px_0px_rgba(0,0,0,0.4)]">
                   {navbar.children.map((child, childIdx) => (
                     <li key={childIdx}>
-                      <a
+                      <Link
                         href={`/${router.locale}${child.link}`}
                         className={`hover:text-base-blue font-medium ${
                           isScrolled ? 'text-base-blue' : 'text-secondary-text'
                         } z-10`}
                       >
                         {child.title}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -226,9 +227,12 @@ export default function Navbar({ isScrolled }: NavbarProps) {
           </div>
 
           <Link href="https://sml.ops.odisys.id/auth" legacyBehavior>
-            <a className="login border-2 border-blue-300 py-2 px-3 text-base font-semibold">
+            <Link
+              className="login border-2 border-blue-300 py-2 px-3 text-base font-semibold"
+              href="#"
+            >
               Login
-            </a>
+            </Link>
           </Link>
         </div>
       </div>
