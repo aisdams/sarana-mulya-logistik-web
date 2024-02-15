@@ -26,7 +26,7 @@ export default function BlogDetails() {
         </div>
       </div>
 
-      <div className="mx-auto justify-center items-center grid place-content-center w-[min(85%,1280px)] text-[#7070a1]">
+      <div className="mx-auto justify-center items-center grid place-content-center w-[min(55%,1280px)] text-[#7070a1] my-24">
         <div className="w-full h-[30rem] bg-gray-300"></div>
         <div className="flex gap-5 mt-5">
           <div className="flex items-center gap-2">
@@ -37,7 +37,7 @@ export default function BlogDetails() {
           </div>
         </div>
 
-        <h1 className="font-medium mt-5 text-3xl">
+        <h1 className="font-medium mt-5 text-3xl text-black">
           Penting! 3 Kesalahan Kirim Barang Berukuran Besar dan <br /> Banyak
         </h1>
         <h3 className="mt-3">
@@ -47,41 +47,62 @@ export default function BlogDetails() {
           pelanggan. Tidak hanya itu, pengemasan yang kurang baik memungkinkan
           pelanggan mengeluh barang kiriman rusak atau tidak sesuai.
         </h3>
-        <h3 className="font-medium text-xl mt-3">
+        <h3 className="font-medium text-xl mt-3 text-[#666670]">
           Untuk menghindari hal tersebut, Anda perlu hindari kesalahan kirim
           barang berukuran besar dan banyak sebagai berikut:
         </h3>
-        <div className="flex gap-5 mt-3">
-          <h1>1.</h1>
-          <h1>
-            Kemas barang tidak sesuai. Kesalahan kirim barang ukuran besar dan
-            jumlah banyak adalah tidak menggunakan kemasan yang tepat untuk
-            membungkus barang. Hal ini bisa membuat barang Anda pecah, robek,
-            atau rusak selama perjalanan. Untuk itu, tentukan kesesuain antara
-            ukuran kotak dan barang. Jangan sampai membungkus barang ukuran
-            kecil menggunakan bungkus yang berukuran besar karena akan
-            menghabiskan ruangan. Jangan pula membungkus barang besar
-            menggunakan kardus terlalu kecil atau pas-pasan. Karena Anda perlu
-            menggunakan pelindung agar barang Anda tidak mengalami kerusakan di
-            perjalanan, misalnya bubble wrap, honeycomb, plastik kolom udara dan
-            lainnya. Kesalahan pada pengukuran barang. Kirim barang dalam ukuran
-            besar dan jumlah yang banyak harus jelas. Apalagi barang ukuran
-            besar terdapat perhitungan volume. Anda tidak bisa asal menebak
-            berat dan harganya. Hal ini perlu Anda hindari agar tidak ada
-            kesalahan. Ukur terlebih dahulu sehingga Anda bisa memberikan
-            estimasi harga lebih terperinci dan akurat kepada pelanggan. Jika
-            kurang yakin, Anda bisa gunakan timbangan dari jasa pengiriman agar
-            ukuran lebih tepat. Jasa pengiriman yang salah. Ya, bayangkan jika
-            barang yang sudah Anda tunggu-tunggu ternyata sampai dalam keadaan
-            rusak atau bahkan hilang? Untuk itu gunakan jasa pengiriman yang
-            aman dan terpercaya untuk kirim barang berukuran besar. Tidak semua
-            jasa pengiriman, bisa mengirimkan barang berukuran besar. Anda bisa
-            pilih jasa pengiriman Sarana Mulya Logistik. Jasa pengiriman terbaik
-            yang siap antar barang Anda ke seluruh Indonesia hingga plosok
-            daerah. Sarana Mulya Logistik memiliki beberapa layanan dan produk
-            yang lengkap, mulai dari express, reguler, container, trucking,
-            hingga export dan import.
-          </h1>
+        <div className="grid">
+          <div className="flex gap-5 mt-3">
+            <h1>1.</h1>
+            <h1>
+              <span className="text-[#666670]">
+                Kemas barang tidak sesuai.{' '}
+              </span>
+              Kesalahan kirim barang ukuran besar dan jumlah banyak adalah tidak
+              menggunakan kemasan yang tepat untuk membungkus barang. Hal ini
+              bisa membuat barang Anda pecah, robek, atau rusak selama
+              perjalanan. Untuk itu, tentukan kesesuain antara ukuran kotak dan
+              barang. Jangan sampai membungkus barang ukuran kecil menggunakan
+              bungkus yang berukuran besar karena akan menghabiskan ruangan.
+              Jangan pula membungkus barang besar menggunakan kardus terlalu
+              kecil atau pas-pasan. Karena Anda perlu menggunakan pelindung agar
+              barang Anda tidak mengalami kerusakan di perjalanan, misalnya
+              bubble wrap, honeycomb, plastik kolom udara dan lainnya.
+            </h1>
+          </div>
+          <div className="flex gap-5 mt-3">
+            <h1>2.</h1>
+            <h1>
+              <span className="text-[#666670]">
+                Kesalahan pada pengukuran barang.
+              </span>{' '}
+              Kirim barang dalam ukuran besar dan jumlah yang banyak harus
+              jelas. Apalagi barang ukuran besar terdapat perhitungan volume.
+              Anda tidak bisa asal menebak berat dan harganya. Hal ini perlu
+              Anda hindari agar tidak ada kesalahan. Ukur terlebih dahulu
+              sehingga Anda bisa memberikan estimasi harga lebih terperinci dan
+              akurat kepada pelanggan. Jika kurang yakin, Anda bisa gunakan
+              timbangan dari jasa pengiriman agar ukuran lebih tepat.
+            </h1>
+          </div>
+          <div className="flex gap-5 mt-3">
+            <h1>3.</h1>
+            <h1>
+              <span className="text-[#666670]">
+                Jasa pengiriman yang salah.
+              </span>{' '}
+              Ya, bayangkan jika barang yang sudah Anda tunggu-tunggu ternyata
+              sampai dalam keadaan rusak atau bahkan hilang? Untuk itu gunakan
+              jasa pengiriman yang aman dan terpercaya untuk kirim barang
+              berukuran besar. Tidak semua jasa pengiriman, bisa mengirimkan
+              barang berukuran besar. Anda bisa pilih jasa pengiriman Sarana
+              Mulya Logistik. Jasa pengiriman terbaik yang siap antar barang
+              Anda ke seluruh Indonesia hingga plosok daerah. Sarana Mulya
+              Logistik memiliki beberapa layanan dan produk yang lengkap, mulai
+              dari express, reguler, container, trucking, hingga export dan
+              import.
+            </h1>
+          </div>
         </div>
       </div>
     </>
