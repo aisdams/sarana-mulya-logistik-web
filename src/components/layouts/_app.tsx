@@ -110,41 +110,39 @@ function App({
         async
       />
       <AppProvider>
-        <ProgressBarProvider>
-          <div className={`relative ${isScrolled ? 'bg-white shadow' : ''}`}>
-            {windowWidth < 992 && (
-              <div className="flex items-center">
-                <Image
-                  src={ImageSML}
-                  alt=""
-                  className="w-32 absolute top-10 z-20 brightness-[100] left-3"
-                />
-                <div
-                  className="menu-icon absolute z-20 right-10 top-10 text-white bg-base-blue p-2"
-                  onClick={toggleMenu}
-                >
-                  <FaBars className="text-xl" />
-                </div>
+        <div className={`relative ${isScrolled ? 'bg-white shadow' : ''}`}>
+          {windowWidth < 992 && (
+            <div className="flex items-center">
+              <Image
+                src={ImageSML}
+                alt=""
+                className="w-32 absolute top-10 z-20 brightness-[100] left-3"
+              />
+              <div
+                className="menu-icon absolute z-20 right-10 top-10 text-white bg-base-blue p-2"
+                onClick={toggleMenu}
+              >
+                <FaBars className="text-xl" />
               </div>
-            )}
+            </div>
+          )}
 
-            {isMenuOpen && (
-              <>
-                <Sidebar />
-                {getLayout(<Component {...pageProps} />)}
-                <Footer />
-              </>
-            )}
+          {isMenuOpen && (
+            <>
+              <Sidebar />
+              {getLayout(<Component {...pageProps} />)}
+              <Footer />
+            </>
+          )}
 
-            {!isMenuOpen && (
-              <>
-                <Navbar isScrolled={isScrolled} />
-                {getLayout(<Component {...pageProps} />)}
-                <Footer />
-              </>
-            )}
-          </div>
-        </ProgressBarProvider>
+          {!isMenuOpen && (
+            <>
+              <Navbar isScrolled={isScrolled} />
+              {getLayout(<Component {...pageProps} />)}
+              <Footer />
+            </>
+          )}
+        </div>
       </AppProvider>
     </>
   );
