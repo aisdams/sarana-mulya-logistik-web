@@ -100,7 +100,7 @@ export default function Blog({
           {pageNumbers.map((number) => (
             <li key={number}>
               <Link
-                href={`http://localhost:3000/information/blog/?page=${number}`}
+                href={`/information/blog/?page=${number}`}
                 className={`${
                   number === currentPage
                     ? 'bg-blue-50 border border-gray-300 text-blue-600 hover:bg-blue-100 hover:text-blue-700'
