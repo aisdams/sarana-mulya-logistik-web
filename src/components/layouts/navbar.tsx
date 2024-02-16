@@ -149,10 +149,10 @@ export default function Navbar({ isScrolled }: NavbarProps) {
 
   return (
     <div
-      className={`w-full absolute top-0 hidden lg:grid transition ease-linear duration-300 ${
+      className={`w-full absolute top-0 lg:grid ${
         isScrolled
-          ? 'bg-white top-0 sticky text-base-blue shadow-[-5px_10px_30px_0px_rgba(0,0,0,0.5)]'
-          : 'bg-transparent text-white '
+          ? 'bg-white sticky text-base-blue shadow-[-5px_10px_30px_0px_rgba(0,0,0,0.5)] transition-all duration-300'
+          : 'bg-transparent sticky text-white'
       } z-10`}
     >
       <div className="flex justify-between items-center gap-3 mx-20 px-3 py-3">

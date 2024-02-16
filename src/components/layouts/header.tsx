@@ -45,7 +45,7 @@ export default function Header() {
   ];
 
   return (
-    <div>
+    <div className="">
       <Swiper
         centeredSlides={true}
         autoplay={{

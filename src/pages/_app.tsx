@@ -133,7 +133,9 @@ function App({
 
           {!isMenuOpen && (
             <>
-              <Navbar isScrolled={isScrolled} />
+              <div className="fixed top-0 w-full z-40">
+                <Navbar isScrolled={isScrolled} />
+              </div>
               {getLayout(<Component {...pageProps} />)}
               <Footer />
             </>
